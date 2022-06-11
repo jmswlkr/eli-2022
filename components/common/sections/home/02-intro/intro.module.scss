@@ -1,0 +1,111 @@
+//// < zIndex > ////
+.intro {
+  .collage {
+    z-index: 2;
+  }
+  .sectionLabel {
+    z-index: 1;
+  }
+}
+
+.intro {
+  position: relative;
+  height: 135vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.sectionLabel {
+  position: absolute;
+  height: 10vh;
+  width: 110vw;
+  top: 20vh;
+  left: -20vw;
+}
+
+// TODO: Should this be removed??
+// .quote {
+//   position: relative;
+// }
+
+.collage {
+  position: relative;
+  height: 85vh;
+  width: 100vw;
+  // border: 1px solid var(--text-color);
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .collagePrimary {
+    position: absolute;
+    height: 32vw;
+    width: 32vw;
+    top: 25vh;
+    left: 0;
+    background-color: var(--primary-tr);
+  }
+
+  .collageTextContent {
+    position: absolute;
+    top: 50%;
+    right: -120%;
+    transform: translateY(-50%);
+    height: auto;
+    width: 35vw;
+  }
+
+  .title {
+    font-family: var(--font-title);
+    font-size: var(--text-header-sm);
+    font-weight: var(--light);
+    white-space: nowrap;
+    transform: translateX(-50%);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .blurb {
+    font-size: var(--text-prose);
+    font-weight: var(--reg);
+  }
+
+  .btn {
+    margin-top: var(--vp-ms);
+    button {
+      color: var(--text-color) !important;
+      font-weight: var(--reg);
+    }
+    span {
+      letter-spacing: 0 !important;
+    }
+    path {
+      fill: var(--primary);
+    }
+    circle {
+      stroke: var(--primary);
+    }
+  }
+  .collageImg {
+    position: absolute;
+    background-color: var(--primary-tr);
+  }
+
+  .sec {
+    height: 16vw;
+    width: 16vw;
+    top: 0;
+    right: 7vw;
+  }
+  .ter {
+    height: 14vw;
+    width: 14vw;
+    bottom: -25vh;
+    right: 0;
+  }
+}

@@ -1,0 +1,77 @@
+//// < zIndex > ////
+.topNav {
+  z-index: var(--level-top);
+}
+
+.topNav {
+  position: fixed;
+  top: 2.5vw;
+  width: 95vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  transition: var(--transition-primary);
+  // mix-blend-mode: difference;
+  // background-blend-mode: difference;
+}
+
+.logo {
+  path {
+    fill: var(--white);
+  }
+}
+
+.menuBtn {
+  position: relative;
+  height: 12px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  transform-origin: right;
+  transition: var(--transition-primary);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    height: 48px;
+    width: 48px;
+  }
+  &:hover {
+    transform: scaleX(1.2);
+  }
+  span {
+    background-color: var(--white);
+    position: relative;
+    height: 1px;
+    transition: var(--transition-primary);
+    &:nth-child(1) {
+      width: 48px;
+    }
+    &:nth-child(2) {
+      width: 36px;
+    }
+  }
+  &.closeBtn {
+    &:hover { 
+      transform: unset;
+      span {
+        background-color: var(--primary-deep);
+      }
+    }
+    span {
+      width: 48px;
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 7px);
+      }
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

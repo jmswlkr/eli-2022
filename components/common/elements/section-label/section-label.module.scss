@@ -1,0 +1,9 @@
+.labelStyle {
+  font-family: var(--font-title);
+  font-size: var(--text-10xl);
+  text-transform: uppercase;
+  letter-spacing: var(--push-lg);
+  div:global(.marquee) {
+    color: var(--label-color) !important;
+  }
+}

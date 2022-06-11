@@ -1,0 +1,14 @@
+//// < zIndex > ////
+.modal {
+  z-index: var(--level-four);
+}
+
+
+
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary);
+}
+

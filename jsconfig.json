@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/layout/*": ["components/common/layout/*"],
+      "@/elements/*": ["components/common/elements/*"],
+      "@/svg/*": ["components/common/elements/svg/*"],
+      "@/sections/*": ["components/common/sections/*"],
+      "@/modules/*": ["components/modules/*"],
+      "@/page-styles/*": ["styles/page-styles/*"],
+      "@/styles/*": ["styles/*"],
+      "@/utils/*": ["utils/*"],
+      "@/data/*": ["mock-api/*"],
+    }
+  }
+}
