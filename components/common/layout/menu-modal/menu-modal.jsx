@@ -18,7 +18,7 @@ import {
 } from '@/svg/social-icons.jsx'
 
 // Styling & Animation
-import { phases } from 'animation/transition'
+import { phases, smooth } from 'animation/transition'
 import { slideInTop } from 'animation/slide'
 
 import {
@@ -32,6 +32,7 @@ import {
   social,
   copyright,
 } from './menu-modal.module.scss'
+import { blurFadeIn } from 'animation/fade'
 
 export const MenuModal = ({ modalOpen, closeModal }) => {
   const { push } = useRouter()
@@ -65,7 +66,12 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
           {...slideInTop}
         >
           <div className={menuOptions}>
-            <ul className={`${contactOptions} ${menuList}`}>
+            <motion.ul
+              className={`${contactOptions} ${menuList}`}
+              transition={smooth(0.5, 0.5)}
+              {...blurFadeIn}
+              {...phases}
+            >
               {contactInfo.map((inf) => {
                 return (
                   <li key={inf.id}>
@@ -80,23 +86,32 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
                   </li>
                 )
               })}
-            </ul>
+            </motion.ul>
             <span className={divider} />
-            <ul className={`${navOptions} ${menuList}`}>
+            <motion.ul
+              className={`${navOptions} ${menuList}`}
+              transition={smooth(0.5, 0.5)}
+              {...blurFadeIn}
+              {...phases}
+            >
               {pageLinks.map((lnk) => {
                 return (
                   <li key={lnk.text}>
-                      <a onClick={() => handleLinkClick(lnk.path)}>
-                        {lnk.content}
-                      </a>
+                    <a
+                      onClick={() =>
+                        handleLinkClick(lnk.path)
+                      }
+                    >
+                      {lnk.content}
+                    </a>
                   </li>
                 )
               })}
-            </ul>
+            </motion.ul>
           </div>
           <div className={menuFooter}>
             <div className={social}>
-              {socialIcons.map(icn => {
+              {socialIcons.map((icn) => {
                 return (
                   <a
                     key={icn.id}

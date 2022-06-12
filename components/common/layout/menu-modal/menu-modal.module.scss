@@ -45,7 +45,9 @@
   flex-direction: column;
   justify-content: space-evenly;
   list-style-type: none;
-  color: var(--white);
+  a {
+    color: var(--white);
+  }
 }
 
 .contactOptions {
