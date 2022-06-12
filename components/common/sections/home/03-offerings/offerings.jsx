@@ -90,7 +90,7 @@ export const Offerings = () => {
         setFocusedOffering((prvState) =>
           next(prvState, len)
         )
-      })
+      }, 500)
     }
   }
 
