@@ -1,0 +1,9 @@
+.calendar {
+  position: relative;
+  height: 105vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}

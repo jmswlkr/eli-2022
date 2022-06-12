@@ -7,7 +7,8 @@ import { Intro } from '@/sections/home/02-intro/intro.jsx'
 import { Offerings } from '@/sections/home/03-offerings/offerings'
 import { Pillars } from '@/sections/home/04-pillars/pillars'
 import { Testimonial } from '@/sections/home/05-testimonial/testimonial'
-import { Contact } from '@/sections/home/06-contact/contact'
+import { Contact } from '@/sections/home/07-contact/contact'
+import { Calendar } from '@/sections/home/06-calendar/calendar'
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Offerings />
       <Pillars />
       <Testimonial />
+      <Calendar />
       <Contact />
     </>
   )
