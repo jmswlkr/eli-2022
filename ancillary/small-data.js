@@ -1,5 +1,7 @@
 // * Small, convenient, reusable data stuctures. * //
 
+import { Facebook, Instagram, LinkedIn } from "@/elements/svg/social-icons"
+
 export const pageLinks = [
   {
     path: '/consulting',
@@ -16,6 +18,43 @@ export const pageLinks = [
   {
     path: '/calendar',
     content: 'Calendar',
+  },
+]
+
+export const connectLinks = [
+  {
+    path: '/about',
+    content: 'About',
+  },
+  {
+    path: '/#contact',
+    content: 'Contact',
+  },
+  {
+    path: '/resources',
+    content: 'Resources',
+  },
+  {
+    path: '/partners',
+    content: 'Partners',
+  },
+]
+
+export const socialIcons = [
+  {
+    id: 'FB',
+    link: `https://wwww.facebook.com/`,
+    icon: <Facebook />,
+  },
+  {
+    id: 'IG',
+    link: `https://wwww.Instagram.com/`,
+    icon: <Instagram />,
+  },
+  {
+    id: 'LI',
+    link: `https://wwww.linkedin.com/`,
+    icon: <LinkedIn />,
   },
 ]
 

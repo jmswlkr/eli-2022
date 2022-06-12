@@ -1,6 +1,6 @@
 //// < zIndex > ////
 .modal {
-  z-index: var(--level-four);
+  isolation: isolate;
 }
 
 @mixin pseudoLine {
@@ -16,7 +16,9 @@
 
 .modal {
   position: fixed;
-  height: 100vh;
+  top: -2vh;
+  left: 0;
+  height: 102vh;
   width: 100vw;
   background-color: var(--primary);
 }
@@ -64,7 +66,7 @@
   }
   a {
     position: relative;
-    font-size: var(--text-subheader);
+    font-size: var(--text-prose-em);
     font-weight: var(--reg);
     padding-bottom: var(--space-md);
     border-bottom: 1px solid transparent;

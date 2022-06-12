@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import {
   pageLinks,
   contactInfo,
+  socialIcons,
 } from '@/ancillary/small-data'
 
 // Components
@@ -58,7 +59,7 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
   return (
     <AnimatePresence exitBeforeEnter>
       {modalOpen && (
-        <motion.div
+        <motion.menu
           className={modal}
           {...phases}
           {...slideInTop}
@@ -95,33 +96,24 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
           </div>
           <div className={menuFooter}>
             <div className={social}>
-              <a
-                href='https://wwww.instagram.com/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <Instagram />
-              </a>
-              <a
-                href='https://wwww.facebook.com/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <Facebook />
-              </a>
-              <a
-                href='https://wwww.linkedin.com/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <LinkedIn />
-              </a>
+              {socialIcons.map(icn => {
+                return (
+                  <a
+                    key={icn.id}
+                    href={icn.link}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    {icn.icon}
+                  </a>
+                )
+              })}
             </div>
             <span className={copyright}>
               © 2022 Embodied learning institute{' '}
             </span>
           </div>
-        </motion.div>
+        </motion.menu>
       )}
     </AnimatePresence>
   )

@@ -1,6 +1,20 @@
 //// < zIndex > ////
-.content {
-  z-index: var(--level-three);
+
+.layout {
+
+  nav {
+    z-index: 5;
+  }
+  menu {
+    z-index: 4;
+  }
+  .content {
+    z-index: 3;
+  }
+  footer {
+    z-index: 2;
+  }
+
 }
 
 
@@ -11,9 +25,11 @@
   height: auto;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   background-color: var(--primary-bg);
+  isolation: isolate;
   &::after {
     position: fixed;
     top: 0;

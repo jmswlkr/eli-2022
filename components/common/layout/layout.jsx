@@ -8,6 +8,7 @@ import { MenuModal } from './menu-modal/menu-modal'
 
 // Styling
 import { layout, content } from './layout.module.scss'
+import { Footer } from './footer/footer'
 
 export const Layout = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -31,6 +32,7 @@ export const Layout = ({ children }) => {
         />
         {children}
       </main>
+      <Footer />
     </div>
   )
 }
