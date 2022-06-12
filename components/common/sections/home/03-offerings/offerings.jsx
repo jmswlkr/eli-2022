@@ -17,7 +17,10 @@ import {
   blockPos,
   block,
   blockTitle,
+  source,
+  dest,
   hide,
+  blockBtn,
   zero,
   one,
   two,
@@ -27,6 +30,7 @@ import {
 } from './offerings.module.scss'
 import { baseUrl } from '@/utils/cloudinary'
 import { Label } from '@/elements/section-label/section-label'
+import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
 
 export const Offerings = () => {
   /*
@@ -37,19 +41,20 @@ export const Offerings = () => {
 
   const sliderRef = useRef(null)
   const [focusedOffering, setFocusedOffering] = useState(2)
-  const [distributedOfferingIdx, setDistributedOfferingIdx] = useState(2)
+  const [
+    distributedOfferingIdx,
+    setDistributedOfferingIdx,
+  ] = useState(2)
 
   useEffect(() => {
-    let converted = focusedOffering;
+    let converted = focusedOffering
 
     if (focusedOffering > 2) {
       converted = focusedOffering - 3
     }
 
     setDistributedOfferingIdx(converted)
-
   }, [focusedOffering])
-  
 
   const sizePositionMatrix = [
     zero,
@@ -60,22 +65,34 @@ export const Offerings = () => {
     five,
   ]
 
+  // Turn array into closed loop
+  const next = (currentIndex, length) =>
+    (currentIndex + 1) % length
+
+  // Navigate closed loop array by variable increments
   const getNextByDegree = (curIdx, degree) => {
     const len = sizePositionMatrix.length
-    const next = (curIdx + degree) % len
+    const nextDegree = next(curIdx + degree, len)
 
-    return next
+    return nextDegree
   }
 
-  const handleSetOffering = () => {
+  // Set focused offering by 1 or two positions based on clicked block's position
+  const handleSetOffering = (clickedPosition) => {
+    let runTwice = clickedPosition === 1
     const len = sizePositionMatrix.length
     const curIdx = focusedOffering
 
-    let next = (curIdx + 1) % len
+    setFocusedOffering(next(curIdx, len))
 
-    setFocusedOffering(next)
+    if (runTwice) {
+      setTimeout(() => {
+        setFocusedOffering((prvState) =>
+          next(prvState, len)
+        )
+      })
+    }
   }
-
 
   return (
     <section className={offeringsStyle}>
@@ -94,7 +111,10 @@ export const Offerings = () => {
         <div className={`${slider}`} ref={sliderRef}>
           {[...offerings, ...offerings].map((offr, idx) => {
             const offsetDegree = idx - 2
-
+            const clickedPos = getNextByDegree(
+              focusedOffering,
+              offsetDegree
+            )
             return (
               <span
                 key={`${offr.name}-${idx}`}
@@ -106,13 +126,23 @@ export const Offerings = () => {
                     )
                   ] ?? hide
                 }`}
-                onClick={() => handleSetOffering()}
+                onClick={() => {
+                  if ([3, 4].includes(clickedPos))  return;
+
+                  handleSetOffering(clickedPos)
+                }
+                }
               >
                 <img
                   src={baseUrl(offr.imgUrlFrag, 'good')}
                   alt={offr.name}
                 />
-                <h3 className={blockTitle}>{offr.title}</h3>
+                <h3 className={blockTitle}>
+                  {offr.title}
+                  <span className={blockBtn}>
+                    <ArrowBtn>Learn More</ArrowBtn>
+                  </span>
+                </h3>
               </span>
             )
           })}

@@ -23,7 +23,7 @@
 
 .label {
   position: absolute;
-  top: 35vh;
+  top: 30vh;
   left: -11vw;
   width: 105vw;
 }
@@ -41,13 +41,14 @@
     font-size: var(--text-header);
     font-weight: var(--light);
     margin-bottom: var(--space-2xl);
+    background-blend-mode: color;
+    mix-blend-mode: color;
   }
-  
+
   .blurb {
     font-size: var(--text-prose);
   }
 }
-
 
 .sliderContainer {
   position: absolute;
@@ -75,6 +76,10 @@
   box-sizing: border-box;
   &:hover {
     opacity: 1;
+    .blockTitle {
+      color: var(--primary);
+      transform: scale(1.1);
+    }
   }
   img {
     height: 100%;
@@ -90,14 +95,40 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    bottom: -1.5vh;
-    right: -1.5vh;
+    bottom: -2.5vh;
+    right: -2.5vh;
     font-family: var(--font-title);
     font-size: var(--text-subheader);
+    font-size: var(--text-4xl);
     font-weight: var(--reg);
     letter-spacing: var(--push-sm);
-    color: var(--white);
+    color: var(--text-color);
     transition: all 1s;
+    mix-blend-mode: plus-lighter;
+  }
+  .blockBtn {
+    display: none;
+    position: absolute;
+    bottom: -12vh;
+    right: 0;
+    &:hover {
+      path {
+      fill: var(--primary);
+    }
+    circle {
+      stroke: var(--primary);
+    }
+    }
+    span {
+      color: var(--text-color);
+      font-weight: normal;
+    }
+    path {
+      fill: var(--text-color);
+    }
+    circle {
+      stroke: var(--text-color);
+    }
   }
 }
 
@@ -116,39 +147,43 @@
   &.zero {
     // ^ OFF
     width: 17vw;
-    // opacity: 0;
     transform: translate(-25vw, 15vh);
-    transform: all 0 !important;
+    transition: all 0s !important;
   }
   &.one {
     width: 17vw;
-    // opacity: 0;
-    transform: translate(-2vw, 15vh);
+    transform: translate(-2vw, 18vh);
     transition: all 0.8s;
   }
   &.two {
     width: 14vw;
-    transform: translate(27vw, 59vh);
+    transform: translate(27vw, 60vh);
     transition: all 0.8s;
   }
   &.three {
     // ^ MAIN
+    z-index: 3;
     opacity: 1;
-    width: 22vw;
+    width: 25vw;
     aspect-ratio: 3 / 4;
-    transform: translate(60vw, 10vh);
-    pointer-events: none;
+    transform: translate(63vw, 10vh);
     transition: all 0.8s;
+    // pointer-events: none;
+    
     .blockTitle {
       z-index: 2;
       position: absolute;
-      transform: translate(3%, -25%);
+      transform: translate(-20%, -25%);
       font-size: var(--text-9xl);
       font-weight: var(--reg);
+      color: var(--primary-deep);
+    }
+    .blockBtn {
+      display: flex;
     }
   }
   &.four {
-    pointer-events: none;
+    // pointer-events: none;
     width: 17vw;
     // opacity: 0;
     transform: translate(97vw, 15vh);
@@ -158,6 +193,7 @@
     // ^ OFF
     width: 17vw;
     transform: translate(107vw, 15vh);
-    transform: all 0 !important;
+    transition: all 0s !important;
+    transition: all 0.8s;
   }
 }
