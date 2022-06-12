@@ -40,3 +40,67 @@ export const contactInfo = [
     link: 'mailto:info@eli.org',
   },
 ]
+
+
+export const testimonialData = [
+  {
+    path: '/',
+    text: (
+      <>
+        Aliquam tempor risus lectus, eu bibendum eros
+        fermentum quis. Mauris faucibus eros nec tristique
+        volutpat. Quisque hendrerit mauris odio.
+      </>
+    ),
+    avatarUrl: '/red-sweater.png',
+    initials: 'G.D.',
+  },
+  {
+    path: '/',
+    text: (
+      <>
+        Aliquam tempor risus lectus, eu bibendum eros
+        fermentum quis. Mauris faucibus eros nec tristique
+        volutpat. Quisque hendrerit mauris odio.
+      </>
+    ),
+    avatarUrl: '/turtleneck.png',
+    initials: 'L.C.',
+  },
+  {
+    path: '/',
+    text: (
+      <>
+        Aliquam tempor risus lectus, eu bibendum eros
+        fermentum quis. Mauris faucibus eros nec tristique
+        volutpat. Quisque hendrerit mauris odio.
+      </>
+    ),
+    avatarUrl: '/glasses.png',
+    initials: 'M.L.',
+  },
+  {
+    path: '/',
+    text: (
+      <>
+        Aliquam tempor risus lectus, eu bibendum eros
+        fermentum quis. Mauris faucibus eros nec tristique
+        volutpat. Quisque hendrerit mauris odio.
+      </>
+    ),
+    avatarUrl: '/red-sweater.png',
+    initials: 'V.M.',
+  },
+  {
+    path: '/',
+    text: (
+      <>
+        Aliquam tempor risus lectus, eu bibendum eros
+        fermentum quis. Mauris faucibus eros nec tristique
+        volutpat. Quisque hendrerit mauris odio.
+      </>
+    ),
+    avatarUrl: '/sport-girl.png',
+    initials: 'A.W.',
+  },
+]

@@ -16,7 +16,7 @@
 }
 .blurb {
   // background-color: lightblue;
-  height: 15vh;
+  height: 25vh;
   width: 100%;
   margin-top: 12vh;
   .title {
@@ -48,6 +48,7 @@
   height: 60vh;
   margin: 0 !important;
   overflow-x: scroll;
+  overflow-y: hidden;
   // border: 1px solid green;
   display: flex;
   align-items: center;
@@ -55,24 +56,29 @@
 }
 
 .testimonialList {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   // border: 1px solid red;
   padding: 0;
-  padding-right: 30vw;
+  padding-right: 35vw;
 }
 
-.testItem {
+.quoteContainer {
   position: relative;
   width: 15vw;
   height: 40vh;
-  // border: 1px solid lightcoral;
   margin-left: 10vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
+  &:hover {
+    .attrImg {
+      opacity: 0.65;
+    }
+  }
 }
 .quoteMark {
   position: absolute;
@@ -84,6 +90,7 @@
   font-weight: var(--reg);
   line-height: 200%;
   margin: 0;
+  margin-bottom: var(--space-2xl);
   width: 80%;
 }
 .attr {
@@ -94,8 +101,18 @@
   font-weight: var(--light);
   text-transform: uppercase;
 }
+
 .attrImg {
-  display: none;
+  z-index: var(--level-top);
+  pointer-events: none;
+  position: fixed;
+  top: -510vh;
+  left: -3vh;
+  // opacity: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  border-bottom-right-radius: 40px;
+  transition: var(--transition-primary);
 }
 
 .fadeTransitionBlock {
