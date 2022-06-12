@@ -120,7 +120,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  transition: var(--transition-primary);
   &:hover {
+    transform: translateY(-2vh);
     .icon {
       path {
         fill: var(--primary);
@@ -146,5 +148,6 @@
     margin-top: var(--space-3xl);
     opacity: 0;
     transition: var(--transition-primary);
+    transition-delay: .2s;
   }
 }
