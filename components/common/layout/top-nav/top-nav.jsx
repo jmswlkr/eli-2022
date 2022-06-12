@@ -12,7 +12,7 @@ import { topNav, logo, menuBtn, closeBtn } from './top-nav.module.scss'
 export const TopNav = ({ toggleModal, modalOpen, introInView }) => {
   
   const mixBlend = {
-    mixBlendMode: (introInView && !modalOpen) ? 'normal' : 'difference'
+    mixBlendMode: (introInView || modalOpen) ? 'normal' : 'difference'
   }
 
   return (
