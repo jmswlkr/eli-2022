@@ -31,7 +31,10 @@ import {
   btn,
   fadeTransitionBar,
 } from './hero.module.scss'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6dcb50d4f1e17d3fd794fe11a96e286677d57092
 
 export const Hero = () => {
   return (
