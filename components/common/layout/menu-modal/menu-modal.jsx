@@ -110,7 +110,12 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
             </motion.ul>
           </div>
           <div className={menuFooter}>
-            <div className={social}>
+            <motion.div
+              className={social}
+              transition={smooth(0.5, 0.5)}
+              {...blurFadeIn}
+              {...phases}
+            >
               {socialIcons.map((icn) => {
                 return (
                   <a
@@ -123,7 +128,7 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
                   </a>
                 )
               })}
-            </div>
+            </motion.div>
             <span className={copyright}>
               © 2022 Embodied learning institute{' '}
             </span>

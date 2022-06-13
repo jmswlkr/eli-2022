@@ -82,7 +82,7 @@
   --vp-xl: 13vh;
   --vp-2xl: 26vh;
 
-  /* line-height */
+/* line-height */
   --solid: 1;
   --dense: 1.25;
   --default: 1.5;
@@ -167,6 +167,7 @@
   /* text size */
   // --text-hero: clamp(240px, 15vmax, 400px);
   --text-hero: 14vmax;
+  --text-hero-sm: var(--text-8xl);
   --text-header: var(--text-6xl);
   --text-header-sm: var(--text-5xl);
   --text-subheader: var(--text-3xl);
