@@ -1,6 +1,9 @@
 // External lib
 import React from 'react'
 
+// Internal lib
+import { ScheduleProvider } from '@/context/schedule-context'
+
 // Components
 import { Layout } from '@/layout/layout.jsx'
 
@@ -11,9 +14,11 @@ import '../styles/global.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ScheduleProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ScheduleProvider>
   )
 }
 

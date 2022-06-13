@@ -1,7 +1,7 @@
 //// < zIndex > ////
 .hero {
   z-index: var(--level-two);
-  
+
   // % isolated zIndex % //
   .shade {
     z-index: 2;
@@ -16,7 +16,6 @@
     z-index: 3;
   }
 }
-
 
 .hero {
   position: relative;
@@ -51,10 +50,8 @@
     object-position: center;
   }
   .bg {
-    
   }
   .fg {
-    
   }
   .fadeTransitionBar {
     position: absolute;
@@ -63,17 +60,15 @@
     height: 14.5vh;
     background: linear-gradient(to bottom, transparent 0%, var(--primary-bg) 70%);
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       opacity: 0.3;
-      background-image: url('/noise-bg.png');
+      background-image: url("/noise-bg.png");
       height: 100%;
       width: 100%;
-
     }
-;
   }
   .shade {
     // z-index: 2;
@@ -87,57 +82,73 @@
   }
 }
 
-
 .heroTextContent {
-  margin-top: var(--vp-md);
+  height: 100%;
+  width: 100%;
+  padding-top: 12.5vh;
+  padding-bottom: 18vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  color: var(--white);
+  justify-content: space-between;
+}
+
+.logoTitle {
+  position: relative;
+  isolation: isolate;
 }
 
 .title {
-  // margin-bottom: var(--vp-sm);
+  font-family: var(--font-title);
+  font-size: var(--text-3xl);
+  letter-spacing: var(--push-md);
+  text-transform: uppercase;
+  font-weight: var(--light);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-title);
-  font-size: var(--text-7xl);
-  font-weight: var(--light);
-  letter-spacing: var(--push-md);
-  text-transform: uppercase;
-  .article {
+  span:nth-child(1) {
     font-size: var(--text-xl);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
 }
 
-.subtitle {
-  font-size: var(--text-5xl);
-  font-family: var(--font-title);
-  color: var(--white);
-  letter-spacing: var(--push-md);
-  font-weight: var(--light);
-  margin: var(--vp-sm);
-  // border-bottom: 1px solid var(--white);
-}
-
-.btn {
-  margin-top: 2vh;
-}
-
-.logoContainer {
-  pointer-events: none;
+.logoWrap {
+  z-index: -1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   svg {
-    transform: scale(6);
+    width: 8vw !important;
   }
   path {
-    fill: var(--primary-tr) !important;
+    fill: var(--primary-tr);
   }
+}
+
+.tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogan {
+  font-family: var(--font-title);
+  font-size: var(--text-hero-sm);
+  letter-spacing: var(--push-sm);
+  font-weight: var(--light);
+  color: var(--white);
+  em {
+    color: var(--primary);
+    letter-spacing: var(--push-md);
+    font-style: unset;
+  }
+}
+
+.btn {
+  margin-top: 4vh;
 }

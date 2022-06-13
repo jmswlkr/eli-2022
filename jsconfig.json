@@ -12,6 +12,7 @@
       "@/utils/*": ["utils/*"],
       "@/data/*": ["mock-api/*"],
       "@/ancillary/*": ["ancillary/*"],
+      "@/context/*": ["context/*"],
     }
   }
 }

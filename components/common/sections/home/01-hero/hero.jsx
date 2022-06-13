@@ -5,12 +5,17 @@ import { AnimatePresence, motion } from 'framer-motion'
 // Internal lib
 import { baseUrl } from '@/utils/cloudinary.js'
 
+// Components
+import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
+import { Logo } from '@/elements/svg/logo'
+
 // Styling & Animation
 import {
   blurFadeIn,
   fadeSlideUpShort,
 } from 'animation/fade'
 import { phases, smooth } from 'animation/transition'
+
 import {
   hero,
   heroImages,
@@ -18,16 +23,15 @@ import {
   fg,
   shade,
   heroTextContent,
+  logoTitle,
   title,
-  article,
-  noun,
-  subtitle,
+  logoWrap,
+  tagline,
+  slogan,
   btn,
-  logoContainer,
-  fadeTransitionBar
+  fadeTransitionBar,
 } from './hero.module.scss'
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
-import { Logo } from '@/elements/svg/logo'
+
 
 export const Hero = () => {
   return (
@@ -61,19 +65,25 @@ export const Hero = () => {
             transition={smooth(3, 2)}
           />
         </AnimatePresence>
-        <div className={fadeTransitionBar}/>
+        <div className={fadeTransitionBar} />
       </div>
       <div className={heroTextContent}>
-        <h1 className={title}>
-          <span className={article}>The</span>
-          <span className={noun}>Embodied Learning Institute</span>
-        </h1>
-        <p className={subtitle}>Learn to Thrive.</p>
-        <div className={btn}>
-          <ArrowBtn>Get Started</ArrowBtn>
+        <div className={logoTitle}>
+          <h1 className={title}>
+            <span>The</span>
+            <span>Embodied Learning Institute</span>
+          </h1>
+          <span className={logoWrap}>
+            <Logo />
+          </span>
         </div>
-        <div className={logoContainer}>
-          <Logo />
+        <div className={tagline}>
+          <h2 className={slogan}>
+            Learn to <em>Thrive.</em>
+          </h2>
+          <div className={btn}>
+            <ArrowBtn>Get Started</ArrowBtn>
+          </div>
         </div>
       </div>
     </section>
