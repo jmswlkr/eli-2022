@@ -7,9 +7,118 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  margin: 12.5vh 0;
+  margin-top: 45vh;
+  margin-bottom: 12.5vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--test);
+}
+
+.sectionHero {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+}
+
+.sectionTitle {
+  position: absolute;
+  top: 55%;
+  right: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  h2 {
+    font-family: var(--font-title);
+    font-size: var(--text-hero-sm);
+    font-weight: var(--reg);
+  }
+  h4 {
+    font-family: var(--font-body);
+    font-size: var(--text-header-sm);
+    font-weight: var(--light);
+    font-style: italic;
+  }
+}
+
+.founderImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 62vh;
+  aspect-ratio: 1.1 / 1;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.quote {
+  position: absolute;
+  width: 30%;
+  top: 17.5%;
+  right: 10%;
+
+  p {
+    font-size: var(--text-prose-em);
+    font-weight: var(--light);
+    font-style: italic;
+    color: var(--grey-30);
+    margin-bottom: var(--space-lg);
+  }
+  em {
+    letter-spacing: var(--push-ms);
+  }
+  span {
+    position: absolute;
+    top: -30%;
+    right: 0;
+  }
+}
+
+.founderTextContent {
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-weight: var(--reg);
+}
+.qualifications {
+  width: 30%;
+  margin-top: var(--vp-ml);
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  .title {
+    font-size: var(--text-subheader);
+    font-family: var(--font-title);
+    font-weight: var(--light);
+    margin-bottom: var(--space-lg);
+  }
+  .list {
+    list-style: disc;
+    margin-left: 5%;
+  }
+  .item {
+    margin-bottom: var(--space-xl);
+    letter-spacing: var(--push-sm);
+    font-weight: var(--reg);
+    font-size: var(--text-prose-em);
+  }
+}
+.blurb {
+  margin: 0 5%;
+  margin-top: calc(var(--vp-ml) + 30px);
+  width: 60%;
+  font-size: var(--text-prose-em);
+  ;
+  b {
+    font-style: italic;
+  }
 }
