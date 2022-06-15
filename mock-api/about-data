@@ -1,0 +1,33 @@
+export const aboutImages = [
+  {
+    altTag: 'giant sequoia',
+    urlFrag: 'sequoia-full_wdznnq',
+  },
+  {
+    altTag: 'girl floating underwater',
+    urlFrag: 'under-current_v9teqk',
+  },
+  {
+    altTag: 'woman looking through monstera plant leaves',
+    urlFrag: 'monstera-eye_kjiv8d',
+  },
+]
+
+export const aboutIntroText = {
+  main: {
+    title: `Title that reflects core tenets of the organization.`,
+    blurb: `Mauris dictum egestas felis at semper. Aenean at tortor eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.  Mauris dictum egestas felis at semper. Aenean at tortor eros. Class aptent taciti.`,
+  },
+  sub: {
+    title: `Subheader`,
+    blurb: `Mauris dictum egestas felis at semper. Aenean at tortor eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. `,
+  },
+  tenetList: {
+    title: `List Title`,
+    tenets: [
+      `Mauris dictum egestas felis at semper. `,
+      `Aenean at tortor eros. `,
+      `Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.`,
+    ],
+  },
+}
