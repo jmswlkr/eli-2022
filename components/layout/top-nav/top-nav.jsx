@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 
 // Components
-import { Logo } from '@/svg/logo'
+import { Logo } from 'components/elements/svg/logo'
 
 // Styling
 import { topNav, logo, menuBtn, closeBtn } from './top-nav.module.scss'

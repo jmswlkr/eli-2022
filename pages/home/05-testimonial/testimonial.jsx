@@ -7,8 +7,8 @@ import { motion } from 'framer-motion'
 import { testimonialData } from '@/ancillary/small-data.js'
 
 // Components
-import { QuoteMark } from '@/elements/svg/quote-mark'
-import { Label } from '@/elements/section-label/section-label'
+import { QuoteMark } from 'components/elements/svg/quote-mark'
+import { Label } from 'components/elements/section-label/section-label'
 
 // Stying & Animation
 import {

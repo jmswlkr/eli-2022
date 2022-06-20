@@ -6,9 +6,9 @@ import Link from 'next/link'
 import { baseUrl } from '@/utils/cloudinary'
 
 // Components
-import { FlowerIcon } from '@/svg/flower'
-import { StonesIcon } from '@/svg/stones'
-import { YogaIcon } from '@/svg/yoga'
+import { FlowerIcon } from 'components/elements/svg/flower'
+import { StonesIcon } from 'components/elements/svg/stones'
+import { YogaIcon } from 'components/elements/svg/yoga'
 
 // Styling & Animation
 import {
@@ -29,7 +29,7 @@ import {
   icon,
   btn,
 } from './pillars.module.scss'
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 
 const pillarData = [
   {

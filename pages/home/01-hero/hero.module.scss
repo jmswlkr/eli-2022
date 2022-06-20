@@ -1,10 +1,14 @@
+// @import url('/styles/_mixins.scss');
+@import '/styles/_mixins.scss';
+
+
 //// < zIndex > ////
 .hero {
   z-index: var(--level-two);
 
   // % isolated zIndex % //
   .shade {
-    z-index: 2;
+    z-index: 9;
   }
   .heroTextContent {
     z-index: 3;
@@ -17,7 +21,10 @@
   }
 }
 
+
+
 .hero {
+  @include homeSection;
   position: relative;
   height: 110vh;
   width: 100%;
@@ -27,51 +34,25 @@
 }
 
 .heroImages {
-  position: absolute;
-  display: block;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 110vh;
-  width: 100vw;
+  @include fullBleedContent;
   isolation: isolate;
   overflow: visible;
   background-color: var(--primary-tr);
   img {
-    height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    object-fit: cover;
-    object-position: center;
   }
   .bg {
   }
   .fg {
   }
   .fadeTransitionBar {
-    position: absolute;
-    bottom: -4vh;
-    width: 100%;
-    height: 14.5vh;
-    background: linear-gradient(to bottom, transparent 0%, var(--primary-bg) 70%);
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0.3;
-      background-image: url("/noise-bg.png");
-      height: 100%;
-      width: 100%;
-    }
+   @include fadeTransitionBar;
   }
   .shade {
-    // z-index: 2;
+    display: none;
+    z-index: 2;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -126,6 +107,7 @@
   }
   path {
     fill: var(--primary-tr);
+    fill: var(--primary-tr-2);
   }
 }
 

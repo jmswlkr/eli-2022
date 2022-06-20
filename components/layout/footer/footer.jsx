@@ -24,6 +24,11 @@ import {
 } from './footer.module.scss'
 
 export const Footer = () => {
+
+  const scrollTop = () => {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <footer className={footer}>
       <div className={footerMain}>
@@ -86,7 +91,7 @@ export const Footer = () => {
         <span className={copyright}>
           © 2022 Embodied learning institute{' '}
         </span>
-        <button className={bttBtn}>↑<span className={hidden}>Back to Top</span></button>
+        <button className={bttBtn} onClick={scrollTop}>↑<span className={hidden}>Back to Top</span></button>
       </div>
     </footer>
   )

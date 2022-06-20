@@ -19,7 +19,7 @@ import {
   item,
   blurb as blurbStyle
 } from './founder.module.scss'
-import { QuoteMark } from '@/elements/svg/quote-mark'
+import { QuoteMark } from 'components/elements/svg/quote-mark'
 
 export const Founder = () => {
   const { quote, qual, blurb } = founderText

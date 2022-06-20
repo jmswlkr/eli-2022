@@ -47,7 +47,7 @@ const createBooking = async () => {
 // createBooking()
 
 
-listBookings()
+// listBookings()
 
 
 export default (req, res) => {

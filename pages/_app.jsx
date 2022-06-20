@@ -5,7 +5,7 @@ import React from 'react'
 import { ScheduleProvider } from '@/context/schedule-context'
 
 // Components
-import { Layout } from '@/layout/layout.jsx'
+import { Layout } from 'components/layout/layout.jsx'
 
 // Styling
 import '../styles/global.scss'

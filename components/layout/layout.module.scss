@@ -46,6 +46,7 @@
 .content {
   height: auto;
   width: 80vw;
+  width: var(--content-width);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

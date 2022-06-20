@@ -5,7 +5,7 @@ import React from 'react'
 import { baseUrl } from '@/utils/cloudinary';
 
 // Components
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn';
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn';
 
 // Styling
 import { hero, heroBg, shade, fadeTransitionBar, heroTextContent, title, blurb, heroBtn } from './hero.module.scss';

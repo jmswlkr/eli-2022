@@ -1,7 +1,7 @@
 export const aboutImages = [
   {
-    altTag: 'giant sequoia',
-    urlFrag: 'sequoia-full_wdznnq',
+    altTag: 'woman looking over ocean',
+    urlFrag: 'tiedie-woman_dgw1ht',
   },
   {
     altTag: 'girl floating underwater',

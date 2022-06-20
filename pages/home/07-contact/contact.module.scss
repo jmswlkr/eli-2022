@@ -1,3 +1,8 @@
+@import '/styles/mixins';
+
+
+
+
 //// < z-index > ////
 .contact {
   isolation: isolate;
@@ -14,24 +19,24 @@
 }
 
 .contact {
-  position: relative;
-  height: 115vh;
-  width: 100%;
-  margin-bottom: -14.5vh;
-  display: flex;
-  align-items: center;
+  @include homeSection(139vh);
   justify-content: flex-start;
-  // background-color: var(--test);
+  margin-bottom: -14.5vh;
   &::after {
     content: '';
     position: absolute;
     top: 4px;
     left: -10vw;
+    left: var(--content-shift-neg);
     height: 100%;
     width: 100vw;
     opacity: 0.4;
     background-image: url('/noise-bg.png');
   }
+}
+
+.contactContainer {
+  @include fullBleedContent;
 }
 
 .formSection {
@@ -137,7 +142,7 @@
 .mapSection {
   position: absolute;
   top: 0;
-  left: -9vw;
+  left: var(--content-shift-neg);
   width: 105vw;
   overflow-y: hidden;
   img {

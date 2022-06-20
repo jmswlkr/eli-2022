@@ -1,12 +1,15 @@
+@import '/styles/mixins';
+
 .testimonial {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
+  @include homeSection;
+  // position: relative;
+  // height: 100vh;
+  // width: 100%;
+  // display: flex;
+  // isolation: isolate;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  isolation: isolate;
 }
 
 .label {
@@ -43,7 +46,7 @@
 .testimonialSlider {
   position: absolute;
   top: 0;
-  left: -10vw;
+  left: var(--content-shift-neg);
   width: 105vw;
   height: 60vh;
   margin: 0 !important;
@@ -68,6 +71,7 @@
   width: 15vw;
   height: 40vh;
   margin-left: 10vw;
+  margin-left: var(--content-margin);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -115,7 +119,7 @@
 
 .fadeTransitionBlock {
   position: absolute;
-  right: -10vw;
+  right: calc(-1 * var(--content-shift));
   width: 20vw;
   height: 100%;
   opacity: 0.8;

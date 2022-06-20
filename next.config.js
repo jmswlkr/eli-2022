@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com'],
   },
+  env: {
+    EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
+  },
 }
 
 module.exports = nextConfig

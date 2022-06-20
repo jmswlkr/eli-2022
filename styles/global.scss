@@ -33,16 +33,18 @@
   --grey-20: hsl(270, 2%, 80%);
   --grey-10: hsl(270, 2%, 90%);
   --grey-fade-20: hsla(276, 2%, 47%, 0.2);
-  --grey-fade-07: hsla(0, 0%, 49%, .07);
+  --grey-fade-07: hsla(0, 0%, 49%, 0.07);
   --off-white: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
   --white-fade-20: hsla(0, 0%, 100%, 0.2);
   --white-fade-35: hsla(0, 0%, 100%, 0.15);
   --papaya: #e6aca5;
-  --papaya-fade-40: hsla(7, 51%, 76%, .4);
+  --papaya-fade-40: hsla(7, 51%, 76%, 0.4);
+  --papaya-fade-60: hsla(7, 51%, 76%, 0.6);
+  --papaya-fade-80: hsla(7, 51%, 76%, 0.8);
   --watermelon: #ee7d66;
   --watermelon: #ed8b77;
-  --snapdragon: #F8F2EF;
+  --snapdragon: #f8f2ef;
 
   --test: rgba(173, 216, 230, 0.303);
 
@@ -91,7 +93,7 @@
   --vp-xl: 13vh;
   --vp-2xl: 26vh;
 
-/* line-height */
+  /* line-height */
   --solid: 1;
   --dense: 1.25;
   --default: 1.5;
@@ -137,20 +139,17 @@
   --text-10xl: 144px;
   --text-11xl: 156px;
 
-  // 
+  //
 
   // * role-based tokens * //
 
   /* colors */
   --primary: var(--papaya);
   --primary-tr: var(--papaya-fade-40);
+  --primary-tr-2: var(--papaya-fade-60);
+  --primary-tr-3: var(--papaya-fade-80);
   --primary-deep: var(--watermelon);
   --primary-bg: var(--snapdragon);
-  // --primary-tr: var(--french-blue-fade-60);
-  // --primary-light: var(--mist-blue);
-  // --primary-soft: var(--soft-blue);
-  // --primary-mute: var(--french-blue);
-  // --primary-muter: var(--ocean-blue);
   --text-color: var(--black);
   --text-color-inv: #b9b9b9;
   --label-color: var(--grey-fade-07);
@@ -185,26 +184,21 @@
   --text-prose: var(--text-xl);
   --text-prose-em: var(--text-2xl);
 
-  /* size */
-  --gen-margin: var(--space-2xl);
-  --grid-gap: 1.38vw;
-  --grid-col: 14.4vw;
+  @import "./mixins";
 
   /* sizing */
-  --layout-width: clamp(93.6vw, 93.6vw, 2100px);
+  --content-width: min(70vw, 1550px);
+  --content-margin: calc((100vw - var(--content-width)) / 2);
+  --content-shift: var(--content-margin);
+  --content-shift-neg: calc(-1 * var(--content-shift));
   --mobile-content-width: 80vw;
   --mobile-blurb-width: 63vw;
-
-  /* margin */
-  --pill-overshoot: -5px;
 }
 
 /* role-based token adjustments per breakpoint */
 
 @media (max-width: 1024px) {
   :root {
-    --layout-width: 77vw;
-
     --text-hero: clamp(240px, 15vmax, 400px);
     --text-hero: 16vmax;
     --text-header: var(--text-7xl);
@@ -224,6 +218,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   font-family: var(--font-body);
   height: auto;
   width: 100vw;
@@ -238,7 +233,7 @@ body {
     width: 5px;
   }
   &::-webkit-scrollbar-track {
-    background: hsla(0, 0, 0, .1);
+    background: hsla(0, 0, 0, 0.1);
     background: var(--primary-tr);
   }
   &::-webkit-scrollbar-thumb {
@@ -251,7 +246,11 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
 }
 
@@ -264,6 +263,13 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 * {

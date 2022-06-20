@@ -15,7 +15,7 @@ import {
   Facebook,
   Instagram,
   LinkedIn,
-} from '@/svg/social-icons.jsx'
+} from 'components/elements/svg/social-icons.jsx'
 
 // Styling & Animation
 import { phases, smooth } from 'animation/transition'

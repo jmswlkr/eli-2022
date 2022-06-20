@@ -6,8 +6,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { baseUrl } from '@/utils/cloudinary.js'
 
 // Components
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
-import { Logo } from '@/elements/svg/logo'
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
+import { Logo } from 'components/elements/svg/logo'
 
 // Styling & Animation
 import {
@@ -32,8 +32,9 @@ import {
   fadeTransitionBar,
 } from './hero.module.scss'
 
-
 export const Hero = () => {
+
+  
   return (
     <section className={hero}>
       <div className={heroImages}>

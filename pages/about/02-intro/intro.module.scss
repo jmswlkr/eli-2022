@@ -3,10 +3,10 @@
   isolation: isolate;
 
   .introTextContent {
-    // z-index: 2;  
+    z-index: 2;  
   }
   .collage {
-    // z-index: 1;  
+    z-index: 1;  
   }
 }
 
@@ -45,7 +45,7 @@
     top: -2%;
     left: 42%;
     height: 50vh;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1.2;
   }
   &:nth-child(2) {
     top: 35%;
@@ -85,6 +85,7 @@
   font-family: var(--font-title);
   font-weight: var(--light);
   color: var(--primary-deep);
+  color: var(--text-color);
   margin-bottom: var(--space-lg);
 }
 .blurb, .tenet   {
@@ -118,5 +119,4 @@
   margin-bottom: var(--space-md);
   width: 80%;
 }
-
 

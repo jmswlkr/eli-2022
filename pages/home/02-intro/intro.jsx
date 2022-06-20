@@ -5,7 +5,7 @@ import React from 'react'
 import { baseUrl } from '@/utils/cloudinary'
 
 // Components
-import { Label } from '@/elements/section-label/section-label'
+import { Label } from 'components/elements/section-label/section-label'
 
 // Styling & Animation
 import {
@@ -23,7 +23,7 @@ import {
   btn,
   collageMainImg,
 } from './intro.module.scss'
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 
 export const Intro = () => {
   return (

@@ -1,5 +1,5 @@
 // External lib
-import React from 'react'
+import React, { useEffect } from 'react'
 
 // Internal lib
 import {
@@ -22,6 +22,7 @@ import {
   blurb,
 } from './intro.module.scss'
 import { baseUrl } from '@/utils/cloudinary'
+
 
 export const Intro = () => {
   const { main, sub, tenetList } = aboutIntroText
@@ -53,7 +54,11 @@ export const Intro = () => {
           <h4 className={title}>{tenetList.title}</h4>
           <ul className={tenets}>
             {tenetList.tenets.map((tnt, idx) => {
-              return <li key={idx} className={tenet}>{tnt}</li>
+              return (
+                <li key={idx} className={tenet}>
+                  {tnt}
+                </li>
+              )
             })}
           </ul>
         </div>

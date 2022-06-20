@@ -29,8 +29,8 @@ import {
   five,
 } from './offerings.module.scss'
 import { baseUrl } from '@/utils/cloudinary'
-import { Label } from '@/elements/section-label/section-label'
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
+import { Label } from 'components/elements/section-label/section-label'
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 
 export const Offerings = () => {
   /*

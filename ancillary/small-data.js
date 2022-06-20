@@ -1,6 +1,6 @@
 // * Small, convenient, reusable data stuctures. * //
 
-import { Facebook, Instagram, LinkedIn } from "@/elements/svg/social-icons"
+import { Facebook, Instagram, LinkedIn } from "components/elements/svg/social-icons"
 
 export const pageLinks = [
   {
