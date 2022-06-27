@@ -1,21 +1,14 @@
-@import '/styles/mixins';
+@import "/styles/mixins";
 
 .testimonial {
   @include homeSection;
-  // position: relative;
-  // height: 100vh;
-  // width: 100%;
-  // display: flex;
-  // isolation: isolate;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
 .label {
-  position: absolute;
-  top: 5vh;
-  left: -10vw;
+  @include sectionLabel;
 }
 .blurb {
   // background-color: lightblue;
@@ -23,15 +16,12 @@
   width: 100%;
   margin-top: 12vh;
   .title {
-    font-family: var(--font-title);
-    font-size: var(--text-header);
-    font-weight: var(--light);
+    @include headerText;
   }
   .text {
+    @include paragraphText;
     margin-top: var(--space-2xl);
     width: 60%;
-    font-size: var(--text-prose-em);
-    font-weight: var(--reg);
   }
 }
 .testimonialSliderBase {
@@ -120,8 +110,10 @@
 .fadeTransitionBlock {
   position: absolute;
   right: calc(-1 * var(--content-shift));
-  width: 20vw;
+  right: var(--content-shift-neg);
+  width: 30vw;
   height: 100%;
   opacity: 0.8;
-  background: linear-gradient(to right, transparent 0%, var(--primary-bg) 70%);
+  background: linear-gradient(to right, transparent 0%, var(--primary-bg) 40%);
+  // background-color: lightblue; 
 }

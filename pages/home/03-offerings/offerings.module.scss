@@ -1,3 +1,5 @@
+@import '/styles/_mixins.scss';
+
 //// < zIndex > ////
 .offerings {
   .offeringTextContent {
@@ -10,22 +12,13 @@
 }
 
 .offerings {
-  position: relative;
-  height: 135vh;
+  @include homeSection(135vh);
   margin-bottom: 15vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
   overflow: visible;
 }
 
 .label {
-  position: absolute;
-  top: 30vh;
-  left: -11vw;
-  width: 105vw;
+  @include sectionLabel(30vh);
 }
 
 .offeringTextContent {

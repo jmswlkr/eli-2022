@@ -1,0 +1,56 @@
+@import "/styles/mixins";
+
+//// < zIndex > ////
+
+.schedule {
+  isolation: isolate;
+}
+
+.scheduleContainer {
+  @include homeSection(100vh);
+  flex-direction: column;
+  margin: var(--section-buffer) 0;
+  border: 1px solid green;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.label {
+  @include sectionLabel(0);
+}
+
+.blurb {
+  width: 80%;
+  margin-top: var(--vp-md);
+  padding-left: var(--section-padding);
+
+  .title {
+    @include headerText;
+    margin-bottom: var(--title-space-bot);
+  }
+  .text {
+    @include paragraphText;
+  }
+}
+
+.schedulingAppContainer {
+  margin-top: var(--vp-md);
+  width: 100%;
+  display: grid;
+  height: 75vh;
+  grid-template-columns: .5fr .2fr .3fr;
+  grid-template-rows: 100%;
+  gap: var(--vp-ms);
+}
+
+.calendarBlock {
+  border: 1px solid red;
+}
+.hourBlock {
+  border: 1px solid green;
+  
+}
+.clientBlock {
+  border: 1px solid deeppink;
+
+}

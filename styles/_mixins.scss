@@ -23,10 +23,15 @@
 
 // Typography
 @mixin headerText {
+  font-family: var(--font-title);
+  font-size: var(--text-header);
+  font-weight: var(--light);
 }
 @mixin subheaderText {
 }
 @mixin paragraphText {
+  font-size: var(--text-prose-em);
+  font-weight: var(--reg);
 }
 
 // Elements
@@ -47,6 +52,13 @@
     height: 100%;
     width: 100%;
   }
+}
+
+@mixin sectionLabel($top: 5vh) {
+  position: absolute;
+  top: $top;
+  left: var(--content-shift-neg);
+  width: 105vw;
 }
 
 // Pseudoelements

@@ -30,10 +30,10 @@ export const ScheduleProvider = ({ children }) => {
     axios
       .get('/api')
       .then((res) => {
-        console.log('res.data: ', res.data);
+        // console.log('res.data: ', res.data);
       })
       .catch((err) => {
-        console.log('err: ', err);
+        // console.log('err: ', err);
       })
   }, [])
 

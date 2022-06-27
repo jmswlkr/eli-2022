@@ -1,3 +1,5 @@
+@import '/styles/mixins';
+
 //// < zIndex > ////
 .intro {
   .collage {
@@ -19,11 +21,7 @@
 }
 
 .sectionLabel {
-  position: absolute;
-  height: 10vh;
-  width: 110vw;
-  top: 20vh;
-  left: -20vw;
+  @include sectionLabel(20vh);
 }
 
 // TODO: Should this be removed??

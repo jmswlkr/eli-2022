@@ -15,7 +15,10 @@ export const Label = ({ children }) => {
       speed={20}
       gradient={false}
     >
-      {children}
+      {/* {children} */}
+      {Array.from({ length: 4 }).fill(
+        ` ${children} `
+      )}
     </Marquee>
   )
 }
