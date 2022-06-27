@@ -1,3 +1,5 @@
+@import '/styles/mixins';
+
 //// < zIndex > ////
 .intro {
   isolation: isolate;
@@ -11,14 +13,8 @@
 }
 
 .intro {
-  position: relative;
-  height: 100vh;
-  width: 100%;
+  @include homeSection(100vh);
   margin: 12.5vh 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // border: 1px solid red;
 }
 
 .collage {
@@ -71,7 +67,7 @@
   height: auto;
   width: 100%;
   margin-top: 15%;
-  padding-left: 5%;
+  padding-left: 10%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
