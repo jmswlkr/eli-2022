@@ -235,6 +235,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+  color: var(--text-color);
   ::-webkit-scrollbar {
     background-color: transparent;
     width: 5px;
@@ -264,6 +265,11 @@ h5 {
 p {
   margin: 0;
   line-height: 175%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 ul {
