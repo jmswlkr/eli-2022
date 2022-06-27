@@ -50,6 +50,8 @@ const createBooking = async () => {
 // listBookings()
 
 
-export default (req, res) => {
+const server = (req, res) => {
   res.status(200).json({ test: 'test cargo' })
 }
+
+export default server;
