@@ -34,7 +34,7 @@ import {
 
 export const Hero = () => {
 
-  
+
   return (
     <section className={hero}>
       <div className={heroImages}>

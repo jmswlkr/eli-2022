@@ -22,7 +22,7 @@ const Authorization = () => {
 
   useEffect(() => {
     axios.get('/api/authorize').then((res) => {
-      setAuthUrl(res.data)
+      setAuthUrl(res.data.url)
     })
   }, [])
 
@@ -56,12 +56,12 @@ const Authorization = () => {
           seller account's appointment calendar.
         </span>
       </p>
-      <span
+      <a
         className={authBtn}
-        onClick={handleAuthBtnClick}
+        href={authUrl ? authUrl : '/auth-error'}
       >
         <ArrowBtn>Authorize </ArrowBtn>
-      </span>
+      </a>
     </div>
   )
 }
