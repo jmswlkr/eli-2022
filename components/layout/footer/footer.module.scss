@@ -28,8 +28,9 @@
 }
 
 .footer {
-  margin-top: var(--vp-xl);
-  height: 70vh;
+  z-index: var(--level-three);
+  padding-top: var(--vp-xl);
+  height: 85vh;
   width: 100vw;
   background-color: var(--primary);
   display: flex;

@@ -68,10 +68,9 @@ export const Contact = () => {
       <div className={formSection}>
         <h2 className={title}>Contact</h2>
         <p className={blurb}>
-          Mauris dictum egestas felis at semper. Aenean at
-          tortor eros. Class aptent taciti sociosqu ad
-          litora torquent per conubia nostra, per inceptos
-          himenaeos.{' '}
+          Mauris dictum egestas felis at semper. Aenean at tortor eros. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos.{' '}
         </p>
         <form className={contactForm}>
           <input
@@ -96,11 +95,8 @@ export const Contact = () => {
             onChange={handleChange}
             placeholder='Enter your message...'
           />
-          <span
-            className={submitBtn}
-            onClick={handleSubmit}
-          >
-            <ArrowBtn>Sumbit</ArrowBtn>
+          <span className={submitBtn} onClick={handleSubmit}>
+            <ArrowBtn text='Sumbit' />
           </span>
         </form>
       </div>

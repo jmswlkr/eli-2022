@@ -9,6 +9,7 @@ import { Layout } from 'components/layout/layout.jsx'
 
 // Styling
 import '../styles/global.scss'
+import '../styles/react-calendar.scss'
 
 
 

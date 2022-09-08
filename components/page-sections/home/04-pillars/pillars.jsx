@@ -14,6 +14,7 @@ import { YogaIcon } from 'components/elements/svg/yoga'
 import {
   pillars,
   fadeTransitionBar,
+  shade,
   top, 
   bot, 
   pillarsImageContainer,
@@ -58,17 +59,13 @@ export const Pillars = () => {
       <div className={pillarsTextContent}>
         <div className={blurb}>
           <h2 className={title}>Three Pillars</h2>
-          <h4 className={subtitle}>
-            Of the Embodied Learning Institute
-          </h4>
+          <h4 className={subtitle}>Of the Embodied Learning Institute</h4>
           <p className={text}>
-            Aliquam tempor risus lectus, eu bibendum eros
-            fermentum quis. Mauris faucibus eros nec
-            tristique volutpat. Quisque hendrerit mauris
-            odio, eu lacinia augue bibendum ut. Nulla vitae
-            massa eget libero maximus faucibus sit amet ac
-            eros. Donec orci neque, malesuada id urna vitae,
-            condimentum eleifend.
+            Aliquam tempor risus lectus, eu bibendum eros fermentum quis. Mauris
+            faucibus eros nec tristique volutpat. Quisque hendrerit mauris odio,
+            eu lacinia augue bibendum ut. Nulla vitae massa eget libero maximus
+            faucibus sit amet ac eros. Donec orci neque, malesuada id urna
+            vitae, condimentum eleifend.
           </p>
         </div>
         <div className={pillarsContainer}>
@@ -78,7 +75,7 @@ export const Pillars = () => {
                 <h3 className={title}>{plr.title}</h3>
                 <span className={icon}>{plr.icon}</span>
                 <span className={btn}>
-                  <ArrowBtn>Learn More</ArrowBtn>
+                  <ArrowBtn lightText arrowColor='var(--accent)'/>
                 </span>
               </div>
             )
@@ -86,13 +83,17 @@ export const Pillars = () => {
         </div>
       </div>
       <div className={pillarsImageContainer}>
-        <div className={`${fadeTransitionBar} ${top}`}/>
-        <img className={fg} src={baseUrl('center-tree_jxzinq', 'good')} alt='' />
-        <img className={bg}
-          src={baseUrl('BG_no-tree_fsmhkc', 'good')}
+        <div className={`${fadeTransitionBar} ${top}`} />
+        <div
+          className={shade}
+        />
+        <img
+          className={fg}
+          src={baseUrl('center-tree_jxzinq', 'good')}
           alt=''
         />
-        <div className={`${fadeTransitionBar} ${bot}`}/>
+        <img className={bg} src={baseUrl('BG_no-tree_fsmhkc', 'good')} alt='' />
+        <div className={`${fadeTransitionBar} ${bot}`} />
       </div>
     </section>
   )

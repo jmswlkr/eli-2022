@@ -1,14 +1,20 @@
-// External lib
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import ReactCalendar from 'react-calendar'
+import { AnimatePresence, motion } from 'framer-motion'
 
-// Internal lib
 import { ScheduleContext } from '@/context/schedule-context'
+import {
+  APT_DETAIL,
+  CLIENT_DETAIL,
+  SESSION_DETAIL,
+} from './calendar/appointment-data.js'
 
-// Components
 import { Label } from '@/elements/section-label/section-label'
-import { Calendar } from './calendar/calendar.jsx'
+import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn.jsx'
 
-// Styling
+import { phases } from 'animation/transition.js'
+import { blurFadeIn } from 'animation/fade.js'
+
 import {
   schedule,
   scheduleContainer,
@@ -19,17 +25,89 @@ import {
   schedulingAppContainer,
   calendarBlock,
   hourBlock,
+  scrollWrap,
+  timesList,
   clientBlock,
+  inputList,
+  aptItemList,
+  aptItem,
+  icon,
+  aptText,
+  info,
+  sessionSelect,
+  pseudoSelect,
+  btnSubmit,
 } from './scheduling.module.scss'
 
-
 export const Scheduling = () => {
-  const { scheduleDate, setScheduleDate } =
-    useContext(ScheduleContext)
+  const [aptDetail, setAptDetail] = useState(APT_DETAIL)
+  const [clientDetail, setClientDetail] = useState(CLIENT_DETAIL)
+  const [sessionDetail, setSessionDetail] = useState(SESSION_DETAIL)
 
-  useEffect(() => {
-    console.log('scheduleDate changed: ', scheduleDate)
-  }, [scheduleDate])
+  const curSess = sessionDetail.current
+  const [optionsVisible, setOptionsVisible] = useState(false)
+
+  const handleSetMonthYear = ({ activeStartDate }) => {
+    // only run on month/year change
+    if (!activeStartDate) return
+
+    const [, month, , year] = activeStartDate.toString().split(' ')
+    setAptDetail((prv) => ({
+      ...prv,
+      date: {
+        ...prv.date,
+        val: {
+          ...prv.date.val,
+          m: month,
+          y: year,
+        },
+      },
+    }))
+  }
+  const handleSetDay = (v, { target }) => {
+    const date = target.textContent
+    setAptDetail((prv) => ({
+      ...prv,
+      date: {
+        ...prv.date,
+        val: {
+          ...prv.date.val,
+          d: date,
+        },
+      },
+    }))
+  }
+  const handleSetTime = ({ target }) => {
+    const meridian = target.dataset.mer
+    const time = target.textContent
+
+    setAptDetail((prv) => ({
+      ...prv,
+      time: {
+        ...prv.time,
+        val: {
+          ...prv.time.val,
+          t: time,
+          m: meridian,
+        },
+      },
+    }))
+  }
+
+  const handleSetClientInfo = ({ target: { value, id } }) => {
+    setClientDetail((prv) => ({
+      ...prv,
+      [id]: value,
+    }))
+  }
+
+  const handleSelectSession = ({ target: { textContent, id } }) => {
+    setSessionDetail((prv) => ({
+      ...prv,
+      current: prv.types[id],
+    }))
+    setOptionsVisible(false)
+  }
 
   return (
     <section className={schedule}>
@@ -38,21 +116,109 @@ export const Scheduling = () => {
           <h2 className={title}>Schedule an Appointment</h2>
           <p className={text}>
             {' '}
-            Mauris dictum egestas felis at semper. Aenean at
-            tortor eros. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos
-            himenaeos.{' '}
+            Mauris dictum egestas felis at semper. Aenean at tortor eros. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.{' '}
           </p>
           <div className={label}>
-            <Label>Calendar</Label>
+            <Label>CALENDAR</Label>
           </div>
         </div>
         <div className={schedulingAppContainer}>
           <div className={calendarBlock}>
-            <Calendar />
+            <ReactCalendar
+              onActiveStartDateChange={handleSetMonthYear}
+              onClickDay={handleSetDay}
+            />
           </div>
-          <div className={hourBlock}></div>
-          <div className={clientBlock}></div>
+          <div className={hourBlock}>
+            <div className={scrollWrap}>
+              <ul className={timesList}>
+                <span>▾</span>
+                {Array.from({ length: 9 }).map((_, time) => {
+                  const isPM = time > 3
+                  const hour = isPM ? time - 3 : time + 9
+                  return (
+                    <button
+                      key={time}
+                      onClick={handleSetTime}
+                      data-mer={isPM ? 'pm' : 'am'}
+                    >
+                      {hour}:00
+                    </button>
+                  )
+                })}
+                <span>▴</span>
+              </ul>
+            </div>
+          </div>
+          <div className={clientBlock}>
+            <div className={inputList}>
+              {Object.entries(clientDetail).map(([id, value]) => {
+                const inputProps = {
+                  id,
+                  placeholder: id,
+                  value,
+                  onChange: handleSetClientInfo,
+                  type: id === 'Email' ? 'email' : 'text',
+                  required: true,
+                }
+
+                return <input key={id} {...inputProps} />
+              })}
+            </div>
+            <ul className={aptItemList}>
+              {Object.values(aptDetail).map((ad) => {
+                return (
+                  <div key={ad.id} className={aptItem}>
+                    <span className={icon}>{ad.icon}</span>
+                    <div className={aptText}>
+                      <label>{ad.id}</label>
+                      <div className={info}>
+                        {Object.entries(ad.val).map(([k, v]) => {
+                          return <span key={k}>{v}</span>
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </ul>
+            <div
+              className={sessionSelect}
+              onClick={() => setOptionsVisible(!optionsVisible)}
+            >
+              <label htmlFor='select'>SESSION TYPE</label>
+              <select id='select' onMouseDown={(e) => e.preventDefault()}>
+                <option>
+                  {curSess.id} &nbsp; &nbsp; | &nbsp; &nbsp; {curSess.duration}
+                </option>
+              </select>
+              <AnimatePresence exitBeforeEnter>
+                {optionsVisible && (
+                  <motion.ul
+                    className={pseudoSelect}
+                    id='pseudo-select'
+                    {...phases}
+                    variants={blurFadeIn}
+                  >
+                    {sessionDetail.types.map(({ id, duration }, idx) => {
+                      return (
+                        <li key={id} id={idx} onClick={handleSelectSession}>
+                          <span>{id}</span>
+                          <span>&nbsp;</span>
+                          <span>{duration}</span>
+                        </li>
+                      )
+                    })}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
+            <div className={btnSubmit}>
+              <ArrowBtn text='Request Appt.' />
+            </div>
+          </div>
         </div>
       </div>
     </section>

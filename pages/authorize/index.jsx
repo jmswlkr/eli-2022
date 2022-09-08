@@ -21,9 +21,9 @@ const Authorization = () => {
   const [authUrl, setAuthUrl] = useState(null)
 
   useEffect(() => {
-    axios.get('/api/authorize').then((res) => {
-      setAuthUrl(res.data.url)
-    })
+    // axios.get('/api/authorize').then((res) => {
+    //   setAuthUrl(res.data.url)
+    // })
   }, [])
 
   const handleAuthBtnClick = () => {
@@ -46,21 +46,16 @@ const Authorization = () => {
       </div>
       <p className={instruction}>
         <span>
-          Sign into your Square™ seller account in another
-          broswer tab.
+          Sign into your Square™ seller account in another broswer tab.
         </span>
         <span>
           <em> Once you've signed in</em>, <br />
-          click the 'Authorize' button below to allow this
-          application to communicate with your
-          seller account's appointment calendar.
+          click the 'Authorize' button below to allow this application to
+          communicate with your seller account's appointment calendar.
         </span>
       </p>
-      <a
-        className={authBtn}
-        href={authUrl ? authUrl : '/auth-error'}
-      >
-        <ArrowBtn>Authorize </ArrowBtn>
+      <a className={authBtn} href={authUrl ? authUrl : '/auth-error'}>
+        <ArrowBtn text='Authorize' />
       </a>
     </div>
   )

@@ -86,7 +86,7 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        Aliquam tempor risus lectus, eu bibendum eros
+        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
@@ -98,7 +98,7 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        Aliquam tempor risus lectus, eu bibendum eros
+        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
@@ -110,7 +110,7 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        Aliquam tempor risus lectus, eu bibendum eros
+        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
@@ -122,7 +122,7 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        Aliquam tempor risus lectus, eu bibendum eros
+        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
@@ -134,7 +134,7 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        Aliquam tempor risus lectus, eu bibendum eros
+        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>

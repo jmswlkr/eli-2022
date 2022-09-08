@@ -20,6 +20,7 @@ import {
   collageTextContent,
   title,
   blurb,
+  blurbEmph,
   btn,
   collageMainImg,
 } from './intro.module.scss'
@@ -38,18 +39,18 @@ export const Intro = () => {
             alt='girl watching sunset on bench'
           />
           <div className={collageTextContent}>
-            <h2 className={title}>
-              Introductory title text that is longish.
-            </h2>
+            <h2 className={title}>Introductory title text that is longish.</h2>
             <p className={blurb}>
-              The Embodied Learning Institute (ELI) is an
-              organization founded by Dr. Ali  (MSW, Ph.D.). Dr. Ali’s passion is helping individuals and
-              organizations thrive via the 3 pillars of
-              Embodied Enoughness: <br /> mindful living, embodied
-              learning, and wholehearted presence.
+              The Embodied Learning Institute (ELI) is an organization founded
+              by Dr. Ali  (MSW, Ph.D.). Dr. Ali’s passion is helping individuals
+              and organizations thrive via the 3 pillars of Embodied Enoughness:{' '}
+              <br />{' '}
+              <span className={blurbEmph}>
+                mindful living, embodied learning, and wholehearted presence.
+              </span>
             </p>
             <div className={btn}>
-              <ArrowBtn>Learn More</ArrowBtn>
+              <ArrowBtn />
             </div>
           </div>
         </div>

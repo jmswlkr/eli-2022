@@ -56,7 +56,7 @@ export const Offerings = () => {
     setDistributedOfferingIdx(converted)
   }, [focusedOffering])
 
-  const sizePositionMatrix = [
+  const positionsIndex = [
     zero,
     one,
     two,
@@ -71,7 +71,7 @@ export const Offerings = () => {
 
   // Navigate closed loop array by variable increments
   const getNextByDegree = (curIdx, degree) => {
-    const len = sizePositionMatrix.length
+    const len = positionsIndex.length
     const nextDegree = next(curIdx + degree, len)
 
     return nextDegree
@@ -80,7 +80,7 @@ export const Offerings = () => {
   // Set focused offering by 1 or two positions based on clicked block's position
   const handleSetOffering = (clickedPosition) => {
     let runTwice = clickedPosition === 1
-    const len = sizePositionMatrix.length
+    const len = positionsIndex.length
     const curIdx = focusedOffering
 
     setFocusedOffering(next(curIdx, len))
@@ -119,28 +119,21 @@ export const Offerings = () => {
               <span
                 key={`${offr.name}-${idx}`}
                 className={`${block} ${blockPos} ${
-                  sizePositionMatrix[
-                    getNextByDegree(
-                      focusedOffering,
-                      offsetDegree
-                    )
+                  positionsIndex[
+                    getNextByDegree(focusedOffering, offsetDegree)
                   ] ?? hide
                 }`}
                 onClick={() => {
-                  if ([3, 4].includes(clickedPos))  return;
+                  if ([3, 4].includes(clickedPos)) return
 
                   handleSetOffering(clickedPos)
-                }
-                }
+                }}
               >
-                <img
-                  src={baseUrl(offr.imgUrlFrag, 'good')}
-                  alt={offr.name}
-                />
+                <img src={baseUrl(offr.imgUrlFrag, 'good')} alt={offr.name} />
                 <h3 className={blockTitle}>
                   {offr.title}
                   <span className={blockBtn}>
-                    <ArrowBtn>Learn More</ArrowBtn>
+                    <ArrowBtn/>
                   </span>
                 </h3>
               </span>

@@ -20,8 +20,6 @@
   width: 100vw;
 }
 
-
-
 // Typography
 @mixin headerText {
   font-family: var(--font-title);
@@ -34,13 +32,28 @@
   font-size: var(--text-prose-em);
   font-weight: var(--reg);
 }
-
-
+@mixin smallLabelText($color: var(--text-color-med)) {
+  font-size: var(--text-md);
+  font-weight: var(--reg);
+  text-transform: uppercase;
+  letter-spacing: var(--push-md);
+  color: $color
+}
 
 // Elements
-@mixin fadeTransitionBar($height: 14.5vh, $bot: -1vh) {
+@mixin inputStyle {
+  padding: var(--space-lg) var(--space-sm);
+  font-size: var(--text-md);
+  font-weight: var(--reg);
+  letter-spacing: var(--push-ms);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid currentColor;
+}
+@mixin fadeTransitionBar($height: 17.5vh, $vOffset: -1vh, $top: false) {
   position: absolute;
-  bottom: $bot;
+  bottom: $vOffset;
   width: 100%;
   height: $height;
   background: linear-gradient(to bottom, transparent 0%, var(--primary-bg) 70%);
@@ -54,6 +67,20 @@
     height: 100%;
     width: 100%;
   }
+  @if $top {
+    bottom: unset;
+    background: linear-gradient(to top, transparent 0%, var(--primary-bg) 70%);
+    top: $vOffset;
+  }
+}
+
+@mixin gradientShade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, hsla(var(--papaya-hsl), 50%), hsla(var(--river-hsl), 65%));
 }
 
 @mixin sectionLabel($top: 5vh) {
@@ -62,8 +89,6 @@
   left: var(--content-shift-neg);
   width: 105vw;
 }
-
-
 
 // Pseudoelements
 @mixin shade($bgColor: var(--black-fade-20)) {
@@ -75,8 +100,6 @@
   height: 100%;
   background-color: $bgColor;
 }
-
-
 
 // Flex
 @mixin flexCenter {

@@ -84,6 +84,11 @@
   margin: 0;
   margin-bottom: var(--space-2xl);
   width: 80%;
+  b {
+    // display: block;
+    margin-right: .25rem;
+    font-size: calc(1.25 * var(--text-prose));
+  }
 }
 .attr {
   font-size: var(--text-subheader);

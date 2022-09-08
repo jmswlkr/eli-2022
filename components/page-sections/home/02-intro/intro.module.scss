@@ -57,6 +57,11 @@
     transform: translateY(-50%);
     height: auto;
     width: 35vw;
+    .blurbEmph {
+      color: var(--primary-deep);
+      font-weight: var(--body);
+      letter-spacing: var(--push-sm);
+    }
   }
 
   .title {
@@ -75,18 +80,12 @@
 
   .btn {
     margin-top: var(--vp-ms);
-    button {
+    a {
       color: var(--text-color) !important;
       font-weight: var(--reg);
     }
     span {
       letter-spacing: 0 !important;
-    }
-    path {
-      fill: var(--primary);
-    }
-    circle {
-      stroke: var(--primary);
     }
   }
   .collageImg {

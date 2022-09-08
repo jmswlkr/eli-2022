@@ -1,14 +1,23 @@
-@import '/styles/mixins';
-
+@import "/styles/mixins";
 
 //// < zIndex > ////
 .pillars {
   // z-index: ;
   .fadeTransitionBar {
+    z-index: 5;
+  }
+  .shade {
     z-index: 4;
+  }
+  &::after {
+    z-index: 3;
   }
   .pillarsTextContent {
     z-index: 3;
+  }
+  .fg,
+  .bg {
+    z-index: 2;
   }
 }
 
@@ -27,9 +36,13 @@
     left: 0;
     height: 100%;
     width: 100%;
+    filter: saturate(20%)
   }
-  &::after, 
-  &::before {
+  .shade {
+    @include gradientShade;
+  }
+  &::before,
+  &::after {
     content: '';
     z-index: 3;
     position: absolute;
@@ -37,10 +50,10 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: var(--black-fade-50);
-  }
-  &::after {
     background-color: var(--white-fade-35);
+  }
+  &::before {
+    background-color: var(--black-fade-20);
   }
   .fg {
     z-index: 2;
@@ -51,16 +64,11 @@
 }
 
 .fadeTransitionBar {
-  position: absolute;
-  width: 100%;
-  background-image: url('/noise-bg--40.png'), linear-gradient(to bottom, transparent 0%, var(--primary-bg) 60%);
-  height: 12vh;
   &.top {
-    top: -1vh;
-    background-image: url('/noise-bg--40.png'), linear-gradient(to top, transparent 0%, var(--primary-bg) 60%);
+    @include fadeTransitionBar($top: true);
   }
   &.bot {
-    bottom: -1vh;
+    @include fadeTransitionBar();
   }
 }
 
@@ -116,7 +124,7 @@
     transform: translateY(-2vh);
     .icon {
       path {
-        fill: var(--primary);
+        fill: var(--accent);
       }
     }
     .btn {
@@ -139,6 +147,6 @@
     margin-top: var(--space-3xl);
     opacity: 0;
     transition: var(--transition-primary);
-    transition-delay: .2s;
+    transition-delay: 0.2s;
   }
 }

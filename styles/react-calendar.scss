@@ -1,0 +1,117 @@
+.react-calendar {
+  font-family: var(--font-body) !important;
+  abbr,
+  span {
+    font-family: var(--font-body) !important;
+  }
+}
+
+.react-calendar {
+  &__navigation {
+    position: relative;
+    margin-bottom: var(--space-2xl);
+    &__label {
+      pointer-events: none;
+      font-size: var(--text-prose-em);
+      color: var(--calendar-accent);
+    }
+    &__arrow {
+      position: absolute;
+      top: 55%;
+      transform: translateY(-50%);
+      color: transparent;
+      &::after {
+        cursor: pointer;
+        font-family: var(--font-body);
+        font-size: var(--text-2xl);
+        color: var(--primary-tr);
+        transition: var(--transition-3-smooth);
+      }
+      &:hover {
+        &::after {
+          color: var(--calendar-accent);
+        }
+      }
+    }
+    &__next-button {
+      left: 93.5%;
+      &::after {
+        content: "→";
+      }
+    }
+    &__prev-button {
+      left: 72.5%;
+      &::after {
+        content: "←";
+      }
+      &::before {
+        pointer-events: none;
+        top: 55%;
+        left: 145%;
+        letter-spacing: var(--push-ms);
+        transform: translateY(-50%);
+        position: absolute;
+        content: "month";
+        font-family: var(--font-body);
+        color: var(--calendar-accent);
+      }
+    }
+    &__prev2-button,
+    &__next2-button {
+      display: none;
+    }
+  }
+}
+
+.react-calendar {
+  &__viewContainer {
+  }
+  &__month-view {
+    &__weekdays {
+    }
+    &__weekdays__weekday {
+      padding: var(--space-lg);
+      text-align: center;
+      font-weight: var(--bold);
+      color: var(--text-color);
+      abbr {
+        text-decoration: none !important;
+      }
+    }
+    &__days {
+    }
+    &__days__day {
+      cursor: pointer;
+      padding: var(--space-2xl) var(--space-lg);
+      color: var(--text-color-med);
+      font-size: var(--text-lg);
+      letter-spacing: var(--push-sm);
+      transition: var(--transition-1-smooth);
+      border-radius: var(--radius-md);
+      &:hover {
+        background-color: var(--primary-tr-2);
+      }
+      &:focus,
+      &:focus-within {
+        font-weight: var(--bold);
+        color: var(--primary);
+        background-color: var(--primary-tr);
+      }
+      &.selected {
+        color: var(--primary);
+        background-color: var(--primary-tr);
+        font-weight: var(--bold);
+      }
+      &.NA {
+        text-decoration: line-through;
+        color: var(--calendar-accent);
+        opacity: .6;
+        font-weight: var(--body);
+        &:hover {
+          background-color: transparent;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}

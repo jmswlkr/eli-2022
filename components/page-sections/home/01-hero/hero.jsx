@@ -10,10 +10,7 @@ import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 import { Logo } from 'components/elements/svg/logo'
 
 // Styling & Animation
-import {
-  blurFadeIn,
-  fadeSlideUpShort,
-} from 'animation/fade'
+import { blurFadeIn, fadeSlideUpShort } from 'animation/fade'
 import { phases, smooth } from 'animation/transition'
 
 import {
@@ -33,8 +30,6 @@ import {
 } from './hero.module.scss'
 
 export const Hero = () => {
-
-
   return (
     <section className={hero}>
       <div className={heroImages}>
@@ -43,20 +38,19 @@ export const Hero = () => {
             key='shade'
             className={shade}
             {...blurFadeIn}
-            initial='visible'
-            animate='hidden'
+            {...phases}
             transition={smooth(3, 0)}
           />
           <motion.img
             className={bg}
             key='img1'
-            src={baseUrl('BG-mountains--rs_xvt0mx', 'best')}
-            alt='mountains bg'
+            src={baseUrl('tiedie-woman_dgw1ht', 'best')}
+            alt='oceanview woman'
             {...fadeSlideUpShort}
             {...phases}
             transition={smooth(3, 1)}
           />
-          <motion.img
+          {/* <motion.img
             className={fg}
             key='img2'
             src={baseUrl('FG-girl--rs_tum4ix', 'best')}
@@ -64,7 +58,7 @@ export const Hero = () => {
             {...fadeSlideUpShort}
             {...phases}
             transition={smooth(3, 2)}
-          />
+          /> */}
         </AnimatePresence>
         <div className={fadeTransitionBar} />
       </div>
@@ -83,7 +77,11 @@ export const Hero = () => {
             Learn to <em>Thrive.</em>
           </h2>
           <div className={btn}>
-            <ArrowBtn>Get Started</ArrowBtn>
+            <ArrowBtn
+              text='Get Started'
+              arrowColor='var(--accent)'
+              lightText={true}
+            />
           </div>
         </div>
       </div>

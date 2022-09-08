@@ -39,14 +39,23 @@
   --white-fade-20: hsla(0, 0%, 100%, 0.2);
   --white-fade-35: hsla(0, 0%, 100%, 0.15);
   --papaya: #e6aca5;
-  --papaya-fade-40: hsla(7, 51%, 76%, 0.4);
-  --papaya-fade-60: hsla(7, 51%, 76%, 0.6);
-  --papaya-fade-80: hsla(7, 51%, 76%, 0.8);
-  --watermelon: #ee7d66;
-  --watermelon: #ed8b77;
-  --snapdragon: #f8f2ef;
+  --snapdragon: #F4F7F8;
 
-  --test: rgba(173, 216, 230, 0.303);
+  --french-blue: #426e8d;
+  --ocean-blue: #2B5879;
+  --tangerine: #f27347;
+  --baby-cherry: #b71f2f;
+  --lotus-blossom: #facebf;
+  
+  
+  --river-hs: 205, 48%;
+  --lotus-hs: 15, 86%;
+  --papaya-hs: 6, 57%;
+  
+  --papaya-hsl: 6, 57%, 77%;
+  --french-hsl: 205, 36%, 41%;
+  --river-hsl: 205, 48%, 32%;
+  --lotus-hsl: 15, 86%, 86%;
 
   /* z-indeces */
   --base-two: -200;
@@ -106,11 +115,6 @@
   --push-ms: 0.06em;
   --push-sm: 0.02em;
   --tight: -0.015em;
-  // --loose: 0.25em;
-  // --even: 0.15em;
-  // --open: 0.08em;
-  // --tracked: 0.02em;
-  // --tight: -0.015em;
 
   /* font-weight */
   --light: 200;
@@ -144,15 +148,31 @@
   // * role-based tokens * //
 
   /* colors */
-  --primary: var(--papaya);
-  --primary-tr: var(--papaya-fade-40);
-  --primary-tr-2: var(--papaya-fade-60);
-  --primary-tr-3: var(--papaya-fade-80);
-  --primary-deep: var(--watermelon);
+  --primary: var(--french-blue);
+  --primary-hs: var(--river-hs);
+  --primary-hsl: var(--river-hsl);
+  --primary-tr: hsla(var(--river-hsl), .25);
+  --primary-tr-2: hsla(var(--river-hsl), .15);
+  --primary-tr-3: hsla(var(--river-hsl), .05);
+  
+  --primary-deep: var(--ocean-blue);
+  
   --primary-bg: var(--snapdragon);
+
+  --accent: var(--lotus-blossom);
+  --accent-tr: hsla(var(--lotus-hsl), .25);
+  --accent-tr-2: hsla(var(--lotus-hsl), .15);
+  --accent-tr-3: hsla(var(--lotus-hsl), .05);
+  
   --text-color: var(--black);
+  --text-color-med: var(--grey-40);
   --text-color-inv: #b9b9b9;
-  --label-color: var(--grey-fade-07);
+  --label-color: hsla(var(--river-hsl), 5%);
+
+  --emph-color: var(--baby-cherry);
+
+  --calendar-accent: var(--tangerine);
+
 
   /* bezier curves */
   --smooth: cubic-bezier(0.115, 0.905, 0.32, 1);
@@ -177,12 +197,12 @@
   /* text size */
   // --text-hero: clamp(240px, 15vmax, 400px);
   --text-hero: 14vmax;
-  --text-hero-sm: var(--text-8xl);
-  --text-header: var(--text-6xl);
-  --text-header-sm: var(--text-5xl);
-  --text-subheader: var(--text-3xl);
-  --text-prose: var(--text-xl);
-  --text-prose-em: var(--text-2xl);
+  --text-hero-sm: var(--text-8xl);     // 96px
+  --text-header: var(--text-6xl);      // 68px
+  --text-header-sm: var(--text-5xl);   // 56px
+  --text-subheader: var(--text-3xl);   // 32px
+  --text-prose: var(--text-xl);        // 20px
+  --text-prose-em: var(--text-2xl);    // 24px
 
   @import "./mixins";
 
@@ -299,37 +319,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.arrow-btn {
-  cursor: pointer;
-  background: none !important;
-  border: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  color: var(--white);
-  font-size: var(--text-xl);
-  font-family: var(--font-body);
-  font-weight: var(--light);
-  span:nth-child(1) {
-    margin-right: var(--space-lg);
-    margin-bottom: 1vh;
-    letter-spacing: var(--push-sm);
-  }
-  svg {
-    & > * {
-      transition: var(--transition-primary);
-    }
-  }
-  &:hover {
-    path {
-      fill: var(--primary);
-    }
-    circle {
-      stroke: var(--primary);
-    }
-  }
 }
 
 .vp-marker {

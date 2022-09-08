@@ -166,10 +166,13 @@
     .blockTitle {
       z-index: 2;
       position: absolute;
-      transform: translate(-20%, -25%);
+      transform: translate(-25%, -30%);
       font-size: var(--text-9xl);
       font-weight: var(--reg);
-      color: var(--primary-deep);
+      color: var(--text-color-inv);
+      &:hover {
+        color: hsl(var(--primary-hs), 50%);
+      }
     }
     .blockBtn {
       display: flex;

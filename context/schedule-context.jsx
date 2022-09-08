@@ -5,7 +5,7 @@ import React, {
   useState,
 } from 'react'
 import { Client, Environment } from 'square'
-import axios from 'axios';
+import axios from 'axios'
 
 const defaultValues = {
   getAvailability: () => {},
@@ -27,14 +27,30 @@ export const ScheduleProvider = ({ children }) => {
   const [availability] = useState({ test: 1 })
 
   useEffect(() => {
-    axios
-      .get('/api')
-      .then((res) => {
-        // console.log('res.data: ', res.data);
-      })
-      .catch((err) => {
-        // console.log('err: ', err);
-      })
+    // axios
+    //   .post('/api/appointments/avail', {
+    //     start: '2022-07-03T01:00:51.607Z',
+    //     end: '2022-08-03T01:00:51.607Z',
+    //   })
+    //   .then((res) => {
+    //     console.log('res.data: ', res)
+    //   })
+    //   .catch((err) => {
+    //     console.log('err from schedule context: ', err)
+    //   })
+    // axios({
+    //   method: 'post',
+    //   url: '/api/appointments/avail',
+    //   data: {
+    //     start: '2022-07-03T01:00:51.607Z',
+    //   },
+    // })
+    //   .then(function (response) {
+    //     console.log('response from context', response)
+    //   })
+    //   .catch(function (error) {
+    //     console.log('error from context', error)
+    //   })
   }, [])
 
   const getAvailability = async () => {}
