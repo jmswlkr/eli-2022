@@ -1,4 +1,4 @@
-@import '/styles/mixins';
+@import "/styles/mixins";
 
 //// < zIndex > ////
 .intro {
@@ -18,10 +18,16 @@
   align-items: center;
   justify-content: center;
   isolation: isolate;
+  @media (max-width: 1024px) {
+    height: 100vh;
+  }
 }
 
 .sectionLabel {
   @include sectionLabel(20vh);
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 // TODO: Should this be removed??
@@ -39,6 +45,9 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 
   .collagePrimary {
@@ -48,6 +57,12 @@
     top: 25vh;
     left: 0;
     background-color: var(--primary-tr);
+    @media (max-width: 1024px) {
+      top: 0;
+      left: 0;
+      width: 80vw;
+      background-color: transparent;
+    }
   }
 
   .collageTextContent {
@@ -62,20 +77,48 @@
       font-weight: var(--body);
       letter-spacing: var(--push-sm);
     }
+    @media (max-width: 1024px) {
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: unset;
+      transform: unset;
+    }
+  }
+
+  .sectionAccent {
+    display: none;
+    @media (max-width: 1024px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      height: 17vh;
+      width: 17vh;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 
   .title {
-    font-family: var(--font-title);
+    @include headerText;
     font-size: var(--text-header-sm);
-    font-weight: var(--light);
     white-space: nowrap;
     transform: translateX(-50%);
     margin-bottom: var(--space-2xl);
+    @media (max-width: 1024px) {
+      transform: unset;
+      white-space: initial;
+    }
   }
 
   .blurb {
-    font-size: var(--text-prose);
-    font-weight: var(--reg);
+    @include paragraphText;
+    @media (max-width: 1024px) {
+      width: 95%;
+    }
   }
 
   .btn {
@@ -91,6 +134,9 @@
   .collageImg {
     position: absolute;
     background-color: var(--primary-tr);
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 
   .sec {
@@ -104,5 +150,9 @@
     width: 14vw;
     bottom: -25vh;
     right: 0;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 }

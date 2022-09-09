@@ -1,0 +1,33 @@
+@import "/styles/mixins";
+
+.schedule {
+  @include homeSection;
+  flex-direction: column;
+
+  // & > * {
+  //   border: 1px solid red;
+  //   & > * {
+  //     border: 1px solid deepskyblue;
+  //     & > * {
+  //       border: 1px solid deeppink;
+  //       & > * {
+  //         border: 1px solid forestgreen;
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+.blurb {
+  width: 100%;
+  margin-top: var(--vp-md);
+  // padding-left: var(--section-padding);
+
+  .title {
+    @include headerText;
+    margin-bottom: var(--title-space-bot);
+  }
+  .text {
+    @include paragraphText;
+  }
+}

@@ -18,6 +18,7 @@ import {
   ter,
   collagePrimary,
   collageTextContent,
+  sectionAccent,
   title,
   blurb,
   blurbEmph,
@@ -25,6 +26,7 @@ import {
   collageMainImg,
 } from './intro.module.scss'
 import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
+import { WaveCircles } from '@/elements/svg/wave-circles'
 
 export const Intro = () => {
   return (
@@ -39,6 +41,9 @@ export const Intro = () => {
             alt='girl watching sunset on bench'
           />
           <div className={collageTextContent}>
+            <div className={sectionAccent}>
+              <WaveCircles />
+            </div>
             <h2 className={title}>Introductory title text that is longish.</h2>
             <p className={blurb}>
               The Embodied Learning Institute (ELI) is an organization founded

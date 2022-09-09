@@ -5,6 +5,7 @@ import {
   pageLinks,
   socialIcons,
 } from '@/ancillary/small-data'
+import { WaveCircles } from '@/elements/svg/wave-circles'
 import Link from 'next/link'
 import React from 'react'
 
@@ -12,7 +13,9 @@ import React from 'react'
 import {
   footer,
   footerMain,
+  sectionAccent,
   linkList,
+  mobileDivider,
   connectLinksStyle,
   pageLinksStyle,
   contactLinks,
@@ -32,6 +35,9 @@ export const Footer = () => {
   return (
     <footer className={footer}>
       <div className={footerMain}>
+        <div className={sectionAccent}>
+          <WaveCircles />
+        </div>
         <ul className={`${linkList} ${connectLinksStyle}`}>
           <label>Connect</label>
           {connectLinks.map((lnk) => {
@@ -56,16 +62,13 @@ export const Footer = () => {
             )
           })}
         </ul>
+        <span className={mobileDivider} />
         <ul className={`${linkList} ${contactLinks}`}>
           {contactInfo.map((inf) => {
             return (
               <li key={inf.id}>
                 <label>{inf.label}</label>
-                <a
-                  href={inf.link}
-                  target='_blank'
-                  rel='noreferrer'
-                >
+                <a href={inf.link} target='_blank' rel='noreferrer'>
                   {inf.content}
                 </a>
               </li>
@@ -77,21 +80,16 @@ export const Footer = () => {
         <ul className={social}>
           {socialIcons.map((icn) => {
             return (
-              <a
-                key={icn.id}
-                href={icn.link}
-                target='_blank'
-                rel='noreferrer'
-              >
+              <a key={icn.id} href={icn.link} target='_blank' rel='noreferrer'>
                 {icn.icon}
               </a>
             )
           })}
         </ul>
-        <span className={copyright}>
-          © 2022 Embodied learning institute{' '}
-        </span>
-        <button className={bttBtn} onClick={scrollTop}>↑<span className={hidden}>Back to Top</span></button>
+        <span className={copyright}>© 2022 Embodied learning institute </span>
+        <button className={bttBtn} onClick={scrollTop}>
+          ↑<span className={hidden}>Back to Top</span>
+        </button>
       </div>
     </footer>
   )

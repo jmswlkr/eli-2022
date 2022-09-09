@@ -19,9 +19,8 @@
 }
 
 .contact {
-  @include homeSection(139vh);
+  @include homeSection(120vh);
   justify-content: flex-start;
-  margin-bottom: -14.5vh;
   &::after {
     content: '';
     position: absolute;
@@ -33,6 +32,14 @@
     opacity: 0.4;
     background-image: url('/noise-bg.png');
   }
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .contactContainer {
@@ -42,22 +49,36 @@
 .formSection {
   height: 100%;
   width: 60%;
-  padding-top: var(--vp-sm);
+  padding-top: var(--vp-lg);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   overflow-y: hidden;
+  @media (max-width: 1024px) {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    margin-bottom: var(--vp-xl);
+  }
 }
 .title {
   font-family: var(--font-title);
   font-size: var(--text-header);
   font-weight: var(--light);
+  @media (max-width: 1024px) {
+    font-size: var(--text-header-sm);
+    color: var(--primary);
+    margin-bottom: var(--space-2xl);
+  }
 }
 .blurb {
   width: 60%;
   font-size: var(--text-prose-em);
   margin-bottom: var(--vp-ms);
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 .contactForm {
   display: flex;
@@ -78,6 +99,9 @@
       font-size: var(--text-prose);
       letter-spacing: var(--push-sm);
       color: var(--grey-30);
+      @media (max-width: 1024px) {
+        color: var(--primary);
+      }
     }
     &:active,
     &:focus,
@@ -86,6 +110,9 @@
       &::placeholder {
         color: var(--primary-deep );
       }
+    }
+    @media (max-width: 1024px) {
+      border-color: var(--primary);
     }
   }
   textarea {
@@ -107,6 +134,9 @@
       font-size: var(--text-prose);
       letter-spacing: var(--push-sm);
       color: var(--grey-30);
+      @media (max-width: 1024px) {
+        color: var(--primary);
+      }
     }
     &:active,
     &:focus,
@@ -116,6 +146,16 @@
       &::placeholder {
         color: var(--primary-deep );
       }
+    }
+    @media (max-width: 1024px) {
+      border-color: var(--primary);
+    }
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    textarea,
+    input {
+      width: 100%;
     }
   }
 }
@@ -130,15 +170,8 @@
     color: var(--text-color);
     font-weight: var(--reg);
   }
-  svg {
-    path {
-      fill: var(--text-color);
-    }
-    circle {
-      stroke: var(--text-color);
-    }
-  }
 }
+
 .mapSection {
   position: absolute;
   top: 0;
@@ -148,53 +181,11 @@
   img {
     margin-top: -4px;
   }
+  @media (max-width: 1024px) {
+    position: static;
+    overflow: unset;
+    height: 40vh;
+  }
 }
 .mapShade {
 }
-
-/*
-  <motion.form
-    className={formStyle}
-    variants={fadeIn}
-    {...phases}
-    transition={smooth(0.5)}
-  >
-    <h2 className={question}>
-      Have questions before scheduling a
-      consult? Submit the form below and
-      we&apos;ll provide some answers.
-    </h2>
-    <div className={inputs} tabIndex={0}>
-      <input
-        name='from_name'
-        className={fullname}
-        type='text'
-        placeholder='Full Name'
-        value={toSend.from}
-        onChange={handleChange}
-      />
-      <input
-        name='reply_to'
-        email={email}
-        type='email'
-        placeholder='Email Address'
-        value={toSend.email}
-        onChange={handleChange}
-      />
-      <textarea
-        name='message'
-        className={message}
-        placeholder='Enter your message...'
-        value={toSend.message}
-        onChange={handleChange}
-      />
-    </div>
-    <button
-      className={submitBtn}
-      type='submit'
-      onClick={handleSubmit}
-    >
-      Submit
-    </button>
-  </motion.form>
-*/

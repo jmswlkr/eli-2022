@@ -7,7 +7,7 @@ import {
   APT_DETAIL,
   CLIENT_DETAIL,
   SESSION_DETAIL,
-} from './calendar/appointment-data.js'
+} from '../appointment-data.js'
 
 import { Label } from '@/elements/section-label/section-label'
 import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn.jsx'
@@ -93,14 +93,12 @@ export const Scheduling = () => {
       },
     }))
   }
-
   const handleSetClientInfo = ({ target: { value, id } }) => {
     setClientDetail((prv) => ({
       ...prv,
       [id]: value,
     }))
   }
-
   const handleSelectSession = ({ target: { textContent, id } }) => {
     setSessionDetail((prv) => ({
       ...prv,
@@ -125,7 +123,7 @@ export const Scheduling = () => {
           </div>
         </div>
         <div className={schedulingAppContainer}>
-          <div className={calendarBlock}>
+          <div className={calendarBlock} id='desk-calendar'>
             <ReactCalendar
               onActiveStartDateChange={handleSetMonthYear}
               onClickDay={handleSetDay}

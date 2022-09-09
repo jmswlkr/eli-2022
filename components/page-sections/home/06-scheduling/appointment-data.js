@@ -31,14 +31,6 @@ export const APT_DETAIL = {
     },
     icon: <ClockIcon />,
   },
-  // session: {
-  //   id: 'SESSION TYPE',
-  //   val: {
-  //     type: 'Consult   : ',
-  //     dur: '45MIN',
-  //   },
-  //   icon: <HourGlassIcon />,
-  // },
 }
 
 export const SESSION_DETAIL = {

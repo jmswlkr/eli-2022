@@ -56,11 +56,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 1024px) {
+    justify-content: flex-start;
+  }
 }
 
 .logoTitle {
   position: relative;
   isolation: isolate;
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin-top: -5vh;
+    transform: scale(.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .title {
@@ -74,9 +85,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  span {
+    text-align: center;
+  }
   span:nth-child(1) {
     font-size: var(--text-xl);
     margin-bottom: var(--space-md);
+    @media (max-width: 1024px) {
+      margin-bottom: 0;
+      font-size: var(--text-md);
+    }
+  }
+  @media (max-width: 1024px) {
+    width: 80%;
+    line-height: 175%;
+    font-size: var(--text-xl);
+    font-weight: var(--light);
   }
 }
 
@@ -88,6 +113,9 @@
   transform: translate(-50%, -50%);
   svg {
     width: 8vw !important;
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
   path {
     fill: var(--primary-tr);
@@ -100,6 +128,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1024px) {
+    margin-top: var(--vp-lg);
+  }
 }
 
 .slogan {
@@ -108,6 +139,7 @@
   letter-spacing: var(--push-sm);
   font-weight: var(--light);
   color: var(--white);
+  text-align: center;
   em {
     color: var(--accent);
     letter-spacing: var(--push-md);
@@ -117,4 +149,7 @@
 
 .btn {
   margin-top: 4vh;
+  @media (max-width: 1024px) {
+    margin-top: var(--vp-2xl);
+  }
 }

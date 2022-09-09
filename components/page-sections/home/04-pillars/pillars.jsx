@@ -13,10 +13,11 @@ import { YogaIcon } from 'components/elements/svg/yoga'
 // Styling & Animation
 import {
   pillars,
+  sectionAccent,
   fadeTransitionBar,
   shade,
-  top, 
-  bot, 
+  top,
+  bot,
   pillarsImageContainer,
   fg,
   bg,
@@ -29,26 +30,40 @@ import {
   pillar,
   icon,
   btn,
+  dots
 } from './pillars.module.scss'
 import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
+import { WaveCircles } from '@/elements/svg/wave-circles'
 
 const pillarData = [
   {
     id: 'mindful-01',
     path: '/',
-    title: <>Mindful <br /> Living</>,
-    icon: <StonesIcon/>,
+    title: (
+      <>
+        Mindful <br /> Living
+      </>
+    ),
+    icon: <StonesIcon />,
   },
   {
     id: 'embodied-02',
     path: '/',
-    title: <>Embodied <br /> Learning</>,
+    title: (
+      <>
+        Embodied <br /> Learning
+      </>
+    ),
     icon: <FlowerIcon />,
   },
   {
     id: 'presence-03',
     path: '/',
-    title: <>Wholehearted <br /> Presence</>,
+    title: (
+      <>
+        Wholehearted <br /> Presence
+      </>
+    ),
     icon: <YogaIcon />,
   },
 ]
@@ -61,11 +76,18 @@ export const Pillars = () => {
           <h2 className={title}>Three Pillars</h2>
           <h4 className={subtitle}>Of the Embodied Learning Institute</h4>
           <p className={text}>
-            Aliquam tempor risus lectus, eu bibendum eros fermentum quis. Mauris
-            faucibus eros nec tristique volutpat. Quisque hendrerit mauris odio,
-            eu lacinia augue bibendum ut. Nulla vitae massa eget libero maximus
-            faucibus sit amet ac eros. Donec orci neque, malesuada id urna
-            vitae, condimentum eleifend.
+            <span className={sectionAccent}>
+              <WaveCircles />
+            </span>
+            <span>
+              Aliquam tempor risus lectus, eu bibendum eros fermentum quis.
+              Mauris faucibus eros nec tristique volutpat. Quisque hendrerit
+              mauris odio, eu lacinia augue bibendum ut.
+            </span>
+            <span>
+              Nulla vitae massa eget libero maximus faucibus sit amet ac eros.
+              Donec orci neque, malesuada id urna vitae, condimentum eleifend.
+            </span>
           </p>
         </div>
         <div className={pillarsContainer}>
@@ -75,7 +97,7 @@ export const Pillars = () => {
                 <h3 className={title}>{plr.title}</h3>
                 <span className={icon}>{plr.icon}</span>
                 <span className={btn}>
-                  <ArrowBtn lightText arrowColor='var(--accent)'/>
+                  <ArrowBtn lightText arrowColor='var(--accent)' />
                 </span>
               </div>
             )
@@ -84,9 +106,7 @@ export const Pillars = () => {
       </div>
       <div className={pillarsImageContainer}>
         <div className={`${fadeTransitionBar} ${top}`} />
-        <div
-          className={shade}
-        />
+        <div className={shade} />
         <img
           className={fg}
           src={baseUrl('center-tree_jxzinq', 'good')}
@@ -94,6 +114,9 @@ export const Pillars = () => {
         />
         <img className={bg} src={baseUrl('BG_no-tree_fsmhkc', 'good')} alt='' />
         <div className={`${fadeTransitionBar} ${bot}`} />
+      </div>
+      <div className={dots}>
+        {pillarData.map(p => <span key={p.id}>•</span>)}
       </div>
     </section>
   )

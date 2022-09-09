@@ -21,12 +21,18 @@ import {
 } from './contact.module.scss'
 
 export const Contact = () => {
+  const [isMobile, setIsMobile] = useState(false)
   const [toSend, setToSend] = useState({
     from_name: '',
     to_name: 'ELI | The Embodied Learning Institute',
     message: '',
     reply_to: '',
   })
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024)
+  }, [])
+  
 
   // Email form functions
   const handleChange = (e) => {
@@ -102,7 +108,7 @@ export const Contact = () => {
       </div>
       <div className={mapSection}>
         <div className={mapShade} />
-        <img src={'/map-fade-2.png'} alt='' />
+        <img src={isMobile ? '/map.png' : '/map-fade-2.png'} alt='map of location' />
       </div>
     </section>
   )

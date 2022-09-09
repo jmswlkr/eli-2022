@@ -1,11 +1,7 @@
-// External lib
 import React, { useEffect, useRef, useState } from 'react'
-import Marquee from 'react-fast-marquee'
 
-// Internal lib
-import { offerings } from '@/data/offerings-data.js'
+import { offerings } from '../offerings-data'
 
-// Styling
 import {
   offerings as offeringsStyle,
   label,
@@ -33,18 +29,9 @@ import { Label } from 'components/elements/section-label/section-label'
 import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 
 export const Offerings = () => {
-  /*
-    TODO: 
-    # Currently papering over an error where one (possibly two) block(s) get an undefined classname. 
-    # Find the bug causing this. 
-  */
-
   const sliderRef = useRef(null)
   const [focusedOffering, setFocusedOffering] = useState(2)
-  const [
-    distributedOfferingIdx,
-    setDistributedOfferingIdx,
-  ] = useState(2)
+  const [distributedOfferingIdx, setDistributedOfferingIdx] = useState(2)
 
   useEffect(() => {
     let converted = focusedOffering
@@ -56,18 +43,10 @@ export const Offerings = () => {
     setDistributedOfferingIdx(converted)
   }, [focusedOffering])
 
-  const positionsIndex = [
-    zero,
-    one,
-    two,
-    three,
-    four,
-    five,
-  ]
+  const positionsIndex = [zero, one, two, three, four, five]
 
   // Turn array into closed loop
-  const next = (currentIndex, length) =>
-    (currentIndex + 1) % length
+  const next = (currentIndex, length) => (currentIndex + 1) % length
 
   // Navigate closed loop array by variable increments
   const getNextByDegree = (curIdx, degree) => {
@@ -87,9 +66,7 @@ export const Offerings = () => {
 
     if (runTwice) {
       setTimeout(() => {
-        setFocusedOffering((prvState) =>
-          next(prvState, len)
-        )
+        setFocusedOffering((prvState) => next(prvState, len))
       }, 500)
     }
   }
@@ -103,18 +80,13 @@ export const Offerings = () => {
         <h4 className={title}>
           {offerings[distributedOfferingIdx].blurbTitle}
         </h4>
-        <p className={blurb}>
-          {offerings[distributedOfferingIdx].blurb}
-        </p>
+        <p className={blurb}>{offerings[distributedOfferingIdx].blurb}</p>
       </div>
       <div className={sliderContainer}>
         <div className={`${slider}`} ref={sliderRef}>
           {[...offerings, ...offerings].map((offr, idx) => {
             const offsetDegree = idx - 2
-            const clickedPos = getNextByDegree(
-              focusedOffering,
-              offsetDegree
-            )
+            const clickedPos = getNextByDegree(focusedOffering, offsetDegree)
             return (
               <span
                 key={`${offr.name}-${idx}`}
@@ -133,7 +105,7 @@ export const Offerings = () => {
                 <h3 className={blockTitle}>
                   {offr.title}
                   <span className={blockBtn}>
-                    <ArrowBtn/>
+                    <ArrowBtn />
                   </span>
                 </h3>
               </span>

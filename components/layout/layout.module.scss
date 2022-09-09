@@ -41,6 +41,9 @@
     opacity: 0;
     filter: brightness(150%);
   }
+  @media (max-width: 1024px) {
+    overflow-x: hidden;
+  }
 }
 
 .content {

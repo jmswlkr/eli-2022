@@ -1,116 +1,193 @@
-.react-calendar {
-  font-family: var(--font-body) !important;
-  abbr,
-  span {
+#desk-calendar {
+  .react-calendar {
     font-family: var(--font-body) !important;
-  }
-}
-
-.react-calendar {
-  &__navigation {
-    position: relative;
-    margin-bottom: var(--space-2xl);
-    &__label {
-      pointer-events: none;
-      font-size: var(--text-prose-em);
-      color: var(--calendar-accent);
+    abbr,
+    span {
+      font-family: var(--font-body) !important;
     }
-    &__arrow {
-      position: absolute;
-      top: 55%;
-      transform: translateY(-50%);
-      color: transparent;
-      &::after {
-        cursor: pointer;
-        font-family: var(--font-body);
-        font-size: var(--text-2xl);
-        color: var(--primary-tr);
-        transition: var(--transition-3-smooth);
+  }
+
+  .react-calendar {
+    &__navigation {
+      position: relative;
+      margin-bottom: var(--space-2xl);
+      &__label {
+        pointer-events: none;
+        font-size: var(--text-prose-em);
+        color: var(--calendar-accent);
       }
-      &:hover {
+      &__arrow {
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        color: transparent;
         &::after {
+          cursor: pointer;
+          font-family: var(--font-body);
+          font-size: var(--text-2xl);
+          color: var(--primary-tr);
+          transition: var(--transition-3-smooth);
+        }
+        &:hover {
+          &::after {
+            color: var(--calendar-accent);
+          }
+        }
+      }
+      &__next-button {
+        left: 93.5%;
+        &::after {
+          content: "→";
+        }
+      }
+      &__prev-button {
+        left: 72.5%;
+        &::after {
+          content: "←";
+        }
+        &::before {
+          pointer-events: none;
+          top: 55%;
+          left: 145%;
+          letter-spacing: var(--push-ms);
+          transform: translateY(-50%);
+          position: absolute;
+          content: "month";
+          font-family: var(--font-body);
           color: var(--calendar-accent);
         }
       }
-    }
-    &__next-button {
-      left: 93.5%;
-      &::after {
-        content: "→";
+      &__prev2-button,
+      &__next2-button {
+        display: none;
       }
     }
-    &__prev-button {
-      left: 72.5%;
-      &::after {
-        content: "←";
-      }
-      &::before {
-        pointer-events: none;
-        top: 55%;
-        left: 145%;
-        letter-spacing: var(--push-ms);
-        transform: translateY(-50%);
-        position: absolute;
-        content: "month";
-        font-family: var(--font-body);
-        color: var(--calendar-accent);
-      }
+  }
+
+  .react-calendar {
+    &__viewContainer {
     }
-    &__prev2-button,
-    &__next2-button {
-      display: none;
+    &__month-view {
+      &__weekdays {
+      }
+      &__weekdays__weekday {
+        padding: var(--space-lg);
+        text-align: center;
+        font-weight: var(--bold);
+        color: var(--text-color);
+        abbr {
+          text-decoration: none !important;
+        }
+      }
+      &__days {
+      }
+      &__days__day {
+        cursor: pointer;
+        padding: var(--space-2xl) var(--space-lg);
+        color: var(--text-color-med);
+        font-size: var(--text-lg);
+        letter-spacing: var(--push-sm);
+        transition: var(--transition-1-smooth);
+        border-radius: var(--radius-md);
+        &:hover {
+          background-color: var(--primary-tr-2);
+        }
+        &:focus,
+        &:focus-within {
+          font-weight: var(--bold);
+          color: var(--primary);
+          background-color: var(--primary-tr);
+        }
+        &.selected {
+          color: var(--primary);
+          background-color: var(--primary-tr);
+          font-weight: var(--bold);
+        }
+        &.NA {
+          text-decoration: line-through;
+          color: var(--calendar-accent);
+          opacity: 0.6;
+          font-weight: var(--body);
+          &:hover {
+            background-color: transparent;
+            opacity: 0.4;
+          }
+        }
+      }
     }
   }
 }
 
-.react-calendar {
-  &__viewContainer {
-  }
-  &__month-view {
-    &__weekdays {
+#mobile-calendar {
+  .react-calendar {
+    margin: var(--vp-md) 0;
+    padding: var(--vp-md) 0;
+    background-color: var(--primary-tr);
+    & > * {
     }
-    &__weekdays__weekday {
-      padding: var(--space-lg);
-      text-align: center;
-      font-weight: var(--bold);
-      color: var(--text-color);
-      abbr {
-        text-decoration: none !important;
+    &__navigation {
+      opacity: 0.2;
+      &__next-button,
+      &__next2-button,
+      &__prev-button,
+      &__prev2-button {
+        display: none;
       }
     }
-    &__days {
+    &__navigation__label {
+      // ...lay out the months laterally
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
     }
-    &__days__day {
-      cursor: pointer;
-      padding: var(--space-2xl) var(--space-lg);
-      color: var(--text-color-med);
-      font-size: var(--text-lg);
-      letter-spacing: var(--push-sm);
-      transition: var(--transition-1-smooth);
-      border-radius: var(--radius-md);
-      &:hover {
-        background-color: var(--primary-tr-2);
-      }
-      &:focus,
-      &:focus-within {
-        font-weight: var(--bold);
-        color: var(--primary);
-        background-color: var(--primary-tr);
-      }
-      &.selected {
-        color: var(--primary);
-        background-color: var(--primary-tr);
-        font-weight: var(--bold);
-      }
-      &.NA {
-        text-decoration: line-through;
-        color: var(--calendar-accent);
-        opacity: .6;
-        font-weight: var(--body);
-        &:hover {
-          background-color: transparent;
-          opacity: 0.4;
+    &__month-view__weekdays {
+      display: none !important;
+    }
+    &__month-view__days {
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap !important;
+      font-family: var(--font-body);
+      overflow-y: visible !important;
+      overflow: visible;
+      overflow-x: scroll;
+      &__day {
+        position: relative;
+        flex: unset;
+        width: 20px;
+        color: var(--white);
+        overflow: visible;
+        &:focus,
+        &:focus-within {
+          &::after {
+            opacity: 1;
+          }
         }
+        &::after {
+          z-index: -1;
+          opacity: 0;
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 45px;
+          width: 45px;
+          border-radius: var(--radius-rounded);
+          background-color: var(--primary);
+        }
+      }
+    }
+    &__tile,
+    &__tile--active,
+    &__tile--range,
+    &__tile--rangeStart,
+    &__tile--rangeEnd,
+    &__month-view__days__day {
+      overflow: visible !important;
+      abbr {
+        overflow: visible !important;
       }
     }
   }

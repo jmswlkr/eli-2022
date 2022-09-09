@@ -25,12 +25,20 @@
   font-family: var(--font-title);
   font-size: var(--text-header);
   font-weight: var(--light);
+  @media (max-width: 1024px) {
+    line-height: 95%;
+    color: var(--primary);
+  }
 }
 @mixin subheaderText {
 }
 @mixin paragraphText {
   font-size: var(--text-prose-em);
   font-weight: var(--reg);
+  @media (max-width: 1024px) {
+    line-height: 200%;
+    
+  }
 }
 @mixin smallLabelText($color: var(--text-color-med)) {
   font-size: var(--text-md);

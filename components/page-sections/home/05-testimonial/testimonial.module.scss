@@ -5,13 +5,34 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  @media (max-width: 1024px) {
+    justify-content: center;
+    overflow: visible;
+  }
 }
 
 .label {
   @include sectionLabel;
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
+
+.sectionAccent {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  svg {
+    height: 80vh;
+    width: 80vh;
+    opacity: 0.5;
+  }
+  path {
+    stroke-width: 0.5px;
+  }
+}
+
 .blurb {
-  // background-color: lightblue;
   height: 25vh;
   width: 100%;
   margin-top: 12vh;
@@ -22,6 +43,22 @@
     @include paragraphText;
     margin-top: var(--space-2xl);
     width: 60%;
+    span:nth-child(1) {
+      display: none;
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
+      font-family: var(--font-title);
+      span:nth-child(1) {
+        display: block;
+      }
+      span:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    height: 20vh;
   }
 }
 .testimonialSliderBase {
@@ -41,10 +78,14 @@
   height: 60vh;
   margin: 0 !important;
   overflow-x: scroll;
-  overflow-y: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  @media (max-width: 1024px) {
+    align-items: flex-start;
+    height: auto;
+    padding-right: var(--vp-md);
+  }
 }
 
 .testimonialList {
@@ -54,6 +95,9 @@
   justify-content: flex-start;
   padding: 0;
   padding-right: 35vw;
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
 }
 
 .quoteContainer {
@@ -71,6 +115,11 @@
       opacity: 0.65;
     }
   }
+  @media (max-width: 1024px) {
+    width: 80vw;
+    height: auto;
+    margin-top: var(--vp-md);
+  }
 }
 .quoteMark {
   position: absolute;
@@ -78,16 +127,19 @@
   left: 0;
 }
 .quote {
-  font-size: var(--text-prose-em);
-  font-weight: var(--reg);
+  @include paragraphText;
   line-height: 200%;
   margin: 0;
   margin-bottom: var(--space-2xl);
   width: 80%;
   b {
-    // display: block;
-    margin-right: .25rem;
+    margin-right: 0.25rem;
     font-size: calc(1.25 * var(--text-prose));
+  }
+  @media (max-width: 1024px) {
+    width: 90%;
+    text-align: center;
+    margin-bottom: var(--vp-lg);
   }
 }
 .attr {
@@ -97,6 +149,16 @@
   color: var(--grey-50);
   font-weight: var(--light);
   text-transform: uppercase;
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    span {
+      margin-left: var(--space-lg);
+      font-size: var(--text-3xl);
+    }
+  }
 }
 
 .attrImg {
@@ -110,6 +172,27 @@
   border-radius: 5px;
   border-bottom-right-radius: 40px;
   transition: var(--transition-primary);
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.mAttrImg {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 30vw;
+  width: 30vw;
+  border-radius: var(--radius-rounded);
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  @media (max-width: 1024px) {
+    display: flex;
+  }
 }
 
 .fadeTransitionBlock {
@@ -120,5 +203,7 @@
   height: 100%;
   opacity: 0.8;
   background: linear-gradient(to right, transparent 0%, var(--primary-bg) 40%);
-  // background-color: lightblue; 
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }

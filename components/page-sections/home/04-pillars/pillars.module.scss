@@ -24,6 +24,9 @@
 .pillars {
   @include homeSection(125vh);
   margin-bottom: 5vh;
+  @media (max-width: 1024px) {
+    min-height: 175vh;
+  }
 }
 
 .pillarsImageContainer {
@@ -36,14 +39,14 @@
     left: 0;
     height: 100%;
     width: 100%;
-    filter: saturate(20%)
+    filter: saturate(20%);
   }
   .shade {
     @include gradientShade;
   }
   &::before,
   &::after {
-    content: '';
+    content: "";
     z-index: 3;
     position: absolute;
     height: 100%;
@@ -78,6 +81,10 @@
   align-items: center;
   justify-content: space-evenly;
   color: var(--white);
+  @media (max-width: 1024px) {
+    margin-top: var(--vp-lg);
+    width: 100%;
+  }
 }
 
 .blurb {
@@ -91,6 +98,11 @@
     font-family: var(--font-title);
     font-size: var(--text-header);
     font-weight: var(--light);
+    @media (max-width: 1024px) {
+      font-size: var(--text-5xl);
+      width: 120%;
+      text-align: center;
+    }
   }
   .subtitle {
     font-family: var(--font-title);
@@ -98,11 +110,38 @@
     font-weight: var(--light);
     font-weight: var(--light);
     margin: var(--vp-ms) 0;
+    @media (max-width: 1024px) {
+      margin-top: var(--space-md);
+      margin-bottom: var(--space-4xl);
+      text-align: center;
+      width: 120%;
+    }
   }
   .text {
+    position: relative;
     text-align: center;
     font-size: var(--text-prose-em);
     font-weight: var(--reg);
+    @media (max-width: 1024px) {
+      @include paragraphText;
+      line-height: 125%;
+      span:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+  .sectionAccent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    svg {
+      height: 50vw;
+      width: 50vw;
+    }
+    path {
+      stroke: var(--accent-tr);
+    }
   }
 }
 
@@ -111,6 +150,14 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  @media (max-width: 1024px) {
+    overflow: scroll;
+    width: 100vw;
+    justify-content: flex-start;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .pillar {
@@ -148,5 +195,32 @@
     opacity: 0;
     transition: var(--transition-primary);
     transition-delay: 0.2s;
+    @media (max-width: 1024px) {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 1024px) {
+    flex-shrink: 0;
+    width: 100vw;
+    padding: 0 10vw;
+  }
+}
+
+.dots {
+  display: none;
+  @media (max-width: 1024px) {
+    position: absolute;
+    bottom: 20vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 5vw;
+    color: var(--papaya);
+    span {
+      opacity: 0.5;
+    }
+    span:nth-child(3) {
+      opacity: 1;
+    }
   }
 }
