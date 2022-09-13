@@ -67,6 +67,8 @@
   grid-area: text;
   width: min(500px, 29vw);
   .title {
+    @include headerText;
+    font-size: var(--text-header-sm);
     @media (max-width: 1024px) {
       display: none;
     }

@@ -1,13 +1,14 @@
-// External lib
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-// Internal lib
-import {
-  aboutImages,
-  aboutIntroText,
-} from '@/data/about-data'
+import { aboutImages, aboutIntroText } from '@/data/about-data'
+import { baseUrl } from '@/utils/cloudinary'
 
-// Styling
+import { SectionHeader } from '@/elements/section-header'
+
+import { animationProps } from 'animation/animate'
+
 import {
   intro,
   collage,
@@ -21,31 +22,42 @@ import {
   title,
   blurb,
 } from './intro.module.scss'
-import { baseUrl } from '@/utils/cloudinary'
-import { SectionHeader } from '@/elements/section-header'
-
 
 export const Intro = () => {
+  const [isMobile, setIsMobile] = useState(false)
   const { main, sub, tenetList } = aboutIntroText
+  const [sectionRef, sectionInView] = useInView()
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (sectionInView) {
+      controls.start('visible')
+    }
+  }, [sectionInView, controls])
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024)
+  }, [])
+  
 
   return (
-    <section className={intro}>
+    <section className={intro} ref={sectionRef}>
       <div className={collage}>
         {aboutImages.map((abImg, idx) => {
           return (
-            <span key={idx} className={collageImg}>
-              <img
-                src={baseUrl(abImg.urlFrag, 'eco')}
-                alt={abImg.altTag}
-              />
-            </span>
+            <motion.span
+              key={idx}
+              className={collageImg}
+              {...animationProps({ controls, del: (idx + 1) * 0.5, dur: 1.5 })}
+            >
+              <img src={baseUrl(abImg.urlFrag, 'eco')} alt={abImg.altTag} />
+            </motion.span>
           )
         })}
       </div>
       <div className={introTextContent}>
         <div className={mainStyle}>
-          {/* <h2 className={title}>{main.title}</h2> */}
-          <SectionHeader title={main.title} withLabel={false}/>
+          <SectionHeader title={main.title} withLabel={true} />
           <p className={blurb}>{main.blurb}</p>
         </div>
         <div className={subStyle}>

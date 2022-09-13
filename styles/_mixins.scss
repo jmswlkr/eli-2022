@@ -81,12 +81,12 @@
   border: none;
   border-bottom: 1px solid currentColor;
 }
-@mixin fadeTransitionBar($height: 17.5vh, $vOffset: -1vh, $top: false) {
+@mixin fadeTransitionBar($height: 17.5vh, $vOffset: -1vh, $top: false, $color: var(--primary-bg)) {
   position: absolute;
   bottom: $vOffset;
   width: 100%;
   height: $height;
-  background: linear-gradient(to bottom, transparent 0%, var(--primary-bg) 70%);
+  background: linear-gradient(to bottom, transparent 0%, $color 70%);
   &::after {
     content: "";
     position: absolute;

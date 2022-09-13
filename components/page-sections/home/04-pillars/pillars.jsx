@@ -1,16 +1,12 @@
-// External lib
-import React from 'react'
-import Link from 'next/link'
+import React, { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
 
-// Internal lib
 import { baseUrl } from '@/utils/cloudinary'
 
-// Components
-import { FlowerIcon } from 'components/elements/svg/flower'
-import { StonesIcon } from 'components/elements/svg/stones'
-import { YogaIcon } from 'components/elements/svg/yoga'
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
+import { WaveCircles } from '@/elements/svg/wave-circles'
+import { FlowerIcon, StonesIcon, YogaIcon } from '@/svg/pillar-icons'
 
-// Styling & Animation
 import {
   pillars,
   sectionAccent,
@@ -31,10 +27,8 @@ import {
   pillar,
   icon,
   btn,
-  dots
+  dots,
 } from './pillars.module.scss'
-import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
-import { WaveCircles } from '@/elements/svg/wave-circles'
 
 const pillarData = [
   {
@@ -75,10 +69,12 @@ export const Pillars = () => {
       <div className={pillarsTextContent}>
         <div className={blurb}>
           <h2 className={title}>Three Pillars</h2>
-          <h4 className={subtitle}>Of the <br /> Embodied Learning Institute</h4>
-            <span className={sectionAccent}>
-              <WaveCircles />
-            </span>
+          <h4 className={subtitle}>
+            Of the <br /> Embodied Learning Institute
+          </h4>
+          <span className={sectionAccent}>
+            <WaveCircles />
+          </span>
           <p className={text}>
             <span>
               Paragraph text: liquam tempor risus lectus, eu bibendum eros

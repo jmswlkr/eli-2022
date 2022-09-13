@@ -23,6 +23,7 @@
 
 .contact {
   @include homeSection;
+  height: 120vh;
   margin-bottom: 0;
   justify-content: flex-start;
   &::before {
@@ -225,7 +226,7 @@
   top: 0;
   right: var(--content-shift-neg);
   width: 50vw;
-  height: 99%;
+  height: 100%;
   overflow-y: hidden;
   img {
     margin-top: 5px;

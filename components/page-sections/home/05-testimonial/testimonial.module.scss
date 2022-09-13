@@ -36,6 +36,7 @@
 
 .blurb {
   margin-top: var(--content-top-margin);
+  margin-bottom: var(--intracontent-margin);
   width: calc(1.5 * var(--column-width));
   .title {
     @include headerText;
@@ -60,6 +61,7 @@
   @media (max-width: 1024px) {
     height: 20vh;
     width: 100%;
+    margin-bottom: 0;
   }
 }
 .testimonialSliderBase {
@@ -201,8 +203,13 @@
   color: var(--primary);
   letter-spacing: var(--push-lg);
   position: absolute;
-  bottom: var(--intracontent-margin-lg);
-  right: var(--intracontent-margin-lg);
+  bottom: calc(-2 * var(--intracontent-margin-lg));
+  left: var(--content-shift);
+  @media (max-width: 1024px) {
+    bottom: var(--intracontent-margin-lg);
+    right: var(--intracontent-margin-lg);
+
+  }
 }
 
 .fadeTransitionBlock {

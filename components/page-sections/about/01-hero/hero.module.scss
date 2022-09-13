@@ -27,7 +27,7 @@
 }
 
 .fadeTransitionBar {
-  @include fadeTransitionBar(10vh, -1vh);
+  // @include fadeTransitionBar(10vh, -1vh);
 }
 
 .shade {
@@ -66,13 +66,16 @@
 }
 
 .blurb {
-  width: 65%;
+  width: 45%;
   margin: 2.5vh;
+  margin-bottom: var(--intracontent-margin-lg);
   font-size: var(--text-prose-em);
   letter-spacing: var(--push-ms);
   font-weight: var(--reg);
   text-align: center;
+  color: var(--white);
   @media (max-width: 1024px) {
     width: 100%;
+    margin: 2.5vh;
   }
 }

@@ -9,7 +9,6 @@ import { Pillars } from '@/page-sections/home/04-pillars/pillars'
 import { Testimonial } from '@/page-sections/home/05-testimonial/testimonial'
 import { Contact } from '@/page-sections/home/07-contact/contact'
 import { Scheduling } from '@/page-sections/home/06-scheduling/desktop/scheduling'
-import { ScheduleMobile } from '@/page-sections/home/06-scheduling/mobile/scheduling.mobile'
 import { OfferingsMobile } from '@/page-sections/home/03-offerings/mobile/offerings.mobile'
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
       {isMobile ? <OfferingsMobile /> : <Offerings />}
       <Pillars />
       <Testimonial />
-      {/* {isMobile ? <ScheduleMobile /> : <Scheduling />} */}
       <Scheduling />
       <Contact />
     </>

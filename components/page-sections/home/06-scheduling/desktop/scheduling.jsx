@@ -11,6 +11,7 @@ import {
 
 import { Label } from '@/elements/section-label/section-label'
 import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn.jsx'
+import { WaveCircles } from '@/elements/svg/wave-circles.jsx'
 
 import { phases } from 'animation/transition.js'
 import { blurFadeIn } from 'animation/fade.js'
@@ -39,7 +40,7 @@ import {
   pseudoSelect,
   btnSubmit,
 } from './scheduling.module.scss'
-import { WaveCircles } from '@/elements/svg/wave-circles.jsx'
+import { SectionHeader } from '@/elements/section-header/index.jsx'
 
 export const Scheduling = () => {
   const [aptDetail, setAptDetail] = useState(APT_DETAIL)
@@ -119,14 +120,15 @@ export const Scheduling = () => {
     <section className={schedule}>
       <div className={scheduleContainer}>
         <div className={blurb}>
-          <div className={sectionAccent}>
+          {/* <div className={sectionAccent}>
             <WaveCircles />
-          </div>
-          <h2 className={title}>Schedule an Appointment</h2>
+          </div> */}
+          <SectionHeader text='Schedule an Appointment'/>
+          {/* <h2 className={title}>Schedule an Appointment</h2> */}
           <p className={text}>Schedule your initial consult with ELI. </p>
-          <div className={label}>
+          {/* <div className={label}>
             <Label>CALENDAR</Label>
-          </div>
+          </div> */}
         </div>
         <div className={schedulingAppContainer}>
           <div className={calendarBlock} id='desk-calendar'>

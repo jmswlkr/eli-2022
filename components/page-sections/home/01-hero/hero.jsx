@@ -1,17 +1,14 @@
-// External lib
 import React, { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 
-// Internal lib
 import { baseUrl } from '@/utils/cloudinary.js'
 
-// Components
 import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 import { Logo } from 'components/elements/svg/logo'
 
-// Styling & Animation
-import { blurFadeIn, fadeSlideUpShort } from 'animation/fade'
 import { phases, smooth } from 'animation/transition'
+import { animationProps } from 'animation/animate'
+import { blurFadeIn, fadeSlideUpShort } from 'animation/fade'
 
 import {
   hero,
@@ -30,6 +27,27 @@ import {
 } from './hero.module.scss'
 
 export const Hero = () => {
+  const [fontsLoaded, setFontsLoaded] = useState(false)
+  const controls = useAnimation()
+
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontsLoaded(true)
+      controls.start('visible')
+    })
+
+  }, [controls])
+  
+  useEffect(() => {
+    setTimeout(() => {
+      if (!fontsLoaded) {
+        setFontsLoaded(true)
+      }
+    }, 3000)
+  }, [fontsLoaded])
+  
+
   return (
     <section className={hero}>
       <div className={heroImages}>
@@ -60,31 +78,39 @@ export const Hero = () => {
             transition={smooth(3, 2)}
           /> */}
         </AnimatePresence>
-        <div className={fadeTransitionBar} />
+        <motion.div
+          className={fadeTransitionBar}
+          {...fadeSlideUpShort}
+          {...phases}
+          transition={smooth(1, 0)}
+        />
       </div>
-      <div className={heroTextContent}>
-        <div className={companyTitle}>
-          <h1 className={title}>
-            <span>The</span>
-            <span>Embodied Learning Institute</span>
-          </h1>
-          <span className={logoWrap}>
-            <Logo />
-          </span>
-        </div>
-        <div className={tagline}>
-          <h2 className={slogan}>
-            Learn to <em>Thrive.</em>
-          </h2>
-          <div className={btn}>
-            <ArrowBtn
-              text='Get Started'
-              arrowColor='var(--accent)'
-              lightText={true}
-            />
+        <motion.div
+          className={heroTextContent}
+          {...animationProps({ controls, animation: blurFadeIn, del: 2 })}
+        >
+          <div className={companyTitle}>
+            <h1 className={title}>
+              <span>The</span>
+              <span>Embodied Learning Institute</span>
+            </h1>
+            <span className={logoWrap}>
+              <Logo />
+            </span>
           </div>
-        </div>
-      </div>
+          <div className={tagline}>
+            <h2 className={slogan}>
+              Learn to <em>Thrive.</em>
+            </h2>
+            <div className={btn}>
+              <ArrowBtn
+                text='Get Started'
+                arrowColor='var(--accent)'
+                lightText={true}
+              />
+            </div>
+          </div>
+        </motion.div>
     </section>
   )
 }

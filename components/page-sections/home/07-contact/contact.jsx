@@ -22,6 +22,7 @@ import {
   mapShade,
 } from './contact.module.scss'
 import { WaveCircles } from '@/elements/svg/wave-circles'
+import { SectionHeader } from '@/elements/section-header'
 
 export const Contact = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -69,10 +70,11 @@ export const Contact = () => {
     <section className={contact}>
       <div className={formSection}>
         <div className={blurb}>
-          <div className={sectionAccent}>
+          <SectionHeader title='Contact us.' withLabel={false}/>
+          {/* <div className={sectionAccent}>
             <WaveCircles />
           </div>
-          <h2 className={title}>Contact us.</h2>
+          <h2 className={title}>Contact us.</h2> */}
           <p className={text}>
             If you have additional questions use the form below to contact us
             directly.{' '}

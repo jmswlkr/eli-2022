@@ -1,25 +1,16 @@
-// External lib
 import React, { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 
-// Internal lib
 import {
   pageLinks,
   contactInfo,
   socialIcons,
 } from '@/ancillary/small-data'
 
-// Components
-import {
-  Facebook,
-  Instagram,
-  LinkedIn,
-} from 'components/elements/svg/social-icons.jsx'
-
-// Styling & Animation
 import { phases, smooth } from 'animation/transition'
 import { slideInTop } from 'animation/slide'
+import { blurFadeIn } from 'animation/fade'
 
 import {
   modal,
@@ -32,7 +23,6 @@ import {
   social,
   copyright,
 } from './menu-modal.module.scss'
-import { blurFadeIn } from 'animation/fade'
 
 export const MenuModal = ({ modalOpen, closeModal }) => {
   const { push } = useRouter()

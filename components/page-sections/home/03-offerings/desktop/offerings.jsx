@@ -1,6 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion'
 
+import { baseUrl } from '@/utils/cloudinary'
 import { offerings } from '../offerings-data'
+
+import { Label } from 'components/elements/section-label/section-label'
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
+
+import { animationProps } from 'animation/animate'
+import { blurFadeIn } from 'animation/fade'
 
 import {
   offerings as offeringsStyle,
@@ -13,8 +22,8 @@ import {
   blockPos,
   block,
   blockTitle,
-  source,
-  dest,
+  // source,
+  // dest,
   hide,
   blockBtn,
   zero,
@@ -24,14 +33,19 @@ import {
   four,
   five,
 } from './offerings.module.scss'
-import { baseUrl } from '@/utils/cloudinary'
-import { Label } from 'components/elements/section-label/section-label'
-import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 
 export const Offerings = () => {
   const sliderRef = useRef(null)
   const [focusedOffering, setFocusedOffering] = useState(2)
   const [distributedOfferingIdx, setDistributedOfferingIdx] = useState(2)
+  const [sectionRef, sectionInView] = useInView()
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (sectionInView) {
+      controls.start('visible')
+    }
+  }, [sectionInView, controls])
 
   useEffect(() => {
     let converted = focusedOffering
@@ -72,7 +86,7 @@ export const Offerings = () => {
   }
 
   return (
-    <section className={offeringsStyle}>
+    <section className={offeringsStyle} ref={sectionRef}>
       <div className={label}>
         <Label>Offerings Offerings Offerings </Label>
       </div>
@@ -88,7 +102,8 @@ export const Offerings = () => {
             const offsetDegree = idx - 2
             const clickedPos = getNextByDegree(focusedOffering, offsetDegree)
             return (
-              <span
+              <motion.span
+                {...animationProps({ controls, animation: blurFadeIn,  del: .25 })}
                 key={`${offr.name}-${idx}`}
                 className={`${block} ${blockPos} ${
                   positionsIndex[
@@ -108,7 +123,7 @@ export const Offerings = () => {
                     <ArrowBtn />
                   </span>
                 </h3>
-              </span>
+              </motion.span>
             )
           })}
         </div>

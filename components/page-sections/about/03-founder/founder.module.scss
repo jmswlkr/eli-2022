@@ -10,7 +10,7 @@
   height: 100vh;
   width: 100%;
   margin-top: 45vh;
-  margin-bottom: 12.5vh;
+  margin-bottom: 22.5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,8 +40,9 @@
   justify-content: flex-end;
   h2 {
     font-family: var(--font-title);
-    font-size: var(--text-hero-sm);
+    font-size: var(--text-hero);
     font-weight: var(--reg);
+    color: var(--primary);
   }
   h4 {
     font-family: var(--font-body);
@@ -51,6 +52,13 @@
   }
   @media (max-width: 1024px) {
     display: none;
+  }
+}
+
+.mSectionTitle {
+  display: none;
+  @media (max-width: 1024px) {
+    display: initial;
   }
 }
 

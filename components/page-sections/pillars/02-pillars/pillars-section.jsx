@@ -1,8 +1,14 @@
-import { WaveCircles } from '@/elements/svg/wave-circles'
-import { baseUrl } from '@/utils/cloudinary'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion'
 
+import { baseUrl } from '@/utils/cloudinary'
 import { pillarData } from './pillar-data'
+
+import { WaveCircles } from '@/elements/svg/wave-circles'
+
+import { animationProps } from '/animation/animate'
+import { slideUpFadeIn } from '/animation/slide'
 
 import {
   pillars,
@@ -20,7 +26,37 @@ import {
   inner,
 } from './pillars-sections.module.scss'
 
+
+
 export const PillarsSections = () => {
+    const [section1Ref, section1InView] = useInView()
+    const [section2Ref, section2InView] = useInView()
+    const [section3Ref, section3InView] = useInView()
+    const controls = useAnimation()
+    const controls2 = useAnimation()
+    const controls3 = useAnimation()
+
+    useEffect(() => {
+      if (section1InView) {
+        console.log('observer works')
+      }
+    }, [section1InView])
+
+    // useEffect(() => {
+    //   if (section1InView) {
+    //     console.log('section in view!')
+    //     controls.start('visible')
+    //   }
+    //   if (section2InView) {
+    //     console.log('section in view!')
+    //     controls2.start('visible')
+    //   }
+    //   if (section3InView) {
+    //     console.log('section in view!')
+    //     controls3.start('visible')
+    //   }
+    // }, [section1InView, section2InView, section3InView, controls])
+
   return (
     <section className={pillars}>
       {pillarData.map(({ id, title, imgSlug, text, icon, color }, idx) => {
@@ -28,7 +64,7 @@ export const PillarsSections = () => {
 
 
         return (
-          <div key={id} className={flexWrap}>
+          <motion.div key={id} className={flexWrap} >
             <div className={`${container} ${reversed && reverse}`}>
               <h2 className={mTitle} style={{ color: color.p }}>
                 <span>{title}</span>
@@ -50,7 +86,7 @@ export const PillarsSections = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         )
       })}
     </section>

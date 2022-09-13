@@ -1,29 +1,33 @@
-// External lib
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-// Components
 import { Logo } from 'components/elements/svg/logo'
 
-// Styling
-import { topNav, logo, menuBtn, closeBtn } from './top-nav.module.scss'
-
+import { topNav, logo, menuBtn, closeBtn, dark } from './top-nav.module.scss'
 
 export const TopNav = ({ toggleModal, modalOpen, introInView }) => {
-  
+  const { pathname } = useRouter()
+  const forceDark = pathname === '/pillars'
+
   const mixBlend = {
-    mixBlendMode: (introInView || modalOpen) ? 'normal' : 'difference'
+    mixBlendMode: (introInView || modalOpen || forceDark) ? 'normal' : 'difference',
   }
 
   return (
     <nav className={topNav} style={mixBlend}>
       <Link href='/'>
         <a className={logo}>
-          <Logo />
+          {/* <Logo color={forceDark ? 'var(--text-color)' : null}/> */}
+          <Logo color={'var(--text-color)'}/>
         </a>
       </Link>
       <button
-        className={`${menuBtn} ${modalOpen && closeBtn}`}
+        className={`
+          ${menuBtn} 
+          ${modalOpen && closeBtn} 
+          ${forceDark && dark}
+        `}
         onClick={toggleModal}
       >
         <span />

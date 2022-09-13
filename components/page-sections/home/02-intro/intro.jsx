@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 import { baseUrl } from '@/utils/cloudinary'
+
+import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
+import { SectionHeader } from '@/elements/section-header'
+
+import { slideFadeInTop, slideInTopShort } from 'animation/slide'
+import { smooth } from 'animation/transition'
+import { animationProps } from 'animation/animate'
 
 import {
   intro,
@@ -19,27 +28,37 @@ import {
   btn,
   collageMainImg,
 } from './intro.module.scss'
-import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
-import { SectionHeader } from '@/elements/section-header'
 
 export const Intro = () => {
+  const [sectionRef, sectionInView] = useInView()
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (sectionInView) {
+      controls.start('visible')
+    }
+  }, [sectionInView, controls])
+
   return (
-    <section className={intro}>
+    <section className={intro} ref={sectionRef}>
       <div className={collage}>
-        <div className={collagePrimary}>
+        <motion.div
+          className={collagePrimary}
+          {...animationProps({ controls, del: 0.25, dur: 1.5 })}
+        >
           <img
             src={baseUrl('bench-girl_lfbyyl', 'eco')}
             alt='girl watching sunset on bench'
           />
           <div className={collageTextContent}>
-            <SectionHeader title='A new beginning.'/>
+            <SectionHeader title='A new beginning.' />
             <p className={blurb}>
               The Embodied Learning Institute (ELI) is an organization founded
               by Dr. Ali  (MSW, Ph.D.). Dr. Ali’s passion is helping individuals
               and organizations thrive via the 3 pillars of Embodied Enoughness:{' '}
               <br />{' '}
               <span className={blurbEmph}>
-                mindful living, <br/> embodied learning, <br/>
+                mindful living, <br /> embodied learning, <br />
                 and wholehearted presence.
               </span>
             </p>
@@ -47,19 +66,27 @@ export const Intro = () => {
               <ArrowBtn />
             </div>
           </div>
-        </div>
-        <div className={`${collageImg} ${sec}`}>
+        </motion.div>
+
+        <motion.div
+          className={`${collageImg} ${sec}`}
+          {...animationProps({ controls })}
+        >
           <img
             src={baseUrl('cloudy-hills_uadnic', 'eco')}
             alt='girl watching sunset on bench'
           />
-        </div>
-        <div className={`${collageImg} ${ter}`}>
+        </motion.div>
+
+        <motion.div
+          className={`${collageImg} ${ter}`}
+          {...animationProps({ controls, del: 1 })}
+        >
           <img
             src={baseUrl('lily_qzb4mr', 'eco')}
             alt='girl watching sunset on bench'
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,12 +1,9 @@
-// External lib
-import { baseUrl } from '@/utils/cloudinary'
 import React, { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-// Internal lib
 import { testimonialData } from '@/ancillary/small-data.js'
 
-// Components
 import { QuoteMark } from 'components/elements/svg/quote-mark'
 import { Label } from 'components/elements/section-label/section-label'
 
@@ -27,14 +24,23 @@ import {
   attr,
   attrImg,
   fadeTransitionBlock,
-  scrollTip
+  scrollTip,
 } from './testimonial.module.scss'
 import { WaveCircles } from '@/elements/svg/wave-circles'
+import { animationProps } from 'animation/animate'
 
 export const Testimonial = () => {
+  const [sectionRef, sectionInView] = useInView()
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (sectionInView) {
+      controls.start('visible')
+    }
+  }, [sectionInView, controls])
 
   return (
-    <section className={testimonial}>
+    <section className={testimonial} ref={sectionRef}>
       <div className={sectionAccent}>
         <WaveCircles />
       </div>
@@ -57,7 +63,15 @@ export const Testimonial = () => {
           <ul className={testimonialList}>
             {testimonialData.map((tst, idx) => {
               return (
-                <li key={idx} className={quoteContainer}>
+                <motion.li
+                  key={idx}
+                  className={quoteContainer}
+                  {...animationProps({
+                    controls,
+                    dur: 2,
+                    del: (idx + 1) * .333
+                  })}
+                >
                   <span className={quoteMark}>
                     <QuoteMark />
                   </span>
@@ -68,7 +82,7 @@ export const Testimonial = () => {
                     </div>
                     <span> {tst.initials}</span>
                   </span>
-                </li>
+                </motion.li>
               )
             })}
           </ul>
