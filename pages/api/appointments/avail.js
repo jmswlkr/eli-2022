@@ -26,7 +26,6 @@ export default async function handler(req, res) {
       // '2022-07-03T01:00:51.607Z',
       ''
     )
-    console.log(response.result)
 
     res.send(response.result)
     resolve()

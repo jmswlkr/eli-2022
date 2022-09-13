@@ -26,6 +26,7 @@ import {
   title,
   subtitle,
   text,
+  mText,
   pillarsContainer,
   pillar,
   icon,
@@ -74,19 +75,15 @@ export const Pillars = () => {
       <div className={pillarsTextContent}>
         <div className={blurb}>
           <h2 className={title}>Three Pillars</h2>
-          <h4 className={subtitle}>Of the Embodied Learning Institute</h4>
-          <p className={text}>
+          <h4 className={subtitle}>Of the <br /> Embodied Learning Institute</h4>
             <span className={sectionAccent}>
               <WaveCircles />
             </span>
+          <p className={text}>
             <span>
-              Aliquam tempor risus lectus, eu bibendum eros fermentum quis.
-              Mauris faucibus eros nec tristique volutpat. Quisque hendrerit
-              mauris odio, eu lacinia augue bibendum ut.
-            </span>
-            <span>
-              Nulla vitae massa eget libero maximus faucibus sit amet ac eros.
-              Donec orci neque, malesuada id urna vitae, condimentum eleifend.
+              Paragraph text: liquam tempor risus lectus, eu bibendum eros
+              fermentum quis. Mauris faucibus eros nec tristique volutpat.
+              pretium diam ut lacinia interdum.
             </span>
           </p>
         </div>
@@ -95,6 +92,10 @@ export const Pillars = () => {
             return (
               <div key={plr.id} className={pillar}>
                 <h3 className={title}>{plr.title}</h3>
+                <p className={mText}>
+                  Aliquam tempor risus lectus, eu bibendum eros fermentum quis.
+                  Mauris faucibus eros nec tristique volutpat.{' '}
+                </p>
                 <span className={icon}>{plr.icon}</span>
                 <span className={btn}>
                   <ArrowBtn lightText arrowColor='var(--accent)' />
@@ -116,7 +117,9 @@ export const Pillars = () => {
         <div className={`${fadeTransitionBar} ${bot}`} />
       </div>
       <div className={dots}>
-        {pillarData.map(p => <span key={p.id}>•</span>)}
+        {pillarData.map((p) => (
+          <span key={p.id}>•</span>
+        ))}
       </div>
     </section>
   )

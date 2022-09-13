@@ -20,6 +20,7 @@
   left: 0;
   height: 102vh;
   width: 100vw;
+  padding: 0;
   background-color: var(--primary);
   @media (max-width: 1024px) {
     padding: 0;
@@ -153,7 +154,7 @@
       transform: scaleX(0);
     }
     @media (max-width: 1024px) {
-      font-size: var(--text-3xl-plus);
+      font-size: var(--text-2xl) !important;
     }
   }
   @media (max-width: 1024px) {

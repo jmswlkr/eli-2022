@@ -1,20 +1,21 @@
+@import "/styles/mixins";
+
 .arrowBtn {
+  @include btnText;
   cursor: pointer;
   background: none !important;
   border: none !important;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-evenly;
-  font-size: var(--text-lg);
-  font-family: var(--font-body);
-  font-weight: var(--reg);
-  letter-spacing: var(--push-ms);
   color: var(--text-color);
   span:nth-child(1) {
+    white-space: nowrap;
     margin-right: var(--space-lg);
     margin-bottom: 1vh;
     &.light {
-      color: var(--white);
+      color: var(--grey-10);
     }
   }
   svg {
@@ -28,6 +29,11 @@
     }
     circle {
       stroke: hsla(var(--papaya-hs), 85%, 100%);
+    }
+  }
+  @media (max-width: 1024px) {
+    span {
+      font-weight: var(--light) !important;
     }
   }
 }

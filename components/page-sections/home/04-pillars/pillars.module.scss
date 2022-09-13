@@ -22,10 +22,10 @@
 }
 
 .pillars {
-  @include homeSection(125vh);
-  margin-bottom: 5vh;
+  @include homeSection($full: true);
+  align-items: flex-start;
+  height: calc(100vh + var(--os-vp-vh));
   @media (max-width: 1024px) {
-    min-height: 175vh;
   }
 }
 
@@ -68,91 +68,99 @@
 
 .fadeTransitionBar {
   &.top {
-    @include fadeTransitionBar($top: true);
+    @include fadeTransitionBar($height: 9vh, $top: true);
   }
   &.bot {
-    @include fadeTransitionBar();
+    @include fadeTransitionBar($height: 9vh);
   }
 }
 
 .pillarsTextContent {
+  margin-top: calc(var(--browser-bar) + var(--space-4xl));
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   color: var(--white);
   @media (max-width: 1024px) {
-    margin-top: var(--vp-lg);
+    margin-top: var(--vp-xl);
     width: 100%;
   }
 }
 
 .blurb {
-  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   margin-bottom: var(--vp-md);
+  margin-bottom: var(--space-4xl);
   .title {
-    font-family: var(--font-title);
-    font-size: var(--text-header);
-    font-weight: var(--light);
+    @include headerText(var(--white));
+    margin-bottom: var(--space-lg);
     @media (max-width: 1024px) {
-      font-size: var(--text-5xl);
       width: 120%;
       text-align: center;
     }
   }
   .subtitle {
-    font-family: var(--font-title);
-    font-size: var(--text-subheader);
-    font-weight: var(--light);
-    font-weight: var(--light);
-    margin: var(--vp-ms) 0;
+    @include subheaderText;
+    margin-bottom: var(--space-lg);
+    br {
+      display: none;
+    }
     @media (max-width: 1024px) {
       margin-top: var(--space-md);
-      margin-bottom: var(--space-4xl);
+      margin-bottom: var(--space-3xl);
       text-align: center;
       width: 120%;
-    }
-  }
-  .text {
-    position: relative;
-    text-align: center;
-    font-size: var(--text-prose-em);
-    font-weight: var(--reg);
-    @media (max-width: 1024px) {
-      @include paragraphText;
-      line-height: 125%;
-      span:nth-child(2) {
-        display: none;
+      br {
+        display: initial;
       }
     }
   }
+  .text {
+    @include paragraphText;
+    width: calc(1.5 * var(--column-width));
+    position: relative;
+    text-align: center;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
   .sectionAccent {
+    display: none;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     svg {
-      height: 50vw;
-      width: 50vw;
+      height: 60vw;
+      width: 60vw;
     }
     path {
       stroke: var(--accent-tr);
     }
+    @media (max-width: 1024px) {
+      display: initial;
+    }
+  }
+  @media (max-width: 1024px) {
+    margin: 0;
   }
 }
 
 .pillarsContainer {
-  width: 80%;
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, var(--column-width));
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   @media (max-width: 1024px) {
-    overflow: scroll;
+    grid-template-columns: repeat(3, 100vw);
     width: 100vw;
+    overflow: scroll;
+    flex-shrink: 0;
     justify-content: flex-start;
     &::-webkit-scrollbar {
       display: none;
@@ -189,6 +197,14 @@
     height: 110px;
     width: 110px;
     margin: var(--space-xl) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 1024px) {
+      height: 88px;
+      width: 88px;
+      margin: var(--intracontent-margin-xl) 0;
+    }
   }
   .btn {
     margin-top: var(--space-3xl);
@@ -199,10 +215,18 @@
       opacity: 1;
     }
   }
+  .mText {
+    display: none;
+    @media (max-width: 1024px) {
+      @include paragraphText;
+      display: initial;
+      width: 62.5vw;
+      text-align: center;
+    }
+  }
   @media (max-width: 1024px) {
     flex-shrink: 0;
     width: 100vw;
-    padding: 0 10vw;
   }
 }
 
@@ -210,7 +234,7 @@
   display: none;
   @media (max-width: 1024px) {
     position: absolute;
-    bottom: 20vh;
+    bottom: 10vh;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;

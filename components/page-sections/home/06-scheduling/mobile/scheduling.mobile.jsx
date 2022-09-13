@@ -48,14 +48,8 @@ export const ScheduleMobile = () => {
     )
   }, [])
 
-  useEffect(() => {
-    console.log('days changed: ', days)
-  }, [days])
 
-  useEffect(() => {
-    console.log('aptDetail changed: ', aptDetail)
-  }, [aptDetail])
-
+  
   return (
     <section className={schedule}>
       <div className={blurb}>

@@ -1,3 +1,5 @@
+@import '/styles/mixins';
+
 //// < z-Index > ////
 .founder {
   isolation: isolate;
@@ -13,12 +15,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1024px) {
+    margin-top: var(--intersection-margin);
+    height: auto;
+  }
 }
 
 .sectionHero {
   position: relative;
   width: 100%;
   height: 65vh;
+  @media (max-width: 1024px) {
+    height: auto;
+  }
 }
 
 .sectionTitle {
@@ -40,6 +49,9 @@
     font-weight: var(--light);
     font-style: italic;
   }
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .founderImg {
@@ -54,6 +66,14 @@
     object-fit: cover;
     object-position: center;
   }
+  @media (max-width: 1024px) {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: min(320px, 40vh);
+  }
 }
 
 .quote {
@@ -61,7 +81,6 @@
   width: 30%;
   top: 17.5%;
   right: 10%;
-
   p {
     font-size: var(--text-prose-em);
     font-weight: var(--light);
@@ -77,6 +96,9 @@
     top: -30%;
     right: 0;
   }
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .founderTextContent {
@@ -86,6 +108,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   font-weight: var(--reg);
+  @media (max-width: 1024px) {
+    height: auto;
+    flex-direction: column-reverse;
+  }
 }
 .qualifications {
   width: 30%;
@@ -111,14 +137,28 @@
     font-weight: var(--reg);
     font-size: var(--text-prose-em);
   }
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin-left: 0;
+    .list {
+      @include paragraphText;
+      margin: 0;
+      list-style-type: circle;
+    }
+  }
 }
 .blurb {
   margin: 0 5%;
   margin-top: calc(var(--vp-ml) + 30px);
   width: 60%;
   font-size: var(--text-prose-em);
-  ;
   b {
     font-style: italic;
+  }
+  @media (max-width: 1024px) {
+    @include paragraphText;
+    width: 100%;
+    margin: 0;
+    margin-top: var(--intracontent-margin-xl);
   }
 }

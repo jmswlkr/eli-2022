@@ -19,6 +19,7 @@ import {
   schedule,
   scheduleContainer,
   label,
+  sectionAccent,
   blurb,
   title,
   text,
@@ -38,14 +39,21 @@ import {
   pseudoSelect,
   btnSubmit,
 } from './scheduling.module.scss'
+import { WaveCircles } from '@/elements/svg/wave-circles.jsx'
 
 export const Scheduling = () => {
   const [aptDetail, setAptDetail] = useState(APT_DETAIL)
   const [clientDetail, setClientDetail] = useState(CLIENT_DETAIL)
   const [sessionDetail, setSessionDetail] = useState(SESSION_DETAIL)
+  const [isMobile, setIsMobile] = useState(false)
 
   const curSess = sessionDetail.current
   const [optionsVisible, setOptionsVisible] = useState(false)
+
+  // viewport breakpoint for js
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024)
+  }, [])
 
   const handleSetMonthYear = ({ activeStartDate }) => {
     // only run on month/year change
@@ -111,13 +119,11 @@ export const Scheduling = () => {
     <section className={schedule}>
       <div className={scheduleContainer}>
         <div className={blurb}>
+          <div className={sectionAccent}>
+            <WaveCircles />
+          </div>
           <h2 className={title}>Schedule an Appointment</h2>
-          <p className={text}>
-            {' '}
-            Mauris dictum egestas felis at semper. Aenean at tortor eros. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.{' '}
-          </p>
+          <p className={text}>Schedule your initial consult with ELI. </p>
           <div className={label}>
             <Label>CALENDAR</Label>
           </div>
@@ -132,7 +138,7 @@ export const Scheduling = () => {
           <div className={hourBlock}>
             <div className={scrollWrap}>
               <ul className={timesList}>
-                <span>▾</span>
+                <span>{isMobile ? '▸' : '▾'}</span>
                 {Array.from({ length: 9 }).map((_, time) => {
                   const isPM = time > 3
                   const hour = isPM ? time - 3 : time + 9
@@ -146,7 +152,7 @@ export const Scheduling = () => {
                     </button>
                   )
                 })}
-                <span>▴</span>
+                <span>{isMobile ? '◂' : '▴'}</span>
               </ul>
             </div>
           </div>
@@ -189,7 +195,8 @@ export const Scheduling = () => {
               <label htmlFor='select'>SESSION TYPE</label>
               <select id='select' onMouseDown={(e) => e.preventDefault()}>
                 <option>
-                  {curSess.id} &nbsp; &nbsp; | &nbsp; &nbsp; {curSess.duration}
+                  {curSess?.id} &nbsp; &nbsp; | &nbsp; &nbsp;{' '}
+                  {curSess?.duration}
                 </option>
               </select>
               <AnimatePresence exitBeforeEnter>
@@ -198,11 +205,15 @@ export const Scheduling = () => {
                     className={pseudoSelect}
                     id='pseudo-select'
                     {...phases}
-                    variants={blurFadeIn}
+                    {...blurFadeIn}
                   >
                     {sessionDetail.types.map(({ id, duration }, idx) => {
                       return (
-                        <li key={id} id={idx} onClick={handleSelectSession}>
+                        <li
+                          key={id}
+                          id={idx}
+                          onClick={handleSelectSession}
+                        >
                           <span>{id}</span>
                           <span>&nbsp;</span>
                           <span>{duration}</span>
@@ -214,7 +225,7 @@ export const Scheduling = () => {
               </AnimatePresence>
             </div>
             <div className={btnSubmit}>
-              <ArrowBtn text='Request Appt.' />
+              <ArrowBtn text='Request' arrowColor='var(--calendar-accent)' />
             </div>
           </div>
         </div>

@@ -1,13 +1,7 @@
-// External
 import React from 'react'
 
-// Internal lib
 import { baseUrl } from '@/utils/cloudinary'
 
-// Components
-import { Label } from 'components/elements/section-label/section-label'
-
-// Styling & Animation
 import {
   intro,
   sectionLabel,
@@ -26,14 +20,11 @@ import {
   collageMainImg,
 } from './intro.module.scss'
 import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
-import { WaveCircles } from '@/elements/svg/wave-circles'
+import { SectionHeader } from '@/elements/section-header'
 
 export const Intro = () => {
   return (
     <section className={intro}>
-      <div className={sectionLabel}>
-        <Label>Embodied Learning Institute</Label>
-      </div>
       <div className={collage}>
         <div className={collagePrimary}>
           <img
@@ -41,17 +32,15 @@ export const Intro = () => {
             alt='girl watching sunset on bench'
           />
           <div className={collageTextContent}>
-            <div className={sectionAccent}>
-              <WaveCircles />
-            </div>
-            <h2 className={title}>Introductory title text that is longish.</h2>
+            <SectionHeader title='A new beginning.'/>
             <p className={blurb}>
               The Embodied Learning Institute (ELI) is an organization founded
               by Dr. Ali  (MSW, Ph.D.). Dr. Ali’s passion is helping individuals
               and organizations thrive via the 3 pillars of Embodied Enoughness:{' '}
               <br />{' '}
               <span className={blurbEmph}>
-                mindful living, embodied learning, and wholehearted presence.
+                mindful living, <br/> embodied learning, <br/>
+                and wholehearted presence.
               </span>
             </p>
             <div className={btn}>

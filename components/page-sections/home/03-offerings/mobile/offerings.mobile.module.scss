@@ -13,7 +13,7 @@
 .offerings {
   @include homeSection;
   height: auto;
-  min-height: 160vh;
+  min-height: 125vh;
   margin-top: 20vh;
   flex-direction: column;
   justify-content: flex-start;
@@ -34,8 +34,7 @@
 
 .header {
   @include headerText;
-  margin-left: 5vw;
-  padding-bottom: 5vh !important;
+  margin-bottom: var(--intracontent-margin-lg);
   font-size: var(--text-header);
   font-weight: var(--reg);
   justify-self: flex-start;
@@ -43,8 +42,8 @@
 
 .slider {
   position: absolute;
-  top: 18vh;
-  left: -10vw;
+  top: 17.5vh;
+  left: var(--content-shift-neg);
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -54,8 +53,8 @@
 }
 .slide {
   flex-shrink: 0;
-  width: 80vw;
-  margin: 0 10vw;
+  width: var(--content-width);
+  margin: 0 var(--content-margin);
 }
 .imgWrap {
   position: relative;
@@ -66,6 +65,7 @@
   img {
     height: 50vh;
     width: 70vw;
+    width: 100%;
   }
 }
 .title {
@@ -78,11 +78,10 @@
 }
 .text {
   @include paragraphText;
-  padding: 0 5%;
-  width: 90%;
+  span:nth-child(2) {
+    display: none;
+  }
 }
 .btnCta {
-  margin-top: var(--vp-ms);
-  padding: 0 5%;
-  width: 90%;
+  margin-top: var(--intracontent-margin-xl);
 }

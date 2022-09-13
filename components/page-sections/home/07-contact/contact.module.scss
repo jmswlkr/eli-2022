@@ -8,9 +8,12 @@
   isolation: isolate;
 
   .formSection {
-    z-index: 3;
+    z-index: 4;
   }
   &::after {
+    z-index: 3;
+  }
+  &::before {
     z-index: 2;
   }
   .mapSection {
@@ -19,23 +22,42 @@
 }
 
 .contact {
-  @include homeSection(120vh);
+  @include homeSection;
+  margin-bottom: 0;
   justify-content: flex-start;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: var(--content-shift-neg);
+    height: 100%;
+    width: 100vw;
+    background: linear-gradient(90deg, #F1F4F5 40%, transparent 100%);
+    @media (max-width: 1024px) {
+      background: none;
+    }
+  }
   &::after {
     content: '';
     position: absolute;
     top: 4px;
-    left: -10vw;
     left: var(--content-shift-neg);
-    height: 100%;
     width: 100vw;
-    opacity: 0.4;
+    opacity: 0;
     background-image: url('/noise-bg.png');
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    @media (max-width: 1024px) {
+      background: none;
+    }
   }
   @media (max-width: 1024px) {
+    margin-top: 20vh;
+    margin-bottom: 3px;
+    height: 150vh;
     flex-direction: column;
     width: 100%;
-    height: auto;
     &::after {
       display: none;
     }
@@ -48,8 +70,7 @@
 
 .formSection {
   height: 100%;
-  width: 60%;
-  padding-top: var(--vp-lg);
+  margin-top: var(--content-top-margin);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -60,11 +81,11 @@
     width: 100%;
     padding: 0;
     margin-bottom: var(--vp-xl);
+    overflow: visible;
   }
 }
 .title {
-  font-family: var(--font-title);
-  font-size: var(--text-header);
+  @include headerText;
   font-weight: var(--light);
   @media (max-width: 1024px) {
     font-size: var(--text-header-sm);
@@ -76,11 +97,35 @@
   width: 60%;
   font-size: var(--text-prose-em);
   margin-bottom: var(--vp-ms);
-  @media (max-width: 1024px) {
+  .text {
     display: none;
+  }
+  @media (max-width: 1024px) {
+    overflow: visible;
+    position: relative;
+    width: 100%;
+    .title {
+      margin-bottom: var(--intracontent-margin-sm);
+    }
+    .text {
+      display: block;
+    }
+    .sectionAccent {
+      position: absolute;
+      top: calc(-1 * var(--space-2xl));
+      left: calc(-1 * var(--space-2xl));
+      display: flex;
+      height: 17vh;
+      width: 17vh;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }
 .contactForm {
+  width: calc(2 * var(--column-width));
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -88,19 +133,18 @@
   input {
     padding: var(--space-2xl);
     margin-bottom: var(--vp-md);
-    width: 30vw;
+    width: 80%;
     border: none;
     background-color: transparent;
-    border-bottom: 0.5px solid var(--grey-30);
+    border-bottom: 0.5px solid var(--primary);
     font-size: var(--text-prose);
     transition: var(--transition-primary);
     &::placeholder {
       font-family: var(--font-body);
       font-size: var(--text-prose);
       letter-spacing: var(--push-sm);
-      color: var(--grey-30);
+      color: var(--primary);
       @media (max-width: 1024px) {
-        color: var(--primary);
       }
     }
     &:active,
@@ -108,7 +152,7 @@
     &:focus-within {
       border-color: var(--primary-deep  );
       &::placeholder {
-        color: var(--primary-deep );
+        color: var(--primary-deep);
       }
     }
     @media (max-width: 1024px) {
@@ -117,11 +161,11 @@
   }
   textarea {
     height: 35vh;
-    width: 35vw;
+    width: 80%;
     margin: var(--vp-md) 0;
     padding: var(--space-2xl);
     background-color: transparent;
-    border: 0.5px solid var(--grey-30);
+    border: 0.5px solid var(--primary);
     border-radius: var(--radius-lg);
     font-family: var(--font-body);
     font-size: var(--text-prose);
@@ -133,9 +177,8 @@
       font-family: var(--font-body);
       font-size: var(--text-prose);
       letter-spacing: var(--push-sm);
-      color: var(--grey-30);
+      color: var(--primary);
       @media (max-width: 1024px) {
-        color: var(--primary);
       }
     }
     &:active,
@@ -152,10 +195,12 @@
     }
   }
   @media (max-width: 1024px) {
-    width: 100%;
+    @include fullBleedContent;
+    margin-top: 25vh;
     textarea,
     input {
-      width: 100%;
+      width: var(--mobile-content-width);
+      margin-left: 5vw;
     }
   }
 }
@@ -170,22 +215,33 @@
     color: var(--text-color);
     font-weight: var(--reg);
   }
+  @media (max-width: 1024px) {
+    margin-left: 5vw;
+  }
 }
 
 .mapSection {
   position: absolute;
   top: 0;
-  left: var(--content-shift-neg);
-  width: 105vw;
+  right: var(--content-shift-neg);
+  width: 50vw;
+  height: 99%;
   overflow-y: hidden;
   img {
-    margin-top: -4px;
+    margin-top: 5px;
+    object-fit: cover;
   }
   @media (max-width: 1024px) {
-    position: static;
+    @include fullBleedContent;
+    top: unset;
+    transform: translate(-50%, 0);
+    bottom: 0;
     overflow: unset;
     height: 40vh;
   }
 }
 .mapShade {
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }

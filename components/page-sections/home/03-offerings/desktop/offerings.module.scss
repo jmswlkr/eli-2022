@@ -1,4 +1,4 @@
-@import '/styles/_mixins.scss';
+@import "/styles/_mixins.scss";
 
 //// < zIndex > ////
 .offerings {
@@ -12,34 +12,28 @@
 }
 
 .offerings {
-  @include homeSection(135vh);
-  margin-bottom: 15vh;
+  @include homeSection;
   overflow: visible;
 }
 
 .label {
-  @include sectionLabel(30vh);
+  @include sectionLabel;
 }
 
 .offeringTextContent {
   pointer-events: none;
   position: absolute;
-  top: 50vh;
-  left: 10vw;
-  width: 40%;
+  top: 50%;
+  left: var(--space-11xl);
+  transform: translateY(-75%);
+  width: calc(2 * var(--column-width));
   .title {
-    transform: translateX(-12vw);
-    white-space: nowrap;
-    font-family: var(--font-title);
-    font-size: var(--text-header);
-    font-weight: var(--light);
-    margin-bottom: var(--space-2xl);
-    background-blend-mode: color;
-    mix-blend-mode: color;
+    @include headerText;
   }
 
   .blurb {
-    font-size: var(--text-prose);
+    @include paragraphText;
+    width: calc(1.5 * var(--column-width));
   }
 }
 
@@ -47,8 +41,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: -10vw;
-  height: 75vh;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -56,7 +49,7 @@
   position: absolute;
   left: 0vw;
   width: 100%;
-  height: 75vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -106,11 +99,11 @@
     right: 0;
     &:hover {
       path {
-      fill: var(--primary);
-    }
-    circle {
-      stroke: var(--primary);
-    }
+        fill: var(--primary);
+      }
+      circle {
+        stroke: var(--primary);
+      }
     }
     span {
       color: var(--text-color);
@@ -159,10 +152,12 @@
     opacity: 1;
     width: 25vw;
     aspect-ratio: 3 / 4;
+     width: var(--column-width);
+    aspect-ratio: 1 / 1.35;
     transform: translate(63vw, 10vh);
     transition: all 0.8s;
     // pointer-events: none;
-    
+
     .blockTitle {
       z-index: 2;
       position: absolute;

@@ -1,0 +1,19 @@
+@import "/styles/mixins";
+
+.container {
+  position: relative;
+  width: 100%;
+}
+.sectionAccent {
+  @include sectionLabel($top: -8vh);
+
+
+  @media (max-width: 1024px) {
+    @include waveCircles;
+  }
+}
+.title {
+  @include headerText;
+  margin: 0 !important;
+  margin-bottom: var(--space-lg);
+}

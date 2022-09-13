@@ -19,7 +19,7 @@
 }
 
 .hero {
-  @include homeSection(80vh);
+  @include homeSection($full: true);
 }
 
 .heroBg {
@@ -37,7 +37,7 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background-color: var(--black-fade-40);
+  background-color: var(--black-fade-50);
 }
 
 .heroTextContent {
@@ -52,10 +52,17 @@
 }
 
 .title {
-  font-family: var(--font-title);
-  font-size: var(--text-header);
-  font-weight: var(--light);
-  letter-spacing: var(--push-sm);
+  @include headerText;
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span:first-child {
+    font-size: var(--text-header-xl);
+    color: var(--accent);
+  }
 }
 
 .blurb {
@@ -65,4 +72,7 @@
   letter-spacing: var(--push-ms);
   font-weight: var(--reg);
   text-align: center;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 }

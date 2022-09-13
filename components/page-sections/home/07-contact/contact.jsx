@@ -9,8 +9,10 @@ import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 import {
   contact,
   formSection,
-  title,
   blurb,
+  sectionAccent,
+  title,
+  text,
   contactForm,
   name,
   email,
@@ -19,6 +21,7 @@ import {
   mapSection,
   mapShade,
 } from './contact.module.scss'
+import { WaveCircles } from '@/elements/svg/wave-circles'
 
 export const Contact = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -32,7 +35,6 @@ export const Contact = () => {
   useEffect(() => {
     setIsMobile(window.innerWidth < 1024)
   }, [])
-  
 
   // Email form functions
   const handleChange = (e) => {
@@ -45,7 +47,7 @@ export const Contact = () => {
   }
 
   useEffect(() => {
-    // 
+    //
   }, [toSend])
 
   const handleSubmit = (e) => {
@@ -58,26 +60,24 @@ export const Contact = () => {
       `${process.env.NEXT_PUBLIC_EMAILJS_USER_ID}`
     )
       .then((response) => {
-        console.log(
-          'SUCCESS!',
-          response.status,
-          response.text
-        )
+        console.log('SUCCESS!', response.status, response.text)
       })
-      .catch((err) => {
-        
-      })
+      .catch((err) => {})
   }
 
   return (
     <section className={contact}>
       <div className={formSection}>
-        <h2 className={title}>Contact</h2>
-        <p className={blurb}>
-          Mauris dictum egestas felis at semper. Aenean at tortor eros. Class
-          aptent taciti sociosqu ad litora torquent per conubia nostra, per
-          inceptos himenaeos.{' '}
-        </p>
+        <div className={blurb}>
+          <div className={sectionAccent}>
+            <WaveCircles />
+          </div>
+          <h2 className={title}>Contact us.</h2>
+          <p className={text}>
+            If you have additional questions use the form below to contact us
+            directly.{' '}
+          </p>
+        </div>
         <form className={contactForm}>
           <input
             className={name}
@@ -108,7 +108,7 @@ export const Contact = () => {
       </div>
       <div className={mapSection}>
         <div className={mapShade} />
-        <img src={isMobile ? '/map.png' : '/map-fade-2.png'} alt='map of location' />
+        <img src={isMobile ? '/map.png' : '/map.png'} alt='map of location' />
       </div>
     </section>
   )

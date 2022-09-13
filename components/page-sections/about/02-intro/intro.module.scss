@@ -1,19 +1,19 @@
-@import '/styles/mixins';
+@import "/styles/mixins";
 
 //// < zIndex > ////
 .intro {
   isolation: isolate;
 
   .introTextContent {
-    z-index: 2;  
+    z-index: 2;
   }
   .collage {
-    z-index: 1;  
+    z-index: 1;
   }
 }
 
 .intro {
-  @include homeSection(100vh);
+  @include homeSection(140vh);
   margin: 12.5vh 0;
 }
 
@@ -23,12 +23,15 @@
   width: 100%;
   top: 12.5vh;
   left: 0;
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .collageImg {
   position: absolute;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0%;
     left: 0%;
@@ -75,6 +78,12 @@
   div {
     margin-bottom: var(--vp-md);
   }
+  @media (max-width: 1024px) {
+    padding: 0;
+    div {
+      margin: 0;
+    }
+  }
 }
 .title {
   font-size: var(--text-subheader);
@@ -83,8 +92,12 @@
   color: var(--primary-deep);
   color: var(--text-color);
   margin-bottom: var(--space-lg);
+  @media (max-width: 1024px) {
+    margin-bottom: 0;
+  }
 }
-.blurb, .tenet   {
+.blurb,
+.tenet {
   font-size: var(--text-prose);
   font-family: var(--font-body);
   font-weight: var(--reg);
@@ -100,13 +113,38 @@
   .blurb {
     width: 35%;
   }
+  @media (max-width: 1024px) {
+    margin-bottom: var(--intracontent-margin-xl) !important;
+    .blurb {
+      @include paragraphText;
+      width: 100%;
+    }
+  }
 }
 .sub {
   .title {
   }
+  @media (max-width: 1024px) {
+    margin-bottom: var(--intracontent-margin-xl) !important;
+    .title {
+      @include subheaderText;
+      font-size: var(--text-header-sm);
+    }
+    .blurb {
+      @include paragraphText;
+      width: 100%;
+    }
+  }
 }
 .tenetList {
   .title {
+  }
+  @media (max-width: 1024px) {
+    .title {
+      @include subheaderText;
+      font-size: var(--text-header-sm);
+      margin-bottom: var(--intracontent-margin-sm);
+    }
   }
 }
 .tenet {
@@ -114,5 +152,9 @@
   list-style: circle;
   margin-bottom: var(--space-md);
   width: 80%;
+  @media (max-width: 1024px) {
+    @include paragraphText;
+    width: 100%;
+    margin-left: 0;
+  }
 }
-

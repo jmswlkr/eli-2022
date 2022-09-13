@@ -26,39 +26,15 @@ import {
   quote,
   attr,
   attrImg,
-  mAttrImg,
   fadeTransitionBlock,
+  scrollTip
 } from './testimonial.module.scss'
 import { WaveCircles } from '@/elements/svg/wave-circles'
 
 export const Testimonial = () => {
-  const avatarRef = useRef(null)
-  const [avatarVisible, setAvatarVisible] = useState(false)
-  const [avatarSrc, setAvatarSrc] = useState(0)
-
-  useEffect(() => {
-    const onMouse = (e) => {
-      const { pageX, pageY } = e
-      const mouseX = pageX - avatarRef?.current?.clientWidth
-      const mouseY =
-        pageY - avatarRef?.current?.clientHeight
-
-      if (avatarRef.current) {
-        avatarRef.current.style.transform =
-          `translate(${mouseX}px, ${mouseY}px)` || null
-      }
-    }
-
-    document.addEventListener('mousemove', onMouse)
-    return () => {
-      document.removeEventListener('mousemove', onMouse)
-    }
-  }, [avatarRef])
-
-  // useEffect(() => {console.log('avatarVisible changed: ', avatarVisible)}, [avatarVisible])
 
   return (
-    <div className={testimonial}>
+    <section className={testimonial}>
       <div className={sectionAccent}>
         <WaveCircles />
       </div>
@@ -81,44 +57,25 @@ export const Testimonial = () => {
           <ul className={testimonialList}>
             {testimonialData.map((tst, idx) => {
               return (
-                <li
-                  key={idx}
-                  className={quoteContainer}
-                  onMouseEnter={() => {
-                    setAvatarVisible(true)
-                    setAvatarSrc(idx)
-                  }}
-                  onMouseLeave={() => setAvatarVisible(false)}
-                >
+                <li key={idx} className={quoteContainer}>
                   <span className={quoteMark}>
                     <QuoteMark />
                   </span>
                   <blockquote className={quote}>{tst.text}</blockquote>
                   <span className={attr}>
-                    <div className={mAttrImg}>
+                    <div className={attrImg}>
                       <img src={tst.avatarUrl} alt='testimonial contributor' />
                     </div>
-                    <span> - {tst.initials}</span>
+                    <span> {tst.initials}</span>
                   </span>
                 </li>
               )
             })}
           </ul>
-          <span
-            className={attrImg}
-            ref={avatarRef}
-            style={{
-              opacity: `${avatarVisible ? 0.5 : 0}`,
-            }}
-          >
-            <img
-              src={testimonialData[avatarSrc].avatarUrl}
-              alt={testimonialData[avatarSrc].initials}
-            />
-          </span>
         </div>
+        <span className={scrollTip}>Scroll for more →</span>
         <div className={fadeTransitionBlock} />
       </div>
-    </div>
+    </section>
   )
 }

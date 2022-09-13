@@ -1,0 +1,188 @@
+@import "/styles/mixins";
+
+.hero {
+  @include homeSection;
+  &::after {
+    z-index: 1;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.3;
+    background-color: var(--primary-bg);
+    background-image: url("/noise-bg.png");
+  }
+  @media (max-width: 1024px) {
+    padding-top: 25vh;
+    height: 80vh;
+  }
+}
+
+.content {
+  @include flexCenter;
+  z-index: 2;
+  height: auto;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.heroImg {
+  isolation: isolate;
+  position: relative;
+  height: min(640px, 65vh);
+  width: min(640px, 65vh);
+  img {
+    filter: saturate(20%);
+  }
+  background-color: rgba(173, 216, 230, 0.215);
+  &::before,
+  &::after {
+    content: "";
+    z-index: 3;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--white-fade-35);
+  }
+  &::before {
+    background-color: var(--black-fade-50);
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: min(400px, 40vh);
+  }
+  .shade {
+    @include gradientShade;
+    z-index: 5;
+  }
+}
+.heroText {
+  height: min(640px, 65vh);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+  }
+}
+.quote {
+  position: relative;
+  margin-top: 25%;
+  margin-left: var(--intracontent-margin-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  .symbol {
+    position: absolute;
+    top: calc(-1 * var(--space-2xl));
+    right: calc(1.5 * var(--space-2xl));
+    svg {
+      height: min(10vh, 105px);
+      transform: rotateY(180deg);
+    }
+  }
+  .text {
+    margin-bottom: var(--intracontent-margin);
+    font-size: var(--text-prose-em);
+    font-weight: var(--light);
+    line-height: 185%;
+  }
+  .attr {
+    font-size: var(--text-prose-em);
+    letter-spacing: var(--push-md);
+    font-weight: var(--semibold);
+    font-style: italic;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  .title {
+    span {
+      @include heroText;
+      color: var(--white);
+      mix-blend-mode: difference;
+      background-blend-mode: difference;
+    }
+    transform: translateX(-20%);
+    font-weight: var(--reg);
+    mix-blend-mode: difference;
+    background-blend-mode: difference;
+    white-space: nowrap;
+  }
+  .subtitle {
+    margin-left: var(--intracontent-margin-sm);
+    font-size: var(--text-header-sm);
+    font-weight: var(--light);
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: var(--intracontent-margin);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .title {
+      margin-top: -50%;
+      margin-bottom: var(--intracontent-margin-xl);
+      transform: unset;
+      white-space: unset;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      span:first-child {
+        font-size: var(--text-prose-lg);
+        text-transform: uppercase;
+      }
+      span:last-child {
+        white-space: nowrap;
+      }
+    }
+    .subtitle {
+      margin: 0;
+      font-family: var(--font-title);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      span:first-child {
+        font-size: var(--text-prose-em);
+        font-weight: var(--body);
+        text-transform: uppercase;
+      }
+      span:last-child {
+        font-size: var(--text-subheader);
+      }
+    }
+  }
+}
+
+.blurb {
+  display: none;
+  @media (max-width: 1024px) {
+    @include paragraphText;
+    font-weight: var(--reg) !important;
+    text-align: center;
+    line-height: 185% !important;
+    display: flex;
+  }
+}

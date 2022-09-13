@@ -20,7 +20,7 @@ import {
   fg,
   shade,
   heroTextContent,
-  logoTitle,
+  companyTitle,
   title,
   logoWrap,
   tagline,
@@ -63,7 +63,7 @@ export const Hero = () => {
         <div className={fadeTransitionBar} />
       </div>
       <div className={heroTextContent}>
-        <div className={logoTitle}>
+        <div className={companyTitle}>
           <h1 className={title}>
             <span>The</span>
             <span>Embodied Learning Institute</span>

@@ -1,7 +1,6 @@
 //// < zIndex > ////
 
 .layout {
-
   nav {
     z-index: 5;
   }
@@ -14,15 +13,11 @@
   footer {
     z-index: 2;
   }
-
 }
-
-
 
 .layout {
   position: relative;
   width: 100vw;
-  height: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -47,14 +42,14 @@
 }
 
 .content {
+  // TEST START:
+  // border: 1px solid green;
+  // TEST END:
+
   height: auto;
-  width: 80vw;
   width: var(--content-width);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
-
-
-

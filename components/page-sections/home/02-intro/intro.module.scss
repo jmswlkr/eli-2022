@@ -11,34 +11,30 @@
 }
 
 .intro {
+  @include homeSection;
   position: relative;
-  height: 135vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   isolation: isolate;
   @media (max-width: 1024px) {
-    height: 100vh;
+    height: 75vh;
   }
 }
 
 .sectionLabel {
-  @include sectionLabel(20vh);
+  @include sectionLabel;
   @media (max-width: 1024px) {
     display: none;
   }
 }
 
-// TODO: Should this be removed??
-// .quote {
-//   position: relative;
-// }
-
 .collage {
   position: relative;
-  height: 85vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   // border: 1px solid var(--text-color);
   img {
     height: 100%;
@@ -52,15 +48,15 @@
 
   .collagePrimary {
     position: absolute;
-    height: 32vw;
-    width: 32vw;
-    top: 25vh;
+    height: 400px;
+    width: 400px;
+    top: 32vh;
     left: 0;
     background-color: var(--primary-tr);
     @media (max-width: 1024px) {
       top: 0;
       left: 0;
-      width: 80vw;
+      width: 100%;
       background-color: transparent;
     }
   }
@@ -68,7 +64,7 @@
   .collageTextContent {
     position: absolute;
     top: 50%;
-    right: -120%;
+    left: calc(var(--column-width) + var(--space-2xl));
     transform: translateY(-50%);
     height: auto;
     width: 35vw;
@@ -76,6 +72,17 @@
       color: var(--primary-deep);
       font-weight: var(--body);
       letter-spacing: var(--push-sm);
+      font-size: calc(1.1 * var(--text-prose-em));
+      br {
+        display: none;
+      }
+      @media (max-width: 1024px) {
+        display: block;
+        margin-top: var(--intracontent-margin);
+        br {
+          display: initial;
+        }
+      }
     }
     @media (max-width: 1024px) {
       width: 100%;
@@ -90,8 +97,8 @@
     display: none;
     @media (max-width: 1024px) {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: calc(-1 * var(--space-2xl));
+      left: calc(-1 * var(--space-2xl));
       display: flex;
       height: 17vh;
       width: 17vh;
@@ -104,10 +111,9 @@
 
   .title {
     @include headerText;
-    font-size: var(--text-header-sm);
     white-space: nowrap;
-    transform: translateX(-50%);
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-lg);
+    transform: translateX(calc(-1 * var(--space-11xl)));
     @media (max-width: 1024px) {
       transform: unset;
       white-space: initial;
@@ -117,7 +123,7 @@
   .blurb {
     @include paragraphText;
     @media (max-width: 1024px) {
-      width: 95%;
+      width: 100%;
     }
   }
 
@@ -130,6 +136,9 @@
     span {
       letter-spacing: 0 !important;
     }
+    @media (max-width: 1024px) {
+      margin-top: var(--intracontent-margin-xl);
+    }
   }
   .collageImg {
     position: absolute;
@@ -140,15 +149,15 @@
   }
 
   .sec {
-    height: 16vw;
-    width: 16vw;
+    height: 27vh;
+    width: 27vh;
     top: 0;
     right: 7vw;
   }
   .ter {
-    height: 14vw;
-    width: 14vw;
-    bottom: -25vh;
+    height: 22vh;
+    width: 22vh;
+    bottom: 0;
     right: 0;
   }
 

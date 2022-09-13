@@ -86,61 +86,61 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
+        <b>Life changing.</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
     ),
     avatarUrl: '/red-sweater.png',
-    initials: 'G.D.',
+    initials: 'Gabrielle D.',
   },
   {
     path: '/',
     text: (
       <>
-        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
+        <b>Incredible.</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
     ),
     avatarUrl: '/turtleneck.png',
-    initials: 'L.C.',
+    initials: 'Leslie C.',
   },
   {
     path: '/',
     text: (
       <>
-        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
+        <b>Fulfilling.</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
     ),
     avatarUrl: '/glasses.png',
-    initials: 'M.L.',
+    initials: 'Mandy L.',
   },
   {
     path: '/',
     text: (
       <>
-        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
+        <b>Opening.</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
     ),
     avatarUrl: '/red-sweater.png',
-    initials: 'V.M.',
+    initials: 'Victor M.',
   },
   {
     path: '/',
     text: (
       <>
-        <b>Aliquam</b> tempor risus lectus, eu bibendum eros
+        <b>Brilliant.</b> tempor risus lectus, eu bibendum eros
         fermentum quis. Mauris faucibus eros nec tristique
         volutpat. Quisque hendrerit mauris odio.
       </>
     ),
     avatarUrl: '/sport-girl.png',
-    initials: 'A.W.',
+    initials: 'Andrew W.',
   },
 ]
 

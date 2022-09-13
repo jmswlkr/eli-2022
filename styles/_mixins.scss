@@ -1,7 +1,7 @@
 // TODO: Review SCSS modules and refactor duplicate code into mixins.
 
 // Containers & Sections
-@mixin homeSection($height: 110vh) {
+@mixin homeSection($height: 100vh, $full: false) {
   position: relative;
   height: $height;
   width: 100%;
@@ -9,8 +9,15 @@
   align-items: center;
   justify-content: center;
   isolation: isolate;
+  margin-bottom: var(--intersection-margin);
+  @media (max-width: 1024px) {
+    margin-top: var(--browser-bar);
+    margin-bottom: var(--task-bar);
+    @if $full {
+      margin: 0 !important;
+    }
+  }
 }
-
 @mixin fullBleedContent {
   position: absolute;
   top: 50%;
@@ -21,37 +28,52 @@
 }
 
 // Typography
-@mixin headerText {
+@mixin heroText {
+  font-family: var(--font-title);
+  font-size: var(--text-hero);
+}
+@mixin largeHeaderText {
+  font-family: var(--font-title);
+  font-size: var(--text-header-xl);
+}
+@mixin headerText($color: var(--primary)) {
   font-family: var(--font-title);
   font-size: var(--text-header);
-  font-weight: var(--light);
-  @media (max-width: 1024px) {
-    line-height: 95%;
-    color: var(--primary);
-  }
+  color: $color;
+  font-weight: var(--reg);
 }
 @mixin subheaderText {
+  font-family: var(--font-title);
+  font-size: var(--text-subheader);
+  font-weight: var(--light);
 }
 @mixin paragraphText {
-  font-size: var(--text-prose-em);
+  font-size: var(--text-prose);
   font-weight: var(--reg);
+  letter-spacing: var(--push-ms);
   @media (max-width: 1024px) {
-    line-height: 200%;
-    
+    font-size: var(--text-prose-em);
+    font-weight: var(--body);
+    line-height: var(--text-xl);
+    line-height: 150%;
   }
 }
+@mixin btnText {
+  font-size: var(--text-prose-em);
+  letter-spacing: var(--push-ms);
+}
 @mixin smallLabelText($color: var(--text-color-med)) {
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
   font-weight: var(--reg);
   text-transform: uppercase;
   letter-spacing: var(--push-md);
-  color: $color
+  color: $color;
 }
 
 // Elements
 @mixin inputStyle {
   padding: var(--space-lg) var(--space-sm);
-  font-size: var(--text-md);
+  font-size: var(--text-prose);
   font-weight: var(--reg);
   letter-spacing: var(--push-ms);
   background-color: transparent;
@@ -81,7 +103,6 @@
     top: $vOffset;
   }
 }
-
 @mixin gradientShade {
   position: absolute;
   top: 0;
@@ -91,11 +112,25 @@
   background: linear-gradient(to right, hsla(var(--papaya-hsl), 50%), hsla(var(--river-hsl), 65%));
 }
 
-@mixin sectionLabel($top: 5vh) {
+@mixin sectionLabel($top: 10vh) {
   position: absolute;
   top: $top;
-  left: var(--content-shift-neg);
-  width: 105vw;
+  left: -50vw;
+  width: 200vw;
+  font-size: 152px;
+}
+
+@mixin waveCircles {
+  position: absolute;
+  top: calc(-0.25 * var(--space-2xl));
+  left: calc(-1 * var(--space-2xl));
+  display: flex;
+  height: min(128px, 17vh);
+  width: min(128px, 17vh);
+  svg {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 // Pseudoelements

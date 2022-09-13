@@ -8,17 +8,10 @@ import { labelStyle } from './section-label.module.scss';
 
 
 
-export const Label = ({ children }) => {
+export const Label = ({ children, text = 'Embodied Learning Institute' }) => {
   return (
-    <Marquee
-      className={labelStyle}
-      speed={20}
-      gradient={false}
-    >
-      {/* {children} */}
-      {Array.from({ length: 4 }).fill(
-        ` ${children} `
-      )}
+    <Marquee className={labelStyle} speed={20} gradient={false}>
+      {Array.from({ length: 10 }).fill(` ${children ?? text} `)}
     </Marquee>
   )
 }

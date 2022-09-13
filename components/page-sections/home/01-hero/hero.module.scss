@@ -21,9 +21,9 @@
 }
 
 .hero {
-  @include homeSection;
+  @include homeSection($full: true);
   position: relative;
-  height: 110vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -61,22 +61,23 @@
   }
 }
 
-.logoTitle {
+.companyTitle {
   position: relative;
   isolation: isolate;
   @media (max-width: 1024px) {
-    width: 100%;
+    width: 120%;
     margin-top: -5vh;
     transform: scale(.9);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: var(--light);
   }
 }
 
 .title {
   font-family: var(--font-title);
-  font-size: var(--text-3xl);
+  font-size: var(--text-prose-em);
   letter-spacing: var(--push-md);
   text-transform: uppercase;
   font-weight: var(--light);
@@ -90,7 +91,7 @@
     text-align: center;
   }
   span:nth-child(1) {
-    font-size: var(--text-xl);
+    font-size: var(--text-md  );
     margin-bottom: var(--space-md);
     @media (max-width: 1024px) {
       margin-bottom: 0;
@@ -100,7 +101,7 @@
   @media (max-width: 1024px) {
     width: 80%;
     line-height: 175%;
-    font-size: var(--text-xl);
+    font-size: var(--text-prose);
     font-weight: var(--light);
   }
 }
@@ -110,7 +111,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(.8);
   svg {
     width: 8vw !important;
     @media (max-width: 1024px) {
@@ -135,7 +136,7 @@
 
 .slogan {
   font-family: var(--font-title);
-  font-size: var(--text-hero-sm);
+  font-size: var(--text-hero);
   letter-spacing: var(--push-sm);
   font-weight: var(--light);
   color: var(--white);
@@ -153,3 +154,5 @@
     margin-top: var(--vp-2xl);
   }
 }
+
+

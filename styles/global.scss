@@ -1,17 +1,5 @@
 :root {
-  // TODO //
-  // TODO //
-  // TODO //
-  // TODO //
-  // > REORGANIZE ALL PROPERITS INTO VARIANTS/TOKENS
-  // TODO //
-  // TODO //
-  // TODO //
-  // TODO //
-  /* tokens */
   /* font-family */
-  // --font-title: 'M Plus Code Latin B', sans-serif;
-  // --font-body: 'IBM Plex Sans', sans-serif;
   --font-title: "Italiana", serif;
   --font-body: "Lato", sans-serif;
 
@@ -24,6 +12,7 @@
   --black-fade-20: hsla(0, 0%, 0%, 0.2);
   --black-fade-40: hsla(0, 0%, 0%, 0.4);
   --black-fade-50: hsla(0, 0%, 0%, 0.5);
+  --black-fade-60: hsla(0, 0%, 0%, 0.6);
   --black-fade-80: hsla(0, 0%, 0%, 0.8);
   --grey-90: hsl(255, 11%, 15%);
   --grey-90: rgb(54, 54, 54);
@@ -46,11 +35,12 @@
   --tangerine: #f27347;
   --baby-cherry: #b71f2f;
   --lotus-blossom: #facebf;
-
+  
   --river-hs: 205, 48%;
   --lotus-hs: 15, 86%;
   --papaya-hs: 6, 57%;
-
+  
+  --cherry-hsl: 354, 71%, 42%;
   --papaya-hsl: 6, 57%, 77%;
   --french-hsl: 205, 36%, 41%;
   --river-hsl: 205, 48%, 32%;
@@ -82,13 +72,22 @@
   --space-xs: 2px;
   --space-sm: 4px;
   --space-ms: 6px;
+  --space: 8px;
   --space-md: 10px;
   --space-lg: 16px;
-  --space-xl: 20px;
-  --space-2xl: 24px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
   --space-3xl: 48px;
   --space-4xl: 64px;
-  --space-5xl: 70px;
+  --space-5xl: 72px;
+  --space-5xl: 80px;
+  --space-6xl: 88px;
+  --space-7xl: 96px;
+  --space-8xl: 104px;
+  --space-9xl: 112px;
+  --space-10xl: 120px;
+  --space-11xl: 128px;
+  --space-12xl: 136px;
 
   /* viewport-spacing */
   --vp-xxs: 1vh;
@@ -124,25 +123,21 @@
   --bold: 700;
 
   /* font-sizes */
-  --text-xs: 12px;
-  --text-sm: 14px;
+  --text-xs: 8px;
+  --text-sm: 12px;
   --text-md: 16px;
-  --text-lg: 18px;
-  --text-xl: 20px;
-  --text-2xl: 24px;
-  --text-2xl-plus: 28px;
-  --text-3xl: 32px;
-  --text-3xl-plus: 40px;
-  --text-4xl: 48px;
-  --text-5xl: 56px;
-  --text-6xl: 68px;
-  --text-7xl: 85px;
-  --text-8xl: 96px;
-  --text-9xl: 118px;
-  --text-10xl: 144px;
-  --text-11xl: 156px;
-
-  //
+  --text-ml: 20px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+  --text-2xl: 40px;
+  --text-3xl: 48px;
+  --text-4xl: 56px;
+  --text-6xl: 64px;
+  --text-7xl: 72px;
+  --text-8xl: 80px;
+  --text-9xl: 88px;
+  --text-10xl: 96px;
+  --text-11xl: 104px;
 
   // * role-based tokens * //
 
@@ -169,6 +164,7 @@
   --label-color: hsla(var(--river-hsl), 5%);
 
   --emph-color: var(--baby-cherry);
+  --emph-tr: hsla(var(--cherry-hsl), .1);
 
   --calendar-accent: var(--tangerine);
 
@@ -193,25 +189,35 @@
   --shadow: 4px 4px 12px var(--black-fade-10);
 
   /* text size */
-  // --text-hero: clamp(240px, 15vmax, 400px);
-  --text-hero: 14vmax;
-  --text-hero-sm: var(--text-8xl); // 96px
-  --text-header: var(--text-6xl); // 68px
-  --text-header-sm: var(--text-5xl); // 56px
-  --text-subheader: var(--text-xl); // 32px
-  --text-prose: var(--text-xl); // 20px
-  --text-prose-em: var(--text-2xl); // 24px
+  --text-hero: var(--text-10xl);      // 96px
+  --text-header-lg: var(--text-7xl);  // 72px
+  --text-header: var(--text-6xl);     // 64px
+  --text-header-sm: var(--text-3xl);  // 48px
+  --text-subheader: var(--text-xl);   // 32px
 
-  @import "./mixins";
+  --text-link: var(--text-3xl);        // 48px
 
-  /* sizing */
-  --content-width: min(70vw, 1550px);
+  --text-prose-xl: var(--text-3xl);    // 48px
+  --text-prose-em: var(--text-lg);     // 24px
+  --text-prose: var(--text-ml);        // 20px
+
+  --nav-width: 93vw;
+  --content-width: 1200px;
+  --column-width: calc(var(--content-width) / 3);
   --content-margin: calc((100vw - var(--content-width)) / 2);
   --content-shift: var(--content-margin);
   --content-shift-neg: calc(-1 * var(--content-shift));
-  --mobile-content-width: 80vw;
-  --mobile-blurb-width: 63vw;
-  --section-padding: var(--space-2xl);
+  --mobile-content-width: 90vw;
+
+  --intersection-margin: 24vh;
+  --content-top-margin: var(--space-11xl);    // 128px
+  --intracontent-margin-lg: var(--space-4xl); // 64px
+  --intracontent-margin: var(--space-2xl);    // 32px
+  --intracontent-margin-sm: var(--space-xl);  // 24px
+
+  --browser-bar: 100px;
+  --task-bar: 40px;
+  --os-vp-vh: calc(var(--browser-bar)) + var(--task-bar);
 
   /* Text Spacing */
   --title-space-bot: var(--space-md);
@@ -220,24 +226,42 @@
   --section-buffer: var(--vp-xl);
 }
 
+
 /* role-based token adjustments per breakpoint */
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) {  
   :root {
-    --text-hero: 16vmax;
-    --text-hero-sm: var(--text-6xl);
-    // --text-header: var(--text-5xl);
-    --text-display: var(--text-3xl);
-    --text-prose-em: var(--text-2xl);
-    --text-prose: var(--text-lg);
+    /* text size */
+    --text-hero: var(--text-6xl);      // 96px
+    --text-header: var(--text-3xl);    // 48px
+    --text-header-sm: var(--text-2xl); // 40px
+    --text-subheader: var(--text-xl);  // 32px
 
-    --content-width: 80vw;
+    --text-link: var(--text-3xl);      // 48px
+
+    --text-prose-xl: var(--text-3xl);  // 48px
+    --text-prose-lg: var(--text-lg);   // 24px
+    --text-prose-em: var(--text-ml);   // 20px
+    --text-prose: var(--text-md);      // 16px
+
+    --content-width: 62.5vw;
     --content-margin: calc((100vw - var(--content-width)) / 2);
     --content-shift: var(--content-margin);
     --content-shift-neg: calc(-1 * var(--content-shift));
-    --mobile-content-width: 80vw;
+    --mobile-content-width: 90vw;
     --mobile-blurb-width: 63vw;
     --section-padding: var(--space-2xl);
+
+    --intersection-margin: 12vh;
+    --intracontent-margin-sm: var(--space);      // 8px
+    --intracontent-margin: var(--space-lg);      // 16px
+    --intracontent-margin-lg: var(--space-xl);   // 24px
+    --intracontent-margin-xl: var(--space-3xl);  // 24px
+
+    --content-top-margin: var(--space-xl);       // 24px
+    
+    --browser-bar: 90px;
+    --task-bar: 50px;
   }
 }
 @media (min-width: 2160px) {

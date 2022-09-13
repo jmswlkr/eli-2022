@@ -22,6 +22,7 @@ import {
   blurb,
 } from './intro.module.scss'
 import { baseUrl } from '@/utils/cloudinary'
+import { SectionHeader } from '@/elements/section-header'
 
 
 export const Intro = () => {
@@ -43,7 +44,8 @@ export const Intro = () => {
       </div>
       <div className={introTextContent}>
         <div className={mainStyle}>
-          <h2 className={title}>{main.title}</h2>
+          {/* <h2 className={title}>{main.title}</h2> */}
+          <SectionHeader title={main.title} withLabel={false}/>
           <p className={blurb}>{main.blurb}</p>
         </div>
         <div className={subStyle}>

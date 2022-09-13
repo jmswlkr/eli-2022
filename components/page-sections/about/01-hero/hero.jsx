@@ -16,18 +16,21 @@ export const Hero = () => {
   return (
     <section className={hero}>
       <div className={heroBg}>
-        <img src={baseUrl('hiker-sunset_haniya', 'best')} alt='' />
+        <img src={baseUrl('sunlight-tree_ztqwxk', 'best')} alt='' />
         <div className={shade} />
         <div className={fadeTransitionBar} />
       </div>
       <div className={heroTextContent}>
-        <h1 className={title}>About section title phrase that’s longish.</h1>
+        <h1 className={title}>
+          <span>ELI</span>
+          <span>About the Institute.</span>
+        </h1>
         <p className={blurb}>
-          Nulla in interdum dui, in vehicula nibh. Donec vestibulum nulla arcu,
-          bibendum faucibus quam sollicitudin eu.
+          Learn more about our history, our people, and the principles that
+          drive us.
         </p>
         <span className={heroBtn}>
-          <ArrowBtn/>
+          <ArrowBtn lightText={true} arrowColor={'var(--accent)'} />
         </span>
       </div>
     </section>

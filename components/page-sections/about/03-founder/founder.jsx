@@ -10,6 +10,7 @@ import {
   founder,
   sectionHero,
   sectionTitle,
+  mSectionTitle,
   founderImg,
   quote as quoteStyle,
   founderTextContent,
@@ -20,6 +21,7 @@ import {
   blurb as blurbStyle
 } from './founder.module.scss'
 import { QuoteMark } from 'components/elements/svg/quote-mark'
+import { SectionHeader } from '@/elements/section-header'
 
 export const Founder = () => {
   const { quote, qual, blurb } = founderText
@@ -27,6 +29,9 @@ export const Founder = () => {
   return (
     <section className={founder}>
       <div className={sectionHero}>
+        <div className={mSectionTitle}>
+          <SectionHeader title='About the Founder'/>
+        </div>
         <span className={founderImg}>
           <img
             src={baseUrl('founder-ph_tujxvc', 'good')}
