@@ -117,18 +117,11 @@ export const Scheduling = () => {
   }
 
   return (
-    <section className={schedule}>
+    <section className={schedule} id='calendar'>
       <div className={scheduleContainer}>
         <div className={blurb}>
-          {/* <div className={sectionAccent}>
-            <WaveCircles />
-          </div> */}
           <SectionHeader text='Schedule an Appointment'/>
-          {/* <h2 className={title}>Schedule an Appointment</h2> */}
           <p className={text}>Schedule your initial consult with ELI. </p>
-          {/* <div className={label}>
-            <Label>CALENDAR</Label>
-          </div> */}
         </div>
         <div className={schedulingAppContainer}>
           <div className={calendarBlock} id='desk-calendar'>

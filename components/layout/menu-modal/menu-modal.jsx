@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import {
-  pageLinks,
-  contactInfo,
-  socialIcons,
-} from '@/ancillary/small-data'
+import { pageLinks, contactInfo, socialIcons } from '@/ancillary/small-data'
 
 import { phases, smooth } from 'animation/transition'
 import { slideInTop } from 'animation/slide'
@@ -35,26 +32,20 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
       }
     }
     window.addEventListener('keydown', close)
-    return () =>
-      window.removeEventListener('keydown', close)
+    return () => window.removeEventListener('keydown', close)
   })
 
   const handleLinkClick = (path) => {
     closeModal()
     setTimeout(() => {
-      // push(path)
-      push('/')
-    }, 800)
+      push(path)
+    }, 400)
   }
 
   return (
     <AnimatePresence exitBeforeEnter>
       {modalOpen && (
-        <motion.menu
-          className={modal}
-          {...phases}
-          {...slideInTop}
-        >
+        <motion.menu className={modal} {...phases} {...slideInTop}>
           <div className={menuOptions}>
             <motion.ul
               className={`${contactOptions} ${menuList}`}
@@ -66,13 +57,11 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
                 return (
                   <li key={inf.id}>
                     <label>{inf.label}</label>
-                    <a
-                      href={inf.link}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      {inf.content}
-                    </a>
+                    <Link href={inf.link}>
+                      <a >
+                        {inf.content}
+                      </a>
+                    </Link>
                   </li>
                 )
               })}
@@ -87,11 +76,7 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
               {pageLinks.map((lnk) => {
                 return (
                   <li key={lnk.text}>
-                    <a
-                      onClick={() =>
-                        handleLinkClick(lnk.path)
-                      }
-                    >
+                    <a onClick={() => handleLinkClick(lnk.path)}>
                       {lnk.content}
                     </a>
                   </li>

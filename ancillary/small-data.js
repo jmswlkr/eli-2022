@@ -4,19 +4,23 @@ import { Facebook, Instagram, LinkedIn } from "components/elements/svg/social-ic
 
 export const pageLinks = [
   {
-    path: '/consulting',
+    // path: '/consulting',
+    path: '/#offerings',
     content: 'Consulting',
   },
   {
-    path: '/coaching',
+    // path: '/coaching',
+    path: '/#offerings',
     content: 'Coaching',
   },
   {
-    path: '/education',
+    // path: '/education',
+    path: '/#offerings',
     content: 'Education',
   },
   {
-    path: '/calendar',
+    // path: '/calendar',
+    path: '/#calendar',
     content: 'Calendar',
   },
 ]
@@ -31,11 +35,11 @@ export const connectLinks = [
     content: 'Contact',
   },
   {
-    path: '/resources',
+    path: '/',
     content: 'Resources',
   },
   {
-    path: '/partners',
+    path: '/',
     content: 'Partners',
   },
 ]
@@ -76,7 +80,7 @@ export const contactInfo = [
     id: 'email',
     label: 'Email',
     content: `info@eli.org`,
-    link: 'mailto:info@eli.org',
+    link: 'mailto:info@eli.orgs',
   },
 ]
 

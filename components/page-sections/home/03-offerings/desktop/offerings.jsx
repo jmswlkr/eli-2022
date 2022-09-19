@@ -86,7 +86,7 @@ export const Offerings = () => {
   }
 
   return (
-    <section className={offeringsStyle} ref={sectionRef}>
+    <section className={offeringsStyle} ref={sectionRef} id={'offerings'}>
       <div className={label}>
         <Label>Offerings Offerings Offerings </Label>
       </div>

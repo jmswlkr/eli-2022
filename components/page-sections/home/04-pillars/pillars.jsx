@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 
 import { baseUrl } from '@/utils/cloudinary'
+import { pillarData } from './pillar-data'
 
 import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 import { WaveCircles } from '@/elements/svg/wave-circles'
-import { FlowerIcon, StonesIcon, YogaIcon } from '@/svg/pillar-icons'
+
 
 import {
   pillars,
@@ -30,38 +31,40 @@ import {
   dots,
 } from './pillars.module.scss'
 
-const pillarData = [
-  {
-    id: 'mindful-01',
-    path: '/',
-    title: (
-      <>
-        Mindful <br /> Living
-      </>
-    ),
-    icon: <StonesIcon />,
-  },
-  {
-    id: 'embodied-02',
-    path: '/',
-    title: (
-      <>
-        Embodied <br /> Learning
-      </>
-    ),
-    icon: <FlowerIcon />,
-  },
-  {
-    id: 'presence-03',
-    path: '/',
-    title: (
-      <>
-        Wholehearted <br /> Presence
-      </>
-    ),
-    icon: <YogaIcon />,
-  },
-]
+// const pillarData = [
+//   {
+//     id: 'mindful-01',
+//     path: '/',
+//     title: (
+//       <>
+//         Mindful <br /> Living
+//       </>
+//     ),
+//     icon: <StonesIcon />,
+//   },
+//   {
+//     id: 'embodied-02',
+//     path: '/',
+//     title: (
+//       <>
+//         Embodied <br /> Learning
+//       </>
+//     ),
+//     icon: <FlowerIcon />,
+//   },
+//   {
+//     id: 'presence-03',
+//     path: '/',
+//     title: (
+//       <>
+//         Wholehearted <br /> Presence
+//       </>
+//     ),
+//     icon: <YogaIcon />,
+//   },
+// ]
+
+
 
 export const Pillars = () => {
   return (

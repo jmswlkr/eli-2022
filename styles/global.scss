@@ -32,6 +32,8 @@
 
   --french-blue: #426e8d;
   --ocean-blue: #2b5879;
+  --vivid-blue: #2177BB;
+  --vivid-blue: #0D85E3;
   --tangerine: #f27347;
   --baby-cherry: #b71f2f;
   --lotus-blossom: #facebf;
@@ -149,6 +151,7 @@
   --primary-tr-2: hsla(var(--river-hsl), 0.15);
   --primary-tr-3: hsla(var(--river-hsl), 0.05);
 
+  --primary-bright: var(--vivid-blue);
   --primary-deep: var(--ocean-blue);
 
   --primary-bg: var(--snapdragon);

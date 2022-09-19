@@ -23,6 +23,8 @@ import {
   blurb,
 } from './intro.module.scss'
 
+
+
 export const Intro = () => {
   const [isMobile, setIsMobile] = useState(false)
   const { main, sub, tenetList } = aboutIntroText
