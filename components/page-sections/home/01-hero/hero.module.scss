@@ -34,16 +34,27 @@
   @include fullBleedContent;
   isolation: isolate;
   overflow: visible;
-  img {
+  overflow: hidden;
+  img, video {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -15%;
+    height: 120%;
+    width: 120%;
+    object-fit: cover;
   }
   .fadeTransitionBar {
     @include fadeTransitionBar($vOffset: -4vh);
   }
   .shade {
     @include gradientShade;
+  }
+  @media (max-width: 1024px) {
+    video {
+      height: 135%;
+      width: 185%;
+      left: -60%;
+    }
   }
 }
 

@@ -11,6 +11,7 @@ export const animationProps = ({
   return {
     animate: controls,
     initial: 'hidden',
+    exit: 'hidden',
     transition: smooth(dur, del),
     ...animation,
   }

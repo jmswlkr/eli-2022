@@ -95,4 +95,16 @@ const bfi = {
 export const blurFadeIn = {
   variants: bfi,
 }
+const fi = {
+  visible: {
+    opacity: 1,
+  },
+  hidden: {
+    opacity: 0,
+  },
+}
+
+export const fadeIn = {
+  variants: fi,
+}
 

@@ -37,9 +37,9 @@ export const offerings = [
     imgUrlFrag: 'stone-stack_ztdlzn',
   },
   {
-    path: 'education',
-    name: 'Esducation',
-    title: 'Education',
+    path: 'training',
+    name: 'Training',
+    title: 'Training',
     blurbTitle: (
       <>
         ELI offers guidance <br /> at all levels.
@@ -48,13 +48,11 @@ export const offerings = [
     blurb: (
       <>
         <span>
-          Experience personal and professional transformation through coaching
-          grounded in somatics and interpersonal neurobiology.
+          ELI offers online and onsite training. Our holistic approach presumes we are all part of multiple interconnected and interrelated systems that shape how we live and lead<i>.</i>
         </span>
+        <span>(individual, familial, social, organizational and cultural).</span>
         <span>
-          Duis laoreet ligula vitae metus convallis volutpat. Donec convallis
-          vulputate fringilla. Etiam egestas magna a mi facilisis, id tristique
-          nulla tempus.
+          Our  practice-based training brings to light new choices and possibilities via collaborative learning communities grounded in growth, resilience, and healing.
         </span>
       </>
     ),

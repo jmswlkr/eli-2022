@@ -33,7 +33,14 @@
 
   .blurb {
     @include paragraphText;
+    font-size: var(--text-prose-em);
     width: calc(1.5 * var(--column-width));
+    span {
+      margin-right: .5rem;
+    }
+    span i {
+      display: none;
+    }
   }
 }
 

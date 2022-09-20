@@ -26,6 +26,9 @@
   align-items: flex-start;
   height: calc(100vh + var(--os-vp-vh));
   @media (max-width: 1024px) {
+    height: auto;
+    padding-top: var(--vp-lg);
+    padding-bottom: var(--vp-2xl);
   }
 }
 
@@ -54,6 +57,7 @@
     top: 0;
     left: 0;
     background-color: var(--white-fade-35);
+    transition: var(--transition-1-smooth);
   }
   &::before {
     background-color: var(--black-fade-20);
@@ -63,6 +67,21 @@
   }
   .bg {
     z-index: 1;
+  }
+  &.darken {
+    & > * {
+      transition-delay: .5s;
+      transition: var(--transition-2-smooth);
+    }
+    &::before {
+      background-color: var(--black-fade-80);
+    }
+    &::after {
+      // background-color: transparent;
+    }
+    .shade {
+      background: rgba(19, 35, 41, 0.2);
+    }
   }
 }
 
@@ -122,8 +141,22 @@
   .text {
     @include paragraphText;
     width: calc(1.5 * var(--column-width));
+    height: 19vh;
     position: relative;
     text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    .genText,
+    .specText {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+    .specText {
+      font-weight: var(--body);
+    }
     @media (max-width: 1024px) {
       display: none;
     }
@@ -131,7 +164,7 @@
   .sectionAccent {
     display: none;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     svg {
@@ -153,11 +186,14 @@
 .pillarsContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, var(--column-width));
+  // gap: 0 24px;
+  // grid-template-columns: repeat(3, var(--column-width));
+  grid-template-columns: repeat(4, calc(32px + var(--column-width-narrow)));
   align-items: center;
   justify-content: center;
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 100vw);
+    // grid-template-columns: repeat(3, 100vw);
+    grid-template-columns: repeat(4, 100vw);
     width: 100vw;
     overflow: scroll;
     flex-shrink: 0;
@@ -170,6 +206,7 @@
 
 .pillar {
   cursor: pointer;
+  padding: 0 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -177,6 +214,9 @@
   transition: var(--transition-primary);
   &:hover {
     transform: translateY(-2vh);
+    .title {
+      transform: scale(1.05);
+    }
     .icon {
       path {
         fill: var(--accent);
@@ -188,10 +228,12 @@
   }
   .title {
     font-family: var(--font-title);
-    font-size: var(--text-4xl);
+    // font-size: var(--text-4xl);
+    font-size: var(--text-2xl);
     font-weight: var(--light);
     white-space: wrap;
     text-align: center;
+    transition: var(--transition-primary);
   }
   .icon {
     height: 110px;
@@ -213,6 +255,12 @@
     transition-delay: 0.2s;
     @media (max-width: 1024px) {
       opacity: 1;
+    }
+  }
+  &.fadePillar {
+    opacity: 0.5;
+    .title {
+      transform: scale(.95);
     }
   }
   .mText {
@@ -243,7 +291,7 @@
     span {
       opacity: 0.5;
     }
-    span:nth-child(3) {
+    &.activeDot {
       opacity: 1;
     }
   }

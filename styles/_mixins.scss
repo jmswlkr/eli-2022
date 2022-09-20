@@ -49,7 +49,7 @@
 }
 @mixin paragraphText {
   font-size: var(--text-prose);
-  font-weight: var(--reg);
+  font-weight: var(--body);
   letter-spacing: var(--push-ms);
   @media (max-width: 1024px) {
     font-size: var(--text-prose-em);

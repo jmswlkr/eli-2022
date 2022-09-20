@@ -207,6 +207,7 @@
   --nav-width: 93vw;
   --content-width: 1200px;
   --column-width: calc(var(--content-width) / 3);
+  --column-width-narrow: calc((var(--content-width) / 4) - 48px);
   --content-margin: calc((100vw - var(--content-width)) / 2);
   --content-shift: var(--content-margin);
   --content-shift-neg: calc(-1 * var(--content-shift));

@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
+import { animate, AnimatePresence, motion, useAnimation } from 'framer-motion'
 
 import { baseUrl } from '@/utils/cloudinary'
 import { pillarData } from './pillar-data'
 
 import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 import { WaveCircles } from '@/elements/svg/wave-circles'
-
 
 import {
   pillars,
@@ -16,6 +15,7 @@ import {
   top,
   bot,
   pillarsImageContainer,
+  darken,
   fg,
   bg,
   pillarsTextContent,
@@ -23,77 +23,92 @@ import {
   title,
   subtitle,
   text,
+  genText,
+  specText,
   mText,
   pillarsContainer,
   pillar,
+  fadePillar,
   icon,
   btn,
   dots,
+  activeDot,
 } from './pillars.module.scss'
-
-// const pillarData = [
-//   {
-//     id: 'mindful-01',
-//     path: '/',
-//     title: (
-//       <>
-//         Mindful <br /> Living
-//       </>
-//     ),
-//     icon: <StonesIcon />,
-//   },
-//   {
-//     id: 'embodied-02',
-//     path: '/',
-//     title: (
-//       <>
-//         Embodied <br /> Learning
-//       </>
-//     ),
-//     icon: <FlowerIcon />,
-//   },
-//   {
-//     id: 'presence-03',
-//     path: '/',
-//     title: (
-//       <>
-//         Wholehearted <br /> Presence
-//       </>
-//     ),
-//     icon: <YogaIcon />,
-//   },
-// ]
-
-
+import { fadeIn } from 'animation/fade'
+import { animationProps } from 'animation/animate'
 
 export const Pillars = () => {
+  const [curPillar, setCurPillar] = useState(null)
+
+  const handleHoverPillar = (hoveredIdx) => {
+    if ([0, 1, 2, 3].includes(hoveredIdx)) {
+      setCurPillar(pillarData[hoveredIdx]?.text)
+    } else {
+      setCurPillar(null)
+    }
+  }
+
   return (
-    <section className={pillars}>
+    <motion.section className={pillars}>
       <div className={pillarsTextContent}>
         <div className={blurb}>
-          <h2 className={title}>Three Pillars</h2>
+          <h2 className={title}>The Four Pillars</h2>
           <h4 className={subtitle}>
-            Of the <br /> Embodied Learning Institute
+            Of <br /> Embodied Enoughness 
           </h4>
           <span className={sectionAccent}>
             <WaveCircles />
           </span>
           <p className={text}>
-            <span>
-              Paragraph text: liquam tempor risus lectus, eu bibendum eros
-              fermentum quis. Mauris faucibus eros nec tristique volutpat.
-              pretium diam ut lacinia interdum.
-            </span>
+            {curPillar ? (
+              <AnimatePresence exitBeforeEnter>
+                <motion.span
+                  key={'spec-text'}
+                  className={specText}
+                  {...animationProps({ animation: fadeIn, dur: 0.25 })}
+                >
+                  {curPillar}
+                </motion.span>
+              </AnimatePresence>
+            ) : (
+              <AnimatePresence exitBeforeEnter>
+                <motion.span
+                  key={'gen-text'}
+                  className={genText}
+                  {...animationProps({ animation: fadeIn, dur: 0.25 })}
+                >
+                  The four pillars of Embodied Enoughness - Somatic
+                  Sensibilities, Wholehearted Presence, Dynamic Discernment, and
+                  Leaderful Learning - are practiced-based ways of being that we
+                  use to consciously shape how we live and lead.
+                </motion.span>
+              </AnimatePresence>
+            )}
           </p>
         </div>
         <div className={pillarsContainer}>
           {pillarData.map((plr, idx) => {
+            // console.log('is curPillar', plr === curPillar)
+
             return (
-              <div key={plr.id} className={pillar}>
+              <div
+                key={plr.id}
+                className={`${pillar} ${
+                  curPillar && plr.text !== curPillar && fadePillar
+                }`}
+                /*
+                  if curPillar && plr !==curPillar -> apply darken style
+                */
+                onMouseEnter={() => {
+                  handleHoverPillar(idx)
+                }}
+                onMouseLeave={() => {
+                  handleHoverPillar()
+                }}
+              >
                 <h3 className={title}>{plr.title}</h3>
                 <p className={mText}>
-                  Aliquam tempor risus lectus, eu bibendum eros fermentum quis.
-                  Mauris faucibus eros nec tristique volutpat.{' '}
+                  {plr.text}{' '}
                 </p>
                 <span className={icon}>{plr.icon}</span>
                 <span className={btn}>
@@ -104,7 +119,7 @@ export const Pillars = () => {
           })}
         </div>
       </div>
-      <div className={pillarsImageContainer}>
+      <div className={`${pillarsImageContainer} ${curPillar && darken}`}>
         <div className={`${fadeTransitionBar} ${top}`} />
         <div className={shade} />
         <img
@@ -116,10 +131,11 @@ export const Pillars = () => {
         <div className={`${fadeTransitionBar} ${bot}`} />
       </div>
       <div className={dots}>
-        {pillarData.map((p) => (
-          <span key={p.id}>•</span>
-        ))}
+        {pillarData.map((p) => {
+          const active = p.text === curPillar
+          return <span key={p.id} className={active && activeDot}>•</span>
+})}
       </div>
-    </section>
+    </motion.section>
   )
 }
