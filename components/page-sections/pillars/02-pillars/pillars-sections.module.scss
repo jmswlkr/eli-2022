@@ -1,7 +1,8 @@
 @import "/styles/mixins";
 
 .pillars {
-  @include homeSection(300vh);
+  // @include homeSection(300vh);
+  @include homeSection(400vh);
   flex-direction: column;
   align-items: center;
   justify-content: center;

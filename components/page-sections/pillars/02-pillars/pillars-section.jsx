@@ -42,21 +42,6 @@ export const PillarsSections = () => {
       }
     }, [section1InView])
 
-    // useEffect(() => {
-    //   if (section1InView) {
-    //     console.log('section in view!')
-    //     controls.start('visible')
-    //   }
-    //   if (section2InView) {
-    //     console.log('section in view!')
-    //     controls2.start('visible')
-    //   }
-    //   if (section3InView) {
-    //     console.log('section in view!')
-    //     controls3.start('visible')
-    //   }
-    // }, [section1InView, section2InView, section3InView, controls])
-
   return (
     <section className={pillars}>
       {pillarData.map(({ id, title, imgSlug, text, icon, color }, idx) => {

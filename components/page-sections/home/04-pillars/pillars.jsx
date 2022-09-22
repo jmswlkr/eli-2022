@@ -111,9 +111,9 @@ export const Pillars = () => {
                   {plr.text}{' '}
                 </p>
                 <span className={icon}>{plr.icon}</span>
-                <span className={btn}>
+                {/* <span className={btn}>
                   <ArrowBtn lightText arrowColor='var(--accent)' />
-                </span>
+                </span> */}
               </div>
             )
           })}

@@ -55,10 +55,10 @@ export const Intro = () => {
             <p className={blurb}>
               The Embodied Learning Institute (ELI) is an organization founded
               by Dr. Ali  (MSW, Ph.D.). Dr. Ali’s passion is helping individuals
-              and organizations thrive via the 3 pillars of Embodied Enoughness:{' '}
+              and organizations thrive via the 4 pillars of Embodied Enoughness:{' '}
               <br />{' '}
               <span className={blurbEmph}>
-                mindful living, <br /> embodied learning, <br />
+               somatic sensibility, <br /> dynamic discernment, <br /> leaderful living, <br/>
                 and wholehearted presence.
               </span>
             </p>
