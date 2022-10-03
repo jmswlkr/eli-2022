@@ -45,6 +45,7 @@
   }
   .fadeTransitionBar {
     @include fadeTransitionBar($vOffset: -4vh);
+    translate: 0 -5%;
   }
   .shade {
     @include gradientShade;
