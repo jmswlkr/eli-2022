@@ -33,8 +33,8 @@
   @include fullBleedContent;
   height: 110% !important;
   isolation: isolate;
-  overflow: visible;
   overflow: hidden;
+  overflow: visible;
   img, video {
     position: absolute;
     top: 0;
