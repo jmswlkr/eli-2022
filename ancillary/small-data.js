@@ -4,22 +4,18 @@ import { Facebook, Instagram, LinkedIn } from "components/elements/svg/social-ic
 
 export const pageLinks = [
   {
-    // path: '/consulting',
-    path: '/#offerings',
+    path: '/offerings/consulting',
     content: 'Consulting',
   },
   {
-    // path: '/coaching',
-    path: '/#offerings',
+    path: '/offerings/coaching',
     content: 'Coaching',
   },
   {
-    // path: '/education',
-    path: '/#offerings',
-    content: 'Education',
+    path: '/offerings/training',
+    content: 'Training',
   },
   {
-    // path: '/calendar',
     path: '/#calendar',
     content: 'Calendar',
   },

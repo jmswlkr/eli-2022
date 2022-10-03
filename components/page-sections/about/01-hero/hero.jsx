@@ -54,7 +54,7 @@ export const Hero = () => {
           drive us.
         </p>
         <span className={heroBtn}>
-          <ArrowBtn lightText={true} arrowColor={'var(--accent)'} />
+          <ArrowBtn text={'Continue'} lightText={true} arrowColor={'var(--accent)'} pageLink={`about/#about-intro`} />
         </span>
       </motion.div>
     </section>

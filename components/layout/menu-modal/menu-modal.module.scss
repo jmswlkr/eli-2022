@@ -8,7 +8,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: var(--primary-deep);
+  background-color: currentColor;
   height: 1px;
   width: 100%;
   transition: var(--transition-primary);
@@ -104,7 +104,7 @@
     transform-origin: left;
     transition: var(--transition-primary);
     &:hover {
-      color: var(--primary-deep);
+      color: var(--accent);
       transform: scale(1.05);
       &::after {
         transform: scaleX(1);
@@ -142,7 +142,7 @@
     border-bottom: 3px solid transparent;
     transition: var(--transition-primary);
     &:hover {
-      color: var(--primary-deep);
+      color: var(--accent);
       &::after {
         transform: scaleX(1);
       }

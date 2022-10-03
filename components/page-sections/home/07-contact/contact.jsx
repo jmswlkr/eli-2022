@@ -61,13 +61,13 @@ export const Contact = () => {
       `${process.env.NEXT_PUBLIC_EMAILJS_USER_ID}`
     )
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text)
+        // console.log('SUCCESS!', response.status, response.text)
       })
       .catch((err) => {})
   }
 
   return (
-    <section className={contact}>
+    <section className={contact} id='contact' >
       <div className={formSection}>
         <div className={blurb}>
           <SectionHeader title='Contact us.' withLabel={false}/>
@@ -103,8 +103,8 @@ export const Contact = () => {
             onChange={handleChange}
             placeholder='Enter your message...'
           />
-          <span className={submitBtn} onClick={handleSubmit}>
-            <ArrowBtn text='Sumbit' />
+          <span className={submitBtn}>
+            <ArrowBtn text='Sumbit' btnAction={handleSubmit} />
           </span>
         </form>
       </div>

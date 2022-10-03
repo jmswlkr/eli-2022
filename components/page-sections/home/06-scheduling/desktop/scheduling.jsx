@@ -116,6 +116,13 @@ export const Scheduling = () => {
     setOptionsVisible(false)
   }
 
+  /*
+    TODO: Use state to visually indicate chosen appointment.
+    TODO: Build in Square:
+      - Disable and grey out unavailable dates/times.
+      ! Need to know appointment types.
+  */
+
   return (
     <section className={schedule} id='calendar'>
       <div className={scheduleContainer}>

@@ -30,6 +30,6 @@ export default async function handler(req, res) {
     res.send(response.result)
     resolve()
   } catch (error) {
-    console.log(error)
+    // console.log(error)
   }
 }

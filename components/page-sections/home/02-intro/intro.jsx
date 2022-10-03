@@ -40,7 +40,7 @@ export const Intro = () => {
   }, [sectionInView, controls])
 
   return (
-    <section className={intro} ref={sectionRef}>
+    <section className={intro} ref={sectionRef} id="intro">
       <div className={collage}>
         <motion.div
           className={collagePrimary}
@@ -63,7 +63,7 @@ export const Intro = () => {
               </span>
             </p>
             <div className={btn}>
-              <ArrowBtn />
+              <ArrowBtn text='About ELI' pageLink={`/about`} />
             </div>
           </div>
         </motion.div>

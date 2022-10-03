@@ -45,6 +45,8 @@ export const Hero = () => {
     }, 3000)
   }, [fontsLoaded])
 
+  // TODO: Fade in video when playable.
+
   return (
     <section className={hero}>
       <div className={heroImages}>
@@ -115,6 +117,7 @@ export const Hero = () => {
               text='Get Started'
               arrowColor='var(--accent)'
               lightText={true}
+              pageLink={`/#intro`}
             />
           </div>
         </div>

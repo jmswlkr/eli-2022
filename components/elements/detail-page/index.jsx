@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import React from 'react'
+import { motion } from 'framer-motion'
 
-import { aboutImages, aboutIntroText } from '@/data/about-data'
+import { animationProps } from 'animation/animate'
 import { baseUrl } from '@/utils/cloudinary'
 
 import { SectionHeader } from '@/elements/section-header'
-
-import { animationProps } from 'animation/animate'
 
 import {
   intro,
@@ -21,45 +18,29 @@ import {
   tenet,
   title,
   blurb,
-} from './intro.module.scss'
+} from './detail-page.module.scss'
 
-
-
-export const Intro = () => {
-  const [isMobile, setIsMobile] = useState(false)
-  const { main, sub, tenetList } = aboutIntroText
-  const [sectionRef, sectionInView] = useInView()
-  const controls = useAnimation()
-
-  useEffect(() => {
-    if (sectionInView) {
-      controls.start('visible')
-    }
-  }, [sectionInView, controls])
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 1024)
-  }, [])
-  
+const DetailPage = ({ imageData, textData }) => {
+  const { main, sub, tenetList } = textData
 
   return (
-    <section className={intro} ref={sectionRef} id="about-intro">
+    <section className={intro} >
       <div className={collage}>
-        {aboutImages.map((abImg, idx) => {
+        {imageData.slice(1).map((colImg, idx) => {
           return (
             <motion.span
               key={idx}
               className={collageImg}
-              {...animationProps({ controls, del: (idx + 1) * 0.5, dur: 1.5 })}
+              {...animationProps({ dur: 1.5 })}
             >
-              <img src={baseUrl(abImg.urlFrag, 'eco')} alt={abImg.altTag} />
+              <img src={baseUrl(colImg.urlFrag, 'eco')} alt={colImg.altTag} />
             </motion.span>
           )
         })}
       </div>
       <div className={introTextContent}>
         <div className={mainStyle}>
-          <SectionHeader title={main.title} withLabel={true} />
+          <SectionHeader title={main.title} labelText={main.label} withLabel={true} />
           <p className={blurb}>{main.blurb}</p>
         </div>
         <div className={subStyle}>
@@ -82,3 +63,7 @@ export const Intro = () => {
     </section>
   )
 }
+
+export default DetailPage
+
+

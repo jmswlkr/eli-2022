@@ -25,9 +25,9 @@ export const OfferingsMobile = () => {
       </div>
       <h2 className={header}>What we Offer.</h2>
       <ul className={slider}>
-        {offerings.map((ofr) => {
+        {offerings.map((ofr, idx) => {
           return (
-            <li key={ofr.name} className={slide}>
+            <li key={`offr-${idx}`} className={slide}>
               <div className={imgWrap}>
                 <img src={baseUrl(ofr.imgUrlFrag)} alt={ofr.blurb} />
                 <h4 className={title}>{ofr.title}</h4>

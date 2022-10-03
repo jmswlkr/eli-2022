@@ -103,8 +103,12 @@ export const Offerings = () => {
             const clickedPos = getNextByDegree(focusedOffering, offsetDegree)
             return (
               <motion.span
-                {...animationProps({ controls, animation: blurFadeIn,  del: .25 })}
-                key={`${offr.name}-${idx}`}
+                key={idx}
+                {...animationProps({
+                  controls,
+                  animation: blurFadeIn,
+                  del: 0.25,
+                })}
                 className={`${block} ${blockPos} ${
                   positionsIndex[
                     getNextByDegree(focusedOffering, offsetDegree)
@@ -120,7 +124,7 @@ export const Offerings = () => {
                 <h3 className={blockTitle}>
                   {offr.title}
                   <span className={blockBtn}>
-                    <ArrowBtn />
+                    <ArrowBtn pageLink={`/offerings/${offr.path}`} />
                   </span>
                 </h3>
               </motion.span>

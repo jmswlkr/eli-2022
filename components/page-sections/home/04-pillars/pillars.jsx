@@ -119,7 +119,7 @@ export const Pillars = () => {
           })}
         </div>
       </div>
-      <div className={`${pillarsImageContainer} ${curPillar && darken}`}>
+      <div className={`${pillarsImageContainer} ${curPillar ? darken : ''}`}>
         <div className={`${fadeTransitionBar} ${top}`} />
         <div className={shade} />
         <img
@@ -133,7 +133,7 @@ export const Pillars = () => {
       <div className={dots}>
         {pillarData.map((p) => {
           const active = p.text === curPillar
-          return <span key={p.id} className={active && activeDot}>•</span>
+          return <span key={p.id} className={active ? activeDot : ''}>•</span>
 })}
       </div>
     </motion.section>

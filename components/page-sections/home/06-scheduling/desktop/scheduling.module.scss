@@ -197,7 +197,7 @@
   align-items: center;
   justify-content: space-evenly;
   border: 1px solid transparent;
-  transition: var(--transition-primary);
+  transition: var(--transition-primary  );
   &:hover {
     border-radius: var(--radius-md);
     background-color: var(--primary-tr-2);

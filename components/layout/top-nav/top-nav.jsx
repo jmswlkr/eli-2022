@@ -8,7 +8,8 @@ import { topNav, logo, menuBtn, closeBtn, dark } from './top-nav.module.scss'
 
 export const TopNav = ({ toggleModal, modalOpen, introInView }) => {
   const { pathname } = useRouter()
-  const forceDark = pathname === '/pillars'
+  console.log('pathname: ', pathname);
+  const forceDark = pathname === '/pillars' || pathname.includes('offerings')
 
   const mixBlend = {
     mixBlendMode: (introInView || modalOpen || forceDark) ? 'normal' : 'difference',
