@@ -1,7 +1,14 @@
 // Auth Route
 
 const env = process.env.NODE_ENV
-const isDev = env === "development"
+const isDev = env === 'development'
+
+const scopes = [
+  'APPOINTMENTS_READ',
+  'APPOINTMENTS_ALL_READ',
+  'APPOINTMENTS_ALL_WRITE',
+  'APPOINTMENTS_WRITE',
+]
 
 export default function handler(req, res) {
   const clientId = isDev
@@ -10,7 +17,9 @@ export default function handler(req, res) {
 
   const authURL = ` https://connect.squareup${
     isDev ? 'sandbox' : ''
-  }.com/oauth2/authorize?client_id=${clientId}&scope=APPOINTMENTS_WRITE+APPOINTMENTS_READ&redirect_uri=http://localhost:3456/callback`
+  }.com/oauth2/authorize?client_id=${clientId}&scope=${scopes.join(
+    '+'
+  )}&redirect_uri=http://localhost:3456/callback`
 
   res.status(200).json({ url: authURL })
 }

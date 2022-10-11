@@ -25,7 +25,7 @@ export default function Home() {
       {isMobile ? <OfferingsMobile /> : <Offerings />}
       <Pillars />
       <Testimonial />
-      <Scheduling />
+      {/* <Scheduling /> */}
       <Contact />
     </>
   )

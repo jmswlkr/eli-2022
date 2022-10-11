@@ -16,22 +16,22 @@ const Callback = () => {
     push,
     query: { code },
   } = useRouter()
+  console.log('code: ', code);
 
-  // useEffect(() => {
-  //   console.log('code: ', code)
-  //   axios.post('/api/token', { token: code })
-  //   if (code) {
-  //     axios({
-  //       method: 'post',
-  //       url: '/api/token',
-  //       data: {
-  //         code,
-  //       },
-  //     }).then((res) => {
-  //       console.log(res.data)
-  //     })
-  //   }
-  // }, [code])
+  useEffect(() => {
+    axios.post('/api/token', { token: code })
+    if (code) {
+      axios({
+        method: 'post',
+        url: '/api/token',
+        data: {
+          code,
+        },
+      }).then((res) => {
+        console.log(res.data)
+      }).catch(err => console.log('Error getting token! Msg →', err))
+    }
+  })
 
   return (
     <div className={callback}>

@@ -38,6 +38,7 @@
 .instruction {
   @include paragraphText;
   @include flexCenter;
+  color: var(--white);
   flex-direction: column;
   width: 30vw;
   text-align: center;

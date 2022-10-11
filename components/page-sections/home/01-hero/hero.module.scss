@@ -51,6 +51,7 @@
     @include gradientShade;
   }
   @media (max-width: 1024px) {
+    overflow: hidden;
     video {
       height: 135%;
       width: 185%;

@@ -21,15 +21,15 @@ const Authorization = () => {
   const [authUrl, setAuthUrl] = useState(null)
 
   useEffect(() => {
-    // axios.get('/api/authorize').then((res) => {
-    //   setAuthUrl(res.data.url)
-    // })
+    axios.get('/api/authorize').then((res) => {
+      setAuthUrl(res.data.url)
+    })
   }, [])
 
   const handleAuthBtnClick = () => {
     if (!authUrl) return 
   
-    window.location.assign(authUrl.test)
+    window.location.assign(authUrl)
   }
 
   return (

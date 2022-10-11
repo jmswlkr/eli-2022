@@ -1,5 +1,4 @@
 // Obtain Token Route
-
 import { Client, Environment } from 'square'
 
 const env = process.env.NODE_ENV
