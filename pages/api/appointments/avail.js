@@ -1,35 +1,26 @@
 // Availability Route
-
 import { Client, Environment } from 'square'
 
-const env = process.env.NODE_ENV
-const isDev = env === 'development'
+const clientConfig = {
+    accessToken: process.env.SB_SQUARE_ACCESS_TOKEN,
+  environment: 'sandbox',
+}
 
-const client = new Client({
-  environment: isDev
-  ? Environment.Sandbox
-  : Environment.Production,
-  accessToken: isDev
-  ? process.env.SB_SQUARE_ACCESS_TOKEN
-  : process.env.SQUARE_ACCESS_TOKEN,
-})
+const { bookingsApi } = new Client(clientConfig)
 
 export default async function handler(req, res) {
   const { start, end } = req.body
   try {
-    const response = await client.bookingsApi.listBookings(
-      30,
+    const response = await bookingsApi.listBookings(
       undefined,
       undefined,
-      'LCK2XKSWZ4R66',
+      undefined,
+      'L2551394AQ8WH',
       start,
-      // '2022-07-03T01:00:51.607Z',
-      ''
+      end
     )
-
-    res.send(response.result)
-    resolve()
+    res.send(response.body)
   } catch (error) {
-    // console.log(error)
+    res.send(error)
   }
 }

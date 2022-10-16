@@ -16,7 +16,7 @@ export const pageLinks = [
     content: 'Training',
   },
   {
-    path: '/#calendar',
+    path: '/calendar',
     content: 'Calendar',
   },
 ]

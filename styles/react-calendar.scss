@@ -51,6 +51,12 @@
         &::after {
           content: "←";
         }
+        &:disabled {
+          &::after {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
         @media (max-width: 1024px) {
           left: 57.5%;
         }
@@ -109,18 +115,23 @@
         letter-spacing: var(--push-sm);
         transition: var(--transition-1-smooth);
         border-radius: var(--radius-md);
+        abbr {
+          pointer-events: none;
+        }
+        &:disabled {
+            abbr {
+              text-decoration: line-through;
+              opacity: .5;
+            }
+        }
         &:hover {
           background-color: var(--primary-tr-2);
         }
-        &:focus,
-        &:focus-within {
-          font-weight: var(--bold);
-          color: var(--primary);
-          background-color: var(--primary-tr);
-        }
         &.selected {
           color: var(--primary);
+          // color: rgb(95, 0, 0);
           background-color: var(--primary-tr);
+          // background-color: rgba(255, 0, 0, 0.3);
           font-weight: var(--bold);
         }
         &.NA {

@@ -33,12 +33,42 @@ export const APT_DETAIL = {
   },
 }
 
+/*
+aptDetail:  
+{date: {…}, time: {…}}
+date
+: 
+icon
+: 
+id
+: 
+"DATE"
+val
+: 
+{m: 'Oct', d: '21', y: 2022}
+[[Prototype]]
+: 
+Object
+time
+: 
+icon
+: 
+id
+: 
+"TIME"
+val
+: 
+{t: '1:00', m: 'pm', tz: 'ET'}
++ Target Format
+Tue Nov 01 2022 00:00:00 GMT+0700 (Indochina Time)
+*/
+
 export const SESSION_DETAIL = {
   types: [
-    { id: 'Consult', duration: '50MIN' },
-    { id: 'Coaching', duration: '90MIN' },
-    { id: 'Follow-up', duration: '30MIN' },
-    { id: 'Group', duration: '4HRS' },
+    { id: '', version: '', name: 'Consult', duration: '50MIN' },
+    { id: '', version: '', name: 'Coaching', duration: '90MIN' },
+    { id: '', version: '', name: 'Follow-up', duration: '30MIN' },
+    { id: '', version: '', name: 'Group', duration: '4HRS' },
   ],
-  current: { id: 'Consult', duration: '50MIN' },
+  current: { id: '', version: '',  name: 'Consult', duration: '50MIN' },
 }

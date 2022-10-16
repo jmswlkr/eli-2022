@@ -32,16 +32,16 @@
 
   --french-blue: #426e8d;
   --ocean-blue: #2b5879;
-  --vivid-blue: #2177BB;
-  --vivid-blue: #0D85E3;
+  --vivid-blue: #2177bb;
+  --vivid-blue: #0d85e3;
   --tangerine: #f27347;
   --baby-cherry: #b71f2f;
   --lotus-blossom: #facebf;
-  
+
   --river-hs: 205, 48%;
   --lotus-hs: 15, 86%;
   --papaya-hs: 6, 57%;
-  
+
   --cherry-hsl: 354, 71%, 42%;
   --papaya-hsl: 6, 57%, 77%;
   --french-hsl: 205, 36%, 41%;
@@ -167,7 +167,7 @@
   --label-color: hsla(var(--river-hsl), 5%);
 
   --emph-color: var(--baby-cherry);
-  --emph-tr: hsla(var(--cherry-hsl), .1);
+  --emph-tr: hsla(var(--cherry-hsl), 0.1);
 
   --calendar-accent: var(--tangerine);
 
@@ -192,32 +192,36 @@
   --shadow: 4px 4px 12px var(--black-fade-10);
 
   /* text size */
-  --text-hero: var(--text-10xl);      // 96px
-  --text-header-lg: var(--text-7xl);  // 72px
-  --text-header: var(--text-6xl);     // 64px
-  --text-header-sm: var(--text-3xl);  // 48px
-  --text-subheader: var(--text-xl);   // 32px
+  --text-hero: var(--text-10xl); // 96px
+  --text-header-lg: var(--text-7xl); // 72px
+  --text-header: var(--text-6xl); // 64px
+  --text-header-sm: var(--text-3xl); // 48px
+  --text-subheader: var(--text-xl); // 32px
 
-  --text-link: var(--text-3xl);        // 48px
+  --text-link: var(--text-3xl); // 48px
 
-  --text-prose-xl: var(--text-3xl);    // 48px
-  --text-prose-em: var(--text-lg);     // 24px
-  --text-prose: var(--text-ml);        // 20px
+  --text-prose-xl: var(--text-3xl); // 48px
+  --text-prose-em: var(--text-lg); // 24px
+  --text-prose: var(--text-ml); // 20px
 
   --nav-width: 93vw;
   --content-width: 1200px;
   --column-width: calc(var(--content-width) / 3);
-  --column-width-narrow: calc((var(--content-width) / 4) - 48px);
-  --content-margin: calc((100vw - var(--content-width)) / 2);
+  --column-width-narrow: calc(
+    (var(--content-width) / 4) - 48px
+  );
+  --content-margin: calc(
+    (100vw - var(--content-width)) / 2
+  );
   --content-shift: var(--content-margin);
   --content-shift-neg: calc(-1 * var(--content-shift));
   --mobile-content-width: 90vw;
 
   --intersection-margin: 24vh;
-  --content-top-margin: var(--space-11xl);    // 128px
+  --content-top-margin: var(--space-11xl); // 128px
   --intracontent-margin-lg: var(--space-4xl); // 64px
-  --intracontent-margin: var(--space-2xl);    // 32px
-  --intracontent-margin-sm: var(--space-xl);  // 24px
+  --intracontent-margin: var(--space-2xl); // 32px
+  --intracontent-margin-sm: var(--space-xl); // 24px
 
   --browser-bar: 100px;
   --task-bar: 40px;
@@ -230,26 +234,27 @@
   --section-buffer: var(--vp-xl);
 }
 
-
 /* role-based token adjustments per breakpoint */
 
-@media (max-width: 1024px) {  
+@media (max-width: 1024px) {
   :root {
     /* text size */
-    --text-hero: var(--text-6xl);      // 96px
-    --text-header: var(--text-3xl);    // 48px
+    --text-hero: var(--text-6xl); // 96px
+    --text-header: var(--text-3xl); // 48px
     --text-header-sm: var(--text-2xl); // 40px
-    --text-subheader: var(--text-xl);  // 32px
+    --text-subheader: var(--text-xl); // 32px
 
-    --text-link: var(--text-3xl);      // 48px
+    --text-link: var(--text-3xl); // 48px
 
-    --text-prose-xl: var(--text-3xl);  // 48px
-    --text-prose-lg: var(--text-lg);   // 24px
-    --text-prose-em: var(--text-ml);   // 20px
-    --text-prose: var(--text-md);      // 16px
+    --text-prose-xl: var(--text-3xl); // 48px
+    --text-prose-lg: var(--text-lg); // 24px
+    --text-prose-em: var(--text-ml); // 20px
+    --text-prose: var(--text-md); // 16px
 
     --content-width: 62.5vw;
-    --content-margin: calc((100vw - var(--content-width)) / 2);
+    --content-margin: calc(
+      (100vw - var(--content-width)) / 2
+    );
     --content-shift: var(--content-margin);
     --content-shift-neg: calc(-1 * var(--content-shift));
     --mobile-content-width: 90vw;
@@ -257,13 +262,13 @@
     --section-padding: var(--space-2xl);
 
     --intersection-margin: 12vh;
-    --intracontent-margin-sm: var(--space);      // 8px
-    --intracontent-margin: var(--space-lg);      // 16px
-    --intracontent-margin-lg: var(--space-xl);   // 24px
-    --intracontent-margin-xl: var(--space-3xl);  // 24px
+    --intracontent-margin-sm: var(--space); // 8px
+    --intracontent-margin: var(--space-lg); // 16px
+    --intracontent-margin-lg: var(--space-xl); // 24px
+    --intracontent-margin-xl: var(--space-3xl); // 24px
 
-    --content-top-margin: var(--space-xl);       // 24px
-    
+    --content-top-margin: var(--space-xl); // 24px
+
     --browser-bar: 90px;
     --task-bar: 50px;
   }
@@ -367,5 +372,13 @@ img {
   &__hero {
     top: 0;
     left: 10vw;
+  }
+}
+
+.time-btn {
+  &.selected {
+    font-weight: var(--bold);
+    color: var(--primary);
+    background-color: var(--primary-tr-2);
   }
 }

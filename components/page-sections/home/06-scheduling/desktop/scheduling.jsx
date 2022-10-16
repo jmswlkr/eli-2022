@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactCalendar from 'react-calendar'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { ScheduleContext } from '@/context/schedule-context'
 import {
   APT_DETAIL,
   CLIENT_DETAIL,
