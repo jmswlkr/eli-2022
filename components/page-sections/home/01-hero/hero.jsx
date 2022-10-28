@@ -61,7 +61,7 @@ export const Hero = () => {
           <video
             key='img1'
             className={bg}
-            src={`https://res.cloudinary.com/jameswalker-work/video/upload/v1663676344/ELI/beach_tlfnut.mp4`}
+            // src={`https://res.cloudinary.com/jameswalker-work/video/upload/v1663676344/ELI/beach_tlfnut.mp4`}
             autoPlay
             loop
             muted

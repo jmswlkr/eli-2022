@@ -11,6 +11,7 @@
   justify-content: space-evenly;
   color: var(--text-color);
   span:nth-child(1) {
+    font-family: var(--font-body);
     white-space: nowrap;
     margin-right: var(--space-lg);
     margin-bottom: 1vh;

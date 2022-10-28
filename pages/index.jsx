@@ -10,6 +10,7 @@ import { Testimonial } from '@/page-sections/home/05-testimonial/testimonial'
 import { Contact } from '@/page-sections/home/07-contact/contact'
 import { Scheduling } from '@/page-sections/home/06-scheduling/desktop/scheduling'
 import { OfferingsMobile } from '@/page-sections/home/03-offerings/mobile/offerings.mobile'
+import { OfferingsSection } from '@/page-sections/offerings/index';
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
@@ -21,8 +22,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Intro />
-      {isMobile ? <OfferingsMobile /> : <Offerings />}
+      {/* <Intro /> */}
+      {/* {isMobile ? <OfferingsMobile /> : <OfferingsSection />} */}
+      <OfferingsSection />
       <Pillars />
       <Testimonial />
       <Contact />

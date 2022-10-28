@@ -99,7 +99,7 @@
   }
   @if $top {
     bottom: unset;
-    background: linear-gradient(to top, transparent 0%, var(--primary-bg) 70%);
+    background: linear-gradient(to top, transparent 0%, $color 70%);
     top: $vOffset;
   }
 }
@@ -136,6 +136,7 @@
 // Pseudoelements
 @mixin shade($bgColor: var(--black-fade-20)) {
   position: absolute;
+  content: '';
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

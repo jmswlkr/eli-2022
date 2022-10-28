@@ -1,7 +1,7 @@
 import DetailPage from '@/elements/detail-page'
 import React from 'react'
 
-import { allOfferings } from '/mock-api/offering-data.js'
+import { allOfferings } from '/data/offering-data.js'
 
 const Offering = ({ text, images }) => {
   return (

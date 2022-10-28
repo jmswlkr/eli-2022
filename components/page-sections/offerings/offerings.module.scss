@@ -1,0 +1,202 @@
+@import '/styles/mixins';
+
+.choiceWrapper {
+  position: relative;
+}
+.choiceBtn {
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  left: -20%;
+  transform: translateY(-100%);
+  font-family: var(--font-title);
+  color: var(--calendar-accent);
+  padding: .5rem;
+  border: 1px solid currentColor;
+  
+}
+
+.offerings {
+  height: 100vh;
+  width: 100%;
+  h2 {
+    text-align: center;
+    @media (max-width: 1024px) {
+      text-align: left;
+      font-size: var(--text-2xl);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      & span:first-child {
+        white-space: nowrap;
+      }
+      & span:last-child {
+        color: var(--calendar-accent);
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    margin-top: var(--browser-bar);
+    margin-bottom: var(--task-bar);
+  }
+}
+
+.offeringsTwo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.bgImgWrap {
+  z-index: -1;
+  isolation: isolate;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -60vh);
+  height: 120vh;
+  width: 100vw;
+  transition: var(--transition-1-smooth);
+  @media (max-width: 1024px) {
+    height: 100vh;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    filter: saturate(.1);
+    transition: var(--transition-1-smooth);
+    @media (max-width: 1024px) {
+      opacity: 0 !important; 
+    }
+  }
+  &::before {
+    height: 100%;
+    width: 100%;
+    // @include shade;
+  }
+  .fadeBlock {
+    z-index: 2;
+    &:nth-child(1) {
+      @include fadeTransitionBar($top: true, $color: var(--primary-bg), $vOffset: -1vh);
+    } 
+    &:last-child {
+      @include fadeTransitionBar;
+    }
+  }
+}
+
+.cardContainer {
+  margin-top: var(--space-3xl) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    width: 100vw;
+    transform: translateX(calc(-1 * (100vw - var(--content-width)) / 2));
+    overflow-x: scroll;
+  }
+}
+
+.cardContainerAlt {
+  width: 100%;
+  margin-top: var(--space-3xl) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin-top: 15vh;
+    transform: translateY(5vh);
+    overflow-x: scroll;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.sectionBlurb {
+  @include paragraphText;
+  width: 75%;
+  margin: 3rem 0;
+  text-align: center;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+
+.card {
+  height: 577px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  h4 {
+    @include subheaderText;
+    font-size: var(--text-header-sm);
+  }
+  p {
+    @include paragraphText;
+  }
+  button span {
+    color: var(--text-color-med);
+    font-weight: var(--reg) !important;
+  }
+  @media (max-width: 1024px) {
+    width: var(--content-width);
+    margin:0 calc((100vw - var(--content-width)) / 2);
+  }
+}
+.cardAlt {
+  cursor: pointer;
+  height: 275px;
+  width: 285px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  opacity: .5;
+  @media (max-width: 1024px) {
+    height: 145px;
+    padding-bottom: 40px;
+    opacity: 1;
+  }
+  &.activeCard {
+    opacity: 1 !important;
+  }
+  h4 {
+    @include subheaderText;
+    font-size: var(--text-header-sm);
+    color: var(--primary)
+  }
+  p {
+    @include paragraphText;
+    min-width: 100%;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  button span {
+    color: var(--text-color-med);
+    font-weight: var(--reg) !important;
+  }
+  @media (max-width: 1024px) {
+    width: var(--content-width);
+    // margin:0 calc((100vw - var(--content-width)) / 2);
+  }
+}
+
+.imgWrap {
+  height: 300px;
+  width: 300px;
+  background-color: slategray;
+  @media (max-width: 1024px) {
+    height: var(--content-width);
+    width: var(--content-width);
+  }
+}
