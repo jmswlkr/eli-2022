@@ -108,7 +108,7 @@ const VersionTwo = (cards, title, isMobile, curBG, handleBgChange) => {
 }
 
 export const OfferingsSection = () => {
-  const [curVersion, setCurVersion] = useState(1)
+  const [curVersion, setCurVersion] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const [title, setTitle] = useState('')
   const { push } = useRouter()
