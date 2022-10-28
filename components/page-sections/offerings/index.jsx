@@ -50,11 +50,13 @@ const VersionOne = (cards, title) => {
 }
 
 const VersionTwo = (cards, title, isMobile, curBG, handleBgChange) => {
-  const { ref: sectionRef, inView } = useInView({ threshold: 0.75 })
+  // const { ref: sectionRef, inView } = useInView({ threshold: 0.75 })
 
   return (
-    <div className={`${offerings} ${offeringsTwo}`} ref={sectionRef}>
-      <div className={bgImgWrap} style={{ opacity: inView ? 1 : 0 }}>
+    // <div className={`${offerings} ${offeringsTwo}`} ref={sectionRef}>
+    <div className={`${offerings} ${offeringsTwo}`}>
+      {/* <div className={bgImgWrap} style={{ opacity: inView ? 1 : 0 }}> */}
+      <div className={bgImgWrap}>
         <div className={fadeBlock} />
         {cards.map((c, idx) => {
           const visible = {
