@@ -9,7 +9,7 @@
       "@/page-styles/*": ["styles/page-styles/*"],
       "@/styles/*": ["styles/*"],
       "@/utils/*": ["utils/*"],
-      "@/data/*": ["mock-api/*"],
+      "@/data/*": ["data/*"],
       "@/ancillary/*": ["ancillary/*"],
       "@/context/*": ["context/*"],
     }
