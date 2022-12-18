@@ -26,17 +26,15 @@
   }
   &:hover {
     path {
-      // fill: hsla(var(--papaya-hs), 85%, 100%);
       fill: var(--primary-bright);
     }
     circle {
-      // stroke: hsla(var(--papaya-hs), 85%, 100%);
       stroke: var(--primary-bright);
     }
   }
   @media (max-width: 1024px) {
     span {
-      font-weight: var(--light) !important;
+      font-family: var(--font-light);
     }
   }
 }
