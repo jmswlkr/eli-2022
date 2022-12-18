@@ -13,6 +13,7 @@ import { Footer } from './footer/footer'
 export const Layout = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
   const { ref: introRef, inView: introInView } = useInView()
+  const { ref: pillarsRef, inView: pillarsInView } = useInView()
 
   return (
     <div className={layout}>
@@ -20,6 +21,7 @@ export const Layout = ({ children }) => {
         toggleModal={() => setModalOpen(!modalOpen)}
         modalOpen={modalOpen}
         introInView={introInView}
+        light={introInView || pillarsInView}
       />
       <MenuModal
         modalOpen={modalOpen}
@@ -29,6 +31,10 @@ export const Layout = ({ children }) => {
         <span
           className='vp-marker vp-marker__hero'
           ref={introRef}
+        />
+        <span
+          className='vp-marker vp-marker__pillars'
+          ref={pillarsRef}
         />
         {children}
       </main>
