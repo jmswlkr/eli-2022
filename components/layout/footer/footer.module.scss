@@ -1,3 +1,5 @@
+@import '/styles/mixins';
+
 //// < zIndex > ////
 .footer {
   isolation: isolate;
@@ -28,6 +30,7 @@
 }
 
 .footer {
+  position: relative;
   z-index: var(--level-three);
   padding-top: var(--vp-xl);
   height: 85vh;
@@ -57,11 +60,13 @@
   position: relative;
   height: 80%;
   width: 80vw;
+  width: var(--content-width);
   margin: 0 10vw;
-  padding-bottom: 5vh;
+  padding-top: 5vh;
   // background-color: var(--test);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   @media (max-width: 1024px) {
     // width: 100%;
     width: 70%;
@@ -113,6 +118,7 @@
     }
   }
   li a {
+    @include linkText;
     position: relative;
     padding-bottom: var(--space-md);
     cursor: pointer;
@@ -175,9 +181,9 @@
 }
 .footerFoot {
   position: relative;
-  height: 20%;
+  height: 15vh;
   width: 100%;
-  padding: 0 10vw;
+  width: var(--content-width);
   padding-bottom: 5vh;
   display: flex;
   align-items: center;
@@ -222,11 +228,19 @@
     color: var(--text-color-med);
   }
 }
-.bttBtn {
-  cursor: pointer;
+
+.btt {
   position: absolute;
+  cursor: pointer;
   right: 5vh;
-  bottom: 5vh;
+  padding-bottom: 5vh;
+  bottom: 0;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+}
+
+.bttBtn {
   border: none;
   height: 60px;
   width: 60px;

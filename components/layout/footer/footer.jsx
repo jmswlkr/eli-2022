@@ -22,14 +22,14 @@ import {
   footerFoot,
   social,
   copyright,
+  btt,
   bttBtn,
   hidden,
 } from './footer.module.scss'
 
 export const Footer = () => {
-
   const scrollTop = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
   }
 
   return (
@@ -87,8 +87,10 @@ export const Footer = () => {
           })}
         </ul>
         <span className={copyright}>© 2022 Embodied learning institute </span>
+      </div>
+      <div className={btt}>
         <button className={bttBtn} onClick={scrollTop}>
-          ↑<span className={hidden}>Back to Top</span>
+          <span className={hidden}>Back to Top</span> ↑
         </button>
       </div>
     </footer>
