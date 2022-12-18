@@ -2,31 +2,29 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Logo } from 'components/elements/svg/logo'
+import { Logo } from '@/elements/logo/logo'
 
 import { topNav, logo, menuBtn, closeBtn, dark } from './top-nav.module.scss'
 
-export const TopNav = ({ toggleModal, modalOpen, introInView }) => {
+export const TopNav = ({ toggleModal, modalOpen, light, introInView }) => {
   const { pathname } = useRouter()
-  const forceDark = pathname === '/pillars' || pathname.includes('offerings')
 
-  const mixBlend = {
-    mixBlendMode: (introInView || modalOpen || forceDark) ? 'normal' : 'difference',
-  }
+  const forceDark = ['pillars', 'offerings', 'calendar'].some((pth) =>
+    pathname.includes(pth)
+  )
 
   return (
-    <nav className={topNav} style={mixBlend}>
+    <nav className={topNav}>
       <Link href='/'>
         <a className={logo}>
-          {/* <Logo color={forceDark ? 'var(--text-color)' : null}/> */}
-          <Logo color={'var(--text-color)'}/>
+          <Logo color={'var(--accent)'} iconOnly={!introInView} />
         </a>
       </Link>
       <button
         className={`
           ${menuBtn} 
-          ${modalOpen && closeBtn} 
-          ${forceDark && dark}
+          ${modalOpen ? closeBtn : ''}
+          ${!light ? dark : ''}
         `}
         onClick={toggleModal}
       >
