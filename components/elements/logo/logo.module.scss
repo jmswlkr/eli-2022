@@ -1,0 +1,33 @@
+.logoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--transition-primary);
+  svg {
+    width: 58px;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+    path {
+      transition: var(--transition-primary);
+    }
+  }
+  &:hover {
+    color: var(--primary);
+    mix-blend-mode: difference;
+    background-blend-mode: difference;
+    svg path {
+      fill: var(--primary);
+    }
+  }
+}
+
+.logoText {
+  text-transform: uppercase;
+  color: var(--off-white);
+  font-size: var(--text-lg);
+  margin-right: 0.25rem;
+}
+
+.thin {
+  font-weight: var(--light);
+}
