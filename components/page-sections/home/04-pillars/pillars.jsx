@@ -48,14 +48,13 @@ export const Pillars = () => {
     }
   }
 
+  // TODO: Fade animate between pillar text changes.
+
   return (
     <motion.section className={pillars}>
       <div className={pillarsTextContent}>
         <div className={blurb}>
-          <h2 className={title}>The Four Pillars</h2>
-          <h4 className={subtitle}>
-            Of <br /> Embodied Enoughness 
-          </h4>
+          <h2 className={title}>ELI Pillars</h2>
           <span className={sectionAccent}>
             <WaveCircles />
           </span>
@@ -77,10 +76,15 @@ export const Pillars = () => {
                   className={genText}
                   {...animationProps({ animation: fadeIn, dur: 0.25 })}
                 >
-                  The four pillars of Embodied Enoughness - Somatic
-                  Sensibilities, Wholehearted Presence, Dynamic Discernment, and
-                  Leaderful Learning - are practiced-based ways of being that we
-                  use to consciously shape how we live and lead.
+                  Life is a process to be experienced, not a series of problems
+                  to be solved. Unfortunately, our culture teaches a lot about
+                  linear thinking, certainty, control, and individualism, and
+                  very little about systems thinking, ambiguity, surrender, and
+                  interconnectedness. Since we are what we practice, this has
+                  significant implications. ELI’s 4 pillars are a way to
+                  practice Embodied Enoughness. A way to build Embodied
+                  Enoughness into our neural pathways, personal relationships,
+                  communities, organizations, and culture writ large.
                 </motion.span>
               </AnimatePresence>
             )}
@@ -88,17 +92,12 @@ export const Pillars = () => {
         </div>
         <div className={pillarsContainer}>
           {pillarData.map((plr, idx) => {
-            // console.log('is curPillar', plr === curPillar)
-
             return (
               <div
                 key={plr.id}
                 className={`${pillar} ${
                   curPillar && plr.text !== curPillar && fadePillar
                 }`}
-                /*
-                  if curPillar && plr !==curPillar -> apply darken style
-                */
                 onMouseEnter={() => {
                   handleHoverPillar(idx)
                 }}
@@ -107,20 +106,15 @@ export const Pillars = () => {
                 }}
               >
                 <h3 className={title}>{plr.title}</h3>
-                <p className={mText}>
-                  {plr.text}{' '}
-                </p>
+                <p className={mText}>{plr.text} </p>
                 <span className={icon}>{plr.icon}</span>
-                {/* <span className={btn}>
-                  <ArrowBtn lightText arrowColor='var(--accent)' />
-                </span> */}
               </div>
             )
           })}
         </div>
       </div>
       <div className={`${pillarsImageContainer} ${curPillar ? darken : ''}`}>
-        <div className={`${fadeTransitionBar} ${top}`} />
+        {/* <div className={`${fadeTransitionBar} ${top}`} /> */}
         <div className={shade} />
         <img
           className={fg}
@@ -128,13 +122,17 @@ export const Pillars = () => {
           alt=''
         />
         <img className={bg} src={baseUrl('BG_no-tree_fsmhkc', 'good')} alt='' />
-        <div className={`${fadeTransitionBar} ${bot}`} />
+        {/* <div className={`${fadeTransitionBar} ${bot}`} /> */}
       </div>
       <div className={dots}>
         {pillarData.map((p) => {
           const active = p.text === curPillar
-          return <span key={p.id} className={active ? activeDot : ''}>•</span>
-})}
+          return (
+            <span key={p.id} className={active ? activeDot : ''}>
+              •
+            </span>
+          )
+        })}
       </div>
     </motion.section>
   )

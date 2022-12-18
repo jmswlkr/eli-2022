@@ -60,7 +60,7 @@
     transition: var(--transition-1-smooth);
   }
   &::before {
-    background-color: var(--black-fade-20);
+    background-color: var(--black-fade-80);
   }
   .fg {
     z-index: 2;
@@ -76,23 +76,21 @@
     &::before {
       background-color: var(--black-fade-80);
     }
-    &::after {
-      // background-color: transparent;
-    }
     .shade {
       background: rgba(19, 35, 41, 0.2);
     }
   }
 }
 
-.fadeTransitionBar {
-  &.top {
-    @include fadeTransitionBar($height: 9vh, $top: true);
-  }
-  &.bot {
-    @include fadeTransitionBar($height: 9vh);
-  }
-}
+// .fadeTransitionBar {
+//   opacity: 0;
+//   &.top {
+//     @include fadeTransitionBar($height: 9vh, $top: true);
+//   }
+//   &.bot {
+//     @include fadeTransitionBar($height: 9vh);
+//   }
+// }
 
 .pillarsTextContent {
   margin-top: calc(var(--browser-bar) + var(--space-4xl));
@@ -124,6 +122,7 @@
   }
   .subtitle {
     @include subheaderText;
+    color: var(--white);
     margin-bottom: var(--space-lg);
     br {
       display: none;
@@ -140,8 +139,10 @@
   }
   .text {
     @include paragraphText;
-    width: calc(1.5 * var(--column-width));
-    height: 19vh;
+    font-family: var(--font-reg);
+    font-size: var(--text-prose-em);
+    width: calc(2.25 * var(--column-width));
+    min-height: 25vh;
     position: relative;
     text-align: center;
     display: grid;
@@ -205,7 +206,6 @@
 }
 
 .pillar {
-  cursor: pointer;
   padding: 0 32px;
   display: flex;
   flex-direction: column;
@@ -227,10 +227,10 @@
     }
   }
   .title {
-    font-family: var(--font-title);
+    font-family: var(--font-reg);
     // font-size: var(--text-4xl);
     font-size: var(--text-2xl);
-    font-weight: var(--light);
+    font-weight: var(--reg);
     white-space: wrap;
     text-align: center;
     transition: var(--transition-primary);
