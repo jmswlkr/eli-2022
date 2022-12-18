@@ -1,49 +1,48 @@
 // Appt. Booking Route
 import { Client, Environment } from 'square'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 const clientConfig = {
   accessToken: process.env.SB_SQUARE_ACCESS_TOKEN,
   environment: Environment.Sandbox,
 }
 
-const { 
-  bookingsApi, 
-  customersApi 
-} = new Client(clientConfig)
+const { bookingsApi, customersApi } = new Client(clientConfig)
 
 const locationId = process.env.SB_SQUARE_ELI_LOCATION_ID
 const teamMemberId = process.env.SB_SQUARE_DEFAULT_TEAM_ID
 
 export default async function handler(req, res) {
-  const { name, email, phone, appt: { start, segments } } = req.body
+  const {
+    name,
+    email,
+    phone,
+    appt: { start, segments },
+  } = req.body
+
   const [first, last] = name.split(' ')
 
   try {
-  const response = await bookingsApi.createBooking({
-    idempotencyKey: uuidv4(),
-    booking: {
-      startAt: start,
-      locationId,
-      customerId: await getCustomerID(first, last, email, phone),
-      appointmentSegments: [
-        {
-          ...segments,
-          teamMemberId,
-        },
-      ],
-      locationType: 'BUSINESS_LOCATION',
-    },
-  })
+    const response = await bookingsApi.createBooking({
+      idempotencyKey: uuidv4(),
+      booking: {
+        startAt: start,
+        locationId,
+        customerId: await getCustomerID(first, last, email, phone),
+        appointmentSegments: [
+          {
+            ...segments,
+            teamMemberId,
+          },
+        ],
+        locationType: 'BUSINESS_LOCATION',
+      },
+    })
 
-  console.log('response.result: ', response.result);
+    res.send({ response })
+  } catch (error) {}
 
-  res.send({ msg: 'booking route in progress...' })
-} catch(error) {
-  console.log(error);
-}
-
-  res.send({ msg: 'Create booking route reached!' })
+  res.send({ msg: 'Error booking appointment!' })
 }
 
 async function getCustomerID(givenName, familyName, emailAddress, phoneNumber) {
@@ -82,5 +81,5 @@ async function getCustomerID(givenName, familyName, emailAddress, phoneNumber) {
     idempotencyKey: uuidv4(),
   })
 
-  return customer.id 
+  return customer.id
 }

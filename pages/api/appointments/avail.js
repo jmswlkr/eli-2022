@@ -2,8 +2,8 @@
 import { Client, Environment } from 'square'
 
 const clientConfig = {
-    accessToken: process.env.SB_SQUARE_ACCESS_TOKEN,
-  environment: 'sandbox',
+  accessToken: process.env.SB_SQUARE_ACCESS_TOKEN,
+  environment: Environment.Sandbox,
 }
 
 const { bookingsApi } = new Client(clientConfig)

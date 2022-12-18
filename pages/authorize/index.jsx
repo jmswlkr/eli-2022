@@ -3,6 +3,8 @@ import axios from 'axios'
 
 // Components
 import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
+import { Square } from '@/elements/svg/social-icons'
+import { Logo } from '@/elements/logo/logo'
 
 // Styling
 import {
@@ -14,8 +16,6 @@ import {
   instruction,
   authBtn,
 } from './authorize.module.scss'
-import { Square } from '@/elements/svg/social-icons'
-import { Logo } from '@/elements/svg/logo'
 
 const Authorization = () => {
   const [authUrl, setAuthUrl] = useState(null)
