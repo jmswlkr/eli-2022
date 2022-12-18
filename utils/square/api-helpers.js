@@ -1,3 +1,5 @@
+import { toEST } from '../date-helpers'
+
 // SQUARE API HELPERS
 const addHours = (startTime, hoursToAdd) => {
   const time = new Date(startTime)
@@ -52,9 +54,11 @@ export const extractServicesData = ({ objects }) => {
 export const formatApptForSquare = (apptState) => {
   const { m, d, y } = apptState.date.val
   let { t, m: mer } = apptState.time.val
+
   // set to 24hr
-  t = (mer === 'pm' && t != '12:00') ? t + 12 : t
+  t = mer === 'pm' && t != '12:00' ? t + 12 : t
+
   return new Date(
-    `${m} ${d} ${y} ${t.toString().padStart(4, '0')}:00`
+    `${m} ${d} ${y} ${t.toString().padStart(2, '0')}`
   ).toISOString()
 }

@@ -10,6 +10,7 @@ import {
 } from '../../data/appointment-data'
 import {
   getDateFromState,
+  getDateWindow,
   getYmd,
   timeAlreadyBooked,
   toEST,
@@ -18,7 +19,10 @@ import {
   styleInitDate,
   toggleSelectedItem,
 } from '@/utils/react-calendar/style-helpers'
-import { formatApptForSquare, getBookingsByDate } from '@/utils/square/api-helpers'
+import {
+  formatApptForSquare,
+  getBookingsByDate,
+} from '@/utils/square/api-helpers'
 
 import { Label } from '@/elements/section-label/section-label'
 import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn.jsx'
@@ -93,7 +97,7 @@ const Calendar = () => {
   useEffect(() => {
     const current = new Date(Date.now()).toISOString()
     const future = new Date()
-    future.setDate(future.getDate() + 30)
+    future.setDate(future.getDate() + 31)
     setAvailabilityWindow({
       start: current,
       end: future.toISOString(),
@@ -115,23 +119,27 @@ const Calendar = () => {
     })
       .then(({ data }) => {
         const { bookings } = data
-        const bookingsByDate = getBookingsByDate(bookings)
-        setCurrBooked(bookingsByDate)
+        
+        if (bookings) {
+          console.log('bookings: ', bookings);
+          const bookingsByDate = getBookingsByDate(bookings)
+          setCurrBooked(bookingsByDate)
+        }
       })
-      .catch((err) => console.log('err: ', err))
+      .catch((err) => {
+        console.log('err: ', err)
+      })
   }, [availabilityWindow])
-
-  useEffect(() => {
-    // console.log('currBooked: ', currBooked)
-    // console.log('aptDetail: ', aptDetail);
-    // console.log('sessionDetail: ', sessionDetail);
-    // console.log('clientDetail: ', clientDetail);
-  }, [currBooked, aptDetail, sessionDetail, clientDetail])
 
   // viewport breakpoint for js
   useEffect(() => {
     setIsMobile(window.innerWidth < 1024)
   }, [])
+
+  useEffect(() => {
+
+    console.log('aptDetail: ', aptDetail);
+  }, [availabilityWindow, currBooked, aptDetail])
 
   // set prevbutton disabled to start
   useEffect(() => {
@@ -143,6 +151,13 @@ const Calendar = () => {
   const handleSetMonthYear = ({ activeStartDate }) => {
     // only run on month/year change
     if (!activeStartDate) return
+
+    // show availability for currently shown calendar
+    let windowEnd = getDateWindow(activeStartDate)
+    setAvailabilityWindow({
+      start: activeStartDate.toISOString(),
+      end: windowEnd,
+    })
 
     // don't allow month nav back in time
     const prevBtn = document.querySelector(
@@ -183,10 +198,10 @@ const Calendar = () => {
     }))
   }
   const handleSetTime = ({ target }) => {
-    console.log('target: ', target)
     toggleSelectedItem(target, '.time-btn')
     const meridian = target.dataset.mer
     const time = target.textContent
+    console.log('time: ', time)
 
     setAptDetail((prv) => ({
       ...prv,
@@ -217,6 +232,8 @@ const Calendar = () => {
     e.preventDefault()
     const { name, duration, id, version } = sessionDetail.current
     const { Name: clientName, Email, Phone } = clientDetail
+    const formattedAppt = formatApptForSquare(aptDetail)
+    console.log('formattedAppt: ', formattedAppt);
     axios('/api/appointments/book', {
       method: 'POST',
       data: {
@@ -228,13 +245,11 @@ const Calendar = () => {
           segments: {
             durationMinutes: duration,
             serviceVariationId: id,
-            serviceVariationVersion: version
-          }
+            serviceVariationVersion: version,
+          },
         },
       },
-    }).then(({ data }) => {
-      console.log('data: ', data)
-    })
+    }).then(({ data }) => {})
   }
 
   /*
@@ -277,6 +292,8 @@ const Calendar = () => {
                   const hour = isPM ? time - 3 : time + 9
                   const disable = () => {
                     const date = getDateFromState(aptDetail.date.val)
+                    console.log('date: ', date);
+
                     const bookings = currBooked[date]
                     return timeAlreadyBooked(bookings, hour)
                   }
@@ -361,7 +378,11 @@ const Calendar = () => {
               </AnimatePresence>
             </div>
             <div className={btnSubmit} onClick={handleCreateBooking}>
-              <ArrowBtn text='Request' arrowColor='var(--calendar-accent)' noAction={true} />
+              <ArrowBtn
+                text='Request'
+                arrowColor='var(--calendar-accent)'
+                noAction={true}
+              />
             </div>
           </div>
         </div>
