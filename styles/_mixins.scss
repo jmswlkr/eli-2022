@@ -14,7 +14,7 @@
     margin-top: var(--browser-bar);
     margin-bottom: var(--task-bar);
     @if $full {
-      margin: 0 !important;
+      margin: 0 !important; 
     }
   }
 }
@@ -29,7 +29,7 @@
 
 // Typography
 @mixin heroText {
-  font-family: var(--font-title);
+  font-family: var(--font-thin);
   font-size: var(--text-hero);
 }
 @mixin largeHeaderText {
@@ -37,29 +37,27 @@
   font-size: var(--text-header-xl);
 }
 @mixin headerText($color: var(--primary)) {
-  font-family: var(--font-title);
-  font-size: var(--text-header);
+  font-family: var(--font-subtitle);
+  font-size: var(--text-header-sm);
+  letter-spacing: var(--push-ms);
   color: $color;
-  font-weight: var(--reg);
 }
 @mixin subheaderText {
-  font-family: var(--font-title);
+  font-family: var(--font-subtitle);
   font-size: var(--text-subheader);
-  font-weight: var(--light);
+  color: var(--primary);
 }
 @mixin paragraphText {
   font-size: var(--text-prose);
-  font-weight: var(--body);
-  letter-spacing: var(--push-ms);
+  // letter-spacing: var(--push-sm);
   @media (max-width: 1024px) {
     font-size: var(--text-prose-em);
-    font-weight: var(--body);
     line-height: var(--text-xl);
     line-height: 150%;
   }
 }
 @mixin btnText {
-  font-size: var(--text-prose-em);
+  font-size: var(--text-prose);
   letter-spacing: var(--push-ms);
 }
 @mixin smallLabelText($color: var(--text-color-med)) {
@@ -68,6 +66,10 @@
   text-transform: uppercase;
   letter-spacing: var(--push-md);
   color: $color;
+}
+@mixin linkText {
+  font-size: var(--text-prose-em);
+  font-weight: var(--body);
 }
 
 // Elements
@@ -113,6 +115,7 @@
 }
 
 @mixin sectionLabel($top: 10vh) {
+  font-family: var(--font-thin);
   position: absolute;
   top: $top;
   left: -50vw;

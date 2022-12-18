@@ -14,7 +14,7 @@
 .label {
   @include sectionLabel;
   @include fullBleedContent;
-  top: calc(50% + var(--space-8xl));
+  top: calc(45% + var(--space-8xl));
   @media (max-width: 1024px) {
     display: none;
   }
@@ -43,6 +43,7 @@
   }
   .text {
     @include paragraphText;
+    font-family: var(--font-med);
     margin-top: var(--space-2xl);
     span:nth-child(1) {
       display: none;
@@ -135,20 +136,28 @@
 .quoteMark {
   position: absolute;
   top: 0;
-  left: 15%;
+  left: -5%;
 }
 .quote {
   @include paragraphText;
   line-height: 200%;
   margin: 0;
   margin-bottom: var(--space-2xl);
-  width: 70%;
+  width: 80%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
   b {
     display: block;
     margin-bottom: var(--intracontent-margin);
     font-size: var(--text-header-sm);
     font-weight: var(--reg);
     color: var(--primary);
+  }
+  span {
+    letter-spacing: var(--push-sm);
+    font-weight: 300;
   }
   @media (max-width: 1024px) {
     width: var(--content-width);
@@ -169,7 +178,9 @@
   span {
     margin-left: var(--space-lg);
     font-family: var(--font-title);
-    font-size: var(--text-prose-em);
+    font-size: var(--text-xl);
+    font-weight: var(--reg);
+    letter-spacing: normal;
     color: var(--primary);
   }
   @media (max-width: 1024px) {
@@ -203,12 +214,11 @@
   color: var(--primary);
   letter-spacing: var(--push-lg);
   position: absolute;
-  bottom: calc(-2 * var(--intracontent-margin-lg));
+  bottom: var(--intracontent-margin-lg);
   left: var(--content-shift);
   @media (max-width: 1024px) {
     bottom: var(--intracontent-margin-lg);
     right: var(--intracontent-margin-lg);
-
   }
 }
 
@@ -220,7 +230,11 @@
   width: 60vw;
   height: 100%;
   opacity: 0.8;
-  background: linear-gradient(to right, transparent 0%, var(--primary-bg) 40%);
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--primary-bg) 40%
+  );
   @media (max-width: 1024px) {
     display: none;
   }
