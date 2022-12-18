@@ -86,9 +86,10 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        <b>Life changing.</b> tempor risus lectus, eu bibendum eros
-        fermentum quis. Mauris faucibus eros nec tristique
-        volutpat. Quisque hendrerit mauris odio.
+        <b>Life changing.</b>
+        <span>
+         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+        </span>
       </>
     ),
     avatarUrl: '/red-sweater.png',
@@ -98,9 +99,10 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        <b>Incredible.</b> tempor risus lectus, eu bibendum eros
-        fermentum quis. Mauris faucibus eros nec tristique
-        volutpat. Quisque hendrerit mauris odio.
+        <b>Incredible.</b>{' '}
+        <span>
+         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+        </span>
       </>
     ),
     avatarUrl: '/turtleneck.png',
@@ -110,9 +112,10 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        <b>Fulfilling.</b> tempor risus lectus, eu bibendum eros
-        fermentum quis. Mauris faucibus eros nec tristique
-        volutpat. Quisque hendrerit mauris odio.
+        <b>Fulfilling.</b>{' '}
+        <span>
+         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+        </span>
       </>
     ),
     avatarUrl: '/glasses.png',
@@ -122,9 +125,10 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        <b>Opening.</b> tempor risus lectus, eu bibendum eros
-        fermentum quis. Mauris faucibus eros nec tristique
-        volutpat. Quisque hendrerit mauris odio.
+        <b>Opening.</b>{' '}
+        <span>
+         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+        </span>
       </>
     ),
     avatarUrl: '/red-sweater.png',
@@ -134,9 +138,10 @@ export const testimonialData = [
     path: '/',
     text: (
       <>
-        <b>Brilliant.</b> tempor risus lectus, eu bibendum eros
-        fermentum quis. Mauris faucibus eros nec tristique
-        volutpat. Quisque hendrerit mauris odio.
+        <b>Brilliant.</b>{' '}
+        <span>
+         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+        </span>
       </>
     ),
     avatarUrl: '/sport-girl.png',
