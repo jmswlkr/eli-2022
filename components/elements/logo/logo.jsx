@@ -1,20 +1,27 @@
 import React from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { IconMark } from '../svg/iconmark'
 
 import { logoWrap, logoText, thin } from './logo.module.scss'
+import { blurFadeIn } from 'animation/fade'
+import { phases } from 'animation/transition'
 
-export const Logo = ({ color = 'var(--off-white)', iconOnly = false }) => {
+blurFadeIn
+
+export const Logo = ({ color = 'var(--accent)', iconOnly = false }) => {
   return (
     <div className={logoWrap}>
       <IconMark color={color} />
-      {!iconOnly && (
-        <>
-          <span className={logoText}>Embodied</span>
-          <span className={logoText}>Learning</span>
-          <span className={`${logoText} ${thin}`}>Institute</span>
-        </>
-      )}
+      <AnimatePresence exitBeforeEnter >
+        {!iconOnly && (
+          <motion.div {...blurFadeIn} {...phases}>
+            <span className={logoText}>Embodied</span>
+            <span className={logoText}>Learning</span>
+            <span className={`${logoText} ${thin}`}>Institute</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
