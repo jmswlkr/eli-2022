@@ -6,8 +6,6 @@
 }
 .sectionAccent {
   @include sectionLabel($top: -5vh);
-
-
   @media (max-width: 1024px) {
     @include waveCircles;
   }
@@ -16,4 +14,7 @@
   @include headerText;
   margin: 0 !important;
   margin-bottom: var(--space-lg);
+  &.left {
+    text-align: left;
+  }
 }
