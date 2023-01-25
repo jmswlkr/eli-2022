@@ -45,8 +45,6 @@ export const Hero = () => {
     }, 3000)
   }, [fontsLoaded])
 
-  // TODO: Fade in video when playable.
-
   return (
     <section className={hero}>
       <div className={heroImages}>
@@ -70,12 +68,6 @@ export const Hero = () => {
             transition={smooth(3, 1)}
           />
         </AnimatePresence>
-        {/* <motion.div
-          className={fadeTransitionBar}
-          {...fadeSlideUpShort}
-          {...phases}
-          transition={smooth(1, 0)}
-        /> */}
       </div>
       <motion.div
         className={heroTextContent}

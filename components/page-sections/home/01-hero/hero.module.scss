@@ -44,10 +44,6 @@
     width: 120%;
     object-fit: cover;
   }
-  .fadeTransitionBar {
-    @include fadeTransitionBar($vOffset: -4vh);
-    translate: 0 -5%;
-  }
   .shade {
     @include gradientShade;
   }
@@ -71,7 +67,7 @@
   align-items: center;
   justify-content: flex-end;
   @media (max-width: 1024px) {
-    justify-content: flex-end;
+    justify-content: center;
   }
 }
 
@@ -118,5 +114,8 @@
   margin-top: 4vh;
   button span {
     text-transform: uppercase;
+  }
+  @media (max-width: 1024px) {
+    margin-top: 7vh;
   }
 }
