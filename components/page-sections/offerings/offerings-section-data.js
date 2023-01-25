@@ -9,14 +9,14 @@ export const cards = [
   {
     imgSrc: 'consulting_b8zqih',
     title: 'ELI Offerings',
-    text: 'Explore what ELI can offer you learn how to get started with us.',
+    text: 'Explore our coaching, consulting, and collaborative learning.',
     btnText: 'Offerings',
     path: '/offerings',
   },
   {
     imgSrc: 'talk-lg_v21sfo',
     title: 'Initial Consult',
-    text: 'Book an initial consult to get to know ELI completely free of charge.',
+    text: 'Book a free 30 minute consultation to get to know more about ELI.',
     btnText: 'Book now',
     path: '/calendar',
   },
