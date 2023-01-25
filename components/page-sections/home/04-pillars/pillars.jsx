@@ -10,10 +10,7 @@ import { WaveCircles } from '@/elements/svg/wave-circles'
 import {
   pillars,
   sectionAccent,
-  fadeTransitionBar,
   shade,
-  top,
-  bot,
   pillarsImageContainer,
   darken,
   fg,
@@ -21,7 +18,6 @@ import {
   pillarsTextContent,
   blurb,
   title,
-  subtitle,
   text,
   genText,
   specText,
@@ -30,7 +26,6 @@ import {
   pillar,
   fadePillar,
   icon,
-  btn,
   dots,
   activeDot,
 } from './pillars.module.scss'
