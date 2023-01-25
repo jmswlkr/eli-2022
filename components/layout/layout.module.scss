@@ -1,6 +1,11 @@
 //// < zIndex > ////
 
 .layout {
+  isolation: isolate;
+  
+  article {
+    z-index: 99;
+  }
   nav {
     z-index: 5;
   }
@@ -24,7 +29,6 @@
   align-items: center;
   justify-content: flex-end;
   background-color: var(--primary-bg);
-  isolation: isolate;
   &::after {
     position: fixed;
     top: 0;

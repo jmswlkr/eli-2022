@@ -19,6 +19,23 @@
       fill: var(--primary);
     }
   }
+  @media (max-width: 1024px) {
+    svg {
+      scale: 0.8;
+    }
+  }
+}
+
+.logoTextWrap {
+  br {
+    display: none;
+  }
+  @media (max-width: 1024px) {
+    font-size: var(--text-md);
+    br {
+      display: block;
+    }
+  }
 }
 
 .logoText {
@@ -27,6 +44,9 @@
   color: var(--off-white);
   font-size: var(--text-lg);
   margin-right: 0.25rem;
+  @media (max-width: 1024px) {
+    font-size: var(--text-md);
+  }
 }
 
 .thin {

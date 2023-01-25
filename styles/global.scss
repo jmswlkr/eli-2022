@@ -2,31 +2,28 @@
   font-family: "Lato Thin";
   src: url("/fonts/Lato-Thin.ttf");
   font-display: swap;
-} 
+}
 @font-face {
   font-family: "Lato Light";
   src: url("/fonts/Lato-Light.ttf");
   font-display: swap;
-} 
+}
 @font-face {
   font-family: "Lato Med";
   src: url("/fonts/Lato-Regular.ttf");
   font-display: swap;
-} 
+}
 
 :root {
   /* font-family */
   // TODO: Replace font weights with actual font families.
-  --font-thin:"Lato Thin", "Segoe UI Light";
-  --font-reg:"Lato Light", "Segoe UI Light";
-  --font-med:"Lato Med", "Segoe UI";
-
+  --font-thin: "Lato Thin", "Segoe UI Light";
+  --font-reg: "Lato Light", "Segoe UI Light";
+  --font-med: "Lato Med", "Segoe UI";
 
   --font-title: var(--font-thin);
   --font-subtitle: var(--font-thin);
   --font-body: var(--font-reg);
-
-
 
   /* palette */
   --full-black: rgb(0, 0, 0);
@@ -175,6 +172,8 @@
   --primary-tr: hsla(var(--river-hsl), 0.25);
   --primary-tr-2: hsla(var(--river-hsl), 0.15);
   --primary-tr-3: hsla(var(--river-hsl), 0.05);
+
+  --primary-light: hsl(var(--primary-hs), 85%);
 
   --primary-bright: var(--vivid-blue);
   --primary-deep: var(--ocean-blue);
@@ -391,13 +390,24 @@ img {
 }
 
 .vp-marker {
+  // background-color: red;
   z-index: 9999999999;
   position: absolute;
   width: 15px;
   height: 15px;
+  &__text {
+    top: 94vh;
+    left: 10vw;
+    @media (max-width: 1024px) {
+      top: 22vh;
+    }
+  }
   &__hero {
     top: 94vh;
     left: 10vw;
+    @media (max-width: 1024px) {
+      top: 90vh;
+    }
   }
   &__pillars {
     top: 327vh;
@@ -421,4 +431,13 @@ img {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#modal {
+  z-index: var(--level-top);
+  z-index: 99999999999999999;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
 }

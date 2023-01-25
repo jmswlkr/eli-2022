@@ -1,6 +1,10 @@
 // * Small, convenient, reusable data stuctures. * //
 
-import { Facebook, Instagram, LinkedIn } from "components/elements/svg/social-icons"
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+} from 'components/elements/svg/social-icons'
 
 export const pageLinks = [
   {
@@ -58,7 +62,6 @@ export const socialIcons = [
   },
 ]
 
-
 export const contactInfo = [
   {
     id: 'location',
@@ -80,59 +83,68 @@ export const contactInfo = [
   },
 ]
 
-
 export const testimonialData = [
   {
     path: '/',
-    text: (
-      <>
-        <b>Life changing.</b>
-        <span>
-         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
-        </span>
-      </>
-    ),
-    avatarUrl: '/red-sweater.png',
-    initials: 'Gabrielle D.',
+    text: <b>Compassionate.</b>,
+    videoThumb:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/v1674480597/ELI/alyona_a9urqh.png',
+    videoUrl:
+      'https://res.cloudinary.com/jameswalker-work/video/upload/v1674480601/ELI/Alyona__compressed_mj9qve.mp4',
+    name: 'Alyona',
   },
   {
     path: '/',
     text: (
       <>
-        <b>Incredible.</b>{' '}
+        <b>Insightful.</b>
         <span>
-         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+          Alison is excellent at facilitating insightful group discussion. She
+          brought a deep sense of acceptance and compassion that allowed group
+          participants to explore challenging topics in a safe and supportive
+          context.
         </span>
       </>
     ),
-    avatarUrl: '/turtleneck.png',
-    initials: 'Leslie C.',
+    name: 'Gary M.',
   },
   {
     path: '/',
     text: (
       <>
-        <b>Fulfilling.</b>{' '}
+        <b>Life Changing.</b>{' '}
         <span>
-         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+          Alison’s workshop helped me to spend less time in my head and more
+          time in my body. It was a life-changing experience that has enabled me
+          to be a more present, authentic, and grounded leaders.
         </span>
       </>
     ),
-    avatarUrl: '/glasses.png',
-    initials: 'Mandy L.',
+    name: 'Diane W.',
+  },
+  {
+    path: '/',
+    text: <b>Attentive.</b>,
+    videoThumb:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/v1674479639/ELI/maria_lvifjh.png',
+    videoUrl:
+      'https://res.cloudinary.com/jameswalker-work/video/upload/v1674479393/ELI/Maria__compressed_zwtmci.mp4',
+    name: 'Maria',
   },
   {
     path: '/',
     text: (
       <>
-        <b>Opening.</b>{' '}
+        <b>Transformational.</b>{' '}
         <span>
-         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+          Working with Alison was transformational. She's incredibly
+          knowledgeable, open, and compassionate. Her deep listening and
+          presence, in combination with her observations and insights, created
+          the space I needed for personal growth.
         </span>
       </>
     ),
-    avatarUrl: '/red-sweater.png',
-    initials: 'Victor M.',
+    name: 'Lisa R.',
   },
   {
     path: '/',
@@ -140,12 +152,12 @@ export const testimonialData = [
       <>
         <b>Brilliant.</b>{' '}
         <span>
-         Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros nec tristique volutpat.
+          Pretium diam ut lacinia interdum. Praesent tincidunt iaculis nisl at
+          dapibus. Etiam vehicula pretium mi ut rhoncus. Mauris faucibus eros
+          nec tristique volutpat.
         </span>
       </>
     ),
-    avatarUrl: '/sport-girl.png',
-    initials: 'Andrew W.',
+    name: 'Andrew W.',
   },
 ]
-

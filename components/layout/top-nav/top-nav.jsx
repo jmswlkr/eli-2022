@@ -6,7 +6,7 @@ import { Logo } from '@/elements/logo/logo'
 
 import { topNav, logo, menuBtn, closeBtn, dark } from './top-nav.module.scss'
 
-export const TopNav = ({ toggleModal, modalOpen, light, introInView }) => {
+export const TopNav = ({ toggleModal, modalOpen, light, introInView, heroTextInView }) => {
   const { pathname } = useRouter()
 
   const forceDark = ['pillars', 'offerings', 'calendar'].some((pth) =>
@@ -17,7 +17,7 @@ export const TopNav = ({ toggleModal, modalOpen, light, introInView }) => {
     <nav className={topNav}>
       <Link href='/'>
         <a className={logo}>
-          <Logo color={'var(--accent)'} iconOnly={!introInView} />
+          <Logo color={'var(--accent)'} iconOnly={!introInView || !heroTextInView} />
         </a>
       </Link>
       <button

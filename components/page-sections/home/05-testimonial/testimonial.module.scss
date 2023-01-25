@@ -138,6 +138,115 @@
   top: 0;
   left: -5%;
 }
+.videoContainer {
+  width: 70%;
+  margin-bottom: var(--space-2xl);
+  b {
+    display: block;
+    margin-bottom: var(--intracontent-margin);
+    font-size: var(--text-header-sm);
+    font-weight: var(--reg);
+    color: var(--primary);
+  }
+}
+.videoWrap {
+  position: relative;
+  height: 234px;
+  border-radius: 10px;
+  overflow: hidden;
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  @media (max-width: 1024px) {
+    height: 30vh;
+  }
+}
+.videoShade {
+  @include shade;
+  cursor: pointer;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  transition: var(--transition-primary);
+  path {
+    transition: var(--transition-primary);
+    fill: var(--white);
+  }
+  &.hideShade {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &:hover {
+    background-color: transparent;
+    path {
+      fill: var(--primary);
+    }
+  }
+}
+
+.expandVideoBtn {
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: white;
+  font-size: 2rem;
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+.modalShade {
+  @include shade;
+  background: var(--black-fade-80);
+  height: 100vh;
+  width: 100vw;
+  isolation: isolate;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  position: relative;
+  height: 70vh;
+  aspect-ratio: 4 / 4;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--primary-light);
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.closeModalBtn {
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  font-size: 3rem;
+  color: var(--white);
+  transform-origin: center;
+  transition: var(--transition-primary);
+  &:hover {
+    rotate: 180deg;
+    color: var(--primary);
+  }
+}
+
 .quote {
   @include paragraphText;
   line-height: 200%;
@@ -167,7 +276,7 @@
 }
 .attr {
   letter-spacing: var(--push-lg);
-  background-color: var(--primary-tr-2);
+  // background-color: var(--primary-tr-2);
   border-radius: var(--radius-rounded);
   padding-right: var(--space-2xl);
   font-weight: var(--light);
@@ -178,30 +287,36 @@
   span {
     margin-left: var(--space-lg);
     font-family: var(--font-title);
+    font-weight: 600;
     font-size: var(--text-xl);
-    font-weight: var(--reg);
     letter-spacing: normal;
     color: var(--primary);
   }
   @media (max-width: 1024px) {
+    margin-top: 4vh;
     margin-bottom: var(--intracontent-margin-lg);
   }
 }
 
-.attrImg {
+.attrInitial {
+  display: flex;
+
+  // remove if testimonial pics
+  display: none;
+
   height: var(--space-7xl);
   width: var(--space-7xl);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: var(--primary-light);
   border-radius: var(--radius-rounded);
   border: 2px solid var(--primary);
+  color: var(--primary-deep);
+  font-size: 2rem;
+  font-weight: bold;
 
-  img {
-    height: 100%;
-    width: 100%;
-  }
   @media (max-width: 1024px) {
     height: 100px;
     width: 100px;
