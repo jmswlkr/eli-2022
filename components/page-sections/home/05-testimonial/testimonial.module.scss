@@ -318,8 +318,8 @@
   font-weight: bold;
 
   @media (max-width: 1024px) {
-    height: 100px;
-    width: 100px;
+    height: var(--space-5xl);
+    width: var(--space-5xl);
     display: flex;
   }
 }
