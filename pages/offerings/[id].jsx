@@ -1,11 +1,12 @@
 import DetailPage from '@/elements/detail-page'
 import React from 'react'
 
-import { allOfferings } from '/data/offering-data.js'
+// import { allOfferings } from '/data/offering-data.js'
 
 const Offering = ({ text, images }) => {
   return (
-    <DetailPage textData={text} imageData={images} />
+    // <DetailPage textData={text} imageData={images} />
+    <></>
   )
 }
 
