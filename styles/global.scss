@@ -13,6 +13,11 @@
   src: url("/fonts/Lato-Regular.ttf");
   font-display: swap;
 }
+@font-face {
+  font-family: "Lato Semibold";
+  src: url("/fonts/Lato-Bold.ttf");
+  font-display: swap;
+}
 
 :root {
   /* font-family */
@@ -20,10 +25,18 @@
   --font-thin: "Lato Thin", "Segoe UI Light";
   --font-reg: "Lato Light", "Segoe UI Light";
   --font-med: "Lato Med", "Segoe UI";
+  --font-semibold: "Lato Semibold", "Segoe UI";
 
+  // LIGHTER TYPE
   --font-title: var(--font-thin);
   --font-subtitle: var(--font-thin);
   --font-body: var(--font-reg);
+
+  // BOLDER TYPE
+  --font-title: var(--font-reg);
+  --font-subtitle: var(--font-med);
+  --font-body: var(--font-med);
+  --font-body-lt: var(--font-reg);
 
   /* palette */
   --full-black: rgb(0, 0, 0);
@@ -173,7 +186,11 @@
   --primary-tr-2: hsla(var(--river-hsl), 0.15);
   --primary-tr-3: hsla(var(--river-hsl), 0.05);
 
-  --primary-light: hsl(var(--primary-hs), 85%);
+  --primary-dark: hsl(var(--primary-hs), 25%);
+  --primary-darker: hsl(var(--primary-hs), 15%);
+
+  --primary-light: hsl(var(--primary-hs), 65%);
+  --primary-lighter: hsl(var(--primary-hs), 85%);
 
   --primary-bright: var(--vivid-blue);
   --primary-deep: var(--ocean-blue);
@@ -440,4 +457,21 @@ img {
 
 video::-webkit-media-controls-fullscreen-button {
   display: none !important;
+}
+
+.general-btn {
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: .8rem 1.75rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition-primary);
+  border: .5px solid currentColor;
+  &:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white) !important;
+  }
 }

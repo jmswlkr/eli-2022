@@ -29,7 +29,7 @@
 
 // Typography
 @mixin heroText {
-  font-family: var(--font-thin);
+  font-family: var(--font-title);
   font-size: var(--text-hero);
 }
 @mixin largeHeaderText {
@@ -48,8 +48,8 @@
   color: var(--primary);
 }
 @mixin paragraphText {
+  font-family: var(--font-body);
   font-size: var(--text-prose);
-  // letter-spacing: var(--push-sm);
   @media (max-width: 1024px) {
     font-size: var(--text-prose-em);
     line-height: var(--text-xl);
