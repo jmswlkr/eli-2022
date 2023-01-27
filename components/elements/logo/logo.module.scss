@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: flex-start;
   transition: var(--transition-primary);
+  color: var(--off-white);
   svg {
     width: 58px;
     flex-shrink: 0;
@@ -13,10 +14,15 @@
   }
   &:hover {
     color: var(--primary);
+    // color: var(--text-color);
     mix-blend-mode: difference;
     background-blend-mode: difference;
     svg path {
       fill: var(--primary);
+      // fill: var(--text-color);
+    }
+    .logoText {
+      color: var(--primary);
     }
   }
   @media (max-width: 1024px) {
@@ -39,9 +45,9 @@
 }
 
 .logoText {
-  font-family: var(--font-reg);
+  font-family: var(--font-semibold);
   text-transform: uppercase;
-  color: var(--off-white);
+  color: currentColor;
   font-size: var(--text-lg);
   margin-right: 0.25rem;
   @media (max-width: 1024px) {
@@ -50,5 +56,5 @@
 }
 
 .thin {
-  font-family: var(--font-thin);
+  font-family: var(--font-body-);
 }

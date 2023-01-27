@@ -53,9 +53,9 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
               {...blurFadeIn}
               {...phases}
             >
-              {contactInfo.map((inf) => {
+              {contactInfo.map((inf, idx) => {
                 return (
-                  <li key={inf.id}>
+                  <li key={idx}>
                     <label>{inf.label}</label>
                     <Link href={inf.link}>
                       <a >
