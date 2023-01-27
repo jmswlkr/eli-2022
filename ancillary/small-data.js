@@ -63,12 +63,12 @@ export const socialIcons = [
 ]
 
 export const contactInfo = [
-  {
-    id: 'location',
-    label: 'Visit Us',
-    content: `5524 Rathbun Rd Cazenovia, NY 13035`,
-    link: 'https://goo.gl/maps/SKCSy7Daqr5Xm7sr9',
-  },
+  // {
+  //   id: 'location',
+  //   label: 'Visit Us',
+  //   content: `5524 Rathbun Rd Cazenovia, NY 13035`,
+  //   link: 'https://goo.gl/maps/SKCSy7Daqr5Xm7sr9',
+  // },
   {
     id: 'Phone',
     label: 'Phone',
