@@ -24,6 +24,7 @@ import {
   text,
   btn,
 } from './contact.module.scss'
+import { Button } from '@/elements/general-btn/general-btn'
 
 export const Contact = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -71,7 +72,7 @@ export const Contact = () => {
     <section className={contact} id='contact'>
       <div className={formSection}>
         <div className={blurb}>
-          <SectionHeader title='Get in touch.' withLabel={false} />
+          <SectionHeader title='Get in touch' withLabel={false} />
         </div>
         <form className={contactForm}>
           <div className={contactInfo}>
@@ -100,23 +101,25 @@ export const Contact = () => {
           />
         </form>
         <span className={submitBtn}>
-          <ArrowBtn text='Sumbit' btnAction={handleSubmit} />
+          <Button text='Submit' />
+          {/* <ArrowBtn text='Sumbit' btnAction={handleSubmit} /> */}
         </span>
       </div>
       <div className={appointment}>
         <div className={image}>
           <img
-            src='https://res.cloudinary.com/jameswalker-work/image/upload/v1666932113/ELI/talk_tx1so3.png'
-            alt='therapist and patient discussing in exposed brick office.'
+            src='https://res.cloudinary.com/jameswalker-work/image/upload/v1674737038/ELI/chatting-area_ggdese.jpg'
+            alt='casual meeting space in well lit office'
           />
         </div>
         <div className={cta}>
           <h4 className={heading}>Ready for more?</h4>
           <div className={text}>
-            Get to know us with a free initial consult online.
+            Get to know us with a free initial consult.
           </div>
           <div className={btn}>
-            <ArrowBtn text='Book now' btnAction={() => {}} />
+            <Button text='Schedule Now' link='/' />
+            {/* <ArrowBtn text='Book now' btnAction={() => {}} /> */}
           </div>
         </div>
       </div>
