@@ -93,6 +93,9 @@ export const Pillars = () => {
                 className={`${pillar} ${
                   curPillar && plr.text !== curPillar && fadePillar
                 }`}
+                // onClick={() => {
+                //   handleHoverPillar(idx)
+                // }}
                 onMouseEnter={() => {
                   handleHoverPillar(idx)
                 }}
