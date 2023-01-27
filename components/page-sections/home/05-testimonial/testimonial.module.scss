@@ -69,6 +69,7 @@
   position: relative;
   overflow: visible;
   width: 100vw;
+  min-height: 450px;
   height: 100%;
   transform: translateX(var(--content-shift-neg));
   display: flex;
@@ -86,9 +87,13 @@
   left: 0;
   width: 105vw;
   height: 60vh;
+  height: 70vh;
   margin: 0 !important;
+  // overflow-x: scroll;
+  // overflow-y: visible;
+  overflow: visible;
   overflow-x: scroll;
-  display: flex;
+  display:  flex;
   align-items: center;
   justify-content: flex-start;
   @media (max-width: 1024px) {
@@ -331,6 +336,7 @@
   position: absolute;
   bottom: var(--intracontent-margin-lg);
   left: var(--content-shift);
+  // bottom: 2rem;
   @media (max-width: 1024px) {
     bottom: var(--intracontent-margin-lg);
     right: var(--intracontent-margin-lg);

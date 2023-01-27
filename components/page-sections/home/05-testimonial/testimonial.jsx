@@ -7,6 +7,12 @@ import { testimonialData } from '@/ancillary/small-data.js'
 
 import { QuoteMark } from 'components/elements/svg/quote-mark'
 import { Label } from 'components/elements/section-label/section-label'
+import { WaveCircles } from '@/elements/svg/wave-circles'
+import { PlayButton } from '@/elements/svg/play-button'
+
+import { animationProps } from 'animation/animate'
+import { phases } from 'animation/transition'
+import { fadeIn } from 'animation/fade'
 
 // Stying & Animation
 import {
@@ -35,12 +41,6 @@ import {
   fadeTransitionBlock,
   scrollTip,
 } from './testimonial.module.scss'
-import { WaveCircles } from '@/elements/svg/wave-circles'
-import { animationProps } from 'animation/animate'
-import { PlayButton } from '@/elements/svg/play-button'
-import { useClickOutside } from 'hooks/useClickOutside'
-import { phases } from 'animation/transition'
-import { fadeIn } from 'animation/fade'
 
 export const Testimonial = () => {
   const [sectionRef, sectionInView] = useInView()
@@ -61,7 +61,7 @@ export const Testimonial = () => {
         <Label> Testimonial Testimonial Testimonial </Label>
       </div>
       <div className={blurb}>
-        <h2 className={title}>Student Stories.</h2>
+        <h2 className={title}>Client Testimonials</h2>
       </div>
       <div className={testimonialSliderBase}>
         <div className={testimonialSlider}>
