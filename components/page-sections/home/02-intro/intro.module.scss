@@ -1,13 +1,13 @@
-@import '/styles/mixins';
+@import "/styles/mixins";
 
-.offerings {
+.intro {
   height: 100vh;
   width: 100%;
   h2 {
     text-align: center;
     @media (max-width: 1024px) {
       text-align: left;
-      font-size: var(--text-2xl);
+      font-size: var(--text-xl);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -43,7 +43,9 @@
   justify-content: space-between;
   @media (max-width: 1024px) {
     width: 100vw;
-    transform: translateX(calc(-1 * (100vw - var(--content-width)) / 2));
+    transform: translateX(
+      calc(-1 * (100vw - var(--content-width)) / 2)
+    );
     overflow-x: scroll;
   }
 }
@@ -58,10 +60,9 @@
   }
 }
 
-
 .card {
   height: 577px;
-  width: 325px;
+  width: 345px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -69,18 +70,27 @@
   h4 {
     @include subheaderText;
     font-size: var(--text-header-sm);
+    white-space: nowrap;
   }
   p {
     @include paragraphText;
     font-family: var(--font-med);
   }
   button span {
+    font-family: var(--font-med) !important;
     color: var(--text-color-med);
-    font-weight: var(--reg) !important;
   }
   @media (max-width: 1024px) {
+    height: 520px;
     width: var(--content-width);
-    margin:0 calc((100vw - var(--content-width)) / 2);
+    margin: 0 calc((100vw - var(--content-width)) / 2);
+  }
+}
+
+.cardBtn {
+  button {
+    font-size: var(--text-prose);
+    color: var(--primary);
   }
 }
 
