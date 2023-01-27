@@ -8,7 +8,7 @@ import { Logo } from '@/elements/logo/logo'
 
 import { phases, smooth } from 'animation/transition'
 import { animationProps } from 'animation/animate'
-import { blurFadeIn, fadeSlideUpShort } from 'animation/fade'
+import { blurFadeIn, fadeIn, fadeSlideUpShort } from 'animation/fade'
 
 import {
   hero,
@@ -73,7 +73,7 @@ export const Hero = () => {
       </div>
       <motion.div
         className={heroTextContent}
-        {...animationProps({ controls, animation: blurFadeIn, del: 2 })}
+        {...animationProps({ controls, animation: fadeIn, del: 2 })}
       >
         <div className={tagline}>
           <h2 className={slogan}>
