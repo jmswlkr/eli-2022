@@ -108,8 +108,9 @@ export const Contact = () => {
       <div className={appointment}>
         <div className={image}>
           <img
-            src='https://res.cloudinary.com/jameswalker-work/image/upload/v1674737038/ELI/chatting-area_ggdese.jpg'
-            alt='casual meeting space in well lit office'
+            src='https://images.pexels.com/photos/1011302/pexels-photo-1011302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            // src='https://res.cloudinary.com/jameswalker-work/image/upload/v1674737038/ELI/chatting-area_ggdese.jpg'
+            // alt='casual meeting space in well lit office'
           />
         </div>
         <div className={cta}>
