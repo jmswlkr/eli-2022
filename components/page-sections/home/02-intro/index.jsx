@@ -52,7 +52,8 @@ export const IntroSection = () => {
           return (
             <div key={c.title} className={card}>
               <div className={imgWrap}>
-                <img src={baseUrl(c.imgSrc)} alt={c.title} />
+                {/* <img src={baseUrl(c.imgSrc)} alt={c.title} /> */}
+                <img src={c.imgSrc} alt={c.title} />
               </div>
               <h4>{c.title}</h4>
               <p>{c.text}</p>
