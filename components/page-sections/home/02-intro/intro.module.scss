@@ -17,7 +17,7 @@
         white-space: nowrap;
       }
       & span:last-child {
-        color: var(--calendar-accent);
+        color: var(--primary-light);
       }
     }
   }
@@ -75,7 +75,8 @@
   justify-content: space-between;
   h4 {
     @include subheaderText;
-    font-size: var(--text-header-sm);
+    // font-size: calc(.8 * var(--text-header-sm));
+    font-size: var(--text-header-xs);
     white-space: nowrap;
   }
   p {

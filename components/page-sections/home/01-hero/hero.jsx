@@ -77,7 +77,7 @@ export const Hero = () => {
       >
         <div className={tagline}>
           <h2 className={slogan}>
-            Learn to <em>Thrive.</em>
+            Learn to <em>Thrive</em>
           </h2>
           <div className={btn}>
             <Button text='Get Started' path='/#intro' />

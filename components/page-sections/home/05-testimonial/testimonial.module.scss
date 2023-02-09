@@ -83,7 +83,7 @@
 .testimonialList {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   padding: 0;
   padding-right: 35vw;
@@ -241,6 +241,7 @@
 
 .quote {
   @include paragraphText;
+  font-size: var(--text-md);
   line-height: 200%;
   margin: 0;
   margin-bottom: var(--space-2xl);
@@ -280,7 +281,7 @@
     margin-left: var(--space-lg);
     font-family: var(--font-title);
     font-weight: 600;
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     letter-spacing: normal;
     color: var(--primary);
   }

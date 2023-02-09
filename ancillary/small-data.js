@@ -78,8 +78,8 @@ export const contactInfo = [
   {
     id: 'email',
     label: 'Email',
-    content: `info@eli.org`,
-    link: 'mailto:info@eli.orgs',
+    content: <>embodiedlearninginstitute<wbr/>@gmail.com</>,
+    link: 'mailto:embodiedlearninginstitute@gmail.com',
   },
 ]
 

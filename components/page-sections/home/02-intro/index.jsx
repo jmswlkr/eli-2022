@@ -30,14 +30,14 @@ export const IntroSection = () => {
     const titleContent = !isMobile ? (
       <div className={titleContainer}>
         <div className={titleInner}>
-          Create <span className='gradient-text'>transformational</span> change
-          through Embodied Learning.
+          <span className='gradient-text'>Transformational</span> change
+          through Embodied Learning
         </div>
       </div>
     ) : (
       <>
         <span>Change through</span>
-        <span>Embodied Learning</span>
+        <span className='gradient-text '>Embodied Learning</span>
       </>
     )
 
