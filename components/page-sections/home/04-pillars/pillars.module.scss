@@ -50,6 +50,11 @@
   }
   .shade {
     @include gradientShade;
+    background: linear-gradient(
+      to right,
+      hsla(var(--lotus-hs), 95%, 20%) 10%,
+      hsla(var(--river-hs), 23%, 80%) 90%
+    );
   }
   &::before,
   &::after {
@@ -60,7 +65,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: var(--white-fade-35);
+    // background-color: var(--white-fade-35);
     transition: var(--transition-1-smooth);
   }
   &::before {
@@ -232,7 +237,7 @@
 .activeCard {
   background: linear-gradient(
       to right,
-      hsla(var(--river-hs), 55%, 20%),
+      hsla(var(--lotus-hs), 90%, 10%),
       hsla(var(--river-hsl), 25%)
     );
   h6 {
