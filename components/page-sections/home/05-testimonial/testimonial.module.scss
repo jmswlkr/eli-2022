@@ -42,12 +42,13 @@
   }
 }
 .testimonialSliderBase {
-  --slider-content-height: 70vh;
+  --slider-content-height: 60vh;
+  margin: var(--intracontent-margin-lg) 0;
 
   position: relative;
   overflow: visible;
   width: 100vw;
-  height: var(--slider-content-height);
+  height: calc(1.25 * var(--slider-content-height));
   transform: translateX(var(--content-shift-neg));
   display: flex;
   align-items: flex-start;
@@ -61,7 +62,8 @@
 
 .testimonialSlider {
   position: absolute;
-  top: 0;
+  top: 50%;
+  translate: 0 -50%;
   left: 0;
   width: 105vw;
   height: var(--slider-content-height);
@@ -69,7 +71,7 @@
   overflow: visible;
   overflow-x: scroll;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   @media (max-width: 1024px) {
     align-items: flex-start;
@@ -101,6 +103,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
+  b {
+    font-size: var(--text-2xl) !important;
+  }
   &:hover {
     .attrImg {
       opacity: 0.65;
@@ -131,7 +136,7 @@
   b {
     display: block;
     margin-bottom: var(--intracontent-margin);
-    font-size: var(--text-header-sm);
+    font-size: var(--text-2xl);
     font-weight: var(--reg);
     color: var(--primary);
   }
