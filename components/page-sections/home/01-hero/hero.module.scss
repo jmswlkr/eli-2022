@@ -21,6 +21,7 @@
 
 .hero {
   @include homeSection($full: true);
+  margin: 0;  
   position: relative;
   height: 100vh;
   width: 100%;

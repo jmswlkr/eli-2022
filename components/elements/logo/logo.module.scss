@@ -14,12 +14,10 @@
   }
   &:hover {
     color: var(--primary);
-    // color: var(--text-color);
     mix-blend-mode: difference;
     background-blend-mode: difference;
     svg path {
       fill: var(--primary);
-      // fill: var(--text-color);
     }
     .wordmarkText {
       color: var(--primary);
@@ -28,6 +26,9 @@
   @media (max-width: 1024px) {
     svg {
       scale: 0.8;
+    }
+    path {
+      fill: var(--white);
     }
   }
 }
@@ -56,6 +57,10 @@
   }
   @media (max-width: 1024px) {
     font-size: var(--text-md);
+    color: var(--white);
+    &.initials {
+      color: var(--white);
+    }
   }
 }
 

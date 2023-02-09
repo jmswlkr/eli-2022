@@ -19,7 +19,7 @@ import {
   testimonial,
   sectionAccent,
   label,
-  blurb,
+  header,
   title,
   text,
   testimonialSliderBase,
@@ -57,11 +57,14 @@ export const Testimonial = () => {
       <div className={sectionAccent}>
         <WaveCircles />
       </div>
-      <div className={label}>
+      {/* <div className={label}>
         <Label> Testimonial Testimonial Testimonial </Label>
-      </div>
-      <div className={blurb}>
+      </div> */}
+      <div className={header}>
         <h2 className={title}>Client Testimonials</h2>
+        <div className={label}>
+          <Label> Testimonial Testimonial Testimonial </Label>
+        </div>
       </div>
       <div className={testimonialSliderBase}>
         <div className={testimonialSlider}>

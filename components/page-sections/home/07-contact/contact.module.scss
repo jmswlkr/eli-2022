@@ -31,10 +31,9 @@
   @media (max-width: 1024px) {
     width: var(--content-width);
     grid-template-columns: 1fr;
-    margin-top: 20vh;
-    margin-bottom: 3px;
-    height: 150vh;
-    height: 100vh;
+    margin-top: 10vh;
+    min-height: 100vh;
+    height: auto;
     flex-direction: column;
     width: 100%;
     &::after {
@@ -180,13 +179,9 @@
     }
   }
   @media (max-width: 1024px) {
-    @include fullBleedContent;
+    // @include fullBleedContent;
     width: var(--content-width);
-    margin-top: 25vh;
-    textarea,
-    input {
-      // margin-left: 5vw;
-    }
+    margin-top: 5vh;
   }
 }
 .name {

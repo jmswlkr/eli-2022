@@ -19,16 +19,20 @@
   .bg {
     z-index: 2;
   }
+
+  --card-height: 410px;
 }
 
 .pillars {
   @include homeSection($full: true);
+  margin: 0;
+  padding: var(--intersection-margin) 0;
   align-items: flex-start;
-  height: calc(100vh + var(--os-vp-vh));
+  height: auto;
   @media (max-width: 1024px) {
     height: auto;
-    padding-top: var(--vp-lg);
-    padding-bottom: var(--vp-2xl);
+    padding-top: var(--vp-md);
+    padding-bottom: var(--vp-xl);
   }
 }
 
@@ -68,32 +72,10 @@
   .bg {
     z-index: 1;
   }
-  &.darken {
-    & > * {
-      transition-delay: .5s;
-      transition: var(--transition-2-smooth);
-    }
-    &::before {
-      background-color: var(--black-fade-80);
-    }
-    .shade {
-      background: rgba(19, 35, 41, 0.2);
-    }
-  }
 }
 
-// .fadeTransitionBar {
-//   opacity: 0;
-//   &.top {
-//     @include fadeTransitionBar($height: 9vh, $top: true);
-//   }
-//   &.bot {
-//     @include fadeTransitionBar($height: 9vh);
-//   }
-// }
-
 .pillarsTextContent {
-  margin-top: calc(var(--browser-bar) + var(--space-4xl));
+  // margin-top: calc(var(--browser-bar) + var(--space-4xl));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,8 +104,10 @@
   }
   .subtitle {
     @include subheaderText;
+    font-family: var(--font-reg);
     color: var(--white);
     margin-bottom: var(--space-lg);
+
     br {
       display: none;
     }
@@ -139,11 +123,10 @@
   }
   .text {
     @include paragraphText;
-    font-family: var(--font-body-lt);
-    font-size: var(--text-prose-em);
-    width: calc(2.25 * var(--column-width));
-    min-height: 25vh;
-    height: 30vh;
+    font-family: var(--font-body);
+    font-size: var(--text-prose);
+    // width: calc(2.25 * var(--column-width));
+    width: 100%;
     position: relative;
     text-align: center;
     display: grid;
@@ -162,11 +145,17 @@
     @media (max-width: 1024px) {
       display: none;
     }
+    span:nth-child(2) {
+      margin-bottom: 1.5rem;
+    }
+    strong {
+      color: var(--primary-light);
+    }
   }
   .sectionAccent {
     display: none;
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     svg {
@@ -185,34 +174,92 @@
   }
 }
 
-.pillarsContainer {
-  width: 100%;
-  display: grid;
-  // gap: 0 24px;
-  // grid-template-columns: repeat(3, var(--column-width));
-  grid-template-columns: repeat(4, calc(32px + var(--column-width-narrow)));
-  align-items: center;
-  justify-content: center;
+.pillarsSlider {
   @media (max-width: 1024px) {
-    // grid-template-columns: repeat(3, 100vw);
-    grid-template-columns: repeat(4, 100vw);
+    overflow-x: scroll;
     width: 100vw;
-    overflow: scroll;
-    flex-shrink: 0;
-    justify-content: flex-start;
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 }
 
+.pillarCardsContainer {
+  position: relative;
+  width: var(--content-width);
+  height: var(--card-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    width: auto;
+    width: 150vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
+  @media (max-width: 592px) {
+     width: 400vw;
+  }
+}
+
+.cardWrapper {
+  height: auto;
+  width: auto;
+  position: relative;
+  height: var(--card-height);
+  aspect-ratio: 3 / 4;
+  width: 70vw;
+}
+
+.pillarCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  // min-height: var(--card-height);
+  // aspect-ratio: 3 / 4;
+  // border: 1px solid var(--white);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+   @media (max-width: 1024px) {
+    margin-right: 15vw;
+  }
+}
+
+.activeCard {
+  background: linear-gradient(
+      to right,
+      hsla(var(--river-hs), 55%, 20%),
+      hsla(var(--river-hsl), 25%)
+    );
+  h6 {
+    color: var(--primary-light);
+  }
+}
+
+.cardHeading {
+  margin-top: 10%;
+  margin-bottom: 0;
+  font-size: var(--text-subheader);
+  text-align: center;
+}
+.cardText {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.cardIcon {
+  position: absolute;
+  top: 45%;
+}
 .pillar {
   padding: 0 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  transition: var(--transition-primary);
   &:hover {
     transform: translateY(-2vh);
     .title {
@@ -261,7 +308,7 @@
   &.fadePillar {
     opacity: 0.5;
     .title {
-      transform: scale(.95);
+      transform: scale(0.95);
     }
   }
   .mText {

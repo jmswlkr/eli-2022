@@ -2,21 +2,13 @@
 
 .testimonial {
   @include homeSection;
+  // margin: var(--intersection-margin) 0;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   overflow: visible;
   @media (max-width: 1024px) {
     justify-content: center;
-  }
-}
-
-.label {
-  @include sectionLabel;
-  @include fullBleedContent;
-  top: calc(45% + var(--space-8xl));
-  @media (max-width: 1024px) {
-    display: none;
   }
 }
 
@@ -34,48 +26,34 @@
   }
 }
 
-.blurb {
-  margin-top: var(--content-top-margin);
-  margin-bottom: var(--intracontent-margin);
+.header {
+  position: relative;
   width: calc(1.5 * var(--column-width));
+  margin-bottom: var(--intracontent-margin);
   .title {
     @include headerText;
   }
-  .text {
-    @include paragraphText;
-    font-family: var(--font-med);
-    margin-top: var(--space-2xl);
-    span:nth-child(1) {
+  .label {
+    @include sectionLabel(50%);
+    translate: 0 -50%;
+    @media (max-width: 1024px) {
       display: none;
     }
-    @media (max-width: 1024px) {
-      width: 100%;
-      margin-top: var(--intracontent-margin-sm);
-      span:nth-child(1) {
-        display: block;
-      }
-      span:nth-child(2) {
-        display: none;
-      }
-    }
-  }
-  @media (max-width: 1024px) {
-    height: 20vh;
-    width: 100%;
-    margin-bottom: 0;
   }
 }
 .testimonialSliderBase {
+  --slider-content-height: 70vh;
+
   position: relative;
   overflow: visible;
   width: 100vw;
-  min-height: 450px;
-  height: 100%;
+  height: var(--slider-content-height);
   transform: translateX(var(--content-shift-neg));
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   @media (max-width: 1024px) {
+    scroll-snap-type: mandatory;
     height: 80vh;
     background-color: var(--primary-tr-2);
   }
@@ -86,14 +64,11 @@
   top: 0;
   left: 0;
   width: 105vw;
-  height: 60vh;
-  height: 70vh;
+  height: var(--slider-content-height);
   margin: 0 !important;
-  // overflow-x: scroll;
-  // overflow-y: visible;
   overflow: visible;
   overflow-x: scroll;
-  display:  flex;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   @media (max-width: 1024px) {
@@ -142,6 +117,13 @@
   position: absolute;
   top: 0;
   left: -5%;
+  @media (max-width: 1024px) {
+    
+    left: 5%;
+    path {
+      fill: var(--primary);
+    }
+  }
 }
 .videoContainer {
   width: 70%;
@@ -334,7 +316,7 @@
   color: var(--primary);
   letter-spacing: var(--push-lg);
   position: absolute;
-  bottom: var(--intracontent-margin-lg);
+  bottom: 0;
   left: var(--content-shift);
   // bottom: 2rem;
   @media (max-width: 1024px) {

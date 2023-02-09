@@ -1,7 +1,9 @@
 // TODO: Review SCSS modules and refactor duplicate code into mixins.
 
 // Containers & Sections
-@mixin homeSection($height: 100vh, $full: false) {
+// @mixin homeSection($height: 100vh, $full: false) {
+@mixin homeSection($height: auto, $full: false) {
+  margin: var(--intersection-margin) 0;
   position: relative;
   height: $height;
   width: 100%;
@@ -9,7 +11,7 @@
   align-items: center;
   justify-content: center;
   isolation: isolate;
-  margin-bottom: var(--intersection-margin);
+  // margin-bottom: var(--intersection-margin);
   @media (max-width: 1024px) {
     margin-top: var(--browser-bar);
     margin-bottom: var(--task-bar);
