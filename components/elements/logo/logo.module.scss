@@ -21,7 +21,7 @@
       fill: var(--primary);
       // fill: var(--text-color);
     }
-    .logoText {
+    .wordmarkText {
       color: var(--primary);
     }
   }
@@ -32,7 +32,7 @@
   }
 }
 
-.logoTextWrap {
+.wordmarkWrap {
   br {
     display: none;
   }
@@ -44,17 +44,21 @@
   }
 }
 
-.logoText {
+.wordmarkText {
   font-family: var(--font-semibold);
   text-transform: uppercase;
   color: currentColor;
   font-size: var(--text-lg);
   margin-right: 0.25rem;
+  &.initials {
+    color: var(--primary);
+    font-size: var(--text-xl);
+  }
   @media (max-width: 1024px) {
     font-size: var(--text-md);
   }
 }
 
 .thin {
-  font-family: var(--font-body-);
+  font-family: var(--font-body);
 }

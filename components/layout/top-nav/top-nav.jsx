@@ -19,7 +19,7 @@ export const TopNav = ({
     pathname.includes(pth)
   )
 
-  const showText = introInView || heroTextInView || modalOpen
+  const showFullText = introInView || heroTextInView || modalOpen
   const useLight = light || modalOpen
 
   return (
@@ -27,8 +27,8 @@ export const TopNav = ({
       <Link href='/'>
         <a className={logo}>
           <Logo
-            showText={showText}
-            color={showText ? 'var(--white)' : 'var(--primary)'}
+            showFullText={showFullText}
+            color={showFullText ? 'var(--white)' : 'var(--primary)'}
           />
         </a>
       </Link>
