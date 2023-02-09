@@ -61,7 +61,7 @@ export const Testimonial = () => {
         <Label> Testimonial Testimonial Testimonial </Label>
       </div> */}
       <div className={header}>
-        <h2 className={title}>Client Testimonials</h2>
+        <h2 className={title}>Praise for ELI</h2>
         <div className={label}>
           <Label> Testimonial Testimonial Testimonial </Label>
         </div>
