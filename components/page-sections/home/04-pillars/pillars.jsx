@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { baseUrl } from '@/utils/cloudinary'
@@ -30,6 +30,7 @@ import {
   standardCard,
   cardIcon,
   cardText,
+  padded,
   cardHeading,
 } from './pillars.module.scss'
 import { useDeviceSize } from 'hooks/useDeviceSize'
@@ -53,9 +54,6 @@ export const Pillars = () => {
         <div className={blurb}>
           <h2 className={title}>ELI Pillars</h2>
           <p className={subtitle}>The Practice of Embodied Enoughness</p>
-          <span className={sectionAccent}>
-            <WaveCircles />
-          </span>
           <p className={text}>
             <span>
               Life is a process to be experienced, not a series of problems to
@@ -75,20 +73,18 @@ export const Pillars = () => {
             </span>
           </p>
         </div>
-        <div className={pillarsSlider}>
-          <div className={pillarCardsContainer}>
-            {pillarData.map((plr, idx) => {
-              return (
-                <PillarCard
-                  key={plr.id}
-                  idx={idx}
-                  {...plr}
-                  curPillar={curPillar}
-                  handleHoverPillar={handleHoverPillar}
-                />
-              )
-            })}
-          </div>
+        <div className={pillarCardsContainer}>
+          {pillarData.map((plr, idx) => {
+            return (
+              <PillarCard
+                key={plr.id}
+                idx={idx}
+                {...plr}
+                curPillar={curPillar}
+                handleHoverPillar={handleHoverPillar}
+              />
+            )
+          })}
         </div>
       </div>
       <div className={`${pillarsImageContainer} ${curPillar ? darken : ''}`}>
@@ -113,13 +109,15 @@ function PillarCard({
   curPillar,
   handleHoverPillar,
 }) {
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
   const deemph = curPillar && curPillar !== id
   const active = curPillar && curPillar === id
+  
+  useEffect(() => {
+    setIsSmallScreen(window.innerWidth < 1400)
+  }, [])
+  
 
-  const { isTablet, isMobile } = useDeviceSize()
-  console.log('isTablet: ', isTablet)
-
-  const isSmallScreen = isTablet || isMobile
 
   return (
     <article
@@ -136,10 +134,13 @@ function PillarCard({
           <motion.div
             {...phases}
             {...fadeIn}
-            className={`${activeCard} ${pillarCard}`}
+            className={`
+              ${activeCard} 
+              ${pillarCard} 
+            `}
           >
             <h6 className={cardHeading}>{title}</h6>
-            <p className={cardText}>{text}</p>
+            <p className={`${cardText} ${idx !== 2 ? padded : ''}`}>{text}</p>
           </motion.div>
         )}
       </AnimatePresence>

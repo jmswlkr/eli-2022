@@ -368,6 +368,7 @@ h5 {
 p {
   margin: 0;
   line-height: 175%;
+  word-wrap: break-word;
   @media (max-width: 1024px) {
     line-height: 140%;
   }

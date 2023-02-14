@@ -3,6 +3,10 @@
 .intro {
   @include homeSection;
   display: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   // margin: var(--intersection-margin) 0;
   h2 {
     text-align: center;
@@ -40,22 +44,6 @@
   }
 }
 
-.cardContainer {
-  margin-top: var(--space-5xl);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @media (max-width: 1024px) {
-    width: 100vw;
-    transform: translateX(
-      calc(-1 * (100vw - var(--content-width)) / 2)
-    );
-    overflow-x: scroll;
-    scroll-snap-type: inline mandatory;
-    // scroll-snap-align: ;
-  }
-}
-
 .sectionBlurb {
   @include paragraphText;
   width: 75%;
@@ -66,21 +54,50 @@
   }
 }
 
+.cardContainer {
+  justify-self: center;
+  align-self: center;
+  height: auto;
+  margin-top: var(--space-5xl);
+  display: grid;
+  gap: 4rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 1200px) {
+    width: 50%;
+    grid-template-columns: 100%;
+    grid-template-rows: unset;
+    grid-auto-rows: min-content;
+  }
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+  @media (max-width: 592px) {
+    width: 100%;
+  }
+}
+
+
 .card {
-  height: 597px;
-  width: 345px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  flex-shrink: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
+  > * {
+    margin-bottom: 1rem;
+  }
   h4 {
     @include subheaderText;
-    // font-size: calc(.8 * var(--text-header-sm));
     font-size: var(--text-header-xs);
     white-space: nowrap;
   }
   p {
     @include paragraphText;
+    width: 100%;
     font-family: var(--font-med);
   }
   button span {
@@ -88,10 +105,6 @@
     color: var(--text-color-med);
   }
   @media (max-width: 1024px) {
-    height: 60vh;
-    width: var(--content-width);
-    margin: 0 calc((100vw - var(--content-width)) / 2);
-    padding-bottom: var(--vp-md);
     align-items: center;
     p {
       text-align: center;
@@ -110,8 +123,4 @@
   height: 300px;
   width: 100%;
   background-color: slategray;
-  @media (max-width: 1024px) {
-    height: var(--content-width);
-    width: var(--content-width);
-  }
 }

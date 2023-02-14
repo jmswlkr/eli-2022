@@ -21,6 +21,10 @@
   }
 
   --card-height: 410px;
+  @media (max-width: 1024px) {
+    --card-height: 350px;
+
+  }
 }
 
 .pillars {
@@ -80,12 +84,14 @@
 }
 
 .pillarsTextContent {
-  // margin-top: calc(var(--browser-bar) + var(--space-4xl));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   color: var(--white);
+  @media (max-width: 1400px) {
+    width: 80%;
+  }
   @media (max-width: 1024px) {
     margin-top: var(--vp-xl);
     width: 100%;
@@ -160,7 +166,7 @@
   .sectionAccent {
     display: none;
     position: absolute;
-    top: 65%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     svg {
@@ -179,28 +185,33 @@
   }
 }
 
-.pillarsSlider {
-  @media (max-width: 1024px) {
-    overflow-x: scroll;
-    width: 100vw;
-  }
-}
-
 .pillarCardsContainer {
   position: relative;
-  width: var(--content-width);
-  height: var(--card-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-self: center;
+  align-self: center;
+  // height: var(--card-height);
+  width: calc(1.25 * var(--content-width));
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: min-content;
+  @media (max-width: 1400px) {
+    width: 70%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, var(--min-content));
+  }
+  @media (max-width: 1200px) {
+    width: 85%;
+  }
   @media (max-width: 1024px) {
-    width: auto;
-    width: 150vw;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    width: 100%;
+  }
+  @media (max-width: 692px) {
+    grid-template-columns: 1fr;
+    width: 65%;
   }
   @media (max-width: 592px) {
-     width: 400vw;
+    width: 100%;
   }
 }
 
@@ -209,8 +220,9 @@
   width: auto;
   position: relative;
   height: var(--card-height);
-  aspect-ratio: 3 / 4;
-  width: 70vw;
+  @media (max-width: 1024px) {
+    height: auto;
+  }
 }
 
 .pillarCard {
@@ -220,28 +232,34 @@
   transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
-  // min-height: var(--card-height);
-  // aspect-ratio: 3 / 4;
-  // border: 1px solid var(--white);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   overflow-y: scroll;
-   @media (max-width: 1024px) {
-    margin-right: 15vw;
+  @media (max-width: 1024px) {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: unset;
   }
 }
 
 .activeCard {
   background: linear-gradient(
-      to right,
-      hsla(var(--lotus-hs), 90%, 10%),
-      hsla(var(--river-hsl), 25%)
-    );
+    to right,
+    hsla(var(--lotus-hs), 90%, 10%),
+    hsla(var(--river-hsl), 25%)
+  );
   h6 {
     color: var(--primary-light);
+  }
+  @media (max-width: 1200px) {
+    background: none !important;
+    h6 {
+      color: var(--color-white);
+    }
   }
 }
 
@@ -254,6 +272,13 @@
 .cardText {
   padding: 1rem 2rem;
   text-align: center;
+  &.padded {
+    padding: 1.5rem 4rem;
+  }
+  @media (max-width: 1024px) {
+    padding: 1rem .5rem !important;
+    line-height: 180%;
+  }
 }
 .cardIcon {
   position: absolute;
