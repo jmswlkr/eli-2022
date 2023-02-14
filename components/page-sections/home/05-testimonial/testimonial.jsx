@@ -87,8 +87,8 @@ export const Testimonial = () => {
                     <TextTestimonial {...tst} />
                   )}
                   <span className={attr}>
-                    <div className={attrInitial}>{tst.name[0]}</div>
-                    <span>{tst.name}</span>
+                    {/* <div className={attrInitial}>{tst.name[0]}</div> */}
+                    <span> - {tst.name}</span>
                   </span>
                 </motion.li>
               )
