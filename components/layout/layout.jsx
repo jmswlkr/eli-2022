@@ -22,7 +22,7 @@ export const Layout = ({ children }) => {
       <TopNav
         toggleModal={() => setModalOpen(!modalOpen)}
         modalOpen={modalOpen}
-        introInView={introInView}
+        showBG={introInView}
         heroTextInView={textInView}
         light={introInView || pillarsInView}
       />
@@ -32,17 +32,17 @@ export const Layout = ({ children }) => {
       />
       <main className={content}>
         <span
+          className='vp-marker vp-marker__hero'
+          ref={introRef}
+        />
+        {/* <span
           className='vp-marker vp-marker__text'
           ref={textRef}
         />
         <span
-          className='vp-marker vp-marker__hero'
-          ref={introRef}
-        />
-        <span
           className='vp-marker vp-marker__pillars'
           ref={pillarsRef}
-        />
+        /> */}
         {children}
       </main>
       <Footer />

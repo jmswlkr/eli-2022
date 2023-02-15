@@ -412,7 +412,7 @@ img {
   // background-color: red;
   z-index: 9999999999;
   position: absolute;
-  width: 15px;
+  width: .5px;
   height: 15px;
   &__text {
     top: 94vh;
@@ -422,7 +422,8 @@ img {
     }
   }
   &__hero {
-    top: 94vh;
+    top: 0;
+    height: 104vh;
     left: 10vw;
     @media (max-width: 1024px) {
       top: 90vh;

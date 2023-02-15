@@ -1,34 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { Logo } from '@/elements/logo/logo'
 
-import { topNav, logo, menuBtn, closeBtn, dark } from './top-nav.module.scss'
+import { topNav, logo, menuBtn, closeBtn, withBG, dark } from './top-nav.module.scss'
 
 export const TopNav = ({
   toggleModal,
   modalOpen,
   light,
-  introInView,
+  showBG,
   heroTextInView,
 }) => {
-  const { pathname } = useRouter()
-
-  const forceDark = ['pillars', 'offerings', 'calendar'].some((pth) =>
-    pathname.includes(pth)
-  )
-
-  const showFullText = introInView || heroTextInView || modalOpen
-  const useLight = light || modalOpen
 
   return (
-    <nav className={topNav}>
+    <nav className={`${topNav} ${!showBG ? withBG : ''}`}>
       <Link href='/'>
         <a className={logo}>
           <Logo
-            showFullText={showFullText}
-            color={showFullText ? 'var(--white)' : 'var(--primary)'}
+            showFullText={true}
+            color={'var(--white)'}
           />
         </a>
       </Link>
@@ -36,7 +28,6 @@ export const TopNav = ({
         className={`
           ${menuBtn} 
           ${modalOpen ? closeBtn : ''}
-          ${!useLight ? dark : ''}
         `}
         onClick={toggleModal}
       >
