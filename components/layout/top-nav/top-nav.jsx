@@ -9,13 +9,11 @@ import { topNav, logo, menuBtn, closeBtn, withBG, dark } from './top-nav.module.
 export const TopNav = ({
   toggleModal,
   modalOpen,
-  light,
-  showBG,
-  heroTextInView,
+  showBG = false,
 }) => {
 
   return (
-    <nav className={`${topNav} ${!showBG ? withBG : ''}`}>
+    <nav className={`${topNav} ${showBG ? withBG : ''}`}>
       <Link href='/'>
         <a className={logo}>
           <Logo
