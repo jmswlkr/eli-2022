@@ -10,7 +10,7 @@ export const TopNav = ({
   toggleModal,
   modalOpen,
   light,
-  showBG,
+  showBG = false,
   heroTextInView,
 }) => {
 
