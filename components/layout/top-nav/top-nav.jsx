@@ -13,7 +13,7 @@ export const TopNav = ({
 }) => {
 
   return (
-    <nav className={`${topNav} ${showBG ? withBG : ''}`}>
+    <nav className={`${topNav} ${withBG}`}>
       <Link href='/'>
         <a className={logo}>
           <Logo
