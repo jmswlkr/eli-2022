@@ -77,20 +77,17 @@ export const Hero = () => {
       >
         <div className={tagline}>
           <h2 className={slogan}>
-            Learn to <em>Thrive</em>
+            <span>Transformational change through</span>
+            <em>Embodied Learning</em>
           </h2>
+          {/* <h2 className={slogan}>
+            Learn to <em>Thrive</em>
+          </h2> */}
           <div className={btn}>
             <Button text='Get Started' path='/#intro' />
-            {/* <ArrowBtn
-              text='Get Started'
-              arrowColor='var(--accent)'
-              lightText={true}
-              pageLink={`/#intro`}
-            /> */}
           </div>
         </div>
       </motion.div>
     </section>
   )
 }
-

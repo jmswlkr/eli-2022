@@ -30,8 +30,9 @@ export const IntroSection = () => {
     const titleContent = !isMobile ? (
       <div className={titleContainer}>
         <div className={titleInner}>
-          <span className='gradient-text'>Transformational</span> change
-          through Embodied Learning
+          Learn to <strong>Thrive</strong>
+          {/* <span className='gradient-text'>Transformational</span> change
+          through Embodied Learning */}
         </div>
       </div>
     ) : (

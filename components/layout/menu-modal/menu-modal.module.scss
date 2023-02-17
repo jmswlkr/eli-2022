@@ -144,6 +144,9 @@
 .navOptions {
   height: 75%;
   align-items: flex-end;
+  li {
+    text-align: right;
+  }
   a {
     cursor: pointer;
     position: relative;

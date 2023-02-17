@@ -39,6 +39,7 @@
 }
 .titleInner {
   width: 80%;
+  font-size: var(--text-header);
   @media (max-width: 592px) {
     width: 100%;
   }

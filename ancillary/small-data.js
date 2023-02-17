@@ -17,7 +17,7 @@ export const pageLinks = [
   },
   {
     path: '/offerings/training',
-    content: 'Training',
+    content: 'Collaborative Learning',
   },
   {
     path: '/calendar',
@@ -34,14 +34,14 @@ export const connectLinks = [
     path: '/#contact',
     content: 'Contact',
   },
-  {
-    path: '/',
-    content: 'Resources',
-  },
-  {
-    path: '/',
-    content: 'Partners',
-  },
+  // {
+  //   path: '/',
+  //   content: 'Resources',
+  // },
+  // {
+  //   path: '/',
+  //   content: 'Partners',
+  // },
 ]
 
 export const socialIcons = [
