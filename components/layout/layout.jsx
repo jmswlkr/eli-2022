@@ -27,14 +27,6 @@ export const Layout = ({ children }) => {
       <MenuModal modalOpen={modalOpen} closeModal={() => setModalOpen(false)} />
       <main className={content}>
         <span className='vp-marker vp-marker__hero' ref={heroRef} />
-        {/* <span
-          className='vp-marker vp-marker__text'
-          ref={textRef}
-        />
-        <span
-          className='vp-marker vp-marker__pillars'
-          ref={pillarsRef}
-        /> */}
         {children}
       </main>
       <Footer />

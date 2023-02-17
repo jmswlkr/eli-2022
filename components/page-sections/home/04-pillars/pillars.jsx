@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { baseUrl } from '@/utils/cloudinary'
-import { pillarData } from './pillar-data'
+import { pillarData } from './pillar-data-old'
 
 import { WaveCircles } from '@/elements/svg/wave-circles'
 

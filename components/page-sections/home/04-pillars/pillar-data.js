@@ -1,48 +1,76 @@
-import { StonesIcon, FlowerIcon, YogaIcon, ThoughtIcon } from "@/elements/svg/pillar-icons";
+import { FlowerIcon, StonesIcon, YogaIcon } from '@/elements/svg/pillar-icons'
 
 export const pillarData = [
   {
-    id: 'sensibilities-01',
-    path: '/',
-    title: (
+    id: 'ss',
+    title: 'Somatic Sensibilities',
+    imgSlug: 'under-current_v9teqk',
+    text: (
       <>
-        Somatic <br /> Sensibilites
+        When we hone our somatic sensibilities, we connect with our sensations
+        and feelings, learn how to respond from a space of engaged equanimity,
+        and spend more time living in the now.
       </>
     ),
-    text: `When we hone our somatic sensibilities, we connect with our sensations and feelings, learn how to respond from a space of engaged equanimity, and spend more time living in the now.`,
-    icon: <StonesIcon />,
+    icon: <FlowerIcon color='var(--primary-tr)' />,
+    color: {
+      p: 'var(--primary)',
+      s: 'var(--primary-tr)',
+    },
   },
   {
-    id: 'presence-02',
-    path: '/',
-    title: (
+    id: 'wp',
+    title: 'Wholehearted Presence',
+    imgSlug: 'splashing_uqohfm',
+    text: (
       <>
-        Wholehearted <br /> Presence
+        When we engage life from the space of wholehearted presence, we bring an
+        unrelentless compassion for ourselves and others. This embodied state is
+        grounded in understanding, generative gratitude, humility, and
+        individual/collective healing.
       </>
     ),
-    text: `When we engage life from the space of wholehearted presence, we bring an unrelentless compassion for ourselves and others. This embodied state is grounded in understanding, gratitude, humility, and healing.`,
-    icon: <YogaIcon />,
+    icon: <YogaIcon color='var(--emph-tr)' />,
+    color: {
+      p: 'var(--emph-color)',
+      s: 'var(--emph-tr)',
+    },
   },
   {
-    id: 'discernment-03',
-    path: '/',
-    title: (
+    id: 'dd',
+    title: 'Dynamic Discernment',
+    imgSlug: 'stone-stack_ztdlzn',
+    text: (
       <>
-        Dynamic <br /> Discernment
+        {/* We all are situated within multiple interconnected and interrelated systems that shape our entire soma. Our ability to see these emergent systems from a mindful space, experience them with an open heart, and listen to the intuition we receive from our gut allows for dynamic discernment. */}
+        We all are situated within multiple interconnected and interrelated
+        systems that shape our entire soma. Dynamic discernment is a space of
+        embodied interconnection where we recognize our habitual patterns,
+        respond from a grounded space, and engage our intuition and imagination.
       </>
     ),
-    text: `We all are situated within multiple interconnected and interrelated systems that shape our entire soma. Dynamic discernment is a space of embodied living where we recognize our habitual patterns, respond from a grounded space, and engage our intuition and imagination.`,
-    icon: <ThoughtIcon />,
+    icon: <StonesIcon color='var(--accent-tr)' />,
+    color: {
+      p: 'var(--accent)',
+      s: 'var(--accent-tr)',
+    },
   },
   {
-    id: 'learning-04',
-    path: '/',
-    title: (
+    id: 'll',
+    title: 'Leaderful Learning',
+    imgSlug: 'stone-stack_ztdlzn',
+    text: (
       <>
-        Leaderful <br /> Living
+        Transformational relationships are built and sustained through
+        interdependence and mutual learning. When we create shared vision,
+        embrace collective co-creation, and take action from a space of
+        collective awareness we are engaging in leadership living and learning.
       </>
     ),
-    text: `Leaderful living is a space of embodied learning, agency, and conscious choice. It ignites transformational relationships grounded in abundance, interdependence and collective co-creation.`,
-    icon: <YogaIcon />,
+    icon: <StonesIcon color='var(--accent-tr)' />,
+    color: {
+      p: 'var(--accent)',
+      s: 'var(--accent-tr)',
+    },
   },
 ]

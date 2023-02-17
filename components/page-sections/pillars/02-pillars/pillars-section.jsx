@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 
 import { baseUrl } from '@/utils/cloudinary'
-import { pillarData } from './pillar-data'
+import { pillarData } from '../../home/04-pillars/pillar-data'
 
 import { WaveCircles } from '@/elements/svg/wave-circles'
 

@@ -247,6 +247,8 @@
 }
 
 .activeCard {
+  height: auto;
+  padding-bottom: 2rem;
   background: linear-gradient(
     to right,
     hsla(var(--lotus-hs), 90%, 10%),
