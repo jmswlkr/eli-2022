@@ -62,8 +62,8 @@ export const Hero = () => {
           <video
             key='img1'
             className={bg}
-            src={`https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4`}
-            // src={`https://res.cloudinary.com/jameswalker-work/video/upload/v1674832419/ELI/ocean_qxigpo.mp4`}
+            // src={`https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4`}
+            src={`https://res.cloudinary.com/jameswalker-work/video/upload/v1674832419/ELI/ocean_qxigpo.mp4`}
             autoPlay
             loop
             muted
