@@ -1,0 +1,122 @@
+.headerCta {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    padding: var(--intracontent-margin) 0;
+    font-size: var(--text-4xl);
+    font-family: var(--font-italic);
+    color: var(--primary-deep);
+    @media (max-width: 592px) {
+      font-size: var(--text-3xl);
+    }
+  }
+  @media (max-width: 592px) {
+    text-align: center;
+  }
+}
+.ctaBtn {
+  @media (max-width: 592px) {
+    button {
+      padding: 0.75rem .75rem !important;
+      color: var(--white);
+      background-color: var(--primary-dark);
+    }
+  }
+}
+.message {
+  margin-top: var(--vp-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg-plus);
+  text-align: center;
+  @media (max-width: 592px) {
+    font-size: var(--text-lg);
+  }
+}
+
+.shade {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--black-fade-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 3rem 2rem 3rem 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-primary);
+  h3 {
+    width: 40%;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-size: var(--text-prose-em);
+    text-align: center;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  top: 2.5%;
+  right: 7%;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.clientForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  label {
+    font-family: var(--font-body);
+    margin-bottom: 0.5rem;
+  }
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-tr);
+    border: none;
+    border-radius: var(--radius-md);
+  }
+  button {
+    margin-top: 2rem;
+    align-self: center;
+  }
+}
+
+.errorMessage,
+.successMessage {
+  align-self: center;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.24rem;
+}
+.errorMessage {
+  color: var(--tangerine);
+}
+.successMessage {
+  color: var(--primary-deep);
+}

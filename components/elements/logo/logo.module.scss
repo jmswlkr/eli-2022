@@ -13,14 +13,14 @@
     }
   }
   &:hover {
-    color: var(--primary);
+    color: var(--primary-light);
     mix-blend-mode: difference;
     background-blend-mode: difference;
     svg path {
-      fill: var(--primary);
+      fill: var(--primary-light);
     }
     .wordmarkText {
-      color: var(--primary);
+      color: var(--primary-light);
     }
   }
   @media (max-width: 1024px) {

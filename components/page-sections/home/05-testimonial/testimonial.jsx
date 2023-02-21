@@ -57,9 +57,6 @@ export const Testimonial = () => {
       <div className={sectionAccent}>
         <WaveCircles />
       </div>
-      {/* <div className={label}>
-        <Label> Testimonial Testimonial Testimonial </Label>
-      </div> */}
       <div className={header}>
         <h2 className={title}>Praise for ELI</h2>
         <div className={label}>

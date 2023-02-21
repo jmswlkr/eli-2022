@@ -27,6 +27,8 @@
   "devDependencies": {
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
+    "json-bigint": "^1.0.0",
+    "react-query": "^3.39.3",
     "sass": "^1.52.2"
   }
 }

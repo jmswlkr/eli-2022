@@ -146,6 +146,9 @@
   align-items: flex-end;
   li {
     text-align: right;
+    @media (max-width: 592px) {
+      text-align: left;
+    }
   }
   a {
     cursor: pointer;

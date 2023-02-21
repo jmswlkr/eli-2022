@@ -19,6 +19,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Lato Italic";
+  src: url("/fonts/Lato-LightItalic.ttf");
+  font-display: swap;
+}
+
 :root {
   /* font-family */
   // TODO: Replace font weights with actual font families.
@@ -26,6 +32,7 @@
   --font-reg: "Lato Light", "Segoe UI Light";
   --font-med: "Lato Med", "Segoe UI";
   --font-semibold: "Lato Semibold", "Segoe UI";
+  --font-italic: "Lato Italic", "Segoe UI Light";
 
   // LIGHTER TYPE
   --font-title: var(--font-thin);
@@ -165,7 +172,9 @@
   --text-md: 16px;
   --text-ml: 20px;
   --text-lg: 24px;
+  --text-lg-plus: 28px;
   --text-xl: 32px;
+  --text-1xl: 36px;
   --text-2xl: 40px;
   --text-3xl: 48px;
   --text-4xl: 56px;
@@ -237,7 +246,7 @@
   --text-header-lg: var(--text-7xl); // 72px
   --text-header: var(--text-6xl); // 64px
   --text-header-sm: var(--text-3xl); // 48px
-  --text-header-xs: var(--text-2xl); // 48px
+  --text-header-xs: var(--text-2xl); // 40px
   --text-subheader: var(--text-xl); // 32px
 
   --text-link: var(--text-3xl); // 48px
@@ -247,6 +256,8 @@
   --text-prose: var(--text-ml); // 20px
 
   --nav-width: 93vw;
+  --nav-height: 9vh;
+
   --content-width: 1200px;
   --column-width: calc(var(--content-width) / 3);
   --column-width-narrow: calc(
@@ -327,7 +338,9 @@
 
 html,
 body {
+  // font-synthesis: none;
   scroll-behavior: smooth;
+
   font-family: var(--font-body);
   height: auto;
   width: 100vw;
@@ -412,7 +425,7 @@ img {
   // background-color: red;
   z-index: 9999999999;
   position: absolute;
-  width: .5px;
+  width: 0.5px;
   height: 15px;
   &__text {
     top: 94vh;
@@ -463,18 +476,30 @@ video::-webkit-media-controls-fullscreen-button {
 }
 
 .general-btn {
+  display: inline;
   cursor: pointer;
   font-family: var(--font-body);
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: .8rem 1.75rem;
+  padding: 0.8rem 1.75rem;
   border-radius: var(--radius-md);
   transition: var(--transition-primary);
-  border: .5px solid currentColor;
+  border: 0.5px solid currentColor;
   &:hover {
     background-color: var(--primary);
     border-color: var(--primary);
     color: var(--white) !important;
   }
+  
+  &.solid.dark {
+    background-color: var(--primary-darker);
+    color: var(--white);
+    &:hover {
+      background-color: var(--primary-dark);
+    }
+  }
+  &.large {
+    font-size: var(--text-lg);
+  } 
 }

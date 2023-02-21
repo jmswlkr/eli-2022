@@ -1,0 +1,14 @@
+.content {
+  height: auto;
+  width: 100%;
+  margin: var(--vp-xl) 0;
+  padding: 0  2rem;
+  @media (max-width: 592px) {
+    padding: 0;
+  }
+}
+
+.intro {
+  margin-top: 75px;
+  font-size: var(--text-1xl);
+}
