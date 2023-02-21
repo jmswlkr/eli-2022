@@ -136,8 +136,7 @@
     @include paragraphText;
     font-family: var(--font-body);
     font-size: var(--text-prose);
-    // width: calc(2.25 * var(--column-width));
-    width: 100%;
+    width: 65ch;
     position: relative;
     text-align: center;
     display: grid;

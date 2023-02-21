@@ -46,6 +46,8 @@ export const Hero = () => {
     }, 3000)
   }, [fontsLoaded])
 
+  // TODO: Add an image if video fails to load.
+
   return (
     <section className={hero}>
       <div className={heroImages}>

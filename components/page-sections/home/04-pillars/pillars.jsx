@@ -46,7 +46,7 @@ export const Pillars = () => {
     }
   }
 
-  // TODO: Fade animate between pillar text changes.
+  // TODO: Pillars should have permanent text when grid changes to 2x2.
 
   return (
     <motion.section className={pillars}>
