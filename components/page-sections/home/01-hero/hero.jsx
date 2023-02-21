@@ -32,9 +32,9 @@ export const Hero = () => {
   const controls = useAnimation()
 
   useEffect(() => {
+    controls.start('visible')
     document.fonts.ready.then(() => {
       setFontsLoaded(true)
-      controls.start('visible')
     })
   }, [controls])
 
