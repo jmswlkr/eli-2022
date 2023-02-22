@@ -18,7 +18,8 @@ export const QuoteBlock = ({ quote, author, source }) => {
       </span>
       <p className={text}>{quote}</p>
       <div className={attr}>
-        <span className={authorStyle}>{author}</span>
+        <span className={authorStyle}> — &nbsp; {author}</span> 
+        <span>•</span>
         <span className={sourceStyle}>{source}</span>
       </div>
     </article>

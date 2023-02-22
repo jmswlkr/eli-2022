@@ -9,6 +9,7 @@ const About = () => {
   return (
     <>
       <Hero />
+      <Intro />
     </>
   )
 }

@@ -20,8 +20,18 @@
 }
 
 @font-face {
-  font-family: "Lato Italic";
+  font-family: "Lato Light Italic";
   src: url("/fonts/Lato-LightItalic.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato Italic";
+  src: url("/fonts/Lato-Italic.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato Bold Italic";
+  src: url("/fonts/Lato-BoldItalic.ttf");
   font-display: swap;
 }
 
@@ -32,7 +42,10 @@
   --font-reg: "Lato Light", "Segoe UI Light";
   --font-med: "Lato Med", "Segoe UI";
   --font-semibold: "Lato Semibold", "Segoe UI";
+ 
+  --font-light-italic: "Lato Light Italic", "Segoe UI Light";
   --font-italic: "Lato Italic", "Segoe UI Light";
+  --font-bold-italic: "Lato Bold Italic", "Segoe UI Light";
 
   // LIGHTER TYPE
   --font-title: var(--font-thin);
@@ -253,7 +266,7 @@
   --text-link: var(--text-3xl); // 48px
 
   --text-prose-xl: var(--text-3xl); // 48px
-  --text-prose-em: var(--text-lg); // 24px
+  --text-prose-em: var(--text-lg-plus); // 24px
   --text-prose: var(--text-ml); // 20px
 
   --nav-width: 93vw;
@@ -305,7 +318,7 @@
     --text-prose-em: var(--text-ml); // 20px
     --text-prose: var(--text-md); // 16px
 
-    --content-width: 62.5vw;
+    --content-width: 80vw;
     --content-margin: calc(
       (100vw - var(--content-width)) / 2
     );
