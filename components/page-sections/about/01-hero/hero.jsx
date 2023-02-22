@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 
-import { baseUrl } from '@/utils/cloudinary'
-
-import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
-
 import {
-  hero,
-  heroBg,
-  shade,
-  fadeTransitionBar,
-  heroTextContent,
-  title,
-  blurb,
-  heroBtn,
+  container,
+  imageWrap,
+  textWrap,
+  header
 } from './hero.module.scss'
-import { animationProps } from 'animation/animate'
-import { blurFadeIn } from 'animation/fade'
 
 export const Hero = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false)
@@ -38,25 +28,20 @@ export const Hero = () => {
   }, [fontsLoaded])
 
   return (
-    <section className={hero}>
-      <div className={heroBg}>
-        <img src={baseUrl('sunlight-tree_ztqwxk', 'best')} alt='' />
-        <div className={shade} />
-        <div className={fadeTransitionBar} />
-      </div>
-      <motion.div className={heroTextContent} {...animationProps({ controls, animation: blurFadeIn })}>
-        <h1 className={title}>
-          <span>ELI</span>
-          <span>About the Institute.</span>
+    <section className={container}>
+      <div className={textWrap}>
+        <h1 className={header}>
+          <span>About the</span>
+          <span>Embodied Learning</span>
+          <span>Institute</span>
         </h1>
-        <p className={blurb}>
-          Learn more about our history, our people, and the principles that
-          drive us.
-        </p>
-        <span className={heroBtn}>
-          <ArrowBtn text={'Continue'} lightText={true} arrowColor={'var(--accent)'} pageLink={`about/#about-intro`} />
-        </span>
-      </motion.div>
+      </div>
+      <div className={imageWrap}>
+        <img
+          src='https://res.cloudinary.com/jameswalker-work/image/upload/v1676831310/ELI/karl-magnuson-HQR_JXd-fPs-unsplash_spk0t3.jpg'
+          alt='3 travelers stand silhoutted in front of a blue sky over an orange sunset in a hazy valley'
+        />
+      </div>
     </section>
   )
 }
