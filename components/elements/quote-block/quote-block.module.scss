@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: var(--intracontent-margin) 0;
+  font-family: var(--font-italic);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.quoteMark {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.text {
+  font-size: var(--text-lg-plus);
+}
+.attr {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--text-color-med);
+}
+.author {
+  font-family: var(--font-semibold);
+}
+.source {
+  font-family: var(--font-italic);
+}
