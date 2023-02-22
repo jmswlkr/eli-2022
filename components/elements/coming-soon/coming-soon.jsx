@@ -4,6 +4,7 @@ import { useCreateClient } from 'hooks/useCreateClient'
 import { Button } from '../general-btn/general-btn'
 
 import {
+  container,
   headerCta,
   ctaBtn,
   message,
@@ -28,7 +29,7 @@ export const ComingSoon = () => {
   }
 
   return (
-    <section>
+    <section className={container}>
       <div className={headerCta}>
         <h2>Coming Soon!</h2>
         <div className={ctaBtn}>

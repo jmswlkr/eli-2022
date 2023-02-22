@@ -15,7 +15,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
-  min-height: var(--container-height);
+  height: var(--container-height);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: var(--container-height);
@@ -27,6 +27,7 @@
 
 .imgWrap {
   width: 100%;
+  height: var(--container-height);
   img {
     height: 100%;
     width: 100%;

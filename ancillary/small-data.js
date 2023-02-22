@@ -8,15 +8,15 @@ import {
 
 export const pageLinks = [
   {
-    path: '/offerings/consulting',
+    path: '/offerings/organizational-consulting',
     content: 'Consulting',
   },
   {
-    path: '/offerings/coaching',
+    path: '/offerings/leadership-coaching',
     content: 'Coaching',
   },
   {
-    path: '/offerings/training',
+    path: '/offerings/collaborative-learning',
     content: 'Collaborative Learning',
   },
   {

@@ -8,22 +8,26 @@ import {
   imgWrap,
   textWrap,
   heroText,
-  header,
+  header as headerStyle,
   accentShapes,
 } from './page-hero.module.scss'
 
-export const PageHero = () => {
+export const PageHero = ({ id, header, image }) => {
   return (
     <section className={container}>
       <div className={hero}>
         <div className={textWrap}>
           <div className={heroText}>
-            <h1 className={header}>
+            <h1 className={headerStyle}>
               <span>ELI</span>
-              <span>Collaborative</span>
-              <span>Learning</span>
+              <span>{header[0]}</span>
+              <span>{header[1]}</span>
             </h1>
-            <Button text='Get Started' classes='solid dark large' path='/#contact'/>
+            <Button
+              text='Get Started'
+              classes='solid dark large'
+              path='/#contact'
+            />
             <span className={accentShapes}>
               <WaveCircles />
             </span>
@@ -31,8 +35,8 @@ export const PageHero = () => {
         </div>
         <div className={imgWrap}>
           <img
-            src='https://res.cloudinary.com/jameswalker-work/image/upload/v1676831350/ELI/pexels-sam-kolder-2387873_hkvtbl.jpg'
-            alt='test image'
+            src={image.url}
+            alt={image.alt_text}
           />
         </div>
       </div>

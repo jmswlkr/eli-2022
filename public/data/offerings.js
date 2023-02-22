@@ -1,8 +1,7 @@
-;;;;[
+export const offerings = [
   {
     id: 'collaborative-learning',
-    'header_line-1': 'Collaborative',
-    'header_line-2': 'Learning',
+    header: ['Collaborative', 'Learning'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/v1676831350/ELI/pexels-sam-kolder-2387873_hkvtbl.jpg',
       alt_text:
@@ -11,8 +10,7 @@
   },
   {
     id: 'organizational-consulting',
-    'header_line-1': 'Organizational',
-    'header_line-2': 'Consulting',
+    header: ['Organizational', 'Consulting'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/v1676831318/ELI/mehak-malhotra-2MTboTv5ucQ-unsplash_dm0ig5.jpg',
       alt_text:
@@ -20,9 +18,8 @@
     },
   },
   {
-    id: 'leadership-coaching`',
-    'header_line-1': 'Leadership',
-    'header_line-2': 'Coaching',
+    id: 'leadership-coaching',
+    header: ['Leadership', 'Coaching'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/v1676831344/ELI/alexander-milo-HwxVLhLyg2s-unsplash_wvpbdq.jpg',
       alt_text:
