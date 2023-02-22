@@ -42,7 +42,7 @@
   --font-reg: "Lato Light", "Segoe UI Light";
   --font-med: "Lato Med", "Segoe UI";
   --font-semibold: "Lato Semibold", "Segoe UI";
- 
+
   --font-light-italic: "Lato Light Italic", "Segoe UI Light";
   --font-italic: "Lato Italic", "Segoe UI Light";
   --font-bold-italic: "Lato Bold Italic", "Segoe UI Light";
@@ -318,7 +318,7 @@
     --text-prose-em: var(--text-ml); // 20px
     --text-prose: var(--text-md); // 16px
 
-    --content-width: 80vw;
+    --content-width: 62.5%vw;
     --content-margin: calc(
       (100vw - var(--content-width)) / 2
     );
@@ -340,6 +340,13 @@
     --task-bar: 50px;
   }
 }
+
+@media (max-width: 592px) {
+  :root {
+    --content-width: 80vw;
+  }
+}
+
 @media (min-width: 2160px) {
   :root {
     --content-margin: 40vh;
@@ -505,7 +512,7 @@ video::-webkit-media-controls-fullscreen-button {
     border-color: var(--primary);
     color: var(--white) !important;
   }
-  
+
   &.solid.dark {
     background-color: var(--primary-darker);
     color: var(--white);
@@ -515,5 +522,5 @@ video::-webkit-media-controls-fullscreen-button {
   }
   &.large {
     font-size: var(--text-lg);
-  } 
+  }
 }
