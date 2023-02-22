@@ -20,8 +20,9 @@ export const PageHero = ({ id, header, image }) => {
           <div className={heroText}>
             <h1 className={headerStyle}>
               <span>ELI</span>
-              <span>{header[0]}</span>
-              <span>{header[1]}</span>
+              {header.map((line, idx) => {
+                return <span key={idx}>{line}</span>
+              })}
             </h1>
             <Button
               text='Get Started'
@@ -34,10 +35,7 @@ export const PageHero = ({ id, header, image }) => {
           </div>
         </div>
         <div className={imgWrap}>
-          <img
-            src={image.url}
-            alt={image.alt_text}
-          />
+          <img src={image.url} alt={image.alt_text} />
         </div>
       </div>
     </section>
