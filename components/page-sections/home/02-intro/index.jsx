@@ -27,7 +27,7 @@ export const IntroSection = () => {
   }, [])
 
   useEffect(() => {
-    const titleContent = !isMobile ? (
+    const titleContent = (
       <div className={titleContainer}>
         <div className={titleInner}>
           Learn to <strong>Thrive</strong>
@@ -35,13 +35,7 @@ export const IntroSection = () => {
           through Embodied Learning */}
         </div>
       </div>
-    ) : (
-      <>
-        <span>Change through</span>
-        <span className='gradient-text '>Embodied Learning</span>
-      </>
     )
-
     setTitle(titleContent)
   }, [isMobile])
 
