@@ -38,6 +38,27 @@
   }
 }
 
+.navActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navItem {
+  margin-right: 2rem;
+  font-size: var(--text-md);
+  text-transform: uppercase;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  color: var(--white);
+  &:nth-child(3) {
+    margin-right: 4rem;
+  }
+  &:hover {
+    color: var(--primary-light);
+  }
+}
+
 .logo {
   scale: 0.8;
   transform-origin: left;

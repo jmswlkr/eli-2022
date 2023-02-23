@@ -17,7 +17,11 @@ export const pageLinks = [
   },
   {
     path: '/offerings/collaborative-learning',
-    content: 'Collaborative Learning',
+    content: 'Collaboration',
+  },
+  {
+    path: '/about',
+    content: 'About ELI',
   },
   {
     path: '/calendar',
