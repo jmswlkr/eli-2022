@@ -86,7 +86,7 @@ export const Footer = () => {
             )
           })}
         </ul>
-        <span className={copyright}>© 2022 Embodied learning institute </span>
+        <span className={copyright}>© 2022 Embodied Learning Institute </span>
       </div>
       <div className={btt}>
         <button className={bttBtn} onClick={scrollTop}>
