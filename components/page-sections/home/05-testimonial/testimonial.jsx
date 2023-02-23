@@ -54,9 +54,6 @@ export const Testimonial = () => {
 
   return (
     <section className={testimonial} ref={sectionRef}>
-      <div className={sectionAccent}>
-        <WaveCircles />
-      </div>
       <div className={header}>
         <h2 className={title}>Praise for ELI</h2>
         <div className={label}>

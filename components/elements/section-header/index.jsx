@@ -21,7 +21,7 @@ export const SectionHeader = ({
   return (
     <div className={container}>
       <div className={sectionAccent}>
-        {isMobile ? <WaveCircles /> : withLabel && <Label text={labelText} /> }
+        <Label text={labelText} />
       </div>
       <h2 className={`${titleStyle} ${alignLeft ? left : ''}`}>{title}</h2>
   </div>

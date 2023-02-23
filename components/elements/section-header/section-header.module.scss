@@ -7,7 +7,7 @@
 .sectionAccent {
   @include sectionLabel($top: -5vh);
   @media (max-width: 1024px) {
-    @include waveCircles;
+    // @include waveCircles;
   }
 }
 .title {
