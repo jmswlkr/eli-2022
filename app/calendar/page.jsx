@@ -16,15 +16,15 @@ import {
   getYmd,
   timeAlreadyBooked,
   toEST,
-} from '@/utils/date-helpers'
+} from '/utils/date-helpers'
 import {
   styleInitDate,
   toggleSelectedItem,
-} from '@/utils/react-calendar/style-helpers'
+} from '/utils/react-calendar/style-helpers'
 import {
   formatApptForSquare,
   getBookingsByDate,
-} from '@/utils/square/api-helpers'
+} from '/utils/square/api-helpers'
 
 import { SectionHeader } from 'ui-components/section-header/index.jsx'
 
@@ -55,7 +55,7 @@ import {
   pseudoSelect,
   btnSubmit,
 } from './scheduling.module.scss'
-import { extractServicesData } from '@/utils/square/api-helpers'
+import { extractServicesData } from '/utils/square/api-helpers'
 import { Button } from 'ui-components/general-btn/general-btn';
 
 /*

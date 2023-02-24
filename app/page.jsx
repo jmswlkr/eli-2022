@@ -7,10 +7,6 @@ import { Pillars } from './home/pillars/pillars';
 import { Testimonial } from './home/testimonial/testimonial';
 
 
-export const metadata = {
-  title: 'ELI | Learn to Thrive',
-}
-
 const Home = () => {
   return (
     <>
