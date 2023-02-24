@@ -4,7 +4,7 @@ import {
   Facebook,
   Instagram,
   LinkedIn,
-} from 'components/elements/svg/social-icons'
+} from 'ui-components/svg/social-icons'
 
 export const pageLinks = [
   {

@@ -1,4 +1,4 @@
-import { CalendarIcon, ClockIcon, HourGlassIcon } from '@/svg/scheduling-icons'
+import { CalendarIcon, ClockIcon } from 'ui-components/svg/scheduling-icons'
 
 const getMonth = () => {
   return new Intl.DateTimeFormat('en-US', { month: 'short' }).format(

@@ -5,10 +5,6 @@ import { useInView } from 'react-intersection-observer'
 
 import { testimonialData } from './testimonial-data'
 
-import { QuoteMark } from 'components/elements/svg/quote-mark'
-import { Label } from 'components/elements/section-label/section-label'
-import { PlayButton } from '@/elements/svg/play-button'
-
 import { animationProps } from 'animation/animate'
 import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
@@ -40,6 +36,8 @@ import {
   fadeTransitionBlock,
   scrollTip,
 } from './testimonial.module.scss'
+import { PlayButton } from 'ui-components/svg/play-button'
+import { QuoteMark } from 'ui-components/svg/quote-mark'
 
 export const Testimonial = () => {
   const [sectionRef, sectionInView] = useInView()
@@ -56,7 +54,7 @@ export const Testimonial = () => {
       <div className={header}>
         <h2 className={title}>Praise for ELI</h2>
         <div className={label}>
-          <Label> Testimonial Testimonial Testimonial </Label>
+          {/* <Label> Testimonial Testimonial Testimonial </Label> */}
         </div>
       </div>
       <div className={testimonialSliderBase}>

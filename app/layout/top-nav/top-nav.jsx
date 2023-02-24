@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
-import { Logo } from '@/elements/logo/logo'
+import { pageLinks } from '../navigation-data'
+
+import { Logo } from 'ui-components/logo/logo'
 
 import {
   topNav,
@@ -14,7 +15,6 @@ import {
   withBG,
   dark,
 } from './top-nav.module.scss'
-import { pageLinks } from '../navigation-data'
 
 export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
   return (

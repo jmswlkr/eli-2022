@@ -1,4 +1,3 @@
-import { WaveCircles } from '@/elements/svg/wave-circles'
 import React from 'react'
 import { Button } from 'ui-components/general-btn/general-btn'
 
@@ -29,9 +28,6 @@ export const PageHero = ({ id, header, image }) => {
               classes='solid dark large'
               path='/#contact'
             />
-            <span className={accentShapes}>
-              <WaveCircles />
-            </span>
           </div>
         </div>
         <div className={imgWrap}>

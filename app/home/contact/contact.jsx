@@ -1,12 +1,9 @@
-// External Lib
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { send } from '@emailjs/browser'
 
-// Components
-import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
 import { SectionHeader } from 'ui-components/section-header'
+import { Button } from 'ui-components/general-btn/general-btn'
 
-// Styling
 import {
   contact,
   formSection,
@@ -24,7 +21,6 @@ import {
   text,
   btn,
 } from './contact.module.scss'
-import { Button } from '@/elements/general-btn/general-btn'
 
 export const Contact = () => {
   const [isMobile, setIsMobile] = useState(false)

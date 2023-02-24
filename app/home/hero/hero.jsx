@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 
-import { baseUrl } from '@/utils/cloudinary.js'
-
-import { ArrowBtn } from 'components/elements/arrow-btn/arrow-btn'
-import { Logo } from '@/elements/logo/logo'
-
 import { phases, smooth } from 'animation/transition'
 import { animationProps } from 'animation/animate'
 import { blurFadeIn, fadeIn, fadeSlideUpShort } from 'animation/fade'
+
+import { Button } from 'ui-components/general-btn/general-btn'
 
 import {
   hero,
@@ -25,7 +22,7 @@ import {
   btn,
   fadeTransitionBar,
 } from './hero.module.scss'
-import { Button } from '@/elements/general-btn/general-btn'
+
 
 export const Hero = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false)
@@ -62,7 +59,7 @@ export const Hero = () => {
           <video
             key='img1'
             className={bg}
-            // src={`https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4`}
+            src={`https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4`}
             // src={`https://res.cloudinary.com/jameswalker-work/video/upload/v1674832419/ELI/ocean_qxigpo.mp4`}
             autoPlay
             loop

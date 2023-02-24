@@ -26,7 +26,6 @@ import {
   getBookingsByDate,
 } from '@/utils/square/api-helpers'
 
-// import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn.jsx'
 import { SectionHeader } from 'ui-components/section-header/index.jsx'
 
 import { phases } from 'animation/transition.js'

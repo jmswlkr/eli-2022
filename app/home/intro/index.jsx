@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { Button } from 'ui-components/general-btn/general-btn'
 import { SectionHeader } from 'ui-components/section-header'
 
 import { cards } from './intro-data'
-import { Button } from '@/elements/general-btn/general-btn'
 
 import {
   intro,

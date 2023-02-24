@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
 import React from 'react'
 
-import { QUOTE_CONTENT, INTRO_CONTENT } from '../about-content'
+import { QuoteBlock } from 'ui-components/quote-block/quote-block'
 
-import { QuoteBlock } from '@/elements/quote-block/quote-block'
+import { QUOTE_CONTENT, INTRO_CONTENT } from '../about-content'
 
 import {
   container,
@@ -13,7 +13,7 @@ import {
   paragraph,
   blue,
   red,
-  inline
+  inline,
 } from './intro.module.scss'
 
 export const Intro = () => {

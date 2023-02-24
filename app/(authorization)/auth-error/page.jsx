@@ -2,10 +2,6 @@
 
 import React from 'react'
 
-// Component
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
-
-// Styling
 import {
   authError,
   title,
@@ -13,6 +9,7 @@ import {
   emailLink,
   backBtn,
 } from './auth-error.module.scss'
+import { Button } from 'ui-components/general-btn/general-btn'
 
 const AuthError = () => {
   return (
@@ -28,7 +25,7 @@ const AuthError = () => {
         </span>
       </p>
       <a className={backBtn} href='/'>
-        <ArrowBtn text='Back to Home' />
+        <Button text='Back to Home' />
       </a>
     </div>
   )

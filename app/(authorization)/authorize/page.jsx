@@ -3,10 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-// Components
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
-import { Square } from '@/elements/svg/social-icons'
-import { Logo } from '@/elements/logo/logo'
 
 // Styling
 import {
@@ -18,6 +14,9 @@ import {
   instruction,
   authBtn,
 } from './authorize.module.scss'
+import { Button } from 'ui-components/general-btn/general-btn';
+import { Square } from 'ui-components/svg/social-icons';
+import { Logo } from 'ui-components/logo/logo';
 
 const Authorization = () => {
   const [authUrl, setAuthUrl] = useState(null)
@@ -57,8 +56,7 @@ const Authorization = () => {
         </span>
       </p>
       <a className={authBtn} href={authUrl ? authUrl : '/auth-error'}>
-        {/* <ArrowBtn text='Authorize' /> */}
-        Authorize
+        <Button text='Authorize' />
       </a>
     </div>
   )

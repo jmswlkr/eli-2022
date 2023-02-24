@@ -1,17 +1,5 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@/layout/*": ["components/layout/*"],
-      "@/page-sections/*": ["components/page-sections/*"],
-      "@/elements/*": ["components/elements/*"],
-      "@/svg/*": ["components/elements/svg/*"],
-      "@/page-styles/*": ["styles/page-styles/*"],
-      "@/styles/*": ["styles/*"],
-      "@/utils/*": ["utils/*"],
-      "@/data/*": ["data/*"],
-      "@/ancillary/*": ["ancillary/*"],
-      "@/context/*": ["context/*"],
-    }
   }
 }

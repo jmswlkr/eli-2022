@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 
-// Components
-import { ArrowBtn } from '@/elements/arrow-btn/arrow-btn'
-
-// Styling
-import {
-  callback,
-  callbackBtn,
-} from './callback.module.scss'
+import { callback, callbackBtn } from './callback.module.scss'
+import { Button } from 'ui-components/general-btn/general-btn'
 
 const Callback = () => {
   const {
     push,
     query: { code },
   } = useRouter()
-  console.log('code: ', code);
+  console.log('code: ', code)
 
   useEffect(() => {
     axios.post('/api/token', { token: code })
@@ -27,9 +21,11 @@ const Callback = () => {
         data: {
           code,
         },
-      }).then((res) => {
-        console.log(res.data)
-      }).catch(err => console.log('Error getting token! Msg →', err))
+      })
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch((err) => console.log('Error getting token! Msg →', err))
     }
   })
 
@@ -37,11 +33,11 @@ const Callback = () => {
     <div className={callback}>
       <h2>Authorization Successful!</h2>
       <p>
-        You have successfully Authorized this application
-        for use with your Square Seller Account.
+        You have successfully Authorized this application for use with your
+        Square Seller Account.
       </p>
       <a className={callbackBtn} onClick={() => push('/')}>
-        <ArrowBtn text='Back to Home' />
+        <Button text='Back to Home' />
       </a>
     </div>
   )

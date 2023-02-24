@@ -3,7 +3,7 @@ import {
   FlowerIcon,
   YogaIcon,
   ThoughtIcon,
-} from '@/elements/svg/pillar-icons'
+} from '/ui-components/svg/pillar-icons.jsx'
 
 export const pillarData = [
   {

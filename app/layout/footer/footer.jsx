@@ -5,7 +5,6 @@ import {
   pageLinks,
   socialIcons,
 } from '../navigation-data'
-import { WaveCircles } from '@/elements/svg/wave-circles'
 import Link from 'next/link'
 import React from 'react'
 
@@ -35,9 +34,6 @@ export const Footer = () => {
   return (
     <footer className={footer}>
       <div className={footerMain}>
-        <div className={sectionAccent}>
-          <WaveCircles />
-        </div>
         <ul className={`${linkList} ${connectLinksStyle}`}>
           <label>Connect</label>
           {connectLinks.map((lnk) => {
