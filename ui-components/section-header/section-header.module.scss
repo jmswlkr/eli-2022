@@ -1,0 +1,31 @@
+@import "/styles/mixins";
+
+.container {
+  position: relative;
+  width: 100%;
+}
+.sectionAccent {
+  @include sectionLabel($top: -5vh);
+  @media (max-width: 1024px) {
+    // @include waveCircles;
+  }
+}
+.title {
+  @include headerText;
+  margin: 0 !important;
+  margin-bottom: var(--space-lg);
+  &.left {
+    text-align: left;
+  }
+}
+
+.label {
+  pointer-events: none;
+  font-size: var(--text-10xl);
+  font-size: 152px;
+  text-transform: uppercase;
+  letter-spacing: var(--push-lg);
+  div:global(.marquee) {
+    color: var(--label-color) !important;
+  }
+}
