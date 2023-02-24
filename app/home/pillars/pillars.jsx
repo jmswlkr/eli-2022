@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { baseUrl } from '@/utils/cloudinary'
+import { baseUrl } from '/utils/cloudinary'
 import { pillarData } from './pillar-data'
 
 import { fadeIn } from 'animation/fade'

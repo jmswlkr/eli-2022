@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import axios from 'axios'
 
 import { callback, callbackBtn } from './callback.module.scss'
@@ -8,9 +10,11 @@ import { Button } from 'ui-components/general-btn/general-btn'
 const Callback = () => {
   const {
     push,
-    query: { code },
   } = useRouter()
-  console.log('code: ', code)
+  const path = usePathname()
+  const search = useSearchParams()
+
+  const code = search.get('code') ?? ''
 
   useEffect(() => {
     axios.post('/api/token', { token: code })
