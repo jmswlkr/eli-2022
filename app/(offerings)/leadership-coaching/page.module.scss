@@ -1,0 +1,36 @@
+.container {
+  padding-bottom: 20rem;
+}
+
+.intro {
+  margin: var(--content-top-margin) 0;
+}
+
+.ethos {
+  display: grid;
+  gap: 0.5rem 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, mincontent);
+  grid-template-areas:
+    "c0  c3"
+    "c0  c3"
+    "c1  c3"
+    "c1  c4"
+    "c2  c4"
+    "c2  c4";
+  article[data-grid-id="c0"] {
+    grid-area: c0;
+  }
+  article[data-grid-id="c1"] {
+    grid-area: c1;
+  }
+  article[data-grid-id="c2"] {
+    grid-area: c2;
+  }
+  article[data-grid-id="c3"] {
+    grid-area: c3;
+  }
+  article[data-grid-id="c4"] {
+    grid-area: c4;
+  }
+}

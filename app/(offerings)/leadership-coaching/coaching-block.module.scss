@@ -1,0 +1,15 @@
+.container {
+  margin: 1rem 0;
+  padding: 2rem;
+  background-color: var(--primary);
+  border-radius: var(--radius-md);
+}
+.header {
+  margin-bottom: .5ch;
+  font-size: var(--text-prose-em);
+  color: var(--primary-dark);
+}
+.content {
+  font-size: var(--text-prose);
+  color: var(--white);
+}
