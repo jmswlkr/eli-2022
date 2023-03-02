@@ -8,8 +8,14 @@ export const QUOTE_CONTENT = {
 }
 
 export const INTRO_CONTENT = {
-  intro:
-    'The Embodied Learning Institute is a space of connection, healing, growth, and leadership-development for individuals, communities, organizations, and people-powered movements committed to progressive social change.',
+  intro: (
+    <>
+      <strong>The Embodied Learning Institute </strong> is a space of
+      connection, healing, growth, and leadership-development for individuals,
+      communities, organizations, and people-powered movements committed to
+      progressive social change.
+    </>
+  ),
   p1: {
     text: 'Clients thrive, as they hone the four pillars of Embodied Enoughness:',
     color_text:
@@ -25,10 +31,86 @@ export const INTRO_CONTENT = {
       <>
         These learned inclinations hinder our ability to thrive. At ELI, we
         teach clients to hone themselves through the practices outlined in our{' '}
-        <Link legacyBehavior href='/#pillars'>four pillars</Link>, undoing these unhealthy
-        tendencies that are at the root of so much strife in our lives and in
-        our culture.
+        <Link legacyBehavior href='/#pillars'>
+          four pillars
+        </Link>
+        , undoing these unhealthy tendencies that are at the root of so much
+        strife in our lives and in our culture.
       </>
     ),
   },
 }
+
+export const MISSION = {
+  title: 'Our Mission',
+  text: 'Advance embodied learning, a holistic and expansive way of being that embraces the interconnected nature of all living things, engages with unbound space, and enables collective growth and well-being.',
+}
+
+export const VISION = {
+  title: 'Our Vision',
+  text: 'Facilitate the emergence of leaders, communities, teams and organizations that: embody somatic sensibilities, engage from a space wholehearted presence, cultivate dynamic discernment, and embrace leaderful living.',
+}
+
+export const VALUES_INTRO = {
+  title: 'Values',
+  text: 'These values not only guide our practices, but are at the root of ELI’s operations, relationships, strategy, and long-term vision.',
+}
+
+export const VALUES = [
+  {
+    front: 'Inherent Dignity',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#4892C6',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+  {
+    front: 'Thriving Together',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#428D89',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+  {
+    front: 'Social Justice',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#88000E',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+  {
+    front: 'Transformational Growth',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#FFCF53',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+  {
+    front: 'Sustainable Living',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#DF9595',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+  {
+    front: 'Radical Compassion',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#426E8D',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+  {
+    front: 'Interconnected Systems Approach',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#9747FF',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+  {
+    front: 'Right-sized Humility',
+    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    color: '#95A74F',
+    image:
+      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  },
+]

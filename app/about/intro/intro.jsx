@@ -21,7 +21,6 @@ export const Intro = () => {
 
   return (
     <section className={container}>
-      <QuoteBlock {...QUOTE_CONTENT} />
       <div className={textWrap}>
         <p className={introStyle}>{intro}</p>
         <p className={paragraph}>

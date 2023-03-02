@@ -5,19 +5,12 @@
   isolation: isolate;
 }
 
-.container {
-  margin: var(--intracontent-margin-lg) 0;
-}
-
 .textWrap {
-  margin: var(--intracontent-margin-lg) 0;
-  @media (max-width: 1024px) {
-    margin: calc(var(--intracontent-margin-lg) * 2) 0;
-  }
+  display: grid;
+  gap: var(--intracontent-margin) 0;
 }
 
 .intro {
-  margin: var(--intracontent-margin) 0;
   font-size: var(--text-prose-em);
 
   @media (max-width: 592px) {
