@@ -28,7 +28,7 @@ export const Values = () => {
               <span>{front}</span>
               <span>{back}</span>
               <div className={shade} style={{ background: color }} />
-              <img src={image} />
+              <img src={image.url} alt={image.alt} />
             </li>
           )
         })}

@@ -61,56 +61,72 @@ export const VALUES = [
     front: 'Inherent Dignity',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#4892C6',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
   {
     front: 'Thriving Together',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#428D89',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
   {
     front: 'Social Justice',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#88000E',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
   {
     front: 'Transformational Growth',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#FFCF53',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
   {
     front: 'Sustainable Living',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#DF9595',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
   {
     front: 'Radical Compassion',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#426E8D',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
   {
     front: 'Interconnected Systems Approach',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#9747FF',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
   {
     front: 'Right-sized Humility',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#95A74F',
-    image:
-      'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+    image: {
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      alt: 'card background',
+    },
   },
 ]
