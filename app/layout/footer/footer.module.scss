@@ -1,4 +1,4 @@
-@import '/styles/mixins';
+@import "/styles/mixins";
 
 //// < zIndex > ////
 .footer {
@@ -53,6 +53,7 @@
   }
   @media (max-width: 1024px) {
     overflow: hidden;
+    padding-top: var(--vp-md);
   }
 }
 
@@ -173,10 +174,24 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
+  .mobile {
+    display: none;
+  }
   @media (max-width: 1024px) {
     font-weight: var(--light);
-    li:nth-child(n + 2) {
-      color: var(--accent);
+    label,
+    .desk {
+      display: none;
+    }
+    .mobile {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 3ch;
+      }
+      &:active {
+        color: var(--primary);
+      }
     }
   }
 }

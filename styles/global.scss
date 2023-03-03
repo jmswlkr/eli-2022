@@ -517,6 +517,13 @@ video::-webkit-media-controls-fullscreen-button {
     color: var(--white) !important;
   }
 
+  &.solid.med {
+    background-color: var(--primary);
+    color: var(--white);
+    &:hover {
+      background-color: var(--primary-dark);
+    }
+  }
   &.solid.dark {
     background-color: var(--primary-darker);
     color: var(--white);

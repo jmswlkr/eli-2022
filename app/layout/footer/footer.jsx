@@ -12,7 +12,6 @@ import React from 'react'
 import {
   footer,
   footerMain,
-  sectionAccent,
   linkList,
   mobileDivider,
   connectLinksStyle,
@@ -24,6 +23,8 @@ import {
   btt,
   bttBtn,
   hidden,
+  desk,
+  mobile
 } from './footer.module.scss'
 
 export const Footer = () => {
@@ -65,7 +66,8 @@ export const Footer = () => {
               <li key={inf.id}>
                 <label>{inf.label}</label>
                 <a href={inf.link} target='_blank' rel='noreferrer'>
-                  {inf.content}
+                  <span className={desk}>{inf.content}</span>
+                  <span className={mobile}>{inf.icon} {inf.label} us</span>
                 </a>
               </li>
             )

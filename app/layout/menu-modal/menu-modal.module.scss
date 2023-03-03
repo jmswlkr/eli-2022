@@ -96,6 +96,24 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    .mobile {
+      display: none;
+    }
+    @media (max-width: 1024px) {
+      label {
+        display: none;
+      }
+      .desk {
+        display: none !important;
+      }
+      .mobile {
+        display: flex;
+        align-items: center;
+        svg {
+          margin-right: 2ch;
+        }
+      }
+    }
   }
   label {
     margin-bottom: var(--space-xl);
@@ -109,6 +127,7 @@
   }
   a {
     position: relative;
+    padding-bottom: 1rem;
     font-size: var(--text-prose-em);
     font-weight: var(--reg);
     padding-bottom: var(--space-md);
@@ -126,6 +145,9 @@
       @include pseudoLine;
       transform-origin: left;
       transform: scaleX(0);
+      @media (max-width: 592px) {
+        display: none;
+      }
     }
     @media (max-width: 1024px) {
       font-size: var(--text-prose-em);
@@ -147,18 +169,19 @@
   li {
     text-align: right;
     @media (max-width: 592px) {
+      padding-bottom: var(--space-xl);
       text-align: left;
     }
   }
   a {
     cursor: pointer;
     position: relative;
+    padding-bottom: .5rem;
     font-family: var(--font-title);
     font-size: var(--text-header);
     font-size: var(--text-header-sm);
     font-weight: var(--reg);
     letter-spacing: var(--push-sm);
-    padding-bottom: var(--space-md);
     border-bottom: 3px solid transparent;
     transition: var(--transition-primary);
     &:hover {
@@ -178,6 +201,8 @@
     }
   }
   @media (max-width: 1024px) {
+    height: auto;
+    margin-top: 5%;
     align-items: flex-start;
   }
 }

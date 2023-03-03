@@ -18,6 +18,8 @@ import {
   divider,
   contactOptions,
   navOptions,
+  desk,
+  mobile,
   menuFooter,
   social,
   copyright,
@@ -60,8 +62,12 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
                   <li key={idx}>
                     <label>{inf.label}</label>
                     <Link legacyBehavior href={inf.link}>
-                      <a >
-                        {inf.content}
+                      <a>
+                        {/* {inf.content} */}
+                        <span className={desk}>{inf.content}</span>
+                        <span className={mobile}>
+                          {inf.icon} {inf.label} us
+                        </span>
                       </a>
                     </Link>
                   </li>
@@ -78,7 +84,10 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
               {pageLinks.map((lnk) => {
                 return (
                   <li key={lnk.text}>
-                    <a onClick={() => handleLinkClick(lnk.path)}>
+                    <a
+                      onClick={() => handleLinkClick(lnk.path)}
+                      onTouch={() => handleLinkClick(lnk.path)}
+                    >
                       {lnk.content}
                     </a>
                   </li>

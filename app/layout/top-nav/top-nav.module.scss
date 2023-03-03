@@ -3,38 +3,31 @@
 //// < zIndex > ////
 .topNav {
   z-index: var(--level-top);
+  isolation: isolate;
 }
 
 .topNav {
   position: fixed;
   top: 0;
-  height: var(--nav-height);
   width: 100vw;
+  height: var(--nav-height);
   padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
-  transition: all 0.4s;
-  &.withBG {
-    isolation: isolate;
+  background-color: var(--primary);
+  transition: var(--transition-primary);
+  &::after {
+    z-index: -1;
+    position: absolute;
     top: 0;
-    // height: 10vh;
-    width: 100vw;
-    // padding: 0 2.5vw;
-    background-color: var(--primary);
-    &::after {
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      content: "";
-      background-image: url("/noise-bg.png");
-      opacity: 0.4;
-      filter: brightness(150%);
-    }
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-image: url("/noise-bg.png");
+    filter: brightness(150%);
+    opacity: 0.4;
   }
 }
 
@@ -53,6 +46,9 @@
   color: var(--white);
   &:nth-child(3) {
     margin-right: 4rem;
+    @media (max-width: 592px) {
+      margin-right: 0;
+    }
   }
   &:hover {
     color: var(--primary-light);
@@ -62,10 +58,7 @@
 .logo {
   scale: 0.8;
   transform-origin: left;
-  @media (max-width: 1024px) {
-    height: 5vh;
-    width: 5vh;
-  }
+  height: auto;
 }
 
 .menuBtn {
@@ -80,15 +73,6 @@
   justify-content: space-between;
   transform-origin: right;
   transition: var(--transition-primary);
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    height: 48px;
-    width: 48px;
-  }
   &:hover {
     transform: scaleX(1.2);
   }

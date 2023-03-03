@@ -1,5 +1,7 @@
 // * Small, convenient, reusable data stuctures. * //
 
+import { EmailIcon } from 'ui-components/svg/email-icon'
+import { PhoneIcon } from 'ui-components/svg/phone-icon'
 import {
   Facebook,
   Instagram,
@@ -64,11 +66,13 @@ export const contactInfo = [
     label: 'Phone',
     content: `+1 (570) 709 4277`,
     link: 'tel://+15707094277',
+    icon: <PhoneIcon color='var(--accent)'/>
   },
   {
     id: 'email',
     label: 'Email',
     content: <>embodiedlearninginstitute<wbr/>@gmail.com</>,
     link: 'mailto:embodiedlearninginstitute@gmail.com',
+    icon: <EmailIcon color='var(--accent)'/>
   },
 ]

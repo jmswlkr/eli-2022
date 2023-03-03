@@ -12,23 +12,21 @@ import {
   logo,
   menuBtn,
   closeBtn,
-  withBG,
-  dark,
 } from './top-nav.module.scss'
 
 export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
   return (
-    <nav className={`${topNav} ${withBG}`}>
-      <Link legacyBehavior href='/'>
-        <a className={logo}>
-          <Logo showFullText={true} color={'var(--white)'} />
-        </a>
+    <nav className={topNav}>
+      <Link className={logo} href='/'>
+        <Logo showFullText={true} color={'var(--white)'} />
       </Link>
       <ul className={navActions}>
         {pageLinks.slice(0, 3).map((pl) => {
           return (
             <li key={pl.path} className={navItem}>
-              <Link legacyBehavior href={pl.path}>{pl.content}</Link>
+              <Link legacyBehavior href={pl.path}>
+                {pl.content}
+              </Link>
             </li>
           )
         })}
