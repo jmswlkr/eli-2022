@@ -4,6 +4,7 @@ import {
   container,
   about as aboutStyle,
   credentials as credentialsStyle,
+  list
 } from './intro.module.scss'
 
 export const Intro = ({ about, credentials }) => {
