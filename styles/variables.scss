@@ -55,7 +55,7 @@
   --font-body-lt: var(--font-reg);
 }
 
-// > TEXT SIZING < \\
+// > TEXT SIZE < \\
 :root {
   // sizes
   --text-xs: 8px;
@@ -213,6 +213,7 @@
   --primary-tr-1: hsla(var(--river-hsl), 0.75);
   --primary-tr-2: hsla(var(--river-hsl), 0.15);
   --primary-tr-3: hsla(var(--river-hsl), 0.1);
+  --primary-tr-4: hsla(var(--river-hsl), 0.6);
 
   --primary-dark: hsl(var(--primary-hs), 25%);
   --primary-darker: hsl(var(--primary-hs), 15%);
@@ -320,7 +321,7 @@
 
     --text-prose-xl: var(--text-3xl); // 48px
     --text-prose-lg: var(--text-lg); // 24px
-    --text-prose-em: var(--text-ml); // 20px
+    --text-prose-em: var(--text-lg); // 20px
     --text-prose: var(--text-md); // 16px
 
     --content-width: 62.5%vw;

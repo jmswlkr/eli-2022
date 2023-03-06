@@ -172,3 +172,9 @@ video::-webkit-media-controls-fullscreen-button {
     font-size: var(--text-lg);
   }
 }
+
+.em-link {
+  font-family: var(--font-med);
+  font-style: italic;
+  color: var(--primary-deep);
+}
