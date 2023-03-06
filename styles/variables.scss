@@ -35,30 +35,129 @@
   font-display: swap;
 }
 
+// > FONT < \\
 :root {
-  /* font-family */
-  // TODO: Replace font weights with actual font families.
+  // base
   --font-thin: "Lato Thin", "Segoe UI Light";
   --font-reg: "Lato Light", "Segoe UI Light";
   --font-med: "Lato Med", "Segoe UI";
   --font-semibold: "Lato Semibold", "Segoe UI";
 
+  // italic
   --font-light-italic: "Lato Light Italic", "Segoe UI Light";
   --font-italic: "Lato Italic", "Segoe UI Light";
   --font-bold-italic: "Lato Bold Italic", "Segoe UI Light";
 
-  // LIGHTER TYPE
-  --font-title: var(--font-thin);
-  --font-subtitle: var(--font-thin);
-  --font-body: var(--font-reg);
-
-  // BOLDER TYPE
+  // + tokens
   --font-title: var(--font-reg);
   --font-subtitle: var(--font-med);
   --font-body: var(--font-med);
   --font-body-lt: var(--font-reg);
+}
 
-  /* palette */
+// > TEXT SIZING < \\
+:root {
+  // sizes
+  --text-xs: 8px;
+  --text-sm: 12px;
+  --text-md: 16px;
+  --text-ml: 20px;
+  --text-lg: 24px;
+  --text-lg-plus: 28px;
+  --text-xl: 32px;
+  --text-1xl: 36px;
+  --text-2xl: 40px;
+  --text-3xl: 48px;
+  --text-4xl: 56px;
+  --text-6xl: 64px;
+  --text-7xl: 72px;
+  --text-8xl: 80px;
+  --text-9xl: 88px;
+  --text-10xl: 96px;
+  --text-11xl: 104px;
+
+  // + tokens | header
+  --text-hero: var(--text-10xl);
+  --text-hero-sm: var(--text-9xl);
+  --text-header-lg: var(--text-7xl);
+  --text-header: var(--text-6xl);
+  --text-header-sm: var(--text-3xl);
+  --text-header-xs: var(--text-2xl);
+  --text-subheader: var(--text-xl);
+
+  // + tokens | prose
+  --text-prose-xl: var(--text-3xl);
+  --text-prose-lg: var(--text-xl);
+  --text-prose-em: var(--text-lg-plus);
+  --text-prose: var(--text-ml);
+
+  // + tokens | misc
+  --text-link: var(--text-3xl);
+}
+
+// > TEXT FORMATTING < \\
+:root {
+  // line-height
+  --solid: 1;
+  --dense: 1.25;
+  --default: 1.5;
+  --loose: 2;
+
+  // letter-spacing
+  --push-xl: 0.25em;
+  --push-lg: 0.15em;
+  --push-md: 0.08em;
+  --push-ms: 0.06em;
+  --push-sm: 0.02em;
+  --tight: -0.015em;
+}
+
+// > MISC < \\
+:root {
+  // z-index
+  --base-two: -200;
+  --base-one: -100;
+  --ground: auto;
+  --level-one: 100;
+  --level-two: 200;
+  --level-three: 300;
+  --level-four: 400;
+  --level-five: 500;
+  --level-six: 600;
+  --level-seven: 700;
+  --level-eight: 800;
+  --level-nine: 900;
+  --level-top: 9999;
+
+  // border radius
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 48px;
+  --radius-rounded: 999px;
+
+  // bezier curves
+  --smooth: cubic-bezier(0.115, 0.905, 0.32, 1);
+  --punchitchewy: cubic-bezier(1, 0, 0.115, 0.995);
+  --smooth-framer: [0.115, 0.905, 0.32, 1];
+
+  // transitions
+  --transition-1: all 1s var(--punchitchewy);
+  --transition-2: all 0.6s var(--punchitchewy);
+  --transition-3: all 0.3s var(--punchitchewy);
+  --transition-4: all 0.1s var(--punchitchewy);
+  --transition-1-smooth: all 1.25s var(--smooth);
+  --transition-2-smooth: all 0.6s var(--smooth);
+  --transition-3-smooth: all 0.3s var(--smooth);
+  --transition-4-smooth: all 0.1s var(--smooth);
+
+  // + tokens | animation
+  --transition-primary: var(--transition-3-smooth);
+}
+
+// > COLORS < \\
+:root {
+  // grey scale
   --full-black: rgb(0, 0, 0);
   --black: #464646;
   --black: rgb(70, 70, 70);
@@ -82,9 +181,10 @@
   --white: hsl(0, 0%, 100%);
   --white-fade-20: hsla(0, 0%, 100%, 0.2);
   --white-fade-35: hsla(0, 0%, 100%, 0.15);
+  
+  // base palette
   --papaya: #e6aca5;
   --snapdragon: #f4f7f8;
-
   --french-blue: #426e8d;
   --ocean-blue: #2b5879;
   --vivid-blue: #2177bb;
@@ -93,39 +193,59 @@
   --baby-cherry: #b71f2f;
   --lotus-blossom: #facebf;
 
+  // - partials | hue • saturation
   --river-hs: 205, 48%;
   --lotus-hs: 15, 86%;
   --papaya-hs: 6, 57%;
-
+  
+  // - partials | hue • saturation • lightness
   --cherry-hsl: 354, 71%, 42%;
   --papaya-hsl: 6, 57%, 77%;
   --french-hsl: 205, 36%, 41%;
   --river-hsl: 205, 48%, 32%;
   --lotus-hsl: 15, 86%, 86%;
 
-  /* z-indeces */
-  --base-two: -200;
-  --base-one: -100;
-  --ground: auto;
-  --level-one: 100;
-  --level-two: 200;
-  --level-three: 300;
-  --level-four: 400;
-  --level-five: 500;
-  --level-six: 600;
-  --level-seven: 700;
-  --level-eight: 800;
-  --level-nine: 900;
-  --level-top: 9999;
+  // + tokens | primary
+  --primary: var(--french-blue);
+  --primary-hs: var(--river-hs);
+  --primary-hsl: var(--river-hsl);
+  --primary-tr: hsla(var(--river-hsl), 0.25);
+  --primary-tr-1: hsla(var(--river-hsl), 0.75);
+  --primary-tr-2: hsla(var(--river-hsl), 0.15);
+  --primary-tr-3: hsla(var(--river-hsl), 0.1);
 
-  /* radii */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 48px;
-  --radius-rounded: 999px;
+  --primary-dark: hsl(var(--primary-hs), 25%);
+  --primary-darker: hsl(var(--primary-hs), 15%);
+  
+  --primary-light: hsl(var(--primary-hs), 65%);
+  --primary-lighter: hsl(var(--primary-hs), 85%);
+  
+  --primary-bright: var(--vivid-blue);
+  --primary-deep: var(--ocean-blue);
+  
+  --primary-bg: var(--snapdragon);
+  
+  // + tokens | accent
+  --accent: var(--lotus-blossom);
+  --accent-tr: hsla(var(--lotus-hsl), 0.25);
+  --accent-tr-2: hsla(var(--lotus-hsl), 0.15);
+  --accent-tr-3: hsla(var(--lotus-hsl), 0.05);
+  
+  // + tokens | text
+  --text-color: var(--black);
+  --text-color-med: var(--grey-40);
+  --text-color-inv: #b9b9b9;
+  --label-color: hsla(var(--river-hsl), 5%);
+  
+  // + tokens | utility
+  --emph-color: var(--baby-cherry);
+  --emph-tr: hsla(var(--cherry-hsl), 0.1);
+  --calendar-accent: var(--tangerine);
+}
 
-  /* spacing */
+// > CONTENT SPACING < \\
+:root {
+  // base
   --space-xs: 2px;
   --space-sm: 4px;
   --space-ms: 6px;
@@ -146,7 +266,7 @@
   --space-11xl: 128px;
   --space-12xl: 136px;
 
-  /* viewport-spacing */
+  // viewport base
   --vp-xxs: 1vh;
   --vp-xs: 1.5vh;
   --vp-sm: 2.5vh;
@@ -157,126 +277,11 @@
   --vp-xl: 12vh;
   --vp-2xl: 26vh;
 
-  /* line-height */
-  --solid: 1;
-  --dense: 1.25;
-  --default: 1.5;
-  --loose: 2;
-
-  /* letter-spacing */
-  --push-xl: 0.25em;
-  --push-lg: 0.15em;
-  --push-md: 0.08em;
-  --push-ms: 0.06em;
-  --push-sm: 0.02em;
-  --tight: -0.015em;
-
-  /* font-weight */
-  // --light: 200;
-  // --reg: 300;
-  // --body: 400;
-  // --medium: 500;
-  // --semibold: 600;
-  // --bold: 700;
-
-  /* font-sizes */
-  --text-xs: 8px;
-  --text-sm: 12px;
-  --text-md: 16px;
-  --text-ml: 20px;
-  --text-lg: 24px;
-  --text-lg-plus: 28px;
-  --text-xl: 32px;
-  --text-1xl: 36px;
-  --text-2xl: 40px;
-  --text-3xl: 48px;
-  --text-4xl: 56px;
-  --text-6xl: 64px;
-  --text-7xl: 72px;
-  --text-8xl: 80px;
-  --text-9xl: 88px;
-  --text-10xl: 96px;
-  --text-11xl: 104px;
-
-  // * role-based tokens * //
-
-  /* colors */
-  --primary: var(--french-blue);
-  --primary-hs: var(--river-hs);
-  --primary-hsl: var(--river-hsl);
-  --primary-tr: hsla(var(--river-hsl), 0.25);
-  --primary-tr-1: hsla(var(--river-hsl), 0.75);
-  --primary-tr-2: hsla(var(--river-hsl), 0.15);
-  --primary-tr-3: hsla(var(--river-hsl), 0.1);
-
-  --primary-dark: hsl(var(--primary-hs), 25%);
-  --primary-darker: hsl(var(--primary-hs), 15%
-  );
-
-  --primary-light: hsl(var(--primary-hs), 65%);
-  --primary-lighter: hsl(var(--primary-hs), 85%);
-
-  --primary-bright: var(--vivid-blue);
-  --primary-deep: var(--ocean-blue);
-
-  --primary-bg: var(--snapdragon);
-
-  --accent: var(--lotus-blossom);
-  --accent-tr: hsla(var(--lotus-hsl), 0.25);
-  --accent-tr-2: hsla(var(--lotus-hsl), 0.15);
-  --accent-tr-3: hsla(var(--lotus-hsl), 0.05);
-
-  --text-color: var(--black);
-  --text-color-med: var(--grey-40);
-  --text-color-inv: #b9b9b9;
-  --label-color: hsla(var(--river-hsl), 5%);
-
-  --emph-color: var(--baby-cherry);
-  --emph-tr: hsla(var(--cherry-hsl), 0.1);
-
-  --calendar-accent: var(--tangerine);
-
-  /* bezier curves */
-  --smooth: cubic-bezier(0.115, 0.905, 0.32, 1);
-  --punchitchewy: cubic-bezier(1, 0, 0.115, 0.995);
-  --smooth-framer: [0.115, 0.905, 0.32, 1];
-
-  /* transitions */
-  --transition-1: all 1s var(--punchitchewy);
-  --transition-2: all 0.6s var(--punchitchewy);
-  --transition-3: all 0.3s var(--punchitchewy);
-  --transition-4: all 0.1s var(--punchitchewy);
-  --transition-1-smooth: all 1.25s var(--smooth);
-  --transition-2-smooth: all 0.6s var(--smooth);
-  --transition-3-smooth: all 0.3s var(--smooth);
-  --transition-4-smooth: all 0.1s var(--smooth);
-
-  --transition-primary: var(--transition-3-smooth);
-
-  /* shadows */
-  --shadow: 4px 4px 12px var(--black-fade-10);
-
-  /* text size */
-  --text-hero: var(--text-10xl); // 96px
-  --text-hero-sm: var(--text-9xl); // 96px
-  --text-header-lg: var(--text-7xl); // 72px
-  --text-header: var(--text-6xl); // 64px
-  --text-header-sm: var(--text-3xl); // 48px
-  --text-header-xs: var(--text-2xl); // 40px
-  --text-subheader: var(--text-xl); // 32px
-
-  --text-link: var(--text-3xl); // 48px
-
-  --text-prose-xl: var(--text-3xl); // 48px
-  --text-prose-lg: var(--text-xl); // 32px
-  --text-prose-em: var(--text-lg-plus); // 24px
-  --text-prose: var(--text-ml); // 20px
-
-
-  /* spacing */
+  // + tokens | nav
   --nav-width: 93vw;
   --nav-height: 9vh;
 
+  // + tokens | layout
   --content-width: 1200px;
   --column-width: calc(var(--content-width) / 3);
   --column-width-narrow: calc(
@@ -288,29 +293,24 @@
   --content-shift: var(--content-margin);
   --content-shift-neg: calc(-1 * var(--content-shift));
   --mobile-content-width: 90vw;
+  --browser-bar: 100px;
+  --task-bar: 40px;
+  --os-vp-vh: calc(var(--browser-bar)) + var(--task-bar);
+  --title-space-bot: var(--space-md);
+  --section-buffer: var(--vp-xl);
 
+  // + tokens | content
   --intersection-margin: 24vh;
   --content-top-margin: var(--space-11xl); // 128px
   --intracontent-margin-lg: var(--space-4xl); // 64px
   --intracontent-margin: var(--space-2xl); // 32px
   --intracontent-margin-sm: var(--space-xl); // 24px
-
-  --browser-bar: 100px;
-  --task-bar: 40px;
-  --os-vp-vh: calc(var(--browser-bar)) + var(--task-bar);
-
-  /* Text Spacing */
-  --title-space-bot: var(--space-md);
-
-  /* Section Spacing */
-  --section-buffer: var(--vp-xl);
 }
 
-/* role-based token adjustments per breakpoint */
-
+// < CONTENT SPACING | Tablet > \\
 @media (max-width: 1024px) {
   :root {
-    /* text size */
+    // + tokens
     --text-hero: var(--text-6xl); // 96px
     --text-header: var(--text-3xl); // 48px
     --text-header-sm: var(--text-2xl); // 40px
@@ -346,12 +346,14 @@
   }
 }
 
+// < CONTENT SPACING | Mobile > \\
 @media (max-width: 592px) {
   :root {
     --content-width: 80vw;
   }
 }
 
+// < CONTENT SPACING | Ultrawide > \\
 @media (min-width: 2160px) {
   :root {
     --content-margin: 40vh;
