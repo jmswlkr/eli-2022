@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import '../styles/global.scss'
+import '../styles/variables.scss'
 import '../styles/react-calendar.scss'
 import { ClientLayout } from './layout/client-layout'
 import { Providers } from './layout/providers'
