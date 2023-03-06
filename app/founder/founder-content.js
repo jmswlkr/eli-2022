@@ -18,3 +18,35 @@ export const QUOTE_CONTENT = {
   author: 'Gabor Maté',
   source: 'The Myth of Normal: Trauma, Illness and Healing in a Toxic Culture',
 }
+
+export const INTRO_CONTENT = {
+  about: (
+    <>
+      <em>Welcome,</em> I’m Ali Brzenchek, the founder of the Embodied Learning
+      Institute (ELI). My life’s passion is to generate a cultural shift toward
+      embodied learning:  This holistic and expansive way of being embraces
+      universal interconnectivity, relies on practice-based transformation,
+      promotes the process of integration; and enables collective growth and
+      well-being.
+    </>
+  ),
+  credentials: [
+    {
+      primary: 'International Coaching Federation',
+      secondary: 'Member since 2022',
+    },
+    {
+      primary: 'Doctorate of Philosophy (Ph.D) - Communication',
+      secondary: 'University of Massachusetts, 2014',
+    },
+    {
+      primary: 'Master of Social Work (MSW)',
+      secondary: 'University of Michigan, 1995',
+    },
+    {
+      primary:
+        'Bachelor of Science (BS) - Human Development and Family Studies',
+      secondary: 'Pennsylvania State University, 1993',
+    },
+  ],
+}
