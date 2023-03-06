@@ -1,0 +1,15 @@
+.container {
+  position: relative;
+  display: grid;
+  gap: 5rem;
+
+  @media (max-width: 1248px) {
+    padding: 0 10%;
+  }
+  @media (max-width: 592px) {
+    gap: 2rem;
+    padding: 0;
+  }
+  // PLACEHOLDER
+  margin-bottom: 10vh;
+}
