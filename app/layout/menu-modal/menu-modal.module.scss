@@ -168,6 +168,9 @@
   align-items: flex-end;
   li {
     text-align: right;
+    @media (max-width: 1024px) {
+      padding-bottom: 1.5rem;
+    }
     @media (max-width: 592px) {
       padding-bottom: var(--space-xl);
       text-align: left;
