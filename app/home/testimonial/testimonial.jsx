@@ -38,6 +38,7 @@ import {
 } from './testimonial.module.scss'
 import { PlayButton } from 'ui-components/svg/play-button'
 import { QuoteMark } from 'ui-components/svg/quote-mark'
+import { SectionHeader } from 'ui-components/section-header'
 
 export const Testimonial = () => {
   const [sectionRef, sectionInView] = useInView()
@@ -51,12 +52,7 @@ export const Testimonial = () => {
 
   return (
     <section className={testimonial} ref={sectionRef}>
-      <div className={header}>
-        <h2 className={title}>Praise for ELI</h2>
-        <div className={label}>
-          {/* <Label> Testimonial Testimonial Testimonial </Label> */}
-        </div>
-      </div>
+      <SectionHeader title={'Praise for ELI'} labelText={'TESTIMONIAL'} />
       <div className={testimonialSliderBase}>
         <div className={testimonialSlider}>
           <ul className={testimonialList}>
@@ -101,6 +97,12 @@ function TextTestimonial({ text }) {
       </span>
       <blockquote className={quote}>{text}</blockquote>
     </>
+  )
+}
+
+function TextModal({ text }) {
+  return (
+    <motion.div {...phases} {...fadeIn} className={modalShade}></motion.div>
   )
 }
 

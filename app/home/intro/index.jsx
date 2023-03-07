@@ -28,8 +28,6 @@ export const Intro = () => {
       <div className={titleContainer}>
         <div className={titleInner}>
           Learn to <strong>Thrive</strong>
-          {/* <span className='gradient-text'>Transformational</span> change
-          through Embodied Learning */}
         </div>
       </div>
     )
@@ -38,7 +36,7 @@ export const Intro = () => {
 
   return (
     <section className={intro} id='intro'>
-      <SectionHeader title={title} labelText={`ELI Offerings`} />
+      <SectionHeader title={title} labelText={`LEARN TO THRIVE`} />
       <div className={cardContainer}>
         {cards.map((c) => {
           return (

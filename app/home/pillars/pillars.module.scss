@@ -203,7 +203,8 @@
     width: 85%;
   }
   @media (max-width: 1024px) {
-    width: 100%;
+    gap: 0% 15%;
+    width: 90%;
   }
   @media (max-width: 692px) {
     grid-template-columns: 1fr;
@@ -242,6 +243,7 @@
     top: unset;
     left: unset;
     transform: unset;
+    align-items: flex-start;
   }
 }
 
@@ -269,6 +271,10 @@
   margin-bottom: 0;
   font-size: var(--text-subheader);
   text-align: center;
+  @media (max-width: 1024px) {
+    padding: 1rem .5rem !important;
+    text-align: left;
+  }
 }
 .cardText {
   padding: 1rem 2rem;
@@ -279,6 +285,11 @@
   @media (max-width: 1024px) {
     padding: 1rem .5rem !important;
     line-height: 180%;
+    text-align: left;
+  }
+  @media (max-width: 592px) {
+    text-align: center;
+
   }
 }
 .cardIcon {
@@ -334,21 +345,13 @@
     transition-delay: 0.2s;
     @media (max-width: 1024px) {
       opacity: 1;
+      text-align: left;
     }
   }
   &.fadePillar {
     opacity: 0.5;
     .title {
       transform: scale(0.95);
-    }
-  }
-  .mText {
-    display: none;
-    @media (max-width: 1024px) {
-      @include paragraphText;
-      display: initial;
-      width: 62.5vw;
-      text-align: center;
     }
   }
   @media (max-width: 1024px) {

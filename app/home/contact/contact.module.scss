@@ -21,7 +21,7 @@
 .contact {
   @include homeSection;
   height: 70vh;
-  margin: 25vh 0;
+  margin: 0;
   display: grid;
   gap: 4vw;
   grid-template-columns: repeat(2, 1fr);
@@ -29,16 +29,14 @@
   justify-content: flex-start;
   align-items: flex-end;
   @media (max-width: 1024px) {
-    width: var(--content-width);
-    grid-template-columns: 1fr;
-    margin-top: 10vh;
-    min-height: 100vh;
     height: auto;
-    flex-direction: column;
     width: 100%;
-    &::after {
-      display: none;
-    }
+    margin: 0;
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 592px) {
+    min-height: unset;
+    margin-top: 0;
   }
 }
 
@@ -55,11 +53,17 @@
   justify-content: space-between;
   overflow-y: hidden;
   @media (max-width: 1024px) {
-    height: 80%;
-    width: 100%;
-    padding: 0;
+    height: auto;
+    background-color: var(--primary-tr-2);
+    border-radius: var(--radius-sm);
+    padding: 10%;
+    align-self: center;
+    justify-self: center;
     margin-bottom: var(--vp-xl);
     overflow: visible;
+  }
+  @media (max-width: 592px) {
+    width: 100%;
   }
 }
 .title {
@@ -141,6 +145,10 @@
     }
     @media (max-width: 1024px) {
       border-color: var(--primary);
+      width: 100%;
+    }
+    @media (max-width: 592px) {
+      width: 100%;
     }
   }
   textarea {
@@ -177,10 +185,11 @@
       margin-left: 0;
       border-color: var(--primary);
     }
+    @media (max-width: 592px) {
+      height: 30vh;
+    }
   }
   @media (max-width: 1024px) {
-    // @include fullBleedContent;
-    width: var(--content-width);
     margin-top: 5vh;
   }
 }

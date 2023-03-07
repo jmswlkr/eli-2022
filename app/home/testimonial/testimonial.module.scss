@@ -2,13 +2,14 @@
 
 .testimonial {
   @include homeSection;
-  // margin: var(--intersection-margin) 0;
+  margin: 0;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   overflow: visible;
   @media (max-width: 1024px) {
     justify-content: center;
+    margin-bottom: 0;
   }
 }
 
@@ -55,9 +56,12 @@
   justify-content: flex-start;
   @media (max-width: 1024px) {
     height: 80vh;
-    background-color: var(--primary-tr-2);
-    padding: var(--intersection-margin) 0;
+    width: 100%;
+    transform: unset;
+    padding: var(--space-5xl) 0;
     height: auto;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -75,9 +79,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   @media (max-width: 1024px) {
-    // align-items: flex-start;
-    // height: 100%;
-    // width: 100%;
+    position: relative;
+    top: unset;
+    left: unset;
+    translate: 0 0;
     position: relative;
     translate: unset;
     top: unset;
@@ -98,10 +103,9 @@
   padding-right: 35vw;
   padding-left: var(--content-shift);
   @media (max-width: 1024px) {
-    // height: 100%;
-    // width: 100%;
-    padding: 0;
-    width: 90%;
+    padding: 0 !important;
+    width: 80%;
+    width: 100%;
     height: auto;
     gap: 3rem 0;
     display: grid;
@@ -140,7 +144,7 @@
 .videoContainer {
   width: 70%;
   margin-bottom: var(--space-2xl);
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   b {
     display: block;
     margin-bottom: var(--intracontent-margin);
@@ -294,10 +298,13 @@
   @media (max-width: 1024px) {
     top: 0%;
     left: 5%;
+    top: 25%;
+    left: 25%;
     width: 100%;
     height: auto;
     path {
-      fill: var(--primary);
+      opacity: 0.1;
+      fill: var(--primary-tr-1);
     }
   }
 }

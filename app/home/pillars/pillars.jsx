@@ -113,8 +113,6 @@ function PillarCard({
   useEffect(() => {
     setIsSmallScreen(window.innerWidth < 1400)
   }, [])
-  
-
 
   return (
     <article
