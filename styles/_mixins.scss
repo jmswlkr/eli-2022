@@ -3,7 +3,6 @@
 // Containers & Sections
 // @mixin homeSection($height: 100vh, $full: false) {
 @mixin homeSection($height: auto, $full: false) {
-  margin: var(--intersection-margin) 0;
   position: relative;
   height: $height;
   width: 100%;

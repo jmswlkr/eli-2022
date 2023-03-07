@@ -5,10 +5,15 @@
   width: 100%;
 }
 .sectionAccent {
-  @include sectionLabel($top: -5vh);
-  @media (max-width: 1024px) {
-    // @include waveCircles;
-  }
+  font-family: var(--font-thin);
+  position: absolute;
+  top: -150%;
+  left: -50vw;
+  top: 0;
+  left: 0;
+  width: 200vw;
+  translate: -50% -40%;
+  font-size: 152px;
 }
 .title {
   @include headerText;
