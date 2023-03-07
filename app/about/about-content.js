@@ -62,7 +62,7 @@ export const VALUES = [
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#4892C6',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207670/ELI/Rectangle_103_a8fuov.png',
       alt: 'card background',
     },
   },
@@ -71,16 +71,16 @@ export const VALUES = [
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#428D89',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207670/ELI/Rectangle_104_g3xq8j.png',
       alt: 'card background',
     },
   },
   {
     front: 'Social Justice',
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
-    color: '#88000E',
+    color: '#112348',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678208510/ELI/Rectangle_119_pkih6q.png',
       alt: 'card background',
     },
   },
@@ -89,7 +89,7 @@ export const VALUES = [
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#FFCF53',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207671/ELI/Rectangle_111_zkbrkd.png',
       alt: 'card background',
     },
   },
@@ -98,7 +98,7 @@ export const VALUES = [
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#DF9595',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678208710/ELI/Rectangle_106_felhju.png',
       alt: 'card background',
     },
   },
@@ -107,7 +107,7 @@ export const VALUES = [
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#426E8D',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207670/ELI/Rectangle_109_db5lnd.png',
       alt: 'card background',
     },
   },
@@ -116,7 +116,7 @@ export const VALUES = [
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#9747FF',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207670/ELI/Rectangle_106-1_qijgmh.png',
       alt: 'card background',
     },
   },
@@ -125,7 +125,7 @@ export const VALUES = [
     back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
     color: '#95A74F',
     image: {
-      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+      url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207671/ELI/Rectangle_113_cbr0rc.png',
       alt: 'card background',
     },
   },
