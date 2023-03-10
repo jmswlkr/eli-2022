@@ -43,6 +43,7 @@
   justify-content: center;
   background-color: var(--primary-tr-2);
   @media (max-width: 1024px) {
+    padding-top: 10vh;
     background-color: var(--primary-tr);
     height: 100%;
     width: 100%;
