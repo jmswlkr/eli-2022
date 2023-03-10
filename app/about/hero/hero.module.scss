@@ -19,8 +19,9 @@
   @include homeSection($full: true);
   margin: 0;
   position: relative;
-  height: 100vh;
+  height: 65vh;
   width: 100%;
+  margin-top: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,10 +41,10 @@
     @include shade(var(--primary-tr));
   }
   img {
+    opacity: 0.75;
     height: 100%;
-    width: 100%;
     object-fit: cover;
-    object-position: 50% 75%;
+    object-position: 50% 70%;
   }
   
 }

@@ -17,7 +17,7 @@ export const Hero = () => {
       </div>
       <div className={imageWrap} data-testid='image-wrap'>
         <img
-          src='https://res.cloudinary.com/jameswalker-work/image/upload/v1676831310/ELI/karl-magnuson-HQR_JXd-fPs-unsplash_spk0t3.jpg'
+          src='https://res.cloudinary.com/jameswalker-work/image/upload/v1678442251/ELI/about--centered_tkpdza.png'
           alt='3 travelers stand silhoutted in front of a blue sky over an orange sunset in a hazy valley'
           data-testid='hero-image'
         />
