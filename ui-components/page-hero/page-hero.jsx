@@ -22,15 +22,15 @@ export const PageHero = ({ id, header, image }) => {
               {header.map((line, idx) => {
                 return <span key={idx}>{line}</span>
               })}
+              <div className={accentShapes}>
+                <BraidedCircles />
+              </div>
             </h1>
             <Button
               text='Get Started'
               classes='solid dark med'
               path='/#contact'
             />
-            <div className={accentShapes}>
-              <BraidedCircles />
-            </div>
           </div>
         </div>
         <div className={imgWrap}>
