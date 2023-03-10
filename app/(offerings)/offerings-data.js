@@ -1,6 +1,6 @@
 export const offerings = {
-  'collaborative-learning': {
-    id: 'collaborative-learning',
+  'training': {
+    id: 'training',
     header: ['Transformational', 'Training'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/v1676831350/ELI/pexels-sam-kolder-2387873_hkvtbl.jpg',
@@ -8,18 +8,18 @@ export const offerings = {
         '3 distant travelers in awe of a waterfall, large red rocks in foreground.',
     },
   },
-  'organizational-consulting': {
-    id: 'organizational-consulting',
-    header: ['Organizational', 'Consulting'],
+  'consulting': {
+    id: 'consulting',
+    header: ['Customized', 'Consulting'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/v1676831318/ELI/mehak-malhotra-2MTboTv5ucQ-unsplash_dm0ig5.jpg',
       alt_text:
         'treacherous looking mountains partially covered in snow under a bright sun.',
     },
   },
-  'leadership-coaching': {
-    id: 'leadership-coaching',
-    header: ['Leadership', 'Coaching'],
+  'coaching': {
+    id: 'coaching',
+    header: ['Emergent &', 'Embodied Coaching'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/v1676831344/ELI/alexander-milo-HwxVLhLyg2s-unsplash_wvpbdq.jpg',
       alt_text:
