@@ -1,8 +1,3 @@
-'use client';
-
-import { useState, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-
 import { container, imageWrap, textWrap, header } from './hero.module.scss'
 
 export const Hero = () => {
