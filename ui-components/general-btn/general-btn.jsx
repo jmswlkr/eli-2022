@@ -16,12 +16,17 @@ export function Button({
     e.preventDefault()
 
     if (path) {
-      prefefch(path)
       push(path, undefined, { shallow: true })
     }
 
     if (action) {
       action(e)
+    }
+  }
+
+  const handleHover = () => {
+    if (path) {
+      prefetch(path)
     }
   }
 
@@ -31,6 +36,7 @@ export function Button({
       onClick={handleClick}
       type={type}
       disabled={disabled}
+      onMouseEnter={handleHover}
     >
       {text}
     </button>
