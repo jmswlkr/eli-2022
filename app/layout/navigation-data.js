@@ -10,16 +10,16 @@ import {
 
 export const pageLinks = [
   {
-    path: '/organizational-consulting',
+    path: '/consulting',
     content: 'Consulting',
   },
   {
-    path: '/leadership-coaching',
+    path: '/coaching',
     content: 'Coaching',
   },
   {
-    path: '/collaborative-learning',
-    content: 'Collaboration',
+    path: '/training',
+    content: 'Training',
   },
   {
     path: '/about',

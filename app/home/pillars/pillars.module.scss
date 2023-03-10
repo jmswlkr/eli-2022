@@ -23,7 +23,6 @@
   --card-height: 410px;
   @media (max-width: 1024px) {
     --card-height: 350px;
-
   }
 }
 
@@ -112,6 +111,10 @@
       width: 120%;
       text-align: center;
     }
+    @media (max-width: 592px) {
+      text-align: left;
+      width: 100%;
+    }
   }
   .subtitle {
     @include subheaderText;
@@ -123,6 +126,7 @@
       display: none;
     }
     @media (max-width: 1024px) {
+      font-family: var(--font-med);
       margin-top: var(--space-md);
       margin-bottom: var(--space-3xl);
       text-align: center;
@@ -130,6 +134,11 @@
       br {
         display: initial;
       }
+    }
+    @media (max-width: 592px) {
+      text-align: left;
+      width: 100%;
+      margin-bottom: var(--space-xl);
     }
   }
   .text {
@@ -181,6 +190,12 @@
   }
   @media (max-width: 1024px) {
     margin: 0;
+  }
+  @media (max-width: 592px) {
+    border-bottom: 1px solid var(--primary-lighter);
+    & > * {
+      color: var(--primary-lighter) !important;
+    }
   }
 }
 
@@ -272,7 +287,7 @@
   font-size: var(--text-subheader);
   text-align: center;
   @media (max-width: 1024px) {
-    padding: 1rem .5rem !important;
+    padding: 1rem 0.5rem !important;
     text-align: left;
   }
 }
@@ -283,13 +298,12 @@
     padding: 1.5rem 4rem;
   }
   @media (max-width: 1024px) {
-    padding: 1rem .5rem !important;
+    padding: 1rem 0.5rem !important;
     line-height: 180%;
     text-align: left;
   }
   @media (max-width: 592px) {
-    text-align: center;
-
+    // text-align: center;
   }
 }
 .cardIcon {

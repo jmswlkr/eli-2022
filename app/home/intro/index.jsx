@@ -5,11 +5,10 @@ import { cards } from './intro-data'
 
 import {
   intro,
-  titleContainer,
-  titleInner,
   cardContainer,
   imgWrap,
   card,
+  cardMain,
   cardBtn,
 } from './intro.module.scss'
 
@@ -24,16 +23,16 @@ export const Intro = () => {
         {cards.map((c) => {
           return (
             <div key={c.title} className={card}>
-              <div className={imgWrap}>
-                {/* <img src={baseUrl(c.imgSrc)} alt={c.title} /> */}
-                <img src={c.imgSrc} alt={c.title} />
+              <div className={cardMain}>
+                <div className={imgWrap}>
+                  <img src={c.imgSrc} alt={c.title} />
+                </div>
+                <h4>{c.title}</h4>
+                <p>{c.text}</p>
               </div>
-              <h4>{c.title}</h4>
-              <p>{c.text}</p>
               <div className={cardBtn}>
                 <Button text={c.btnText} path={c.path} />
               </div>
-              {/* <ArrowBtn text={c.btnText} btnAction={() => push(`${c.path}`)} /> */}
             </div>
           )
         })}

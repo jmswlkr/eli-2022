@@ -134,10 +134,15 @@
     }
   }
   @media (max-width: 1024px) {
-    // flex-shrink: 0;
     width: 100%;
     height: auto;
     align-items: center;
+  }
+  @media (max-width: 592px) {
+    margin-right: 0;
+    &:not(:last-child) {
+      margin-bottom: var(--space-3xl);
+    }
   }
 }
 
@@ -151,6 +156,9 @@
     font-size: var(--text-2xl);
     font-weight: var(--reg);
     color: var(--primary);
+  }
+  @media (max-width: 592px) {
+    width: 100%;
   }
 }
 .videoWrap {
@@ -285,10 +293,8 @@
     letter-spacing: var(--push-sm);
     font-weight: 300;
   }
-  @media (max-width: 1024px) {
-    // width: var(--content-width);
-    // text-align: left;
-    // margin-bottom: var(--vp-lg);
+  @media (max-width: 592px) {
+    width: 100%;
   }
 }
 .quoteMark {
@@ -331,6 +337,9 @@
     margin-top: 4vh;
     margin-left: 2rem;
     margin-bottom: var(--intracontent-margin-lg);
+  }
+  @media (max-width: 592px) {
+    margin: 0;
   }
 }
 

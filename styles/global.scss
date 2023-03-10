@@ -68,6 +68,10 @@ img {
   object-fit: cover;
   object-position: center;
 }
+// div:has(> img) {
+//   border-radius: var(--radius-sm);
+//   overflow: hidden;
+// }
 
 * {
   box-sizing: border-box;
