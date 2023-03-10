@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import { pageLinks } from '../navigation-data'
 
@@ -13,6 +14,9 @@ import {
   menuBtn,
   closeBtn,
 } from './top-nav.module.scss'
+import { AnimatePresence } from 'framer-motion'
+import { phases } from 'animation/transition'
+import { fadeIn } from 'animation/fade'
 
 export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
   return (
@@ -21,15 +25,23 @@ export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
         <Logo showFullText={true} color={'var(--white)'} />
       </Link>
       <ul className={navActions}>
-        {pageLinks.slice(0, 3).map((pl) => {
-          return (
-            <li key={pl.path} className={navItem}>
-              <Link legacyBehavior href={pl.path}>
-                {pl.content}
-              </Link>
-            </li>
-          )
-        })}
+        <AnimatePresence exitBeforeEnter>
+          {!modalOpen &&
+            pageLinks.slice(0, 3).map((pl) => {
+              return (
+                <motion.li
+                  {...phases}
+                  {...fadeIn}
+                  key={pl.path}
+                  className={navItem}
+                >
+                  <Link legacyBehavior href={pl.path}>
+                    {pl.content}
+                  </Link>
+                </motion.li>
+              )
+            })}
+        </AnimatePresence>
         <li>
           <button
             className={`
