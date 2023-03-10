@@ -11,8 +11,7 @@ import {
   textWrap,
   intro as introStyle,
   paragraph,
-  blue,
-  red,
+  accent,
   inline,
 } from './intro.module.scss'
 
@@ -25,11 +24,11 @@ export const Intro = () => {
         <p className={introStyle}>{intro}</p>
         <p className={paragraph}>
           <span>{p1.text}</span>
-          <span className={blue}>{p1.color_text}</span>
+          <span className={accent}>{p1.color_text}</span>
         </p>
         <p className={paragraph}>
           <span>{p2.text}</span>
-          <span className={red}>{p2.color_text}</span>
+          <span className={accent}>{p2.color_text}</span>
         </p>
         <p className={`${paragraph} ${inline}`}>{p3.text}</p>
       </div>

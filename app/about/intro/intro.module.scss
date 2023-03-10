@@ -29,7 +29,9 @@
   @media (max-width: 592px) {
     font-size: var(--text-ml);
   }
-
+  .accent {
+    font-family: var(--font-italic);
+  }
   .red {
     color: var(--emph-color);
     font-family: var(--font-italic);
