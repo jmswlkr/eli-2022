@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+'use client';
+
 import Marquee from 'react-fast-marquee'
 
 import {
@@ -15,11 +16,6 @@ export const SectionHeader = ({
   labelText = 'Embodied Learning Institute',
   withLabel = true,
 }) => {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 1024)
-  }, [])
 
   return (
     <div className={container}>

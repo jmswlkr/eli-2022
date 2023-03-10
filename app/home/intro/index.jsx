@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-
 import { Button } from 'ui-components/general-btn/general-btn'
 import { SectionHeader } from 'ui-components/section-header'
 
@@ -16,27 +14,12 @@ import {
 } from './intro.module.scss'
 
 export const Intro = () => {
-  const [isMobile, setIsMobile] = useState(false)
-  const [title, setTitle] = useState('')
 
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 1024)
-  }, [])
-
-  useEffect(() => {
-    const titleContent = (
-      <div className={titleContainer}>
-        <div className={titleInner}>
-          Learn to <strong>Thrive</strong>
-        </div>
-      </div>
-    )
-    setTitle(titleContent)
-  }, [isMobile])
+  
 
   return (
     <section className={intro} id='intro'>
-      <SectionHeader title={title} labelText={`LEARN TO THRIVE`} />
+      <SectionHeader title={'Learn to Thrive'} labelText={`LEARN TO THRIVE`} />
       <div className={cardContainer}>
         {cards.map((c) => {
           return (

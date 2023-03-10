@@ -1,7 +1,7 @@
 export const offerings = {
   'collaborative-learning': {
     id: 'collaborative-learning',
-    header: ['Collaborative', 'Learning'],
+    header: ['Transformational', 'Training'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/v1676831350/ELI/pexels-sam-kolder-2387873_hkvtbl.jpg',
       alt_text:

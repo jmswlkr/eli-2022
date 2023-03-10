@@ -1,22 +1,23 @@
-'use client';
+'use client'
 
 import { useRouter } from 'next/navigation'
 
 export function Button({
   text = 'Learn More',
-  path = null,
+  path = '',
   classes = '',
   type = 'text',
   disabled = false,
-  action = null
+  action = null,
 }) {
-  const { push } = useRouter()
+  const { push, prefetch } = useRouter()
 
   const handleClick = (e) => {
     e.preventDefault()
 
     if (path) {
-      push(path)
+      prefefch(path)
+      push(path, undefined, { shallow: true })
     }
 
     if (action) {

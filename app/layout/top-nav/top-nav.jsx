@@ -35,7 +35,7 @@ export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
                   key={pl.path}
                   className={navItem}
                 >
-                  <Link legacyBehavior href={pl.path}>
+                  <Link href={pl.path} scroll={false}>
                     {pl.content}
                   </Link>
                 </motion.li>

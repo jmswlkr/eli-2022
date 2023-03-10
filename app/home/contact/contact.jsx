@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { send } from '@emailjs/browser'
 
@@ -21,19 +23,15 @@ import {
   text,
   btn,
 } from './contact.module.scss'
+import { useScrollOnMount } from 'hooks/useScrollOnMount'
 
 export const Contact = () => {
-  const [isMobile, setIsMobile] = useState(false)
   const [toSend, setToSend] = useState({
     from_name: '',
     to_name: 'ELI | The Embodied Learning Institute',
     message: '',
     reply_to: '',
   })
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 1024)
-  }, [])
 
   // Email form functions
   const handleChange = (e) => {
@@ -44,6 +42,8 @@ export const Contact = () => {
       }
     })
   }
+
+  useScrollOnMount()
 
   useEffect(() => {
     //
@@ -65,7 +65,8 @@ export const Contact = () => {
   }
 
   return (
-    <section className={contact} id='contact'>
+    <section className={contact}>
+      <span className='scroll-pad' id='contact' />
       <div className={formSection}>
         <div className={blurb}>
           <SectionHeader title='Get in touch' withLabel={false} />

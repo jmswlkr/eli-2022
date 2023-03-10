@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 
@@ -11,16 +13,11 @@ import {
   hero,
   heroImages,
   bg,
-  fg,
   shade,
   heroTextContent,
-  companyTitle,
-  title,
-  logoWrap,
   tagline,
   slogan,
   btn,
-  fadeTransitionBar,
 } from './hero.module.scss'
 
 
