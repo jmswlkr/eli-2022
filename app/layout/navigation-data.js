@@ -10,15 +10,15 @@ import {
 
 export const pageLinks = [
   {
-    path: '/consulting',
+    path: '/offerings/consulting',
     content: 'Consulting',
   },
   {
-    path: '/coaching',
+    path: '/offerings/coaching',
     content: 'Coaching',
   },
   {
-    path: '/training',
+    path: '/offerings/training',
     content: 'Training',
   },
   {

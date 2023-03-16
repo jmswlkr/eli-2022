@@ -12,7 +12,7 @@ import {
   accentShapes,
 } from './page-hero.module.scss'
 
-export const PageHero = ({ id, header, image }) => {
+export const PageHero = ({ id, header = '', image = '' }) => {
   return (
     <section className={container}>
       <div className={hero}>
@@ -22,9 +22,9 @@ export const PageHero = ({ id, header, image }) => {
               {header.map((line, idx) => {
                 return <span key={idx}>{line}</span>
               })}
-              <div className={accentShapes}>
+              {/* <div className={accentShapes}>
                 <BraidedCircles />
-              </div>
+              </div> */}
             </h1>
             <Button
               text='Get Started'

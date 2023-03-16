@@ -18,7 +18,8 @@
   src: url("/fonts/Lato-Bold.ttf");
   font-display: swap;
 }
-
+// ↑ REGULAR
+// ↓ ITALIC
 @font-face {
   font-family: "Lato Light Italic";
   src: url("/fonts/Lato-LightItalic.ttf");
@@ -78,7 +79,7 @@
 
   // + tokens | header
   --text-hero: var(--text-10xl);
-  --text-hero-sm: var(--text-6xl);
+  --text-hero-sm: var(--text-8xl);
   --text-header-lg: var(--text-7xl);
   --text-header: var(--text-6xl);
   --text-header-sm: var(--text-3xl);
@@ -221,6 +222,7 @@
   
   --primary-light: hsl(var(--primary-hs), 65%);
   --primary-lighter: hsl(var(--primary-hs), 85%);
+  --primary-lightest: hsl(202, 18%, 88%);
   
   --primary-bright: var(--vivid-blue);
   --primary-deep: var(--ocean-blue);
@@ -285,6 +287,7 @@
 
   // + tokens | layout
   --content-width: 1200px;
+  --content-width: 1400px; // TODO - Reevaluate layout with this width
   --column-width: calc(var(--content-width) / 3);
   --column-width-narrow: calc(
     (var(--content-width) / 4) - 48px
