@@ -87,12 +87,23 @@ img {
   justify-content: center;
 }
 
-.scroll-pad {
+#contact {
+  pointer-events: none;
   position: absolute;
-  top: calc(-.8 * var(--intersection-margin));
   left: 0;
+  top: 50%;
   height: 20px;
   width: 20px;
+}
+
+#pillars {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 5vh;
+  width: 20px;
+  // background-color: deepskyblue;
 }
 
 .vp-marker {
@@ -145,6 +156,8 @@ img {
   z-index: 99999999999999999;
 }
 
+
+
 video::-webkit-media-controls-fullscreen-button {
   display: none !important;
 }
@@ -170,7 +183,10 @@ video::-webkit-media-controls-fullscreen-button {
     color: var(--white);
     &:hover {
       background-color: var(--primary-dark);
-    } 
+    }
+    &.light {
+      background-color: var(--primary-light);
+    }
   }
   &.dark {
     background-color: var(--primary-darker);

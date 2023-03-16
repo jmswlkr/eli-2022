@@ -77,7 +77,7 @@ export const Hero = () => {
             <em>Embodied Learning</em>
           </h2>
           <div className={btn}>
-            <Button text='Get Started' path='/#intro' />
+            <Button text='Get Started' classes='solid light' path='/#intro' />
           </div>
         </div>
       </motion.div>

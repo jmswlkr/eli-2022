@@ -6,7 +6,7 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(2, 1fr);
-  @media (max-width: 700px) {
+  @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
   }
@@ -36,12 +36,23 @@
 }
 .header {
   margin-bottom: 0.5rem;
-  font-family: var(--font-reg);
+  font-family: var(--font-med);
   font-size: var(--text-header-xs);
   color: var(--primary-deep);
+  @media (max-width: 592px) {
+    font-family: var(--font-med);
+  }
 }
 .content {
   font-size: var(--text-prose);
   color: var(--white);
   line-height: 150%;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 592px) {
+    font-size: 20px;
+  }
 }

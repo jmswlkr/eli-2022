@@ -7,7 +7,6 @@ export const useClickOutside = (onClickOutside) => {
 
   useEffect(() => {
     const handleClick = (e) => {
-      // console.log('e from oco hc: ', e);
       onClickOutside()
     }
 

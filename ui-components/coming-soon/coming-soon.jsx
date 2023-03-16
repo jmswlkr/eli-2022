@@ -65,7 +65,6 @@ function NewsletterModal({ closeModal }) {
   } = useCreateClient()
 
   const handleSubmit = async (e) => {
-    console.log('submit triggered')
     e.preventDefault()
 
     await createClient({

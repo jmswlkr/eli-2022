@@ -23,7 +23,6 @@ import {
   text,
   btn,
 } from './contact.module.scss'
-import { useScrollOnMount } from 'hooks/useScrollOnMount'
 
 export const Contact = () => {
   const [toSend, setToSend] = useState({
@@ -42,8 +41,6 @@ export const Contact = () => {
       }
     })
   }
-
-  useScrollOnMount()
 
   useEffect(() => {
     //

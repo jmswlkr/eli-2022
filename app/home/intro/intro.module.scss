@@ -71,7 +71,7 @@
     grid-auto-rows: min-content;
   }
   @media (max-width: 1024px) {
-    width: 80%;
+    width: 85%;
   }
   @media (max-width: 592px) {
     width: 100%;
@@ -84,13 +84,19 @@
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  padding: 1rem;
   flex-shrink: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
   > * {
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
+  }
+  &:hover {
+    border: 1px solid var(--primary-lightest);
   }
   h4 {
     @include subheaderText;
@@ -107,10 +113,9 @@
     color: var(--text-color-med);
   }
   @media (max-width: 1200px) {
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
     p {
-      text-align: left;
+    text-align: left;
     }
   }
   @media (max-width: 592px) {
@@ -125,6 +130,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  @media (max-width: 592px) {
+    gap: 1rem;
+  }
 }
 
 .cardBtn {

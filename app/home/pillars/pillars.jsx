@@ -33,6 +33,8 @@ import {
   padded,
   cardHeading,
 } from './pillars.module.scss'
+import { useScrollLinks } from 'hooks/useScrollLinks';
+import { useScrollOnMount } from 'hooks/useScrollOnMount';
 
 export const Pillars = () => {
   const [curPillar, setCurPillar] = useState(null)
@@ -45,7 +47,8 @@ export const Pillars = () => {
     }
   }
 
-  // TODO: Pillars should have permanent text when grid changes to 2x2.
+  // useScrollLinks()
+  useScrollOnMount()
 
   return (
     <motion.section className={pillars}>
@@ -95,6 +98,7 @@ export const Pillars = () => {
         />
         <img className={bg} src={baseUrl('BG_no-tree_fsmhkc', 'good')} alt='' />
       </div>
+      <span id='pillars' className='scroll-pillars' />
     </motion.section>
   )
 }

@@ -3,6 +3,7 @@
 .container {
   position: relative;
   width: 100%;
+  
 }
 .sectionAccent {
   font-family: var(--font-thin);
@@ -21,6 +22,12 @@
   margin-bottom: var(--space-lg);
   &.left {
     text-align: left;
+  }
+  @media (max-width: 1024px) {
+    font-size: 48px !important;
+  }
+  @media (max-width: 592px) {
+    font-size: 40px !important;
   }
 }
 

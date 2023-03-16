@@ -25,6 +25,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 592px) {
+    height: 70vh;
+  }
 }
 
 .imageWrap {
@@ -81,7 +84,7 @@
       font-size: var(--text-header-lg);
     }
     @media (max-width: 592px) {
-      font-size: var(--text-6xl);
+      font-size: var(--text-4xl);
       color: var(--white);
     }
   }

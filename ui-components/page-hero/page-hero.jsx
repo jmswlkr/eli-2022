@@ -13,6 +13,7 @@ import {
 } from './page-hero.module.scss'
 
 export const PageHero = ({ id, header = '', image = '' }) => {
+  console.log('id: ', id);
   return (
     <section className={container}>
       <div className={hero}>

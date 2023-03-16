@@ -1,22 +1,23 @@
 'use client';
 
-// External lib
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { useSearchParams } from 'next/navigation';
 
-// Components
 import { TopNav } from './top-nav/top-nav'
 import { MenuModal } from './menu-modal/menu-modal'
 import { Footer } from './footer/footer'
 
-// Styling
 import { layout, content } from './client-layout.module.scss'
+import { useScrollLinks } from 'hooks/useScrollLinks';
 
 export const ClientLayout = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
   const { ref: heroRef, inView: heroInView } = useInView({
     initialInView: true,
   })
+
+  // useScrollLinks()
 
   return (
     <div className={layout}>

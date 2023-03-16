@@ -70,7 +70,7 @@ export const BODY_CONTENT = [
     paragraph: (
       <>
         I developed the four pillars of Embodied Enoughness –{' '}
-        <Link href='/' className='em-link'>
+        <Link href='/#pillars' className='em-link'>
           <em>
             somatic sensibilities, wholehearted presence, dynamic discernment,
             and leaderful living

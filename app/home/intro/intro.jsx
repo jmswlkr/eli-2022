@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Button } from 'ui-components/general-btn/general-btn'
 import { SectionHeader } from 'ui-components/section-header'
 
@@ -22,18 +23,20 @@ export const Intro = () => {
       <div className={cardContainer}>
         {cards.map((c) => {
           return (
-            <div key={c.title} className={card}>
-              <div className={cardMain}>
-                <div className={imgWrap}>
-                  <img src={c.imgSrc} alt={c.title} />
+            <Link key={c.title} href={c.path}>
+              <div className={card}>
+                <div className={cardMain}>
+                  <div className={imgWrap}>
+                    <img src={c.imgSrc} alt={c.title} />
+                  </div>
+                  <h4>{c.title}</h4>
+                  <p>{c.text}</p>
                 </div>
-                <h4>{c.title}</h4>
-                <p>{c.text}</p>
+                <div className={cardBtn}>
+                  <Button text={c.btnText} path={c.path} />
+                </div>
               </div>
-              <div className={cardBtn}>
-                <Button text={c.btnText} path={c.path} />
-              </div>
-            </div>
+            </Link>
           )
         })}
       </div>

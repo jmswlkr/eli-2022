@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 import { pageLinks, contactInfo, socialIcons } from '../navigation-data'
+import { useActionOnKey } from 'hooks/useActionOnKey'
 
 import { phases, smooth } from 'animation/transition'
 import { slideInTop } from 'animation/slide'
@@ -28,16 +29,7 @@ import {
 export const MenuModal = ({ modalOpen, closeModal }) => {
   const { push } = useRouter()
 
-  // close modal with esc key
-  useEffect(() => {
-    const close = (e) => {
-      if (e.keyCode === 27) {
-        closeModal()
-      }
-    }
-    window.addEventListener('keydown', close)
-    return () => window.removeEventListener('keydown', close)
-  })
+  useActionOnKey(closeModal, 'Escape') // close modal with esc key
 
   const handleLinkClick = (path) => {
     closeModal()

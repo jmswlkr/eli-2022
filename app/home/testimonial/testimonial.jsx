@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
@@ -47,7 +47,7 @@ export const Testimonial = () => {
   const controls = useAnimation()
 
   useEffect(() => {
-    if (sectionInView) {
+    if (sectionInView || window.innerWidth < 1024) {
       controls.start('visible')
     }
   }, [sectionInView, controls])
@@ -61,7 +61,7 @@ export const Testimonial = () => {
             {testimonialData.map((tst, idx) => {
               const isVideo = tst?.videoUrl
               return (
-                <motion.li
+                <li
                   key={idx}
                   className={quoteContainer}
                   {...animationProps({
@@ -76,16 +76,14 @@ export const Testimonial = () => {
                     <TextTestimonial {...tst} />
                   )}
                   <span className={attr}>
-                    {/* <div className={attrInitial}>{tst.name[0]}</div> */}
                     <span> - {tst.name}</span>
                   </span>
-                </motion.li>
+                </li>
               )
             })}
           </ul>
         </div>
         <span className={scrollTip}>Scroll for more →</span>
-        <div className={fadeTransitionBlock} />
       </div>
     </section>
   )
@@ -137,7 +135,6 @@ function VideoTestimonial({ videoUrl, name, text, videoThumb }) {
     e.preventDefault()
     e.stopPropagation()
     videoRef.current.pause()
-    console.log('should play in modal')
 
     setIsPlayingInModal(true)
     setTimeToStart(Math.floor(videoRef.current.currentTime))

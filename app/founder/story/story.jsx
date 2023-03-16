@@ -3,7 +3,6 @@ import React from 'react'
 import { container, block, light, dark, halves, full } from './story.module.scss'
 
 export const Story = ({ before, after }) => {
-  console.log({ before, after })
   return (
     <section className={container}>
       <div className={`${block} ${light}`}>
