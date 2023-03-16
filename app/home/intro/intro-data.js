@@ -2,10 +2,10 @@ export const cards = [
   {
     imgSrc:
       'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1655285379/ELI/founder-ph_tujxvc.png',
-    title: `Welcome from ELI's Founder`,
+    title: `Welcome!`,
     text: `Checkout ELI founder Ali Brzenchek's MSW, Ph.D welcome message and story.`,
     btnText: 'Learn more',
-    path: '/about',
+    path: '/founder',
   },
   {
     imgSrc:
@@ -26,8 +26,9 @@ export const cards = [
   {
     imgSrc:
       'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678450111/ELI/stone-stairs_kmzuwm.jpg',
-    title: 'Free Initial Consult',
-    text: ' Book a free 30 minute consultation to learn more.',
+    title: 'Free Consult',
+    // text: ' Book a free 30 minute consultation to learn more.',
+    text: ' Book a free 30 minute consultation to discover what ELI can offer you.',
     btnText: 'Schedule now',
     path: '/calendar',
   },

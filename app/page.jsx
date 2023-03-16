@@ -1,6 +1,6 @@
 import { Contact } from './home/contact/contact'
 import { Hero } from './home/hero/hero'
-import { Intro } from './home/intro'
+import { Intro } from './home/intro/intro'
 import { Pillars } from './home/pillars/pillars'
 import { Testimonial } from './home/testimonial/testimonial'
 

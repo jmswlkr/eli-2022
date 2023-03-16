@@ -42,8 +42,8 @@ export const ComingSoon = () => {
         <span>Stay tuned for more information on our upcoming launch!</span>
         <span>•</span>
         <span>
-          Get ready to awaken your body and transform your life with our ELI’s
-          unique approach to Somatic learning.
+          Get ready to awaken your body and transform your life with ELI’s
+          unique approach to Embodied learning.
         </span>
       </p>
       {modalOpen && <NewsletterModal closeModal={handleModalClose} />}
