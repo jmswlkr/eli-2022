@@ -149,6 +149,23 @@
   background-color: $bgColor;
 }
 
+@mixin noiseBG($bgColor: var(--primary)) {
+
+  background-color: $bgColor;
+  &::after {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    content: "";
+    background-image: url("/noise-bg.png");
+    opacity: 0.4;
+    filter: brightness(150%);
+  }
+}
+
 // Flex
 @mixin flexCenter {
   display: flex;

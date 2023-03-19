@@ -66,10 +66,11 @@ img {
   object-fit: cover;
   object-position: center;
 }
-// div:has(> img) {
-//   border-radius: var(--radius-sm);
-//   overflow: hidden;
-// }
+
+menu {
+  margin: 0;
+  padding: 0;
+}
 
 * {
   box-sizing: border-box;
@@ -103,52 +104,6 @@ img {
   top: 0;
   height: 5vh;
   width: 20px;
-  // background-color: deepskyblue;
-}
-
-.vp-marker {
-  // background-color: red;
-  z-index: 9999999999;
-  position: absolute;
-  width: 0.5px;
-  height: 15px;
-  &__text {
-    top: 94vh;
-    left: 10vw;
-    @media (max-width: 1024px) {
-      top: 22vh;
-    }
-  }
-  &__hero {
-    top: 0;
-    height: 104vh;
-    left: 10vw;
-    @media (max-width: 1024px) {
-      top: 90vh;
-    }
-  }
-  &__pillars {
-    top: 327vh;
-    left: 10vw;
-  }
-}
-
-.time-btn {
-  &.selected {
-    color: var(--primary);
-    background-color: var(--primary-tr-2);
-  }
-}
-
-.gradient-text {
-  background: linear-gradient(
-    49deg,
-    var(--primary) 0%,
-    var(--accent) 60%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 #modal {
@@ -156,55 +111,6 @@ img {
   z-index: 99999999999999999;
 }
 
-
-
 video::-webkit-media-controls-fullscreen-button {
   display: none !important;
-}
-
-.general-btn {
-  cursor: pointer;
-  padding: 0.8rem 1.75rem;
-  border-radius: var(--radius-md);
-  border: 0.5px solid currentColor;
-  display: inline;
-  white-space: nowrap;
-  letter-spacing: 2px;
-  font-family: var(--font-body);
-  text-transform: uppercase;
-  transition: var(--transition-primary);
-  &:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    color: var(--white) !important;
-  }
-  &.solid {
-    background-color: var(--primary);
-    color: var(--white);
-    &:hover {
-      background-color: var(--primary-dark);
-    }
-    &.light {
-      background-color: var(--primary-light);
-    }
-  }
-  &.dark {
-    background-color: var(--primary-darker);
-    color: var(--white);
-    &:hover {
-      background-color: var(--primary);
-    }
-  }
-  &.med {
-    font-size: var(--text-ml);
-  }
-  &.large {
-    font-size: var(--text-lg);
-  }
-}
-
-.em-link {
-  font-family: var(--font-med);
-  font-style: italic;
-  color: var(--primary-deep);
 }
