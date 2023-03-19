@@ -355,7 +355,7 @@ const Calendar = () => {
                   {curSess?.duration} MIN
                 </option>
               </select>
-              <AnimatePresence exitBeforeEnter>
+              <AnimatePresence mode='wait'>
                 {optionsVisible && (
                   <motion.ul
                     className={pseudoSelect}

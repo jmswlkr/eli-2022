@@ -130,7 +130,7 @@ function PillarCard({
         handleHoverPillar()
       }}
     >
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode='wait'>
         {(active || isSmallScreen) && (
           <motion.div
             {...phases}
@@ -145,7 +145,7 @@ function PillarCard({
           </motion.div>
         )}
       </AnimatePresence>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode='wait'>
         {!active && !isSmallScreen && (
           <motion.div {...phases} {...fadeIn} className={pillarCard}>
             <h6 className={cardHeading}>{title}</h6>

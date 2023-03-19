@@ -25,7 +25,7 @@ export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
         <Logo showFullText={true} color={'var(--white)'} />
       </Link>
       <ul className={navActions}>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode='wait'>
           {!modalOpen &&
             pageLinks.slice(0, 3).map((pl) => {
               return (

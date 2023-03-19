@@ -39,7 +39,7 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
   }
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode='wait'>
       {modalOpen && (
         <motion.menu className={modal} {...phases} {...slideInTop}>
           <div className={menuOptions}>
