@@ -2,22 +2,18 @@
 
 import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useSearchParams } from 'next/navigation';
 
 import { TopNav } from './top-nav/top-nav'
-import { MenuModal } from './menu-modal/menu-modal'
 import { Footer } from './footer/footer'
 
 import { layout, content } from './client-layout.module.scss'
-import { useScrollLinks } from 'hooks/useScrollLinks';
+import { Menu } from './menu/menu';
 
 export const ClientLayout = ({ children }) => {
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(true)
   const { ref: heroRef, inView: heroInView } = useInView({
     initialInView: true,
   })
-
-  // useScrollLinks()
 
   return (
     <div className={layout}>
@@ -27,7 +23,8 @@ export const ClientLayout = ({ children }) => {
         modalOpen={modalOpen}
         showBG={!heroInView}
       />
-      <MenuModal modalOpen={modalOpen} closeModal={() => setModalOpen(false)} />
+      <Menu modalOpen={modalOpen} closeModal={() => setModalOpen(false)} />
+      {/* <MenuModal modalOpen={modalOpen} closeModal={() => setModalOpen(false)} /> */}
       <main className={content}>
         <span className='vp-marker vp-marker__hero' ref={heroRef} />
         {children}

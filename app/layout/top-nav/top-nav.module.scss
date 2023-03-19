@@ -2,7 +2,7 @@
 
 //// < zIndex > ////
 .topNav {
-  z-index: var(--level-top);
+  z-index: var(--level-nav);
   isolation: isolate;
 }
 
@@ -20,6 +20,7 @@
   &::after {
     z-index: -1;
     position: absolute;
+    content: '';
     top: 0;
     left: 0;
     height: 100%;
@@ -79,8 +80,8 @@
   span {
     background-color: var(--white);
     position: relative;
-    height: 1.5px;
     height: 2px;
+    height: .5px;
     transition: var(--transition-primary);
     &:nth-child(1) {
       width: 48px;
@@ -107,7 +108,7 @@
     span {
       width: 48px;
       &:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 7px);
+        transform: rotate(45deg) translate(7px, 7px);
       }
       &:nth-child(2) {
         transform: rotate(-45deg);
