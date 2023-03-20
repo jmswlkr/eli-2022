@@ -10,7 +10,7 @@ import { layout, content } from './client-layout.module.scss'
 import { Menu } from './menu/menu';
 
 export const ClientLayout = ({ children }) => {
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
   const { ref: heroRef, inView: heroInView } = useInView({
     initialInView: true,
   })
