@@ -43,12 +43,12 @@ export const INTRO_CONTENT = {
 
 export const MISSION = {
   title: 'Our Mission',
-  text: 'Advance embodied learning, a holistic and expansive way of being that embraces the interconnected nature of all living things, engages with unbound space, and enables collective growth and well-being.',
+  text: 'Facilitate the emergence of leaders, communities, teams and organizations that: embody somatic sensibilities, engage from a space wholehearted presence, cultivate dynamic discernment, and embrace leaderful living.',
 }
 
 export const VISION = {
   title: 'Our Vision',
-  text: 'Facilitate the emergence of leaders, communities, teams and organizations that: embody somatic sensibilities, engage from a space wholehearted presence, cultivate dynamic discernment, and embrace leaderful living.',
+  text: 'Advance embodied learning, a holistic and expansive way of being that embraces the interconnected nature of all living things, engages with unbound space, and enables collective growth and well-being.',
 }
 
 export const VALUES_INTRO = {
