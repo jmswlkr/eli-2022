@@ -34,6 +34,10 @@ export const INTRO_CONTENT = {
   ),
   credentials: [
     {
+      primary: 'Strozzi Institute - Somatic Coaching Certification Program',
+      secondary: 'Completed December 2022',
+    },
+    {
       primary: 'International Coaching Federation',
       secondary: 'Member since 2022',
     },

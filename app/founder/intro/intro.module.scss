@@ -1,7 +1,12 @@
 .container {
   display: grid;
-  gap: 2rem;
+  gap: 4rem;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: .45fr .55fr;
+  align-items: center;
+  @media (max-width: 1024px) {
+    align-items: flex-start;
+  }
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);

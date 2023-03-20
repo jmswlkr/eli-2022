@@ -11,6 +11,8 @@ import {
   content,
   grid,
   card,
+  cardTitle,
+  cardText,
   flipped,
   shade,
 } from './values.module.scss'
@@ -42,8 +44,10 @@ export const Values = () => {
               onClick={() => handleFlipped(idx)}
               className={`${card} ${isFlipped ? flipped : ''}`}
             >
-              <span>{front}</span>
-              <span>{back}</span>
+              <span className={cardTitle}>{front}</span>
+              <div className={`${cardText}`}>
+                <p>{back}</p>
+              </div>
               <div className={shade} style={{ background: color }} />
               <img src={image.url} alt={image.alt} />
             </li>
