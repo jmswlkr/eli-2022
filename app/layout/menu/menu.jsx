@@ -44,12 +44,24 @@ export const Menu = ({ modalOpen, closeModal }) => {
               <motion.ul className={`${cell} ${about}`}>
                 <label>About</label>
                 <li className='mobile-only'>
-                  <Link href='/offerings'>Offerings</Link>
+                  <Link
+                    onClick={closeModal}
+                    onTouch={closeModal}
+                    href='/offerings'
+                  >
+                    Offerings
+                  </Link>
                 </li>
                 {connectLinks.map((cl) => {
                   return (
                     <li key={cl.path}>
-                      <Link href={cl.path}>{cl.content}</Link>
+                      <Link
+                        onClick={closeModal}
+                        onTouch={closeModal}
+                        href={cl.path}
+                      >
+                        {cl.content}
+                      </Link>
                     </li>
                   )
                 })}
@@ -59,7 +71,13 @@ export const Menu = ({ modalOpen, closeModal }) => {
                 {pageLinks.map((ofr) => {
                   return (
                     <li key={ofr.path}>
-                      <Link href={ofr.path}>{ofr.menu_content}</Link>
+                      <Link
+                        onClick={closeModal}
+                        onTouch={closeModal}
+                        href={ofr.path}
+                      >
+                        {ofr.menu_content}
+                      </Link>
                     </li>
                   )
                 })}
@@ -70,11 +88,21 @@ export const Menu = ({ modalOpen, closeModal }) => {
                     <li key={cn.path}>
                       {/* DESKTOP LAYOUT */}
                       <label className='desk-only'>{cn.id}</label>
-                      <Link className='desk-only' href={cn.link}>
+                      <Link
+                        onClick={closeModal}
+                        onTouch={closeModal}
+                        className='desk-only'
+                        href={cn.link}
+                      >
                         {cn.content}
                       </Link>
                       {/* MOBILE LAYOUT */}
-                      <Link className='mobile-only' href={cn.link}>
+                      <Link
+                        onClick={closeModal}
+                        onTouch={closeModal}
+                        className='mobile-only'
+                        href={cn.link}
+                      >
                         <div className={flexWrap}>
                           <span className={icon}>{cn.icon}</span>
                           <span>{cn.mobile_content}</span>
