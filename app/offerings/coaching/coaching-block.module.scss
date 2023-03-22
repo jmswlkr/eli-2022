@@ -7,13 +7,14 @@
 .header {
   margin-bottom: .5ch;
   font-size: var(--text-prose-em);
+
+  font-size: 32px;
   color: var(--primary-dark);
   @media (max-width: 592px) {
-    font-size: 32px;
   }
 }
 .content {
-  font-size: var(--text-prose);
+  font-size: var(--text-prose-em);
   color: var(--white);
 
   @media (max-width: 592px) {

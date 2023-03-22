@@ -38,7 +38,7 @@
     grid-area: c4;
   }
 
-  @media (max-width: 592px) {
+  @media (max-width: 1024px) {
     grid-template-areas: unset;
     grid-template-rows: unset;
     grid-template-columns: 1fr;
