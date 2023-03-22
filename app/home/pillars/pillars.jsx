@@ -33,8 +33,8 @@ import {
   padded,
   cardHeading,
 } from './pillars.module.scss'
-import { useScrollLinks } from 'hooks/useScrollLinks';
 import { useScrollOnMount } from 'hooks/useScrollOnMount';
+import { useResize } from 'hooks/useResize';
 
 export const Pillars = () => {
   const [curPillar, setCurPillar] = useState(null)
@@ -116,9 +116,7 @@ function PillarCard({
   const deemph = curPillar && curPillar !== id
   const active = curPillar && curPillar === id
   
-  useEffect(() => {
-    setIsSmallScreen(window.innerWidth < 1400)
-  }, [])
+  useResize(() => setIsSmallScreen(window.innerWidth < 1400))
 
   return (
     <article
