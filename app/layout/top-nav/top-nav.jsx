@@ -21,7 +21,7 @@ import { fadeIn } from 'animation/fade'
 export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
   return (
     <nav className={topNav}>
-      <Link className={logo} href='/'>
+      <Link className={logo} href='/' onClick={toggleModal}>
         <Logo showFullText={true} color={'var(--white)'} />
       </Link>
       <ul className={navActions}>
