@@ -85,7 +85,7 @@ export const contactInfo = [
     content: `+1 (570) 709 4277`,
     mobile_content: `Call us`,
     link: 'tel://+15707094277',
-    icon: <PhoneIcon color='var(--accent)'/>
+    icon: <PhoneIcon color='currentColor'/>
   },
   {
     id: 'email',
@@ -93,6 +93,6 @@ export const contactInfo = [
     content: <>embodiedlearninginstitute<wbr/>@gmail.com</>,
     mobile_content: `Email us`,
     link: 'mailto:embodiedlearninginstitute@gmail.com',
-    icon: <EmailIcon color='var(--accent)'/>
+    icon: <EmailIcon color='currentColor'/>
   },
 ]

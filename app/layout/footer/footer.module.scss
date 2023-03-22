@@ -23,7 +23,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: var(--accent);
+  background-color: var(--primary-dark);
+  background-color: currentColor;
   height: 1px;
   width: 100%;
   transition: var(--transition-primary);
@@ -127,7 +128,7 @@
     letter-spacing: var(--push-md);
     transition: var(--transition-primary);
     &:hover {
-      color: var(--accent);
+      color: var(--primary-dark);
       transform: scale(1.05);
       &::after {
         transform: scaleX(1);
@@ -227,7 +228,7 @@
     }
     &:hover {
       path {
-        fill: var(--accent);
+        fill: var(--primary-dark);
       }
     }
   }
@@ -235,7 +236,7 @@
     // width: 75%;
     width: 25%;
     path {
-      fill: var(--accent);
+      fill: var(--primary-dark);
     }
   }
   @media (max-width: 592px) {
@@ -252,7 +253,7 @@
     // margin-top: 5vh;
     font-size: var(--text-xs);
     font-weight: var(--reg);
-    color: var(--text-color-med);
+    color: var(--primary-dark);
   }
 }
 

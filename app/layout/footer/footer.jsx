@@ -53,7 +53,7 @@ export const Footer = () => {
             return (
               <li key={lnk.content}>
                 <Link legacyBehavior href={lnk.path}>
-                  <a>{lnk.content}</a>
+                  <a>{lnk.menu_content}</a>
                 </Link>
               </li>
             )
