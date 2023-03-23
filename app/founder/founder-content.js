@@ -164,3 +164,13 @@ export const STORY_CONTENT = {
     ],
   },
 }
+
+export const CTA_CONTENT = {
+  title: `Schedule an Appointment`,
+  text: 'Get to know us with a free 30-minute consulting session.',
+  btnText: 'Schedule Now',
+  btnPath: '/calendar',
+  imageUrl:
+    'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1654689213/ELI/lily_qzb4mr.jpg',
+  imageAlt: 'A lily floating on the surface of a pond.',
+}

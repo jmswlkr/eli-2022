@@ -48,7 +48,7 @@ export const MISSION = {
 
 export const VISION = {
   title: 'Our Vision',
-  text: `ELI is all about embodied learning. Embodied learning embraces universal interconnectivity, relies on practice-based transformation, promotes the process of integration; and enables collective growth and well-being. We believe this holistic and expansive way of being is a force for positive social change within a neoliberal capitalist society guided by scarcity, individualism, and competition. Our other foundational values, which are listed below, align with our embodied learning ethos.`,
+  text: `ELI envisions a world where we collectively thrive through embodied learning.`,
 }
 
 export const VALUES_INTRO = {

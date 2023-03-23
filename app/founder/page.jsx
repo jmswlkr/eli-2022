@@ -2,6 +2,7 @@ import React from 'react'
 
 import {
   BODY_CONTENT,
+  CTA_CONTENT,
   HERO_CONTENT,
   INTRO_CONTENT,
   QUOTE_CONTENT,
@@ -14,6 +15,7 @@ import { QuoteBlock } from 'ui-components/quote-block/quote-block'
 import { Intro } from './intro/intro'
 import { BodyContent } from './body-content/body-content'
 import { Story } from './story/story'
+import { CtaSection } from 'ui-components/cta-section/cta-section'
 
 const Founder = () => {
   return (
@@ -23,6 +25,7 @@ const Founder = () => {
       <Intro {...INTRO_CONTENT} />
       <BodyContent contents={BODY_CONTENT} />
       <Story {...STORY_CONTENT} />
+      <CtaSection {...CTA_CONTENT}/>
     </ContentLayout>
   )
 }
