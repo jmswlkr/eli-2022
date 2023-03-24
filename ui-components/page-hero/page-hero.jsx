@@ -12,30 +12,38 @@ import {
   accentShapes,
 } from './page-hero.module.scss'
 
-export const PageHero = ({ id, header = '', image = '' }) => {
-  console.log('id: ', id);
+export const PageHero = async ({
+  heroHeaderLines = [],
+  heroSubtitle = '',
+  image = '',
+  defaultImage = '',
+  heroButtonText = 'Get Started',
+  buttonLink = '/#contact',
+}) => {
+  
   return (
     <section className={container}>
       <div className={hero}>
         <div className={textWrap}>
           <div className={heroText}>
             <h1 className={headerStyle}>
-              {header.map((line, idx) => {
+              {heroHeaderLines.map((line, idx) => {
                 return <span key={idx}>{line}</span>
               })}
-              {/* <div className={accentShapes}>
-                <BraidedCircles />
-              </div> */}
+              {heroSubtitle && <span>{heroSubtitle}</span>}
             </h1>
             <Button
-              text='Get Started'
+              text={heroButtonText}
               classes='solid dark med'
-              path='/#contact'
+              path={buttonLink}
             />
           </div>
         </div>
         <div className={imgWrap}>
-          <img src={image.url} alt={image.alt_text} />
+          <img
+            src={image ? image.url : defaultImage}
+            alt={image.alt_text || ''}
+          />
         </div>
       </div>
     </section>

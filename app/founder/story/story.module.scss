@@ -12,7 +12,7 @@
 
   h2 {
     margin: 2ch 0;
-    font-family: var(--font-reg);
+    font-family: var(--font-med);
     font-size: var(--text-lg-plus);
     @media (max-width: 1024px) {
       margin: 1ch 0;
@@ -89,7 +89,4 @@
 .full {
   display: grid;
   gap: 2rem;
-  p {
-    font-family: var(--font-reg);
-  }
 }

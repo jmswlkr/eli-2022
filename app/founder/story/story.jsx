@@ -1,22 +1,45 @@
 import React from 'react'
+import { splitMarkdown } from 'utils/text-helpers'
 
-import { container, block, light, dark, halves, full } from './story.module.scss'
+import {
+  container,
+  block,
+  light,
+  dark,
+  halves,
+  full,
+} from './story.module.scss'
 
-export const Story = ({ before, after }) => {
+export const Story = ({ storyBlock1Title, storyBlock1Content, storyBlock2Title, storyBlock2Content }) => {
+  console.log('storyBlock2Content: ', storyBlock2Content)
+
+  // const splitContent = storyBlock2Content
+  //   .split('\n')
+  //   .filter((item) => item !== '')
+  // console.log('splitContent: ', splitContent)
+
+  const story1Content = splitMarkdown(storyBlock1Content)
+  const story2Content = splitMarkdown(storyBlock2Content)
+
   return (
     <section className={container}>
       <div className={`${block} ${light}`}>
-        <h2>{before.title}</h2>
-        <div className={halves}>
+        <h2>{storyBlock1Title}</h2>
+        {/* <div className={halves}>
           {before.paragraphs.map((paragraph, idx) => {
+            return <p key={idx}>{paragraph}</p>
+          })}
+        </div> */}
+        <div className={full}>
+          {story1Content.map((paragraph, idx) => {
             return <p key={idx}>{paragraph}</p>
           })}
         </div>
       </div>
       <div className={`${block} ${dark}`}>
-        <h2>{after.title}</h2>
+        <h2>{storyBlock2Title}</h2>
         <div className={full}>
-          {after.paragraphs.map((paragraph, idx) => {
+          {story2Content.map((paragraph, idx) => {
             return <p key={idx}>{paragraph}</p>
           })}
         </div>

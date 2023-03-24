@@ -4,19 +4,25 @@ import {
   container,
   about as aboutStyle,
   credentials as credentialsStyle,
-  list
 } from './intro.module.scss'
 
-export const Intro = ({ about, credentials }) => {
+export const Intro = ({ salutation, about, credentials }) => {
   return (
     <section className={container}>
-      <p className={aboutStyle}>{about}</p>
+      <p className={aboutStyle}>
+        {salutation && <em>{salutation} &nbsp;</em>}
+        {about}
+      </p>
       <ul className={credentialsStyle}>
-        {credentials.map((c, idx) => {
+        {credentials.map((credential, idx) => {
+          const [primary, secondary] = credential
+            .split(';')
+            .map((c) => c.trim())
+
           return (
             <li key={idx}>
-              <h4>{c.primary}</h4>
-              <p>{c.secondary}</p>
+              <h4>{primary}</h4>
+              <p>{secondary}</p>
             </li>
           )
         })}

@@ -6,7 +6,7 @@ export const useScrollOnMount = () => {
 
   useEffect(() => {
     const hash = window.location.hash
-    console.log('hash: ', hash)
+
     if (hash.length > 0 && !scrolledToHash) {
       window.location.hash = ''
       window.location.hash = hash
@@ -14,7 +14,5 @@ export const useScrollOnMount = () => {
     }
   }, [])
 
-  useEffect(() => {
-    console.log('scrolledToHash changed: ', scrolledToHash)
-  }, [scrolledToHash])
+  useEffect(() => {}, [scrolledToHash])
 }

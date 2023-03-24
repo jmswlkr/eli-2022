@@ -15,11 +15,11 @@
 
 .about {
   font-family: var(--font-med);
-  font-size: var(--text-lg-plus);
+  font-size: var(--text-xl);
   em {
     color: var(--primary);
   }
-  @media (max-width: 592px) {
+  @media (max-width: 1024px) {
     font-size: var(--text-lg);
   }
 }
@@ -41,7 +41,7 @@
   p {
     font-family: var(--font-med);
   }
-  @media (max-width: 592px) {
+  @media (max-width: 1024px) {
     font-size: var(--text-ml);
   }
 }
