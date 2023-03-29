@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
@@ -7,7 +7,7 @@ import { TopNav } from './top-nav/top-nav'
 import { Footer } from './footer/footer'
 
 import { layout, content } from './client-layout.module.scss'
-import { Menu } from './menu/menu';
+import { Menu } from './menu/menu'
 
 export const ClientLayout = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -15,11 +15,16 @@ export const ClientLayout = ({ children }) => {
     initialInView: true,
   })
 
+  const handleToggleModal = () => {
+    console.log('toggling modal')
+    setModalOpen(!modalOpen)
+  }
+
   return (
     <div className={layout}>
       <article id='portal' />
       <TopNav
-        toggleModal={() => setModalOpen(!modalOpen)}
+        toggleModal={handleToggleModal}
         modalOpen={modalOpen}
         showBG={!heroInView}
       />

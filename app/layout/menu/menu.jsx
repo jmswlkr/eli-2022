@@ -46,7 +46,7 @@ export const Menu = ({ modalOpen, closeModal }) => {
                 <li className='mobile-only'>
                   <Link
                     onClick={closeModal}
-                    onTouch={closeModal}
+                    onTouchStart={closeModal}
                     href='/offerings'
                   >
                     Offerings
@@ -57,7 +57,7 @@ export const Menu = ({ modalOpen, closeModal }) => {
                     <li key={cl.path}>
                       <Link
                         onClick={closeModal}
-                        onTouch={closeModal}
+                        onTouchStart={closeModal}
                         href={cl.path}
                       >
                         {cl.content}
@@ -70,10 +70,10 @@ export const Menu = ({ modalOpen, closeModal }) => {
                 <label>Offerings</label>
                 {pageLinks.map((ofr) => {
                   return (
-                    <li key={ofr.path}>
+                    <li key={ofr.content}>
                       <Link
                         onClick={closeModal}
-                        onTouch={closeModal}
+                        onTouchStart={closeModal}
                         href={ofr.path}
                       >
                         {ofr.menu_content}
@@ -85,12 +85,12 @@ export const Menu = ({ modalOpen, closeModal }) => {
               <motion.ul className={`${cell} ${contact}`}>
                 {contactInfo.map((cn) => {
                   return (
-                    <li key={cn.path}>
+                    <li key={cn.id}>
                       {/* DESKTOP LAYOUT */}
                       <label className='desk-only'>{cn.id}</label>
                       <Link
                         onClick={closeModal}
-                        onTouch={closeModal}
+                        onTouchStart={closeModal}
                         className='desk-only'
                         href={cn.link}
                       >
@@ -99,7 +99,7 @@ export const Menu = ({ modalOpen, closeModal }) => {
                       {/* MOBILE LAYOUT */}
                       <Link
                         onClick={closeModal}
-                        onTouch={closeModal}
+                        onTouchStart={closeModal}
                         className='mobile-only'
                         href={cn.link}
                       >

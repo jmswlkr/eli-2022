@@ -1,6 +1,7 @@
+'use client'
+
 import React from 'react'
 import { Button } from 'ui-components/general-btn/general-btn'
-import { BraidedCircles } from 'ui-components/svg/braided-circles'
 
 import {
   container,
@@ -9,10 +10,9 @@ import {
   textWrap,
   heroText,
   header as headerStyle,
-  accentShapes,
 } from './page-hero.module.scss'
 
-export const PageHero = async ({
+export const PageHero = ({
   heroHeaderLines = [],
   heroSubtitle = '',
   image = '',
@@ -20,16 +20,17 @@ export const PageHero = async ({
   heroButtonText = 'Get Started',
   buttonLink = '/#contact',
 }) => {
-  
+
   return (
     <section className={container}>
       <div className={hero}>
         <div className={textWrap}>
           <div className={heroText}>
             <h1 className={headerStyle}>
-              {heroHeaderLines.map((line, idx) => {
-                return <span key={idx}>{line}</span>
-              })}
+              {heroHeaderLines &&
+                heroHeaderLines?.map((line, idx) => {
+                  return <span key={idx}>{line ?? ''}</span>
+                })}
               {heroSubtitle && <span>{heroSubtitle}</span>}
             </h1>
             <Button

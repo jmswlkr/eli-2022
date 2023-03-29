@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -19,13 +21,14 @@ import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
 
 export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
+
   return (
     <nav className={topNav}>
       <Link className={logo} href='/' onClick={toggleModal}>
         <Logo showFullText={true} color={'var(--white)'} />
       </Link>
       <ul className={navActions}>
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode='sync'>
           {!modalOpen &&
             pageLinks.slice(0, 3).map((pl) => {
               return (
@@ -44,11 +47,11 @@ export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
         </AnimatePresence>
         <li>
           <button
+            onClick={toggleModal}
             className={`
           ${menuBtn} 
           ${modalOpen ? closeBtn : ''}
         `}
-            onClick={toggleModal}
           >
             <span />
             <span />

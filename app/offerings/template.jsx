@@ -11,6 +11,7 @@ const OfferingsTemplate = ({ children }) => {
   const id = useSelectedLayoutSegment()
 
   const heroContent = offerings[id] ?? offerings.index
+  console.log('heroContent: ', heroContent);
 
   return (
     <ContentLayout>

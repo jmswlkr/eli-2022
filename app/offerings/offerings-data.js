@@ -1,7 +1,7 @@
 export const offerings = {
   training: {
     id: 'training',
-    header: ['Transformational', 'Training'],
+    heroHeaderLines: ['Transformational', 'Training'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:good/v1678942217/ELI/training--hero_aa43s7.png',
       alt_text:
@@ -10,7 +10,7 @@ export const offerings = {
   },
   consulting: {
     id: 'consulting',
-    header: ['Customized', 'Consulting'],
+    heroHeaderLines: ['Customized', 'Consulting'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:good/v1678942217/ELI/consulting--hero_ojgg66.png',
       alt_text:
@@ -19,7 +19,7 @@ export const offerings = {
   },
   coaching: {
     id: 'coaching',
-    header: ['Emergent &', 'Embodied Coaching'],
+    heroHeaderLines: ['Emergent &', 'Embodied Coaching'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:good/v1678942214/ELI/coaching--hero_tv4phy.png',
       alt_text:
@@ -28,7 +28,7 @@ export const offerings = {
   },
   index: {
     id: 'offerings',
-    header: ['Our', 'Offerings'],
+    heroHeaderLines: ['Our', 'Offerings'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:best/v1678942217/ELI/stones--hero_mmgp7a.png',
       alt_text: 'a stone stack against a pinkish white, dusky sky',

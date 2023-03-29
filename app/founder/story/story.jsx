@@ -25,11 +25,6 @@ export const Story = ({ storyBlock1Title, storyBlock1Content, storyBlock2Title, 
     <section className={container}>
       <div className={`${block} ${light}`}>
         <h2>{storyBlock1Title}</h2>
-        {/* <div className={halves}>
-          {before.paragraphs.map((paragraph, idx) => {
-            return <p key={idx}>{paragraph}</p>
-          })}
-        </div> */}
         <div className={full}>
           {story1Content.map((paragraph, idx) => {
             return <p key={idx}>{paragraph}</p>

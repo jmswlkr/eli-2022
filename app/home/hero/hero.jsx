@@ -69,7 +69,7 @@ export const Hero = () => {
       </div>
       <motion.div
         className={heroTextContent}
-        {...animationProps({ controls, animation: fadeIn, del: 2 })}
+        // {...animationProps({ controls, animation: fadeIn, del: 2 })}
       >
         <div className={tagline}>
           <h2 className={slogan}>
