@@ -16,7 +16,6 @@ export const ClientLayout = ({ children }) => {
   })
 
   const handleToggleModal = () => {
-    console.log('toggling modal')
     setModalOpen(!modalOpen)
   }
 

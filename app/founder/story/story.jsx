@@ -11,12 +11,6 @@ import {
 } from './story.module.scss'
 
 export const Story = ({ storyBlock1Title, storyBlock1Content, storyBlock2Title, storyBlock2Content }) => {
-  console.log('storyBlock2Content: ', storyBlock2Content)
-
-  // const splitContent = storyBlock2Content
-  //   .split('\n')
-  //   .filter((item) => item !== '')
-  // console.log('splitContent: ', splitContent)
 
   const story1Content = splitMarkdown(storyBlock1Content)
   const story2Content = splitMarkdown(storyBlock2Content)

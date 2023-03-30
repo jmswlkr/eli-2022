@@ -3,7 +3,6 @@ import { client } from './config'
 import { CONTENTFUL_CONTENT_KEYS } from './keys'
 
 export const useContentful = async ({ key = 'FOUNDER', defaultImage }) => {
-  console.log('defaultImage: ', defaultImage);
   const content = await client.getEntry(CONTENTFUL_CONTENT_KEYS[key])
 
   content.fields['defaultImage'] = defaultImage
