@@ -17,7 +17,7 @@ export const PageHero = ({
   heroSubtitle = '',
   image = '',
   defaultImage = '',
-  heroButtonText = 'Get Started',
+  heroButtonText = 'Contact Us',
   buttonLink = '/#contact',
 }) => {
 
