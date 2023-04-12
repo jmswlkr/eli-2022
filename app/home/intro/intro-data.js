@@ -3,7 +3,7 @@ export const cards = [
     imgSrc:
       'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1655285379/ELI/founder-ph_tujxvc.png',
     title: `Welcome!`,
-    text: `Checkout ELI founder Ali Brzenchek's MSW, Ph.D welcome message and story.`,
+    text: `Checkout ELI founder Dr. Ali Brzenchek's welcome message and story.`,
     btnText: 'Learn more',
     path: '/founder',
   },

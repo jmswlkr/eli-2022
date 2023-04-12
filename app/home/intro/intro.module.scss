@@ -104,9 +104,8 @@
     // white-space: nowrap;
   }
   p {
-    @include paragraphText;
+    font-size: var(--text-ml);
     width: 100%;
-    font-family: var(--font-med);
   }
   button span {
     font-family: var(--font-med) !important;

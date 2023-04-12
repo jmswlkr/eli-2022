@@ -15,8 +15,6 @@ import {
 
 export const Intro = () => {
 
-  
-
   return (
     <section className={intro} id='intro'>
       <SectionHeader title={'Learn to Thrive'} labelText={`LEARN TO THRIVE`} />

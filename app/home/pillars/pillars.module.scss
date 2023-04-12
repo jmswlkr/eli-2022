@@ -242,11 +242,11 @@
 
 .pillarCard {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 100%;
-  width: 100%;
+  width: 130%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -292,6 +292,8 @@
   }
 }
 .cardText {
+  font-size: var(--text-ml);
+  font-size: var(--text-prose);
   padding: 1rem 2rem;
   text-align: center;
   &.padded {

@@ -19,8 +19,8 @@
     }
   }
   p {
-    font-size: var(--text-lg);
     font-family: var(--font-med);
+    font-size: var(--text-prose-em);
     @media (max-width: 1024px) {
       font-size: var(--text-lg);
     }

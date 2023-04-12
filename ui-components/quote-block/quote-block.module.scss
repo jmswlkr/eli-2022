@@ -19,7 +19,7 @@
   left: -5%;
 }
 .text {
-  font-size: var(--text-lg-plus);
+  font-size: var(--text-prose-em);
   @media (max-width: 1024px) {
     line-height: 175%;
     font-size: var(--text-ml);
