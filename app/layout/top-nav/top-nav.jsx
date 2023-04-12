@@ -20,11 +20,22 @@ import { AnimatePresence } from 'framer-motion'
 import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
 
-export const TopNav = ({ toggleModal, modalOpen, showBG = false }) => {
+export const TopNav = ({
+  modalOpen,
+  setModalOpen,
+  showBG = false,
+}) => {
+
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+  const toggleModal = () => {
+    setModalOpen(!modalOpen)
+  }
 
   return (
     <nav className={topNav}>
-      <Link className={logo} href='/' onClick={toggleModal}>
+      <Link className={logo} href='/' onClick={closeModal}>
         <Logo showFullText={true} color={'var(--white)'} />
       </Link>
       <ul className={navActions}>

@@ -15,20 +15,15 @@ export const ClientLayout = ({ children }) => {
     initialInView: true,
   })
 
-  const handleToggleModal = () => {
-    setModalOpen(!modalOpen)
-  }
-
   return (
     <div className={layout}>
       <article id='portal' />
       <TopNav
-        toggleModal={handleToggleModal}
+        setModalOpen={setModalOpen}
         modalOpen={modalOpen}
         showBG={!heroInView}
       />
       <Menu modalOpen={modalOpen} closeModal={() => setModalOpen(false)} />
-      {/* <MenuModal modalOpen={modalOpen} closeModal={() => setModalOpen(false)} /> */}
       <main className={content}>
         <span className='vp-marker vp-marker__hero' ref={heroRef} />
         {children}
