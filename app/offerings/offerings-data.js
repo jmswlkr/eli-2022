@@ -19,7 +19,7 @@ export const offerings = {
   },
   coaching: {
     id: 'coaching',
-    heroHeaderLines: ['Emergent &', 'Embodied Coaching'],
+    heroHeaderLines: ['Embodied', 'Coaching'],
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:good/v1678942214/ELI/coaching--hero_tv4phy.png',
       alt_text:
