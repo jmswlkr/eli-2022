@@ -93,15 +93,6 @@
     font-size: var(--text-prose);
     color: var(--white);
   }
-  span:nth-child(2) {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    // opacity: 0;
-    // font-size: var(--text-prose);
-    // text-transform: initial;
-  }
   .shade {
     @include shade;
     z-index: 2;
@@ -136,7 +127,8 @@
   align-items: center;
   justify-content: center;
   text-align: left;
-  font-size: var(--text-prose);
+  font-size: var(--text-ml);
   text-transform: initial;
   color: var(--white);
+  
 }
