@@ -69,6 +69,7 @@ export const VALUES = [
   {
     front: 'Thriving Together',
     back: `We value thriving together. At ELI we understand that we are stronger when we pool our strengths, share ideas, and learn from each other. We embody this value through transformational relationships and services that honor and engage the inherent human drive toward connection and interdependence.`,
+    color: '#03fc90',
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207670/ELI/Rectangle_104_g3xq8j.png',
       alt: 'card background',
@@ -86,6 +87,7 @@ export const VALUES = [
   {
     front: 'Transformational Growth',
     back: `We value transformational growth. Transformational growth comes from the inherent aliveness that is ignited as we individually and collectively live from a space of Embodied Learning. We embody this value by continuously honing our somatic sensibilities, wholehearted presence, dynamic discernment, and leaderful living`,
+    color: '#fcca03',
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207671/ELI/Rectangle_111_zkbrkd.png',
       alt: 'card background',
