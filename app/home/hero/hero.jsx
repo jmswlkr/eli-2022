@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
@@ -20,8 +20,7 @@ import {
   btn,
 } from './hero.module.scss'
 
-
-export const Hero = () => {
+export const Hero = ({ heroHeaderLines, heroButtonText }) => {
   const [fontsLoaded, setFontsLoaded] = useState(false)
   const controls = useAnimation()
 
@@ -57,7 +56,6 @@ export const Hero = () => {
             key='img1'
             className={bg}
             src={`https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4`}
-            // src={`https://res.cloudinary.com/jameswalker-work/video/upload/v1674832419/ELI/ocean_qxigpo.mp4`}
             autoPlay
             loop
             muted
@@ -73,11 +71,15 @@ export const Hero = () => {
       >
         <div className={tagline}>
           <h2 className={slogan}>
-            <span>Transformational change through</span>
-            <em>Embodied Learning</em>
+            <span>{heroHeaderLines[0]}</span>
+            <em>{heroHeaderLines[1]}</em>
           </h2>
           <div className={btn}>
-            <Button text='Get Started' classes='solid light' path='/#intro' />
+            <Button
+              text={heroButtonText}
+              classes='solid light'
+              path='/#intro'
+            />
           </div>
         </div>
       </motion.div>

@@ -11,7 +11,12 @@ import { animationProps } from 'animation/animate'
 import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
 
-// Stying & Animation
+import { PlayButton } from 'ui-components/svg/play-button'
+import { QuoteMark } from 'ui-components/svg/quote-mark'
+import { SectionHeader } from 'ui-components/section-header'
+import { useAnimationControls } from './useAnimationControls'
+import { extractTestimonials } from './extract-testimonials'
+
 import {
   testimonial,
   sectionAccent,
@@ -33,32 +38,32 @@ import {
   modalShade,
   closeModalBtn,
   modal,
+  modalText,
+  modalAttr,
   attr,
   attrInitial,
   fadeTransitionBlock,
   scrollTip,
 } from './testimonial.module.scss'
-import { PlayButton } from 'ui-components/svg/play-button'
-import { QuoteMark } from 'ui-components/svg/quote-mark'
-import { SectionHeader } from 'ui-components/section-header'
 
-export const Testimonial = () => {
-  const [sectionRef, sectionInView] = useInView()
-  const controls = useAnimation()
+export const Testimonial = (content) => {
+  console.log('content: ', content)
 
-  useEffect(() => {
-    if (sectionInView || window.innerWidth < 1024) {
-      controls.start('visible')
-    }
-  }, [sectionInView, controls])
+  const { sectionRef, controls } = useAnimationControls()
+
+  const { testimonialTitle, testimonialMarqueeText } = content
+  const contentfulTestimonials = extractTestimonials(content)
 
   return (
     <section className={testimonial} ref={sectionRef}>
-      <SectionHeader title={'Praise for ELI'} labelText={'TESTIMONIAL'} />
+      <SectionHeader
+        title={testimonialTitle}
+        labelText={testimonialMarqueeText}
+      />
       <div className={testimonialSliderBase}>
         <div className={testimonialSlider}>
           <ul className={testimonialList}>
-            {testimonialData.map((tst, idx) => {
+            {contentfulTestimonials.map((tst, idx) => {
               const isVideo = tst?.videoUrl
               return (
                 <li
@@ -76,7 +81,7 @@ export const Testimonial = () => {
                     <TextTestimonial {...tst} />
                   )}
                   <span className={attr}>
-                    <span> - {tst.name}</span>
+                    <span>{tst.name}</span>
                   </span>
                 </li>
               )
@@ -89,20 +94,56 @@ export const Testimonial = () => {
   )
 }
 
-function TextTestimonial({ text }) {
+function TextTestimonial({ text, name }) {
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const handleModalOpen = () => {
+    setModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setModalOpen(false)
+  }
+
   return (
     <>
+      {modalOpen &&
+        createPortal(
+          <TextModal
+            text={text}
+            name={name}
+            handleCloseModal={handleCloseModal}
+          />,
+          portal
+        )}
       <span className={quoteMark}>
         <QuoteMark />
       </span>
-      <blockquote className={quote}>{text}</blockquote>
+      <blockquote className={quote} onClick={handleModalOpen}>
+        {text}
+      </blockquote>
     </>
   )
 }
 
-function TextModal({ text }) {
+function TextModal({ text, name, handleCloseModal }) {
   return (
-    <motion.div {...phases} {...fadeIn} className={modalShade}></motion.div>
+    <motion.div
+      {...phases}
+      {...fadeIn}
+      className={modalShade}
+      onClick={handleCloseModal}
+    >
+      <button className={closeModalBtn} onClick={handleCloseModal}>
+        &times;
+      </button>
+      <div className={modal}>
+        <article className={modalText}>
+          <p>{text}</p>
+          <span className={modalAttr}>{name}</span>
+        </article>
+      </div>
+    </motion.div>
   )
 }
 

@@ -24,7 +24,7 @@ import {
   btn,
 } from './contact.module.scss'
 
-export const Contact = () => {
+export const Contact = ({ ctaHeader, ctaBlurb, ctaButtonText }) => {
   const [toSend, setToSend] = useState({
     from_name: '',
     to_name: 'ELI | The Embodied Learning Institute',
@@ -106,13 +106,12 @@ export const Contact = () => {
           />
         </div>
         <div className={cta}>
-          <h4 className={heading}>Ready for more?</h4>
+          <h4 className={heading}>{ctaHeader}</h4>
           <div className={text}>
-            Get to know us with a free initial consult.
+            {ctaBlurb}
           </div>
           <div className={btn}>
-            <Button text='Schedule Now' link='/' />
-            {/* <ArrowBtn text='Book now' btnAction={() => {}} /> */}
+            <Button text={ctaButtonText} link='/calendar' />
           </div>
         </div>
       </div>

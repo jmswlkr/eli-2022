@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -33,10 +33,24 @@ import {
   padded,
   cardHeading,
 } from './pillars.module.scss'
-import { useScrollOnMount } from 'hooks/useScrollOnMount';
-import { useResize } from 'hooks/useResize';
+import { useScrollOnMount } from 'hooks/useScrollOnMount'
+import { useResize } from 'hooks/useResize'
 
-export const Pillars = () => {
+import { FlowerIcon, StonesIcon, ThoughtIcon, YogaIcon } from 'ui-components/svg/pillar-icons'
+import { breakWords } from 'utils/text-helpers'
+
+export const Pillars = ({
+  pillarsTitleSubtitle,
+  pillarsMainText,
+  pillarsCard1Title,
+  pillarsCard1Text,
+  pillarsCard2Title,
+  pillarsCard2Text,
+  pillarsCard3Title,
+  pillarsCard3Text,
+  pillarsCard4Title,
+  pillarsCard4Text,
+}) => {
   const [curPillar, setCurPillar] = useState(null)
 
   const handleHoverPillar = (hoveredIdx) => {
@@ -47,17 +61,48 @@ export const Pillars = () => {
     }
   }
 
-  // useScrollLinks()
   useScrollOnMount()
+
+  const contentfulPillars = [
+    {
+      id: 'sensibilities-01',
+      path: '/',
+      title: breakWords(pillarsCard1Title),
+      text: <>{pillarsCard1Text}</>,
+      icon: <StonesIcon />,
+    },
+    {
+      id: 'presence-02',
+      path: '/',
+      title: breakWords(pillarsCard2Title),
+      text: <>{pillarsCard2Text}</>,
+      icon: <YogaIcon />,
+    },
+    {
+      id: 'discernment-03',
+      path: '/',
+      title: breakWords(pillarsCard3Title),
+      text: <>{pillarsCard3Text}</>,
+      icon: <ThoughtIcon />,
+    },
+    {
+      id: 'learning-04',
+      path: '/',
+      title: breakWords(pillarsCard4Title),
+      text: <>{pillarsCard4Text}</>,
+      icon: <FlowerIcon />,
+    },
+  ]
 
   return (
     <motion.section className={pillars}>
       <div className={pillarsTextContent}>
         <div className={blurb}>
-          <h2 className={title}>ELI Pillars</h2>
-          <p className={subtitle}>The Practice of Embodied Enoughness</p>
+          <h2 className={title}>{pillarsTitleSubtitle[0]}</h2>
+          <p className={subtitle}>{pillarsTitleSubtitle[1]}</p>
           <p className={text}>
-            <span>
+            <span>{pillarsMainText}</span>
+            {/* <span>
               Life is a process to be experienced, not a series of problems to
               be solved.
             </span>
@@ -72,11 +117,11 @@ export const Pillars = () => {
               <strong> Embodied Enoughness</strong>. A way to build Embodied
               Enoughness into our neural pathways, personal relationships,
               communities, organizations, and culture writ large.
-            </span>
+            </span> */}
           </p>
         </div>
         <div className={pillarCardsContainer}>
-          {pillarData.map((plr, idx) => {
+          {contentfulPillars.map((plr, idx) => {
             return (
               <PillarCard
                 key={plr.id}
@@ -115,7 +160,7 @@ function PillarCard({
   const [isSmallScreen, setIsSmallScreen] = useState(false)
   const deemph = curPillar && curPillar !== id
   const active = curPillar && curPillar === id
-  
+
   useResize(() => setIsSmallScreen(window.innerWidth < 1400))
 
   return (

@@ -13,13 +13,56 @@ import {
   cardBtn,
 } from './intro.module.scss'
 
-export const Intro = () => {
+export const Intro = ({
+  introTitle,
+  introMarqueeText,
+  introCard1Image,
+  introCard1Text,
+  introCard2Image,
+  introCard2Text,
+  introCard3Image,
+  introCard3Text,
+  introCard4Image,
+  introCard4Text,
+}) => {
+  
+  const contentfulCards = [
+    {
+      title: introCard1Text[0],
+      text: introCard1Text[1],
+      btnText: introCard1Text[2],
+      imgSrc: introCard1Image.fields.file.url,
+      path: '/founder',
+    },
+    {
+      title: introCard2Text[0],
+      text: introCard2Text[1],
+      btnText: introCard2Text[2],
+      imgSrc: introCard2Image.fields.file.url,
+      path: '/founder',
+    },
+    {
+      title: introCard3Text[0],
+      text: introCard3Text[1],
+      btnText: introCard3Text[2],
+      imgSrc: introCard3Image.fields.file.url,
+      path: '/founder',
+    },
+    {
+      title: introCard4Text[0],
+      text: introCard4Text[1],
+      btnText: introCard4Text[2],
+      imgSrc: introCard4Image.fields.file.url,
+      path: '/founder',
+    },
+  ]
 
   return (
     <section className={intro} id='intro'>
-      <SectionHeader title={'Learn to Thrive'} labelText={`LEARN TO THRIVE`} />
+      {/* <SectionHeader title={'Learn to Thrive'} labelText={`LEARN TO THRIVE`} /> */}
+      <SectionHeader title={introTitle} labelText={introMarqueeText} />
       <div className={cardContainer}>
-        {cards.map((c) => {
+        {contentfulCards.map((c) => {
           return (
             <Link key={c.title} href={c.path}>
               <div className={card}>
