@@ -2,10 +2,21 @@ import { client } from './config'
 
 import { CONTENTFUL_CONTENT_KEYS } from './keys'
 
-export const useContentful = async ({ key = 'FOUNDER', defaultImage }) => {
-  const content = await client.getEntry(CONTENTFUL_CONTENT_KEYS[key])
+export const useContentful = async ({
+  key = 'FOUNDER',
+  defaultImage = null,
+}) => {
+  try {
+    const entry = await client.getEntry(CONTENTFUL_CONTENT_KEYS[key])
+    const data = entry.fields
+    if (defaultImage) {
+      data['defaultImage'] = defaultImage
+    }
 
-  content.fields['defaultImage'] = defaultImage
+    return { content: data, error: null }
+  } catch (error) {
+    console.log(error)
 
-  return await content?.fields
+    return { content: null, error }
+  }
 }
