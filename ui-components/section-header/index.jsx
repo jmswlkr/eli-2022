@@ -30,7 +30,7 @@ export const SectionHeader = ({
 
 const Label = ({ children, text = 'Embodied Learning Institute' }) => {
   return (
-    <Marquee className={label} speed={20} gradient={false}>
+    <Marquee className={label} speed={5} gradient={false}>
       {Array.from({ length: 10 }).fill(` ${children ?? text} `)}
     </Marquee>
   )
