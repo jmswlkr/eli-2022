@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 export function Button({
@@ -10,14 +11,10 @@ export function Button({
   disabled = false,
   action = null,
 }) {
-  const { push, prefetch } = useRouter()
+  const { prefetch } = useRouter()
 
   const handleClick = (e) => {
     e.preventDefault()
-
-    if (path) {
-      push(path, undefined, { shallow: true })
-    }
 
     if (action) {
       action(e)
@@ -38,7 +35,7 @@ export function Button({
       disabled={disabled}
       onMouseEnter={handleHover}
     >
-      {text}
+      {path ? <Link href={path}>{text}</Link> : text}
     </button>
   )
 }
