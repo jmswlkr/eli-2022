@@ -1,5 +1,5 @@
 export const splitMarkdown = (markdown) => {
-  return markdown.split('\n').filter((item) => item !== '')
+  return markdown?.split('\n')?.filter((item) => item !== '') ?? markdown
 }
 
 export const breakWords = (str) => {

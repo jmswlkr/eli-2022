@@ -14,7 +14,7 @@ export const Intro = ({ salutation, about, credentials }) => {
         {about}
       </p>
       <ul className={credentialsStyle}>
-        {credentials.map((credential, idx) => {
+        {credentials?.map((credential, idx) => {
           const [primary, secondary] = credential
             .split(';')
             .map((c) => c.trim())

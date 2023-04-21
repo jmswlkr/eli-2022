@@ -20,7 +20,7 @@ export const Story = ({ storyBlock1Title, storyBlock1Content, storyBlock2Title, 
       <div className={`${block} ${light}`}>
         <h2>{storyBlock1Title}</h2>
         <div className={full}>
-          {story1Content.map((paragraph, idx) => {
+          {story1Content?.map((paragraph, idx) => {
             return <p key={idx}>{paragraph}</p>
           })}
         </div>
@@ -28,9 +28,9 @@ export const Story = ({ storyBlock1Title, storyBlock1Content, storyBlock2Title, 
       <div className={`${block} ${dark}`}>
         <h2>{storyBlock2Title}</h2>
         <div className={full}>
-          {story2Content.map((paragraph, idx) => {
+          {story2Content?.map((paragraph, idx) => {
             return <p key={idx}>{paragraph}</p>
-          })}
+          }) ?? ''}
         </div>
       </div>
     </section>
