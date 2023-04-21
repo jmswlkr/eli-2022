@@ -22,7 +22,7 @@ export const PageHero = ({
   heroButtonText = 'Contact Us',
   buttonLink = '/#contact',
 }) => {
-  const imageToBottom = heroImage.fields.title === 'founder-image'
+  const imageToBottom = heroImage?.fields?.title === 'founder-image'
 
   return (
     <section className={container}>
@@ -44,8 +44,8 @@ export const PageHero = ({
         </div>
         <div className={`${imgWrap} ${imageToBottom ? positionBottom : ''}`}>
           <img
-            src={heroImage.fields.file.url ?? defaultImage}
-            alt={heroImage.fields.description ?? ''}
+            src={heroImage?.fields?.file?.url ?? image?.url ?? defaultImage}
+            alt={heroImage?.fields?.description ?? ''}
           />
         </div>
       </div>
