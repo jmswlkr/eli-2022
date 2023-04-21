@@ -48,7 +48,7 @@ export const MISSION = {
 
 export const VISION = {
   title: 'Our Vision',
-  text: `ELI envisions a world where we collectively thrive through embodied learning.`,
+  text: `Planting seeds of Embodied Learning that empower people, communities, and organizations to thrive and flourish.`,
 }
 
 export const VALUES_INTRO = {
@@ -77,7 +77,7 @@ export const VALUES = [
   },
   {
     front: 'Social Justice',
-    back: `We value social justice. We embody social justice through our conscious attention and action in the realms of inclusion, access, equity, and diversity. At ELI, we take ownership of our privileged identities; engage the ways multiple intersecting identities shape experience; and prioritize accessible programming, use inclusive language, and embrace the gift of diversity.`,
+    back: `We value social justice. We embody social justice through our conscious attention and action in the realms of inclusion, access, equity, and diversity. At ELI, we take ownership of our privileged identities; engage the ways multiple intersecting identities shape experience; and prioritize accessible programming.`,
     color: '#112348',
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678208510/ELI/Rectangle_119_pkih6q.png',
@@ -94,8 +94,8 @@ export const VALUES = [
     },
   },
   {
-    front: 'Sustainable Living',
-    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    front: 'Environmental Justice',
+    back: 'At Eli we wholeheartedly support the environmental justice movement. We seek to change the narratives, structures, and practices that enable that enable environmental injustice and build collective stewardship initiatives that enhance environmental justice.',
     color: '#DF9595',
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678208710/ELI/Rectangle_106_felhju.png',
@@ -113,7 +113,7 @@ export const VALUES = [
   },
   {
     front: 'Universal Interconnectivity',
-    back: 'We value diversity, equity, & inclusion. We believe that our world is a better place when we learn and grow from each other.',
+    back: 'At ELI we honor the interconnectivity and interdependence of all living systems. ELI’s embraces a holistic transdisciplinary perspective that avoids simplistic divisions. We prioritize the beautiful complexity and expansive nature of interconnectivity, interdependence, collective co-creation, nonlinear thinking and embodied living/learning.',
     color: '#9747FF',
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207670/ELI/Rectangle_106-1_qijgmh.png',
@@ -122,7 +122,7 @@ export const VALUES = [
   },
   {
     front: 'Right-sized Humility',
-    back: `We value right-sized humility. Right-sized humility is a space of awareness, respect, and accountability for self and others. We embody this teachable and humble way of being through action like: seeking to understand and learn from others, creating space for others, allowing for emergence, taking ownership of mistakes, and setting clear boundaries.`,
+    back: `We value right-sized humility. Right-sized humility is a space of awareness, respect, and accountability for self and others. We embody this teachable and humble way of being through actions like: seeking to understand and learn from others, creating space for others, allowing for emergence, taking ownership of mistakes, and setting clear boundaries.`,
     color: '#95A74F',
     image: {
       url: 'https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1678207671/ELI/Rectangle_113_cbr0rc.png',
