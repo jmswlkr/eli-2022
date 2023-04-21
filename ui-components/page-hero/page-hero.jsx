@@ -7,6 +7,7 @@ import {
   container,
   hero,
   imgWrap,
+  positionBottom,
   textWrap,
   heroText,
   header as headerStyle,
@@ -16,10 +17,12 @@ export const PageHero = ({
   heroHeaderLines = [],
   heroSubtitle = '',
   image = '',
+  heroImage = '',
   defaultImage = '',
   heroButtonText = 'Contact Us',
   buttonLink = '/#contact',
 }) => {
+  const imageToBottom = heroImage.fields.title === 'founder-image'
 
   return (
     <section className={container}>
@@ -27,10 +30,9 @@ export const PageHero = ({
         <div className={textWrap}>
           <div className={heroText}>
             <h1 className={headerStyle}>
-              {heroHeaderLines &&
-                heroHeaderLines?.map((line, idx) => {
-                  return <span key={idx}>{line ?? ''}</span>
-                })}
+              {heroHeaderLines?.map((line, idx) => {
+                return <span key={idx}>{line ?? ''}</span>
+              })}
               {heroSubtitle && <span>{heroSubtitle}</span>}
             </h1>
             <Button
@@ -40,10 +42,10 @@ export const PageHero = ({
             />
           </div>
         </div>
-        <div className={imgWrap}>
+        <div className={`${imgWrap} ${imageToBottom ? positionBottom : ''}`}>
           <img
-            src={image ? image.url : defaultImage}
-            alt={image.alt_text || ''}
+            src={heroImage.fields.file.url ?? defaultImage}
+            alt={heroImage.fields.description ?? ''}
           />
         </div>
       </div>

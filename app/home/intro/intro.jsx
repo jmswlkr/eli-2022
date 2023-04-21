@@ -39,21 +39,21 @@ export const Intro = ({
       text: introCard2Text[1],
       btnText: introCard2Text[2],
       imgSrc: introCard2Image.fields.file.url,
-      path: '/founder',
+      path: '/about',
     },
     {
       title: introCard3Text[0],
       text: introCard3Text[1],
       btnText: introCard3Text[2],
       imgSrc: introCard3Image.fields.file.url,
-      path: '/founder',
+      path: '/offerings',
     },
     {
       title: introCard4Text[0],
       text: introCard4Text[1],
       btnText: introCard4Text[2],
       imgSrc: introCard4Image.fields.file.url,
-      path: '/founder',
+      path: '/calendar',
     },
   ]
 

@@ -1,4 +1,6 @@
-import { useContentful } from 'utils/contentful/useContentful'
+'use client'
+
+import { useContentfulClient } from 'utils/contentful/useContentfulClient'
 import { PAGE_CONFIG } from './page.config'
 
 import { PageHero } from 'ui-components/page-hero/page-hero'
@@ -9,8 +11,8 @@ import { BodyContent } from './body-content/body-content'
 import { Story } from './story/story'
 import { CtaSection } from 'ui-components/cta-section/cta-section'
 
-const Founder = async () => {
-  const content = await useContentful(PAGE_CONFIG)
+const Founder = () => {
+  const content = useContentfulClient(PAGE_CONFIG)
 
   const components = [
     PageHero,
@@ -23,9 +25,10 @@ const Founder = async () => {
 
   return (
     <ContentLayout>
-      {components.map((Component, idx) => {
-        return <Component key={idx} {...content} />
-      })}
+      {content &&
+        components.map((Component, idx) => {
+          return <Component key={idx} {...content} />
+        })}
     </ContentLayout>
   )
 }

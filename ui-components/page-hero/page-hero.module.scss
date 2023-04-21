@@ -43,6 +43,11 @@
     object-fit: cover;
     object-position: center;
   }
+  &.positionBottom {
+    img {
+      object-position: top;
+    }
+  }
 }
 
 .textWrap {
