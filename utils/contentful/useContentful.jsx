@@ -9,13 +9,16 @@ export const useContentful = async ({
   try {
     const entry = await client.getEntry(CONTENTFUL_CONTENT_KEYS[key])
     const data = entry.fields
+    
     if (defaultImage) {
       data['defaultImage'] = defaultImage
     }
 
     return { content: data, error: null }
   } catch (error) {
-    console.log(error)
+    const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN
+    console.log('_____accessToken_____: ', accessToken);
+    console.log("_____error_____:",error)
 
     return { content: null, error }
   }

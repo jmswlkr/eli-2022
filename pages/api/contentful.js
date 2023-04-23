@@ -1,17 +1,10 @@
 import { createClient } from 'contentful'
-
-const CONTENTFUL_CONTENT_KEYS = {
-  HOME: '2peFXvBUiCt2gM8eCh4NoD',
-  FOUNDER: '6YLVKd81WK2Z6eASH3POSc',
-}
-
-const space = process.env.CONTENTFUL_SPACE_ID
-const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN
+import { CONTENTFUL_CONTENT_KEYS } from 'utils/contentful/keys'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  host: 'preview.contentful.com',
+  host: 'cdn.contentful.com',
 })
 
 export default async function handler(req, res) {
