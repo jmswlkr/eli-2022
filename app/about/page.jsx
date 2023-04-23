@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { QUOTE_CONTENT, CTA_CONTENT } from './about-content'
 import { PAGE_CONFIG } from './page.config'
 import { useContentful } from 'utils/contentful/useContentful'
 

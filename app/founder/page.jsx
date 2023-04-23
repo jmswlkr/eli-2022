@@ -1,6 +1,5 @@
-'use client'
 
-import { useContentfulClient } from 'utils/contentful/useContentfulClient'
+// import { useContentfulClient } from 'utils/contentful/useContentfulClient'
 import { PAGE_CONFIG } from './page.config'
 
 import { PageHero } from 'ui-components/page-hero/page-hero'
@@ -10,9 +9,10 @@ import { Intro } from './intro/intro'
 import { BodyContent } from './body-content/body-content'
 import { Story } from './story/story'
 import { CtaSection } from 'ui-components/cta-section/cta-section'
+import { useContentful } from 'utils/contentful/useContentful'
 
-const Founder = () => {
-  const content = useContentfulClient(PAGE_CONFIG)
+const Founder = async () => {
+  const { content } = await useContentful(PAGE_CONFIG)
 
   const components = [
     PageHero,
