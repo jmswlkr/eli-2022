@@ -1,36 +1,38 @@
 'use client'
 
 import React from 'react'
-
-import { QuoteBlock } from 'ui-components/quote-block/quote-block'
-
-import { QUOTE_CONTENT, INTRO_CONTENT } from '../about-content'
+import MD from 'react-markdown'
 
 import {
   container,
   textWrap,
   intro as introStyle,
   paragraph,
-  accent,
   inline,
 } from './intro.module.scss'
 
-export const Intro = () => {
-  const { intro, p1, p2, p3 } = INTRO_CONTENT
+export const Intro = ({
+  mainContentParagraph1,
+  mainContentParagraph2,
+  mainContentParagraph3,
+  mainContentParagraph4,
+}) => {
 
   return (
     <section className={container}>
       <div className={textWrap}>
-        <p className={introStyle}>{intro}</p>
-        <p className={paragraph}>
-          <span>{p1.text}</span>
-          <span className={accent}>{p1.color_text}</span>
+        <p className={introStyle}>
+          <MD>{mainContentParagraph1}</MD>
         </p>
         <p className={paragraph}>
-          <span>{p2.text}</span>
-          <span className={accent}>{p2.color_text}</span>
+          <MD>{mainContentParagraph2}</MD>
         </p>
-        <p className={`${paragraph} ${inline}`}>{p3.text}</p>
+        <p className={paragraph}>
+          <MD>{mainContentParagraph3}</MD>
+        </p>
+        <p className={`${paragraph} ${inline}`}>
+          <MD>{mainContentParagraph4}</MD>
+        </p>
       </div>
     </section>
   )

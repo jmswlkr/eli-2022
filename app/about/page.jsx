@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { QUOTE_CONTENT, CTA_CONTENT } from './about-content'
+import { PAGE_CONFIG } from './page.config'
+import { useContentful } from 'utils/contentful/useContentful'
 
 import { Hero } from './hero/hero'
 import { QuoteBlock } from 'ui-components/quote-block/quote-block'
@@ -8,18 +10,27 @@ import { Intro } from './intro/intro'
 import { MissionVision } from './mission-vision/mission-vision'
 import { Values } from './values/values'
 import { CtaSection } from 'ui-components/cta-section/cta-section'
-
 import { ContentLayout } from 'ui-components/content-layout/content-layout'
 
-const About = () => {
+
+const About = async () => {
+    const { content } = await useContentful(PAGE_CONFIG)  
+
+    const components = [
+      Hero,
+      QuoteBlock,
+      Intro,
+      MissionVision,
+      Values,
+      CtaSection,
+    ]
+
   return (
     <ContentLayout>
-      <Hero />
-      <QuoteBlock {...QUOTE_CONTENT} />
-      <Intro />
-      <MissionVision />
-      <Values />
-      <CtaSection {...CTA_CONTENT} />
+      {content &&
+        components.map((Component, idx) => {
+          return <Component key={idx} {...content} />
+        })}
     </ContentLayout>
   )
 }
