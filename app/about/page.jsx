@@ -11,18 +11,17 @@ import { Values } from './values/values'
 import { CtaSection } from 'ui-components/cta-section/cta-section'
 import { ContentLayout } from 'ui-components/content-layout/content-layout'
 
-
 const About = async () => {
-    const { content } = await useContentful(PAGE_CONFIG)  
+  const { content } = await useContentful(PAGE_CONFIG)
 
-    const components = [
-      Hero,
-      QuoteBlock,
-      Intro,
-      MissionVision,
-      Values,
-      CtaSection,
-    ]
+  const components = [
+    Hero,
+    QuoteBlock,
+    Intro,
+    MissionVision,
+    Values,
+    CtaSection,
+  ]
 
   return (
     <ContentLayout>

@@ -31,7 +31,7 @@ export const Intro = ({
       title: introCard1Text[0],
       text: introCard1Text[1],
       btnText: introCard1Text[2],
-      imgSrc: introCard1Image.fields.file.url,
+      imgSrc: `${introCard1Image.fields.file.url}?f=face&fit=fill`,
       path: '/founder',
     },
     {
