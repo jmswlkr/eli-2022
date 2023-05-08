@@ -1,4 +1,4 @@
-import { client } from './config'
+import { client, previewClient } from './config'
 
 import { CONTENTFUL_CONTENT_KEYS } from './keys'
 

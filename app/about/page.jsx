@@ -14,9 +14,12 @@ import { ContentLayout } from 'ui-components/content-layout/content-layout'
 
 const About = async () => {
   const { isEnabled: previewModeEnabled } = draftMode();
+
   PAGE_CONFIG.preview = previewModeEnabled
+  console.log('PAGE_CONFIG: ', PAGE_CONFIG);
 
   const { content } = await useContentful(PAGE_CONFIG)
+  console.log('content: ', content);
 
   const components = [
     Hero,

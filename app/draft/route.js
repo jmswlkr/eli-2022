@@ -11,6 +11,7 @@ export async function GET(request) {
   const secret = searchParams.get('secret')
 
   const slug = searchParams.get('slug')
+  // console.log('slug: ', slug);
 
   // Check for valid secret and slug
   if (secret !== contentfulSecret || !slug) {
@@ -21,6 +22,7 @@ export async function GET(request) {
   const content = await checkContentful({
     key: slug.toUpperCase(),
   })
+  // console.log('content: ', content);
 
   // error if no data returned
   if (!content) {
@@ -29,5 +31,11 @@ export async function GET(request) {
 
   draftMode().enable()
 
-  redirect(`/${slug}`)
+  // redirect(`/${slug}`)
+  return new Response(null, {
+    status: 307,
+    headers: {
+      Location: `/${slug}`,
+    },
+  })
 }
