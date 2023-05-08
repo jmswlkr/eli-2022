@@ -1,5 +1,3 @@
-
-// import { useContentfulClient } from 'utils/contentful/useContentfulClient'
 import { PAGE_CONFIG } from './page.config'
 
 import { PageHero } from 'ui-components/page-hero/page-hero'
@@ -12,7 +10,12 @@ import { CtaSection } from 'ui-components/cta-section/cta-section'
 import { useContentful } from 'utils/contentful/useContentful'
 
 const Founder = async () => {
-  const { content } = await useContentful(PAGE_CONFIG)
+  const { isEnabled } = draftMode()
+
+  const { content } = await useContentful({
+    ...PAGE_CONFIG,
+    preview: isEnabled,
+  })
 
   const components = [
     PageHero,
