@@ -1,3 +1,5 @@
+import { draftMode } from 'next/headers'
+
 import { PAGE_CONFIG } from './page.config'
 
 import { PageHero } from 'ui-components/page-hero/page-hero'

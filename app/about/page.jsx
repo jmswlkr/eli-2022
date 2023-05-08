@@ -1,4 +1,3 @@
-import React from 'react'
 import { draftMode } from 'next/headers'
 
 import { PAGE_CONFIG } from './page.config'
