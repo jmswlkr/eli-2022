@@ -31,11 +31,13 @@ export async function GET(request) {
 
   draftMode().enable()
 
+  const isHomePage = slug === 'home'
+
   // redirect(`/${slug}`)
   return new Response(null, {
     status: 307,
     headers: {
-      Location: `/${slug}`,
+      Location: `/${isHomePage ? '' : slug}`,
     },
   })
 }
