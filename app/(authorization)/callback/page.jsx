@@ -27,7 +27,7 @@ const Callback = () => {
         },
       })
         .then((res) => {
-          console.log(res.data)
+          // console.log(res.data)
         })
         .catch((err) => console.log('Error getting token! Msg →', err))
     }
