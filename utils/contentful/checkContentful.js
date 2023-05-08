@@ -1,4 +1,4 @@
-import { client } from './config'
+import { previewClient } from './config'
 
 import { CONTENTFUL_CONTENT_KEYS } from './keys'
 
@@ -7,7 +7,7 @@ export const checkContentful = async ({
   defaultImage = null,
 }) => {
   try {
-    const entry = await client.getEntry(CONTENTFUL_CONTENT_KEYS[key])
+    const entry = await previewClient.getEntry(CONTENTFUL_CONTENT_KEYS[key])
 
     const data = entry.fields
 
