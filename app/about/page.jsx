@@ -1,5 +1,5 @@
 import React from 'react'
-import { draftMode } from 'next/headers';
+import { draftMode } from 'next/headers'
 
 import { PAGE_CONFIG } from './page.config'
 import { useContentful } from 'utils/contentful/useContentful'
@@ -13,13 +13,12 @@ import { CtaSection } from 'ui-components/cta-section/cta-section'
 import { ContentLayout } from 'ui-components/content-layout/content-layout'
 
 const About = async () => {
-  const { isEnabled: previewModeEnabled } = draftMode();
+  const { isEnabled } = draftMode()
 
-  PAGE_CONFIG.preview = previewModeEnabled
-  console.log('PAGE_CONFIG: ', PAGE_CONFIG);
-
-  const { content } = await useContentful(PAGE_CONFIG)
-  console.log('content: ', content);
+  const { content } = await useContentful({
+    ...PAGE_CONFIG,
+    preview: isEnabled,
+  })
 
   const components = [
     Hero,
