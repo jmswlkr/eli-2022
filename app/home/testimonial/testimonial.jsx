@@ -47,7 +47,6 @@ import {
 } from './testimonial.module.scss'
 
 export const Testimonial = (content) => {
-  console.log('content: ', content)
 
   const { sectionRef, controls } = useAnimationControls()
 
