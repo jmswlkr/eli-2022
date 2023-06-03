@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 
 import { phases, smooth } from 'animation/transition'
-import { blurFadeIn } from 'animation/fade'
+import { blurFadeIn, fadeSlideUpShort } from 'animation/fade'
 
 import {
   hero,
