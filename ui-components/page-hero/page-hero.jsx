@@ -1,17 +1,16 @@
 'use client'
 
 import React from 'react'
-import { Button } from 'ui-components/general-btn/general-btn'
 
 import {
   container,
   hero,
   imgWrap,
-  positionBottom,
   textWrap,
   heroText,
   header as headerStyle,
 } from './page-hero.module.scss'
+import Link from 'next/link'
 
 export const PageHero = ({
   heroHeaderLines = [],
@@ -22,7 +21,6 @@ export const PageHero = ({
   heroButtonText = 'Contact Us',
   buttonLink = '/#contact',
 }) => {
-  // const imageToBottom = heroImage?.fields?.title === 'founder-image'
 
   return (
     <section className={container}>
@@ -35,14 +33,13 @@ export const PageHero = ({
               })}
               {heroSubtitle && <span>{heroSubtitle}</span>}
             </h1>
-            <Button
-              text={heroButtonText}
-              classes='solid dark med'
-              path={buttonLink}
-            />
+            <Link href={buttonLink}>
+              <button className='general-btn solid dark med'>
+                {heroButtonText}
+              </button>
+            </Link>
           </div>
         </div>
-        {/* <div className={`${imgWrap} ${imageToBottom ? positionBottom : ''}`}> */}
         <div className={imgWrap}>
           <img
             src={heroImage?.fields?.file?.url ?? image?.url ?? defaultImage}

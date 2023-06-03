@@ -58,8 +58,8 @@ export const Intro = ({
   ]
 
   return (
-    <section className={intro} id='intro'>
-      {/* <SectionHeader title={'Learn to Thrive'} labelText={`LEARN TO THRIVE`} /> */}
+    <section className={intro}>
+      <span className='scroll-pad' id='intro' />
       <SectionHeader title={introTitle} labelText={introMarqueeText} />
       <div className={cardContainer}>
         {contentfulCards.map((c) => {

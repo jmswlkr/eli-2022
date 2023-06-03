@@ -62,7 +62,7 @@ export const Contact = ({ ctaHeader, ctaBlurb, ctaButtonText }) => {
   }
 
   return (
-    <section className={contact}>
+    <section className={contact} >
       <span className='scroll-pad' id='contact' />
       <div className={formSection}>
         <div className={blurb}>

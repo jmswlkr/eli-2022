@@ -4,10 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 
 import { phases, smooth } from 'animation/transition'
-import { animationProps } from 'animation/animate'
-import { blurFadeIn, fadeIn, fadeSlideUpShort } from 'animation/fade'
-
-import { Button } from 'ui-components/general-btn/general-btn'
+import { blurFadeIn } from 'animation/fade'
 
 import {
   hero,
@@ -67,7 +64,6 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
       </div>
       <motion.div
         className={heroTextContent}
-        // {...animationProps({ controls, animation: fadeIn,   del: 2 })}
       >
         <div className={tagline}>
           <h2 className={slogan}>
@@ -75,11 +71,11 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
             <em>{heroHeaderLines[1]}</em>
           </h2>
           <div className={btn}>
-            <Button
-              text={heroButtonText}
-              classes='solid light'
-              path='/#intro'
-            />
+            <a href={'/#intro'}>
+              <button className='general-btn solid light'>
+                {heroButtonText}
+              </button>
+            </a>
           </div>
         </div>
       </motion.div>
