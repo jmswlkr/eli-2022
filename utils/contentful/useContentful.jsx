@@ -4,7 +4,7 @@ import { CONTENTFUL_CONTENT_KEYS } from './keys'
 
 export const useContentful = async ({
   preview = false,
-  key = 'FOUNDER',
+  key = '',
   defaultImage = null,
 }) => {
   try {
