@@ -19,8 +19,6 @@ export const useContentful = async ({
 
     return { content: data, error: null }
   } catch (error) {
-    const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN
-    console.log('_____accessToken_____: ', accessToken);
     console.log("_____error_____:",error)
 
     return { content: null, error }
