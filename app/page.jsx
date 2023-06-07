@@ -1,13 +1,13 @@
 import { draftMode } from 'next/headers'
 
 import { useContentful } from 'utils/contentful/useContentful'
+import { PAGE_CONFIG } from './page.config'
 
 import { Contact } from './home/contact/contact'
 import { Hero } from './home/hero/hero'
 import { Intro } from './home/intro/intro'
 import { Pillars } from './home/pillars/pillars'
 import { Testimonial } from './home/testimonial/testimonial'
-import { PAGE_CONFIG } from './page.config'
 
 const Home = async () => {
   const { isEnabled } = draftMode()
