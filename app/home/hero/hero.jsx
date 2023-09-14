@@ -14,6 +14,7 @@ import {
   heroTextContent,
   tagline,
   slogan,
+  small,
   btn,
 } from './hero.module.scss'
 
@@ -68,7 +69,8 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
         <div className={tagline}>
           <h2 className={slogan}>
             <span>{heroHeaderLines[0]}</span>
-            <em>{heroHeaderLines[1]}</em>
+            <span className={small}>{heroHeaderLines[1]}</span>
+            <em>{heroHeaderLines[2]}</em>
           </h2>
           <div className={btn}>
             <a href={'/#intro'}>

@@ -113,9 +113,13 @@
  
   // ↓ PROVISIONAL
   display: flex;
+  gap: 1rem;
   flex-direction: column;
-  span {
-    // color: var(--primary-light);
+  .small {
+    margin-top: 1rem;
+    font-size: 1.75rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
   }
   // ↑ PROVISIONAL
  
