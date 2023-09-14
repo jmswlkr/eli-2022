@@ -1,7 +1,6 @@
 import React from 'react'
 import { draftMode } from 'next/headers'
 
-import { INTRO_DATA, ETHOS_DATA } from './coaching-data'
 import { useContentful } from 'utils/contentful/useContentful'
 import { PAGE_CONFIG } from './page-config'
 
