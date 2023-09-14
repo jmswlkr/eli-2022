@@ -102,22 +102,6 @@ export const Pillars = ({
           <p className={subtitle}>{pillarsTitleSubtitle[1]}</p>
           <p className={text}>
             <span>{pillarsMainText}</span>
-            {/* <span>
-              Life is a process to be experienced, not a series of problems to
-              be solved.
-            </span>
-            <span>
-              Unfortunately, our culture teaches a lot about linear thinking,
-              certainty, control, and individualism, and very little about
-              systems thinking, ambiguity, surrender, and interconnectedness.
-              Since we are what we practice, this has significant implications.
-            </span>
-            <span>
-              ELI’s 4 pillars are a way to practice
-              <strong> Embodied Enoughness</strong>. A way to build Embodied
-              Enoughness into our neural pathways, personal relationships,
-              communities, organizations, and culture writ large.
-            </span> */}
           </p>
         </div>
         <div className={pillarCardsContainer}>

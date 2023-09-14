@@ -204,7 +204,8 @@
   justify-self: center;
   align-self: center;
   // height: var(--card-height);
-  width: calc(1.25 * var(--content-width));
+  // width: calc(1.25 * var(--content-width));
+  width: var(--content-width);
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
@@ -246,7 +247,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   height: 100%;
-  width: 130%;
+  // width: 130%;
+  width: 150%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -295,10 +297,12 @@
 .cardText {
   font-size: var(--text-ml);
   font-size: var(--text-prose);
-  padding: 1rem 2rem;
+  // padding: 1rem 2rem;
+  padding: 1rem;
   text-align: center;
   &.padded {
-    padding: 1.5rem 4rem;
+    // padding: 1.5rem 4rem;
+    padding: 1.5rem 2.5rem;
   }
   @media (max-width: 1024px) {
     padding: 1rem 0.5rem !important;
