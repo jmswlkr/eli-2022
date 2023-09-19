@@ -7,7 +7,7 @@ import { PAGE_CONFIG } from './page-config'
 import { HeaderParagraph } from 'ui-components/header-paragraph/header-paragraph'
 import { CoachingBlock } from './coaching-block'
 
-import { container, intro, ethos } from './page.module.scss'
+import { container, welcome, intro, ethos } from './page.module.scss'
 import { PageHero } from 'ui-components/page-hero/page-hero'
 
 
@@ -24,6 +24,8 @@ const LeadershipCoaching = async () => {
     heroImage: content.heroImage,
     heroButtonText: 'Get Started'
   }
+
+  const { quoteText } = content;
 
   const introContent = [
     {
@@ -61,12 +63,16 @@ const LeadershipCoaching = async () => {
 
   return (
     <>
-      <PageHero  {...heroContent} />
+      <PageHero {...heroContent} />
+      {/* <QuoteBlock quote={quoteText} /> */}
       <div className={container}>
+        <div className={welcome}>
+          <h3>{quoteText}</h3>
+        </div>
         <section className={intro}>
           {introContent.map(({ heading, paragraph }) => {
             return (
-              <HeaderParagraph 
+              <HeaderParagraph
                 key={heading}
                 mainContentHeading={heading}
                 mainContentParagraph={paragraph}

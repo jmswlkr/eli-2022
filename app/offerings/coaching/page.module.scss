@@ -4,8 +4,33 @@
   gap: 4rem;
 }
 
+.welcome {
+  height: 15lvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 592px) {
+    min-height: 10lvh;
+  }
+  h3 {
+    width: 85%;
+    font-size: var(--text-prose-em);
+    font-size: var(--text-1xl);
+    font-family: var(--font-italic);
+    font-weight: bold;
+    color: var(--primary-deep);
+    @media (max-width: 1024px) {
+      width: 100%;
+      line-height: 175%;
+      font-size: var(--text-ml);
+    }
+  }
+}
+
 .intro {
   margin: var(--content-top-margin) 0;
+  margin-top: 0;
   display: grid;
   gap: 2rem;
 }
