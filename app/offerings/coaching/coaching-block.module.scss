@@ -19,8 +19,9 @@
 .content {
   font-size: var(--text-prose-em);
   color: var(--white);
-
+  
   @media (max-width: 592px) {
     font-size: 24px;
+    font-size: var(--text-ml);
   }
 }
