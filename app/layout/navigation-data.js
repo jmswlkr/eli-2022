@@ -85,14 +85,20 @@ export const contactInfo = [
     content: `+1 (570) 709 4277`,
     mobile_content: `Call us`,
     link: 'tel://+15707094277',
-    icon: <PhoneIcon color='currentColor'/>
+    icon: <PhoneIcon color='currentColor' />
   },
   {
     id: 'email',
     label: 'Email',
-    content: <>embodiedlearninginstitute<wbr/>@gmail.com</>,
+    content: (
+      <>
+        info@
+        <wbr />
+        embodiedlearninginstitute.com
+      </>
+    ),
     mobile_content: `Email us`,
-    link: 'mailto:embodiedlearninginstitute@gmail.com',
-    icon: <EmailIcon color='currentColor'/>
-  },
+    link: 'mailto:info@embodiedlearninginstitute.com',
+    icon: <EmailIcon color='currentColor' />
+  }
 ]
