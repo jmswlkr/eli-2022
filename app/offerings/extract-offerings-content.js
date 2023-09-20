@@ -6,6 +6,7 @@ export function extractOfferingsContent(content) {
       title: c.coachingHeading,
       text: c.coachingDescriptionText,
       path: '/offerings/coaching',
+      list_header: c.coachingListHeader,
       details_list: c.coachingWhoItsForList,
       image: {
         url:
@@ -22,6 +23,7 @@ export function extractOfferingsContent(content) {
       title: c.consultingHeading,
       text: c.consultingDescriptionText,
       path: '/offerings/coaching',
+      list_header: c.consultingListHeader,
       details_list: c.consultingWhoItsForList,
       image: {
         url:
@@ -38,6 +40,7 @@ export function extractOfferingsContent(content) {
       title: c.trainingHeading,
       text: c.trainingDescriptionText,
       path: '/offerings/training',
+      list_header: c.trainingListHeader,
       details_list: c.trainingWhoItsForList,
       image: {
         url:

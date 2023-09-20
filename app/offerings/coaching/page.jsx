@@ -64,7 +64,6 @@ const LeadershipCoaching = async () => {
   return (
     <>
       <PageHero {...heroContent} />
-      {/* <QuoteBlock quote={quoteText} /> */}
       <div className={container}>
         <div className={welcome}>
           <h3>{quoteText}</h3>

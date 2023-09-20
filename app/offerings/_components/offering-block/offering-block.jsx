@@ -19,6 +19,7 @@ export const OfferingBlock = ({
   title,
   text,
   path,
+  list_header,
   details_list = [],
   image,
 }) => {
@@ -36,7 +37,7 @@ export const OfferingBlock = ({
         />
       </div>
       <div className={details}>
-        <h3 className={header}>Who it's for</h3>
+        <h3 className={header}>{list_header}</h3>
         <ul className={list}>
           {details_list.map((detail, idx) => {
             return <li key={idx}>{detail}</li>
