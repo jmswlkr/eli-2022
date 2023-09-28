@@ -33,11 +33,15 @@ export const PageHero = ({
               })}
               {heroSubtitle && <span>{heroSubtitle}</span>}
             </h1>
-            <Link href={buttonLink}>
+
+            {/* Commented until final decision. */}
+            
+            {/* <Link href={buttonLink}>
               <button className='general-btn solid dark med'>
                 {heroButtonText}
               </button>
-            </Link>
+            </Link> */}
+          
           </div>
         </div>
         <div className={imgWrap}>
