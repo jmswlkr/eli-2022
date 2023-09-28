@@ -17,7 +17,8 @@ export const BodyContent = ({
   return (
     <div className={container}>
       {contents.map(({ paragraph }, idx) => {
-        return <HeaderParagraph key={idx} text={paragraph} />
+        // return <HeaderParagraph key={idx} text={paragraph} />
+        return <HeaderParagraph key={idx} mainContentParagraph={paragraph} />
       })}
     </div>
   )
