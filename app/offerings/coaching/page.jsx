@@ -65,9 +65,6 @@ const LeadershipCoaching = async () => {
     <>
       <PageHero {...heroContent} />
       <div className={container}>
-        <div className={welcome}>
-          <h3>{quoteText}</h3>
-        </div>
         <section className={intro}>
           {introContent.map(({ heading, paragraph }) => {
             return (
