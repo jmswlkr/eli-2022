@@ -12,6 +12,15 @@
   grid-template-rows: 1fr;
   align-items: center;
   justify-content: center;
+  
+  // ↓ EXPERIMENTAL
+  height: 65vh;
+  margin: 5vh 0;
+  background-color: var(--primary-tr-2);
+  padding: 5rem;
+  border-radius: var(--radius-md);
+  // ↑ EXPERIMENTAL
+
   @media (max-width: 1024px) {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
