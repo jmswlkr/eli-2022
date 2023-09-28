@@ -9,6 +9,7 @@ import { CoachingBlock } from './coaching-block'
 
 import { container, welcome, intro, ethos } from './page.module.scss'
 import { PageHero } from 'ui-components/page-hero/page-hero'
+import { CtaSection } from 'ui-components/cta-section/cta-section'
 
 
 const LeadershipCoaching = async () => {
@@ -89,6 +90,17 @@ const LeadershipCoaching = async () => {
           })}
         </section>
       </div>
+      <CtaSection 
+        title='Ready to get started?'
+        text='Get in touch with us today to learn more about our offerings.'
+        btnText='Get Started'
+        btnPath='#'
+        imageUrl='/talk-lg.jpg'
+        imageAlt='People meeting in an office lobby'
+        ctaHeader={'Ready to get started?'}
+        ctaButtonText={'Get Started'}
+        ctaLinkedPage={'/contact'}
+      />
     </>
   )
 }
