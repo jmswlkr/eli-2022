@@ -59,3 +59,39 @@
     gap: calc(.5 * var(--intersection-margin));
   }
 }
+
+.modal {
+  z-index: var(--level-top);
+  isolation: isolate;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(4px);
+  background: var(--primary-darker-tr-1);
+
+  color: var(--white);
+
+  .close {
+    z-index: 10;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;  
+    right: 5%;
+    transition: var(--transition-primary);
+    @media (max-width: 592px) {
+      transform-origin: center;
+      scale: .5;
+    }
+  }
+
+  * {
+    z-index: 1;
+  }
+}
