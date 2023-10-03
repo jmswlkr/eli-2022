@@ -28,18 +28,25 @@
 
 .pillars {
   @include homeSection($full: true);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: var(--intersection-margin) 0;
-  align-items: flex-start;
-  height: auto;
+  // align-items: flex-start;
   @media (max-width: 1024px) {
-    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
     padding-top: var(--vp-md);
     padding-bottom: var(--vp-xl);
   }
+  @media (max-width: 592px) {
+    height: 225vh;
+  }
 }
 
-.pillarsImageContainer {
+.pillarsBackgroundContainer {
   @include fullBleedContent;
   isolation: isolate;
   background-color: rgba(173, 216, 230, 0.215);
@@ -92,7 +99,7 @@
     width: 80%;
   }
   @media (max-width: 1024px) {
-    margin-top: var(--vp-xl);
+    // margin-top: var(--vp-xl);
     width: 100%;
   }
 }
@@ -199,109 +206,255 @@
   }
 }
 
-.pillarCardsContainer {
+.pillarsModal {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(10px);
+  background: var(--primary-darker-tr-1);
+
+  @media (max-width: 592px) {
+    align-items: flex-start;
+    padding-top: 10vh;
+  }
+
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+  .modalIcon {
+    path {
+      fill: var(--accent);
+    }
+    @media (max-width: 592px) {
+      transform-origin: bottom;
+      scale: 0.75;
+    }
+  }
+  .modalTitle {
+    @include headerText(var(--white));
+    br {
+      display: none;
+    }
+    @media (max-width: 592px) {
+      font-size: var(--text-ml);
+    }
+  }
+  .modalDivider {
+    display: block;
+    height: 5px;
+    width: 35px;
+    background-color: var(--accent);
+  }
+  .modalText {
+    @include paragraphText;
+    font-size: var(--text-prose);
+    color: var(--white);
+    width: 40%;
+    text-align: center;
+    @media (max-width: 1024px) {
+      width: 80%;
+    }
+    @media (max-width: 592px) {
+      font-size: var(--text-prose);
+    }
+  }
+  .modalNavigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 1024px) {
+      top: 90%;
+    }
+    @media (max-width: 592px) {
+      top: 95%;
+      svg {
+        scale: 0.5;
+      }
+    }
+  }
+  .modalPrev {
+    cursor: pointer;
+    &:hover {
+      path {
+        stroke: var(--accent);
+      }
+    }
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+  .modalNext {
+    cursor: pointer;
+    &:hover {
+      path {
+        stroke: var(--accent);
+      }
+    }
+  }
+  .modalListNavigation {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  .modalNavItem {
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    &.active {
+      color: var(--accent);
+    }
+    br {
+      display: none;
+    }
+  }
+}
+
+.pillarCardsGrid {
   position: relative;
   justify-self: center;
   align-self: center;
-  // height: var(--card-height);
-  // width: calc(1.25 * var(--content-width));
   width: var(--content-width);
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: min-content;
+  grid-auto-rows: auto;
   @media (max-width: 1400px) {
     width: 70%;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, var(--min-content));
+    grid-template-rows: repeat(2, 1fr);
   }
   @media (max-width: 1200px) {
     width: 85%;
   }
   @media (max-width: 1024px) {
-    gap: 0% 15%;
+    gap: 5%;
     width: 90%;
   }
   @media (max-width: 692px) {
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
     width: 65%;
   }
   @media (max-width: 592px) {
-    width: 100%;
-  }
-}
-
-.cardWrapper {
-  height: auto;
-  width: auto;
-  position: relative;
-  height: var(--card-height);
-  @media (max-width: 1024px) {
     height: auto;
+    width: 100%;
+    margin-top: 5vh;
   }
 }
 
 .pillarCard {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100%;
-  // width: 130%;
-  width: 150%;
-  border-radius: 10px;
+  height: auto;
+  width: auto;
+  position: relative;
+  height: var(--card-height);
+  
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  overflow-y: scroll;
-  @media (max-width: 1024px) {
-    position: relative;
-    top: unset;
-    left: unset;
-    width: 100%;
-    transform: unset;
-    align-items: flex-start;
-  }
-}
+  gap: 40px;
+  transition: var(--transition-primary);
 
-.activeCard {
-  height: auto;
-  padding-bottom: 2rem;
-  background: linear-gradient(
-    to right,
-    hsla(var(--lotus-hs), 90%, 10%),
-    hsla(var(--river-hsl), 25%)
-  );
-  h6 {
-    color: var(--primary-light);
-  }
-  @media (max-width: 1200px) {
-    background: none !important;
-    h6 {
-      color: var(--color-white);
+  &:hover {
+    gap: 45px;
+    path {
+      fill: var(--accent);
     }
+    .cardHeading {
+      color: var(--white);
+    }
+    .cardDivider {
+      opacity: 1;
+    }
+    .expandBtn {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    height: auto;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    .cardDivider {
+      display: none;
+    }
+  }
+  @media (max-width: 592px) {
+    width: 100%;
+    aspect-ratio: 1/1;
   }
 }
 
 .cardHeading {
-  margin-top: 10%;
-  margin-bottom: 0;
+  margin: 0;
   font-size: var(--text-subheader);
   text-align: center;
+  color: var(--text-color-med);
   @media (max-width: 1024px) {
     padding: 1rem 0.5rem !important;
-    text-align: left;
+    font-size: var(--text-lg);
+    color: var(--white);
   }
 }
+.cardDivider {
+  display: block;
+  height: 5px;
+  width: 35px;
+  background-color: var(--accent);
+  opacity: 0;
+}
+
+.cardIcon {
+  svg {
+    scale: 0.8;
+  }
+}
+
+.expandBtn {
+  cursor: pointer;
+  opacity: 0;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: var(--white);
+  &:hover {
+    color: var(--accent);
+  }
+}
+
 .cardText {
   font-size: var(--text-ml);
   font-size: var(--text-prose);
-  // padding: 1rem 2rem;
   padding: 1rem;
   text-align: center;
   &.padded {
-    // padding: 1.5rem 4rem;
     padding: 1.5rem 2.5rem;
   }
   @media (max-width: 1024px) {
@@ -313,10 +466,7 @@
     // text-align: center;
   }
 }
-.cardIcon {
-  position: absolute;
-  top: 45%;
-}
+
 .pillar {
   padding: 0 32px;
   display: flex;
