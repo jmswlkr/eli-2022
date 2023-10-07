@@ -218,11 +218,11 @@ function PillarsModal({ allPillars, idx = 0 }) {
         </button>
       </div>
       <ul className={modalListNavigation}>
-        {allPillars.map((pillar) => {
+        {allPillars.map((pillar, idx) => {
           const activeStyle = pillar.title === title ? active : ''
 
           return (
-            <li className={`${modalNavItem} ${activeStyle}`} key={pillar.id}>
+            <li onClick={() => setCurIdx(idx)} className={`${modalNavItem} ${activeStyle}`} key={pillar.id}>
               {pillar.title}
             </li>
           )

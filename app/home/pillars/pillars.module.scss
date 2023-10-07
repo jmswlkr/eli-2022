@@ -214,9 +214,6 @@
   align-items: center;
   justify-content: center;
 
-  backdrop-filter: blur(10px);
-  background: var(--primary-darker-tr-1);
-
   @media (max-width: 592px) {
     align-items: flex-start;
     padding-top: 10vh;
@@ -324,6 +321,7 @@
     }
   }
   .modalNavItem {
+    cursor: pointer;
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -370,6 +368,7 @@
 }
 
 .pillarCard {
+  cursor: pointer;
   height: auto;
   width: auto;
   position: relative;
@@ -443,7 +442,7 @@
   opacity: 0;
   text-transform: uppercase;
   letter-spacing: 6px;
-  color: var(--white);
+  color: var(--accent);
   &:hover {
     color: var(--accent);
   }
