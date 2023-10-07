@@ -5,14 +5,16 @@ import '../styles/variables.scss'
 import '../styles/react-calendar.scss'
 
 import { ClientLayout } from './layout/client-layout'
-import { Providers } from './layout/providers'
+import { Providers } from './(context)/providers'
 
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body>
         <Providers>
-          <ClientLayout>{children}</ClientLayout>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </Providers>
       </body>
     </html>
