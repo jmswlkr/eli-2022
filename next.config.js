@@ -2,14 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 'images.ctfassets.net']
   },
   env: {
-    EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
+    EMAILJS_USER_ID: process.env.EMAILJS_USER_ID
   },
   experimental: {
-    appDir: true,
-  },
+    appDir: true
+  }
 }
 
 module.exports = nextConfig
