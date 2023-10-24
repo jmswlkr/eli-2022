@@ -1,0 +1,46 @@
+@import "/styles/mixins";
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.imageWrap {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  img {
+    @include absoluteImage;
+  }
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--space-xl);
+}
+
+.heading {
+  font-size: var(--text-2xl);
+}
+.subheading {
+  font-size: var(--text-xl);
+  font-weight: 200;
+}
+.meta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .5ch;
+}
+.button {
+  color: var(--primary);
+  border-color: var(--primary);
+  margin-top: 10ch;
+}
+
+
