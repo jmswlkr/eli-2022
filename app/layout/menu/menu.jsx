@@ -57,7 +57,6 @@ export const Menu = ({ modalOpen, closeModal }) => {
                     <li key={cl.path}>
                       <Link
                         onClick={closeModal}
-                        onTouchStart={closeModal}
                         href={cl.path}
                       >
                         {cl.content}
@@ -73,7 +72,6 @@ export const Menu = ({ modalOpen, closeModal }) => {
                     <li key={ofr.content}>
                       <Link
                         onClick={closeModal}
-                        onTouchStart={closeModal}
                         href={ofr.path}
                       >
                         {ofr.menu_content}
