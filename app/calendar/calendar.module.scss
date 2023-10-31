@@ -3,7 +3,7 @@
 
 .layout {
   // border: 1px solid red;
-
+  padding-top: 15vh;
   margin-top: 15vh;
   height: 80vh;
   display: flex;
@@ -19,21 +19,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.backBtn {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: var(--text-md);
-  text-transform: uppercase;
-  letter-spacing: var(--push-lg);
-  color: var(--primary);
-  translate: -100%;
-  @media (max-width: 1024px) {
-    translate: unset;
-    top: unset;
-    bottom: 5%;
-  }
 }
