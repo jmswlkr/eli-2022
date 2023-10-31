@@ -58,6 +58,11 @@ export const connectLinks = [
     path: '/calendar',
     content: 'Calendar',
   },
+  {
+    path: '/blog',
+    content: 'Blog',
+  }
+  
 ]
 
 export const socialIcons = [
