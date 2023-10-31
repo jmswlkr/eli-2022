@@ -12,10 +12,10 @@ export const CloseIcon = ({ fill='var(--white)' }) => {
       <path
         d='M38 38L1 1M1 38L38 1L1 38Z'
         stroke={fill}
-        stroke-opacity='0.5'
-        stroke-width='1.6862'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeOpacity='0.5'
+        strokeWidth='1.6862'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   )

@@ -9,7 +9,7 @@ export const ChevronIcon = ({ fill='var(--white)' }) => {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <path d='M1 1L16 24L1 47' stroke={fill} stroke-width='1.5' />
+      <path d='M1 1L16 24L1 47' stroke={fill} strokeWidth='1.5' />
     </svg>
   )
 }
