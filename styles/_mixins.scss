@@ -83,6 +83,13 @@
   object-fit: cover;
   object-position: center;
 }
+@mixin truncateText($num_lines: 3) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-clamp: $num_lines;
+  -webkit-line-clamp: $num_lines;
+}
 
 // Elements
 @mixin inputStyle {
