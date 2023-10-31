@@ -10,7 +10,6 @@ import {
   heroText,
   header as headerStyle,
 } from './page-hero.module.scss'
-import Link from 'next/link'
 
 export const PageHero = ({
   heroHeaderLines = [],
