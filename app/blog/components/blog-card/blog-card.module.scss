@@ -23,11 +23,18 @@
 
 .heading {
   font-size: var(--text-xl);
-
+  @media (max-width: 1024px) {
+    font-size: var(--text-lg);
+  }
 }
 .subheading {
   font-size: var(--text-lg);
   font-weight: 200;
+  @media (max-width: 1024px) {
+    font-size: var(--text-md);
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+  }
 }
 .meta {
   display: flex;
