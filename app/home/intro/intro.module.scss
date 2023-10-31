@@ -100,7 +100,7 @@
   }
   h4 {
     @include subheaderText;
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     // white-space: nowrap;
   }
   p {
