@@ -1,4 +1,4 @@
-import { PAGE_CONFIG } from "../consulting/page-config"
+import { PAGE_CONFIG } from "./page-config"
 
 const { defaultImage } = PAGE_CONFIG
 
