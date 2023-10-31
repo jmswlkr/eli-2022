@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-top: var(--nav-height);
+  padding-top: var(--space-7xl);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @media (max-width: 1024px) {
+    padding-top: var(--space-4xl);
+  }
+  @media (max-width: 592px) {
+    padding-top: var(--space-2xl);
+  }
+}
