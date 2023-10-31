@@ -39,7 +39,7 @@
     font-size: 48px;
     color: var(--primary);
     @media (max-width: 592px) {
-      font-size: 32px;
+      font-size: 28px;
     }
   }
 }
@@ -55,6 +55,7 @@
 .content {
   font-size: 24px;
   @media (max-width: 592px) {
+    font-size: 20px;
   }
 }
 
@@ -67,6 +68,9 @@
   .header {
     font-size: 40px;
     color: var(--primary-lighter);
+    @media (max-width: 592px) {
+      font-size: 28px;
+    }
   }
 }
 
@@ -81,6 +85,9 @@
     font-size: 24px;
     font-family: var(--font-reg);
     color: var(--white);
+    @media (max-width: 592px) {
+      font-size: 20px;
+    }
   }
 }
 

@@ -92,9 +92,6 @@
   justify-content: flex-start;
   border: 1px solid transparent;
   border-radius: var(--radius-md);
-  > * {
-    // margin-bottom: 1rem;
-  }
   &:hover {
     border: 1px solid var(--primary-lightest);
   }
