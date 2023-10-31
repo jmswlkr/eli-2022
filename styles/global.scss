@@ -126,3 +126,9 @@ video::-webkit-media-controls-fullscreen-button {
   width: 100%;
   border: 1px solid red;
 }
+
+.calendly-overlay {
+  z-index: 99 !important;
+  isolation: isolate;
+  translate: 0 5vh;
+}
