@@ -129,6 +129,7 @@
   flex-direction: column;
   justify-content: space-between;
   color: var(--white);
+  gap: var(--space-md);
 
   label {
     position: absolute;
