@@ -114,21 +114,22 @@
   .small {
     margin-top: 1rem;
     font-size: 1.75rem;
+    font-size: 1.25rem;
     letter-spacing: 8px;
-    text-transform: uppercase;
+    text-transform: lowercase;
+    color: var(--primary-light);
   }
  
   em {
     // color: var(--accent);
-    color: var(--primary);
-    color: var(--primary-light);
+    color: var(--white);
     font-style: unset;
     letter-spacing: var(--push-ms);
   }
 }
 
 .btn {
-  // margin-top: -2rem;
+  margin-top: 2rem;
   button {
     color: var(--white);
   }
