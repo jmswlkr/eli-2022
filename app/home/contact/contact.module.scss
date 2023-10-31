@@ -122,7 +122,8 @@
   }
   input {
     padding-left: 1rem;
-    padding-bottom: 32px;
+    padding-bottom: 16px;
+    padding-top: 16px;
     width: 100%;
     border: none;
     background-color: transparent;
@@ -258,6 +259,67 @@
     margin-top: 2rem;
     button {
       color: var(--primary);
+    }
+  }
+}
+
+.contactModal {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 592px) {
+    align-items: flex-start;
+    padding-top: 10vh;
+  }
+
+  .modalContent {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+  .modalIcon {
+    path {
+      fill: var(--accent);
+    }
+    @media (max-width: 592px) {
+      transform-origin: bottom;
+      scale: 0.75;
+    }
+  }
+  .modalTitle {
+    @include headerText(var(--white));
+    br {
+      display: none;
+    }
+    @media (max-width: 592px) {
+      font-size: var(--text-ml);
+    }
+  }
+  .modalDivider {
+    display: block;
+    height: 5px;
+    width: 35px;
+    background-color: var(--accent);
+  }
+  .modalText {
+    @include paragraphText;
+    font-size: var(--text-prose);
+    color: var(--white);
+    width: 40%;
+    text-align: center;
+    @media (max-width: 1024px) {
+      width: 80%;
+    }
+    @media (max-width: 592px) {
+      font-size: var(--text-prose);
     }
   }
 }
