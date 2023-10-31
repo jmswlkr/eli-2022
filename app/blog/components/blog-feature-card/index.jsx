@@ -12,7 +12,7 @@ import {
 } from './blog-feature-card.module.scss'
 import { Button } from 'ui-components/general-btn/general-btn'
 
-export const BlogFeatureCard = ({ content: c }) => {
+export const BlogFeatureCard = ({ content: c, withMeta = true }) => {
   return (
     <div className={container}>
       <div className={imageWrap}>
@@ -26,11 +26,9 @@ export const BlogFeatureCard = ({ content: c }) => {
           <span>•</span>
           <span>{c.ttr}</span>
         </div>
-        <Button
-          text={c.button.text}
-          path={c.button.link}
-          classes={button}
-        />
+        {withMeta && (
+          <Button text={c.button.text} path={c.button.link} classes={button} />
+        )}
       </div>
     </div>
   )
