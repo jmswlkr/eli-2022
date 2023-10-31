@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { useActionOnKey } from 'hooks/useActionOnKey'
@@ -12,7 +11,7 @@ import {
 } from '../navigation-data'
 
 import { blurFadeIn } from 'animation/fade'
-import { phases, smooth } from 'animation/transition'
+import { phases } from 'animation/transition'
 import { slideInTop } from 'animation/slide'
 
 import {
@@ -31,7 +30,6 @@ import {
 import Link from 'next/link'
 
 export const Menu = ({ modalOpen, closeModal }) => {
-  const { push } = useRouter()
 
   useActionOnKey(closeModal, 'Escape') // close modal with esc key
 
