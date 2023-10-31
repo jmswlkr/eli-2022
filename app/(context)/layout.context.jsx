@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from 'react'
 
+import { useToggleScroll } from 'hooks/useToggleScrolll'
+
 const defaultOptions = {
   modalContent: null,
   setModalContent: () => {},
@@ -14,6 +16,8 @@ export const useLayoutContext = () => useContext(LayoutContext)
 export const LayoutProvider = ({ children }) => {
   const [contentModalOpen, setContentModalOpen] = useState(false)
   const [modalContent, setModalContent] = useState(null)
+
+  useToggleScroll(contentModalOpen)
 
   return (
     <LayoutContext.Provider
