@@ -173,7 +173,6 @@ function PillarCard({ idx, title, icon, handleHoverPillar, allPillars }) {
 
 // function PillarsModal({ id, icon, title, text, allPillars }) {
 function PillarsModal({ allPillars, idx = 0 }) {
-  console.log('allPillars: ', allPillars);
   const [curIdx, setCurIdx] = useState(idx)
 
   const { icon, title, text } = allPillars[curIdx]
