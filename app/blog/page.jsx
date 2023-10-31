@@ -2,7 +2,7 @@ import { ContentLayout } from 'ui-components/content-layout/content-layout'
 
 import {
   container,
-  wrapper,
+  heroWrapper,
   hero,
   heroImg,
   heroText,
@@ -29,7 +29,7 @@ const BlogDirectory = () => {
 
 function BlogHero() {
   return (
-    <section className={wrapper}>
+    <section className={heroWrapper}>
       <div className={hero}>
         <div className={heroText}>
           <p className={preTitle}>

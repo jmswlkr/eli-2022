@@ -9,7 +9,7 @@
   gap: 150px 0 !important;
 }
 
-.wrapper {
+.heroWrapper {
   position: relative;
   height: var(--container-height);
   width: 100%;
@@ -90,6 +90,9 @@
 }
 .feature {
   height: 60vh;
+  @media (max-width: 1024px) {
+    height: auto;
+  }
 }
 .grid {
   display: grid;
@@ -98,6 +101,10 @@
 
   li {
     height: 60vh;
+  }
+
+  @media (max-width: 592px) {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -109,4 +116,8 @@
   border: none;
   margin-top: 5ch;
   background: var(--primary-tr-2);
+
+  @media (max-width: 592px) {
+    width: 100%;
+  }
 }
