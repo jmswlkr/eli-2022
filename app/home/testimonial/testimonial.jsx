@@ -37,6 +37,7 @@ import {
   hideShade,
   modalShade,
   closeModalBtn,
+  close,
   modal,
   modalText,
   modalAttr,
@@ -45,9 +46,16 @@ import {
   fadeTransitionBlock,
   scrollTip,
 } from './testimonial.module.scss'
+import { CloseIcon } from 'ui-components/svg/close'
+
+// TODO
+// TODO
+// # Rebuild this section to allow zoom.
+// TODO
+// TODO
+
 
 export const Testimonial = (content) => {
-
   const { sectionRef, controls } = useAnimationControls()
 
   const { testimonialTitle, testimonialMarqueeText } = content
@@ -133,9 +141,12 @@ function TextModal({ text, name, handleCloseModal }) {
       className={modalShade}
       onClick={handleCloseModal}
     >
-      <button className={closeModalBtn} onClick={handleCloseModal}>
-        &times;
+      <button onClick={handleCloseModal} className={close}>
+        <CloseIcon />
       </button>
+      {/* <button className={closeModalBtn} onClick={handleCloseModal}>
+        &times;
+      </button> */}
       <div className={modal}>
         <article className={modalText}>
           <p>{text}</p>
