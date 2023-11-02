@@ -16,6 +16,14 @@ export const getYmd = (date) => {
   return new Date(date).toISOString().slice(0, 10)
 }
 
+export function getYmdObject(dateStr) {
+  let date = new Date(dateStr)
+  let year = date.getFullYear()
+  let month = date.toLocaleDateString('en-us', { month: 'short' })
+  let day = date.getDate()
+  return { year, month, day }
+}
+
 export const getDateFromState = (aptDateVal) => {
 
   const { y, m, d } = aptDateVal

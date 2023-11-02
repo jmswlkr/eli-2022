@@ -1,18 +1,95 @@
+@import "/styles/mixins";
+
 .container {
   position: relative;
   height: auto;
   width: 100%;
+  width: 100ch;
   margin-top: var(--nav-height);
+  margin-top: 10vh;
   padding-top: var(--space-7xl);
 
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 
   @media (max-width: 1024px) {
+    width: 100%;
     padding-top: var(--space-4xl);
   }
   @media (max-width: 592px) {
     padding-top: var(--space-2xl);
+  }
+}
+
+.bodyBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--space-lg);
+
+  h2 {
+    @include subheaderText;
+    color: var(--primary);
+    @media (max-width: 592px) {
+      font-size: 28px;
+    }
+  }
+  p {
+    @include paragraphText;
+    font-size: var(--text-ml) !important;
+  }
+}
+
+.quoteBlock {
+  padding: var(--space-lg);
+  padding-left: var(--space-2xl);
+  border-left: 1px solid var(--primary);
+
+  font-size: 20px;
+  font-style: italic;
+  line-height: 180%;
+  color: var(--primary);
+}
+
+.footer {
+  width: 100%;
+  padding-top: var(--space-3xl);
+  border-top: .5px solid var(--primary);
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--primary);
+  }
+
+   @media (max-width: 592px) {
+    flex-direction: column;
+    gap: var(--space-7xl);
+  }
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-xl);
+  
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  .linkIcon {
+    svg {
+      height: 27px;
+      width: 27px;
+    }
   }
 }

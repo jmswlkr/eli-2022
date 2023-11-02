@@ -10,3 +10,15 @@ export const breakWords = (str) => {
     </>
   )
 }
+
+export const calculateTimeToRead = (text) => {
+  const wpm = 200
+  const words = text.trim().split(/\s+/).length
+  const minutesToRead = Math.ceil(words / wpm)
+
+  return minutesToRead
+}
+
+export const removeNewLineChar = (str) => {
+  return str.replace(/\r?\n|\r/g, '')
+}

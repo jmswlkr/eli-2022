@@ -16,17 +16,22 @@ export const BlogCard = ({ content: c }) => {
   return (
     <div className={container}>
       <div className={imageWrap}>
-        <img src={c.image.src} alt={c.image.alt} />
+        <img
+          src={`${c.mainImage.fields.file.url}?f=face&fit=fill`}
+          alt={'Featured Image'}
+        />
       </div>
       <div className={textWrap}>
         <h2 className={heading}>{c.heading}</h2>
         <p className={subheading}>{c.subheading}</p>
         <div className={meta}>
-          <span>{c.date}</span>
+          <span>{c.publishDate.month} </span>
+          <span>{c.publishDate.day}, </span>
+          <span>{c.publishDate.year}</span>
           <span>•</span>
-          <span>{c.ttr}</span>
+          <span>{c.timeToRead} minute read</span>
         </div>
-        <Button text={c.button.text} path={c.button.link} classes={button} />
+        <Button text='Read More' path={`blog/${c.entryId}`} classes={button} />
       </div>
     </div>
   )
