@@ -1,9 +1,3 @@
-import { BLOG_CONTENT } from './data'
-
-import { useGetContentfulEntriesOfType } from 'utils/contentful/useContentfulDynamic'
-import { calculateTimeToRead } from 'utils/text-helpers'
-import { getYmdObject } from 'utils/date-helpers'
-
 import { ContentLayout } from 'ui-components/content-layout/content-layout'
 import { BlogFeatureCard } from './components/blog-feature-card'
 import { BlogCard } from './components/blog-card'
