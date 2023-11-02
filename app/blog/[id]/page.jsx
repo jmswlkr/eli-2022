@@ -36,7 +36,8 @@ const BlogSingle = async ({ params: { id } }) => {
 export default BlogSingle
 
 function BodyBlock({ block }) {
-  const { heading, paragraph } = block
+  const heading = block?.heading // heading is not req'd
+  const paragraph = block?.paragraph
 
   return (
     <div className={bodyBlock}>
