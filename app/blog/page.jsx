@@ -68,7 +68,7 @@ async function BlogLayout() {
           return <BlogCard key={blog.id} content={blog} />
         })}
       </ul>
-      <Button text='Load More +' classes={button} />
+      {/* <Button text='Load More +' classes={button} /> */}
     </section>
   )
 }
