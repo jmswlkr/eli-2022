@@ -11,7 +11,7 @@ import {
 } from './blog-card.module.scss'
 import { Button } from 'ui-components/general-btn/general-btn'
 
-export const BlogCard = ({ content: c }) => {
+export const BlogCard = ({ content: c, truncated = false }) => {
 
   return (
     <div className={container}>
@@ -23,14 +23,14 @@ export const BlogCard = ({ content: c }) => {
       </div>
       <div className={textWrap}>
         <h2 className={heading}>{c.heading}</h2>
-        <p className={subheading}>{c.subheading}</p>
-        <div className={meta}>
+        {!truncated && <p className={subheading}>{c.subheading}</p>}
+        {!truncated && <div className={meta}>
           <span>{c.publishDate.month} </span>
           <span>{c.publishDate.day}, </span>
           <span>{c.publishDate.year}</span>
           <span>•</span>
           <span>{c.timeToRead} minute read</span>
-        </div>
+        </div>}
         <Button text='Read More' path={`blog/${c.entryId}`} classes={button} />
       </div>
     </div>

@@ -28,7 +28,7 @@ export const BlogFeatureCard = ({ content: c, withMeta = true }) => {
           <span>{c.publishDate.day}, </span>
           <span>{c.publishDate.year}</span>
           <span>•</span>
-          <span>{c.timeToRead} minute read</span>
+          <span>{c.timeToRead || '3'} minute read</span>
         </div>
         {withMeta && (
           <Button

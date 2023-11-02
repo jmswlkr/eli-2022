@@ -22,6 +22,8 @@ import {
   grid,
   button
 } from './blog-index.module.scss'
+import { useGetBlogHeroContent } from './hooks/useGetBlogHeroContent'
+import { useGetBlogListContent } from './hooks/useGetBlogListContent'
 
 const BlogDirectory = () => {
   return (
@@ -74,82 +76,3 @@ async function BlogLayout() {
 }
 
 export default BlogDirectory
-
-// HOOKS
-async function useGetBlogHeroContent() {
-  const data = await useGetContentfulEntriesOfType({ contentType: 'blogPost' })
-
-  function getContentfulBlogReadingTime(entry) {
-    // extract single string of all body text fields
-    const contentString = Object.entries(entry.fields)
-      .filter(([key]) => {
-        return key.startsWith('bodyText')
-      })
-      .map(([_, content]) => {
-        // get text from body content fields
-        return content.fields.paragraph.content[0].content[0].value.replace(
-          /\r?\n|\r/g,
-          ''
-        )
-      })
-      .join(' ')
-
-    return calculateTimeToRead(contentString)
-  }
-
-  const timeToRead = getContentfulBlogReadingTime(data.entries[0])
-
-  function getHeroContent(data) {
-    const { entries } = data
-
-    const latestPost = entries[0].fields
-    const publishDate = getYmdObject(entries[0].sys.createdAt)
-    const entryId = entries[0].sys.id
-    const slug = entries[0].fields.blogId
-
-    return { ...latestPost.heroSection.fields, publishDate, slug, entryId }
-  }
-
-  const heroContent = getHeroContent(data)
-
-  return { ...heroContent, timeToRead }
-}
-async function useGetBlogListContent() {
-  const data = await useGetContentfulEntriesOfType({ contentType: 'blogPost' })
-
-  function getContentfulBlogReadingTime(entry) {
-    // extract single string of all body text fields
-    const contentString = Object.entries(entry.fields)
-      .filter(([key]) => {
-        return key.startsWith('bodyText')
-      })
-      .map(([_, content]) => {
-        // get text from body content fields
-        return content.fields.paragraph.content[0].content[0].value.replace(
-          /\r?\n|\r/g,
-          ''
-        )
-      })
-      .join(' ')
-
-    return calculateTimeToRead(contentString)
-  }
-
-  function getListCardContent(entry) {
-    const latestPost = entry.fields
-    const publishDate = getYmdObject(entry.sys.createdAt)
-    const entryId = entry.sys.id
-    const slug = entry.fields.blogId
-
-    return { ...latestPost.heroSection.fields, publishDate, slug, entryId }
-  }
-
-  const blogList = data.entries.map((entry) => {
-    const timeToRead = getContentfulBlogReadingTime(entry)
-    const cardContent = getListCardContent(entry)
-
-    return { ...cardContent, timeToRead }
-  })
-
-  return blogList;
-}
