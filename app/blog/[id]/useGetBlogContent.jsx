@@ -1,5 +1,5 @@
-import { useGetContentfulEntry } from "utils/contentful/useContentfulEntry"
-import { getYmdObject } from "utils/date-helpers"
+import { useGetContentfulEntry } from 'utils/contentful/useContentfulEntry'
+import { getYmdObject } from 'utils/date-helpers'
 
 export async function useGetBlogContent({ entryId }) {
   const data = await useGetContentfulEntry({ entryId })
@@ -33,13 +33,7 @@ export async function useGetBlogContent({ entryId }) {
   }
 
   function getInterstialQuote({ entry }) {
-    const quote =
-      entry.fields.interstitialQuote.content[0].content[0].value.replace(
-        /\r?\n|\r/g,
-        ''
-      )
-
-    return quote
+    return entry.fields.interstitialQuote
   }
 
   const heroContent = getHeroContent(data)
