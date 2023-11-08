@@ -59,7 +59,7 @@ export const Contact = ({ ctaHeader, ctaBlurb, ctaButtonText }) => {
     )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text)
-        setModalContent(<ContactModalContent type={modal_types.ERROR} />)
+        setModalContent(<ContactModalContent type={modal_types.SUCCESS} />)
         setContentModalOpen(true)
       })
       .catch((err) => {
