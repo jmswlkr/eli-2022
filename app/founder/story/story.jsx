@@ -1,37 +1,33 @@
 import React from 'react'
-import { splitMarkdown } from 'utils/text-helpers'
+import { HeaderParagraph } from 'ui-components/header-paragraph/header-paragraph'
 
 import {
   container,
   block,
   light,
   dark,
-  halves,
-  full,
 } from './story.module.scss'
 
-export const Story = ({ storyBlock1Title, storyBlock1Content, storyBlock2Title, storyBlock2Content }) => {
-
-  const story1Content = splitMarkdown(storyBlock1Content)
-  const story2Content = splitMarkdown(storyBlock2Content)
+export const Story = ({
+  storySection1Title,
+  storySection1Content,
+  storySection2Title,
+  storySection2Content,
+}) => {
 
   return (
     <section className={container}>
       <div className={`${block} ${light}`}>
-        <h2>{storyBlock1Title}</h2>
-        <div className={full}>
-          {story1Content?.map((paragraph, idx) => {
-            return <p key={idx}>{paragraph}</p>
-          })}
-        </div>
+        <HeaderParagraph
+          mainContentHeading={storySection1Title}
+          mainContentParagraph={storySection1Content}
+        />
       </div>
       <div className={`${block} ${dark}`}>
-        <h2>{storyBlock2Title}</h2>
-        <div className={full}>
-          {story2Content?.map((paragraph, idx) => {
-            return <p key={idx}>{paragraph}</p>
-          }) ?? ''}
-        </div>
+        <HeaderParagraph
+          mainContentHeading={storySection2Title}
+          mainContentParagraph={storySection2Content}
+        />
       </div>
     </section>
   )
