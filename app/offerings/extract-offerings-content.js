@@ -22,7 +22,7 @@ export function extractOfferingsContent(content) {
     {
       title: c.consultingHeading,
       text: c.consultingDescriptionText,
-      path: '/offerings/coaching',
+      path: '/offerings/consulting',
       list_header: c.consultingListHeader,
       details_list: c.consultingWhoItsForList,
       image: {
