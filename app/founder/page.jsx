@@ -18,7 +18,6 @@ const Founder = async () => {
     ...PAGE_CONFIG,
     preview: isEnabled,
   })
-  // console.log('founder content__________________: ', content);
 
   const components = [
     PageHero,
