@@ -1,14 +1,14 @@
-// External lib
+import React from 'react'
+import Link from 'next/link'
+import dayjs from 'dayjs'
+
 import {
   connectLinks,
   contactInfo,
   pageLinks,
   socialIcons,
 } from '../navigation-data'
-import Link from 'next/link'
-import React from 'react'
 
-// Styling
 import {
   footer,
   footerMain,
@@ -31,6 +31,7 @@ export const Footer = () => {
   const scrollTop = () => {
     window.scrollTo(0, 0)
   }
+  const currentYear = dayjs().format('YYYY')
 
   return (
     <footer className={footer}>
@@ -84,7 +85,7 @@ export const Footer = () => {
             )
           })}
         </ul>
-        <span className={copyright}>© 2022 Embodied Learning Institute </span>
+        <span className={copyright}>© {currentYear} Embodied Learning Institute </span>
       </div>
       <div className={btt}>
         <button className={bttBtn} onClick={scrollTop}>

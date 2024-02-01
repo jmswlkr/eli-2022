@@ -1,4 +1,4 @@
-import { ContentLayout } from 'ui-components/content-layout/content-layout'
+import { ContentLayout } from '@ui-components/content-layout/content-layout'
 
 const OfferingsTemplate = async ({ children }) => {
 
