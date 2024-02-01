@@ -102,6 +102,10 @@
       background-color: var(--primary);
     }
   }
+  &.sm {
+    font-size: var(--text-md);
+    padding: 0.4rem 1.25rem;
+  }
   &.med {
     font-size: var(--text-ml);
   }

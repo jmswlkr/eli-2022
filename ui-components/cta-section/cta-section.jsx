@@ -4,9 +4,10 @@ import { Button } from 'ui-components/general-btn/general-btn'
 
 import {
   container,
+  content,
   words,
   header,
-  content,
+  paragraph,
   image,
 } from './cta-section.module.scss'
 
@@ -20,8 +21,6 @@ export const CtaSection = ({
   text = '',
   btnText = '',
   btnPath = '',
-  imageUrl = '',
-  imageAlt = '',
   ctaHeader,
   ctaBlurb,
   ctaButtonText,
@@ -29,27 +28,29 @@ export const CtaSection = ({
 }) => {
   return (
     <section className={container}>
-      <div className={words}>
-        {title && text && btnText ? (
-          <>
-            <h3 className={header}>{title}</h3>
-            <p className={content}>{text}</p>
-            <Button text={btnText} path={btnPath} classes='solid med' />
-          </>
-        ) : (
-          <>
-            <h3 className={header}>{ctaHeader}</h3>
-            <p className={content}>{ctaBlurb}</p>
-            <Button
-              text={ctaButtonText}
-              path={ctaLinkedPage}
-              classes='solid med'
-            />
-          </>
-        )}
-      </div>
-      <div className={image}>
-        <img src={IMG_DEFAULTS.url} alt={IMG_DEFAULTS.alt} />
+      <div className={content}>
+        <div className={words}>
+          {title && text && btnText ? (
+            <>
+              <h3 className={header}>{title}</h3>
+              <p className={paragraph}>{text}</p>
+              <Button text={btnText} path={btnPath} classes='solid med' />
+            </>
+          ) : (
+            <>
+              <h3 className={header}>{ctaHeader}</h3>
+              <p className={paragraph}>{ctaBlurb}</p>
+              <Button
+                text={ctaButtonText}
+                path={ctaLinkedPage}
+                classes='solid med'
+              />
+            </>
+          )}
+        </div>
+        <div className={image}>
+          <img src={IMG_DEFAULTS.url} alt={IMG_DEFAULTS.alt} />
+        </div>
       </div>
     </section>
   )
