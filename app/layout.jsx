@@ -8,6 +8,8 @@ import '../styles/global.scss'
 import '../styles/utils.scss'
 import '../styles/variables.scss'
 import '../styles/react-calendar.scss'
+import '../styles/tailwind.typography.scss'
+import '../styles/tailwind.utils.scss'
 
 const RootLayout = ({ children }) => {
   return (

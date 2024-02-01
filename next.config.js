@@ -6,9 +6,6 @@ const nextConfig = {
   },
   env: {
     EMAILJS_USER_ID: process.env.EMAILJS_USER_ID
-  },
-  experimental: {
-    appDir: true
   }
 }
 
