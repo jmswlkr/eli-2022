@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from 'ui-components/general-btn/general-btn'
-import { SectionHeader } from 'ui-components/section-header'
+import { SectionHeader } from 'ui-components/headings/section-header'
 
 import { cards } from './intro-data'
 

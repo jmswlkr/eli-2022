@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 
-import { useToggleScroll } from 'hooks/useToggleScrolll'
+import { useToggleScroll } from '@hooks/useToggleScrolll'
 
 const defaultOptions = {
   modalContent: null,

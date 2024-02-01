@@ -13,7 +13,7 @@ import { fadeIn } from 'animation/fade'
 
 import { PlayButton } from 'ui-components/svg/play-button'
 import { QuoteMark } from 'ui-components/svg/quote-mark'
-import { SectionHeader } from 'ui-components/section-header'
+import { SectionHeader } from 'ui-components/headings/section-header'
 import { useAnimationControls } from './useAnimationControls'
 import { extractTestimonials } from './extract-testimonials'
 

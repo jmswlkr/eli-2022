@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { send } from '@emailjs/browser'
 
-import { useLayoutContext } from 'app/(context)/layout.context'
+import { useLayoutContext } from '@context/layout.context'
 
-import { SectionHeader } from 'ui-components/section-header'
+import { SectionHeader } from 'ui-components/headings/section-header'
 import { Button } from 'ui-components/general-btn/general-btn'
 
 import {
