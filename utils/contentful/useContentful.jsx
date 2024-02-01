@@ -17,10 +17,10 @@ export const useContentful = async ({
       data['defaultImage'] = defaultImage
     }
 
-    return { content: data, error: null }
+    return { content: data, entry, error: null }
   } catch (error) {
     console.log("_____error_____:",error)
 
-    return { content: null, error }
+    return { content: null, entry: null, error }
   }
 }
