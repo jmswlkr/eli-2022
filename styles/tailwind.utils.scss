@@ -1,0 +1,127 @@
+// TAILWIND UTILITY CLASSES
+
+// DIMENSIONS
+.full {
+  height: 100%;
+  width: 100%;
+}
+
+.full-screen {
+  height: 100lvh;
+  width: 100lvw;
+}
+
+// POSITION
+.fixed-tl {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.absolute-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.absolute-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.absolute-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.absolute-center-x {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0%;
+}
+.absolute-center-y {
+  position: absolute;
+  top: 50%;
+  translate: 0% -50%;
+}
+
+// FLEX
+.flex-tl {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col-center-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-col-center-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-col-tl {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.flex-col-bl {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+// SHADES & BG
+.card-bg {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(4px);
+}
+
+// SHAPES
+.triangle-1 {
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+.trap-left-1 {
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    10% 100%
+  );
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+}
+.trap-right-1 {
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    93% 100%,
+    0% 100%
+  );
+  clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+}

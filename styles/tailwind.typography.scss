@@ -1,0 +1,120 @@
+// TW TYPOGRAPHY CLASSES
+
+// HEADINGS
+.display-1 {
+  font-size: 150px;
+  font-family: var(--font-display);
+  line-height: 70%;
+  letter-spacing: var(--tracking-xl);
+  @media (max-width: 1024px) {
+    font-size: 100px;
+  }
+  @media (max-width: 592px) {
+    font-size: 56px;
+    letter-spacing: var(--tracking-lg);
+  }
+}
+
+.display-2 {
+  font-size: 136px;
+  font-family: var(--font-display);
+  line-height: 70%;
+  letter-spacing: var(--tracking-xl);
+  @media (max-width: 1024px) {
+    font-size: 88px;
+  }
+  @media (max-width: 592px) {
+    font-size: 46px;
+    letter-spacing: var(--tracking-lg);
+  }
+}
+
+// use in section headers
+.head-1 {
+  font-size: 80px;
+  font-family: var(--font-display);
+  line-height: 100%;
+  @media (max-width: 1024px) {
+    font-size: 56px !important;
+  }
+  @media (max-width: 592px) {
+    font-size: 48px !important;
+  }
+}
+.head-2 {
+  font-size: 56px;
+  @media (max-width: 1024px) {
+    font-size: 48px;
+  }
+  @media (max-width: 592px) {
+    font-size: 40px;
+  }
+}
+.head-3 {
+  font-size: 36px;
+  @media (max-width: 1024px) {
+    font-size: 28px;
+  }
+  @media (max-width: 592px) {
+    font-size: 24px;
+  }
+}
+.head-4 {
+  font-size: 32px;
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+  @media (max-width: 592px) {
+    font-size: 20px;
+  }
+}
+.head-1,
+.head-2,
+.head-3,
+.head-4 {
+  line-height: 100%;
+  font-family: var(--font-semibold);
+}
+
+// PARAGRAPH
+.par-1 {
+  font-size: 20px;
+  @media (max-width: 1024px) {
+    font-size: 16px !important;
+  }
+}
+
+// BUTTON
+.button-1 {
+  text-transform: uppercase;
+  font-weight: semibold;
+  letter-spacing: 10px;
+  font-size: 20px;
+  @media (max-width: 1024px) {
+    font-size: 16px;
+    letter-spacing: 5px;
+  }
+}
+
+// LINK
+.link-1 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @media (max-width: 592px) {
+    font-size: 16px;
+  }
+}
+
+.link-2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+// META TEXT
+.meta-1 {
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}

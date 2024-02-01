@@ -194,6 +194,7 @@
   --snapdragon: #f4f7f8;
   --french-blue: #426e8d;
   --ocean-blue: #2b5879;
+  --deep-blue: #173245;
   --vivid-blue: #2177bb;
   --vivid-blue: #0d85e3;
   --tangerine: #f27347;
@@ -221,10 +222,10 @@
   --primary-tr-2: hsla(var(--river-hsl), 0.15);
   --primary-tr-3: hsla(var(--river-hsl), 0.1);
   --primary-tr-4: hsla(var(--river-hsl), 0.6);
-
+  
   --primary-dark: hsl(var(--primary-hs), 20%);
   --primary-darker: hsl(var(--primary-hs), 15%);
-
+  
   --primary-darker-tr-1: hsl(var(--primary-hs), 10%, 75%);
   
   --primary-light: hsl(var(--primary-hs), 65%);
@@ -235,6 +236,17 @@
   --primary-deep: var(--ocean-blue);
   
   --primary-bg: var(--snapdragon);
+  
+  // + tokens | primary | tailwindcss
+  --reference-300: var(--vivid-blue);
+  --reference-500: var(--french-blue);
+  --reference-600: var(--ocean-blue);
+  --reference-900: var(--deep-blue);
+  --color-primary-300: 13 133 227;
+  --color-primary-500: 66 110 141;
+  --color-primary-600: 43 88 121;
+  --color-primary-900: 23 50 69;
+
   
   // + tokens | accent
   --accent: var(--lotus-blossom);
