@@ -20,7 +20,7 @@ export const HeaderParagraph = ({
 
   return (
     <div className={container}>
-      <h5 className={header}>{mainContentHeading}</h5>
+      {mainContentHeading && <h4 className={header}>{mainContentHeading}</h4>}
       <p className={contentStyle}>
         {documentToReactComponents(mainContentParagraph, formattingOptions)}
       </p>
