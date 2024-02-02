@@ -4,9 +4,9 @@ import { useContentful } from 'utils/contentful/useContentful'
 import { PAGE_CONFIG } from './page-config'
 import { extractOfferingsContent } from './extract-offerings-content'
 
-import { HeaderParagraph } from 'ui-components/header-paragraph/header-paragraph'
-import { OfferingBlock } from './_components/offering-block/offering-block'
-import { PageHero } from 'ui-components/page-hero/page-hero'
+import { HeaderParagraph } from '@/ui-components/header-paragraph/header-paragraph'
+import { HeroSecondary } from '@/ui-components/hero/secondary'
+import { OfferingBlock } from './_components/offering-block'
 
 const Offerings = async () => {
   const { isEnabled } = draftMode()
@@ -26,7 +26,7 @@ const Offerings = async () => {
 
   return (
     <>
-      <PageHero {...heroContent} />
+      <HeroSecondary {...content.hero.fields}/>
       <HeaderParagraph
         mainContentHeading={content.mainContentHeading}
         mainContentParagraph={content.mainContentParagraph}
