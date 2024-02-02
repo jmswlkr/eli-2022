@@ -20,11 +20,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@animation/*": ["animation/*"],
-      "@context/*": ["app/(context)/*"],
-      "@hooks/*": ["hooks/*"],
-      "@ui-components/*": ["ui-components/*"],
-      "@utils/*": ["utils/*"]
+      "@/animation/*": ["animation/*"],
+      "@/context/*": ["app/(context)/*"],
+      "@/hooks": ["hooks/index.js"],
+      "@/ui-components/*": ["ui-components/*"],
+      "@/utils/*": ["utils/*"]
     },
     "strictNullChecks": true
   },
