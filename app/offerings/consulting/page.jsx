@@ -1,21 +1,28 @@
-import React from 'react'
-import { ComingSoon } from 'ui-components/coming-soon/coming-soon'
-import { CtaSection } from 'ui-components/cta-section/cta-section'
-import { PageHero } from 'ui-components/page-hero/page-hero'
-import { PLACEHOLDER_DATA } from './placeholder-data'
+import { draftMode } from 'next/headers'
 
-const { hero, cta } = PLACEHOLDER_DATA;
+import { useContentful } from '@/utils/contentful/useContentful'
 
-const OrganizationalConsulting = () => {
+import { ComingSoon } from '@/ui-components/coming-soon/coming-soon'
+import { CtaSection } from '@/ui-components/cta-section/cta-section'
+import { HeroSecondary } from '@/ui-components/hero/secondary'
+
+import { PAGE_CONFIG } from './page-config'
+
+const OrganizationalConsulting = async () => {
+  const { isEnabled } = draftMode()
+
+  const { content } = await useContentful({
+    ...PAGE_CONFIG,
+    preview: isEnabled
+  })
+  console.log('content from consulting page: ', content)
+
   return (
     <div>
-      <PageHero {...hero} />
+      {/* <PageHero {...hero} /> */}
+      <HeroSecondary {...content.hero.fields} />
       <ComingSoon />
-      <CtaSection {...cta}/>
+      {/* <CtaSection {...cta}/> */}
     </div>
   )
 }
-
-export default OrganizationalConsulting
-
-

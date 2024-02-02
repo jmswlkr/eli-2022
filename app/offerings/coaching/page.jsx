@@ -10,6 +10,7 @@ import { CoachingBlock } from './coaching-block'
 import { container, welcome, intro, ethos } from './page.module.scss'
 import { PageHero } from 'ui-components/page-hero/page-hero'
 import { CtaSection } from 'ui-components/cta-section/cta-section'
+import { HeroSecondary } from '@/ui-components/hero/secondary'
 
 
 const LeadershipCoaching = async () => {
@@ -64,7 +65,7 @@ const LeadershipCoaching = async () => {
 
   return (
     <>
-      <PageHero {...heroContent} />
+      <HeroSecondary {...content.hero.fields}/>
       <div className={container}>
         <section className={intro}>
           {introContent.map(({ heading, paragraph }) => {
