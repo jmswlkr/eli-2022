@@ -3,6 +3,7 @@ import { Button } from '@/ui-components/general-btn/general-btn'
 
 export const HeroSecondary = ({
   titleSegments,
+  subtitle,
   imageUrl,
   buttonText = null,
   buttonPath = null
@@ -17,6 +18,7 @@ export const HeroSecondary = ({
                 return <span key={segment}>{segment}</span>
               })}
             </h1>
+            {subtitle && <p className='SUBTITLE head-3 italic text-primary-500 !font-thin'>{subtitle}</p>}
             {buttonText && (
               <Button
                 text={buttonText}
@@ -25,7 +27,7 @@ export const HeroSecondary = ({
               />
             )}
           </div>
-          <div className='CIRCLE_DECORATION absolute-center aspect-square h-1/2 lg:h-2/3 z-10'>
+          <div className='CIRCLE_DECORATION absolute-center aspect-square h-1/2 z-10'>
             <img
               className='absolute-img contain'
               src='/circle-decoration.png'
