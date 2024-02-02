@@ -98,7 +98,6 @@
 
 // COMPONENTS
 .hero-container-1 {
-
 }
 .hero-container-2 {
   height: 65vh;
@@ -106,6 +105,18 @@
   @media (max-width: 592px) {
     height: 50vh;
   }
+}
+.hero-container-3 {
+  height: 55vh;
+  margin-top: calc(2 * var(--nav-height));
+  @media (max-width: 1024px) {
+    height: auto;
+  }
+}
+
+.bordered-list-wrapper {
+  border-left: 1px solid rgba(var(--color-primary-900) / 50);
+  padding: 5px 25px;
 }
 
 // SHAPES

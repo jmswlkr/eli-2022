@@ -68,19 +68,38 @@
     font-size: 20px;
   }
 }
+.head-5 {
+  font-size: 28px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media (max-width: 592px) {
+    font-size: 16px;
+  }
+}
 .head-1,
 .head-2,
 .head-3,
-.head-4 {
+.head-4,
+.head-5 {
   line-height: 100%;
   font-family: var(--font-semibold);
 }
 
+// BANNER
+.banner-1 {
+  font-size: 36px;
+  font-family: var(--font-med);
+}
+
 // PARAGRAPH
 .par-1 {
-  font-size: 20px;
+  font-size: 24px;
   @media (max-width: 1024px) {
-    font-size: 16px !important;
+    font-size: 20px;
+  }
+  @media (max-width: 592px) {
+    font-size: 16px;
   }
 }
 

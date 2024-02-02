@@ -5,10 +5,18 @@ import {
   header,
   content as contentStyle
 } from './header-paragraph.module.scss'
+import { twm } from '@/utils/tailwind/tw-merge'
+
+// TODO: Rewrite styles with tailwind.
 
 export const HeaderParagraph = ({
   mainContentHeading,
-  mainContentParagraph
+  mainContentParagraph,
+  classes = {
+    wrapper: '',
+    heading: '',
+    paragraph: ''
+  }
 }) => {
   const formattingOptions = {
     renderText: (text) => {
@@ -19,9 +27,11 @@ export const HeaderParagraph = ({
   }
 
   return (
-    <div className={container}>
-      {mainContentHeading && <h4 className={header}>{mainContentHeading}</h4>}
-      <p className={contentStyle}>
+    <div className={twm(container, classes.wrapper)}>
+      {mainContentHeading && (
+        <h4 className={twm(header, 'head-4', classes.header)}>{mainContentHeading}</h4>
+      )}
+      <p className={twm(contentStyle, 'par-1', classes.paragraph)}>
         {documentToReactComponents(mainContentParagraph, formattingOptions)}
       </p>
     </div>

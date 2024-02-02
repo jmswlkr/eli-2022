@@ -1,5 +1,4 @@
 .container {
-  margin-bottom: var(--intracontent-margin);
   display: flex;
   gap: 1ch;
   flex-direction: column;
@@ -8,23 +7,14 @@
 }
 .header {
   font-family: var(--font-med);
-  font-size: 48px;
-  font-size: var(--text-header-xs);
 
   color: var(--primary);
   letter-spacing: 1px;
 
 }
 .content {
-  font-size: var(--text-prose-em);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  @media (max-width: 1024px) {
-    font-size: 28px !important;
-  }
-  @media (max-width: 592px) {
-    font-size: 20px !important;
-  }
+  gap: 2ch;
 }
 

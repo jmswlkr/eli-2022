@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: flex-end;
   background-color: var(--primary-bg);
+  overflow-x: hidden;
   &::after {
     position: fixed;
     top: 0;
