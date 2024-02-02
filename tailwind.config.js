@@ -3,7 +3,7 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './ui-components/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
@@ -14,15 +14,15 @@ module.exports = {
       },
       fontFamily: {
         display: ['var(--font-title)'],
-        body: ['var(--font-med)'],
+        body: ['var(--font-med)']
       },
       colors: {
         primary: {
           300: 'rgba(var(--color-primary-300) / <alpha-value>)',
           500: 'rgba(var(--color-primary-500) / <alpha-value>)',
           600: 'rgba(var(--color-primary-600) / <alpha-value>)',
-          900: 'rgba(var(--color-primary-900) / <alpha-value>)',
-        },
+          900: 'rgba(var(--color-primary-900) / <alpha-value>)'
+        }
       },
       gap: {
         sm: '10px',
@@ -31,7 +31,7 @@ module.exports = {
         ml: '40px',
         lg: '50px',
         xl: '75px',
-        xxl: '100px',
+        xxl: '100px'
       },
       spacing: {
         xs: '5px',
@@ -41,9 +41,9 @@ module.exports = {
         ml: '40px',
         lg: '50px',
         xl: '75px',
-        xxl: '100px',
-      },
-    },
+        xxl: '100px'
+      }
+    }
   },
   plugins: []
 }

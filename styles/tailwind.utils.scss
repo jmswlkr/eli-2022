@@ -96,10 +96,16 @@
   align-items: flex-start;
 }
 
-// SHADES & BG
-.card-bg {
-  background: var(--color-card-bg);
-  backdrop-filter: blur(4px);
+// COMPONENTS
+.hero-container-1 {
+
+}
+.hero-container-2 {
+  height: 65vh;
+  margin-top: var(--nav-height);
+  @media (max-width: 592px) {
+    height: 50vh;
+  }
 }
 
 // SHAPES
