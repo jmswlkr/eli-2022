@@ -14,7 +14,8 @@ module.exports = {
       },
       fontFamily: {
         display: ['var(--font-title)'],
-        body: ['var(--font-med)']
+        body: ['var(--font-med)'],
+        thin: ['var(--font-reg)'],
       },
       colors: {
         primary: {

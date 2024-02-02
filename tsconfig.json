@@ -28,6 +28,6 @@
     },
     "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "app/offerings/training/events/[slug]/page.jsx", "app/offerings/training/categories/[slug]/page.jsx"],
   "exclude": ["node_modules"]
 }
