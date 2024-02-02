@@ -7,10 +7,12 @@ import { PLACEHOLDER_DATA } from './placeholder-data'
 
 import { CtaSection } from 'ui-components/cta-section/cta-section'
 import { PageHero } from 'ui-components/page-hero/page-hero'
-import { ParagraphHeader } from '@ui-components/headings/paragraph-header'
-import { HeaderParagraphList } from '@ui-components/header-paragraph/header-paragraph-list'
+import { HeroSecondary } from '@/ui-components/hero/secondary'
+import { ParagraphHeader } from '@/ui-components/headings/paragraph-header'
+import { HeaderParagraphList } from '@/ui-components/header-paragraph/header-paragraph-list'
 import { TrainingCard } from '../_components/training-event-card'
 import { TrainingCategoryCard } from '../_components/training-category-card'
+import { TestComponent } from '../_components/test'
 
 const { cta } = PLACEHOLDER_DATA
 
@@ -29,7 +31,8 @@ const TrainingPage = async () => {
   return (
     <>
       {/* HERO */}
-      <PageHero {...content} />
+      {/* <PageHero {...content} /> */}
+      <HeroSecondary {...content.hero.fields}/>
 
       {/* INTRO */}
       <HeaderParagraphList paragraphs={content.mainContentParagraphs} />
@@ -53,6 +56,9 @@ const TrainingPage = async () => {
           })}
         </div>
       </section>
+      
+      {/* TEST */}
+      <TestComponent content={content}/>
 
       {/* <div className="my-24 bg-primary-500/20 w-full h-[.5px]"></div> */}
 

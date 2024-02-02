@@ -1,4 +1,4 @@
-import { twm } from '@utils/tailwind/tw-merge'
+import { twm } from '@/utils/tailwind/tw-merge'
 
 export const ContentfulImageBlock = ({ contentfulData, classes }) => {
   const src = contentfulData.fields.file.url
