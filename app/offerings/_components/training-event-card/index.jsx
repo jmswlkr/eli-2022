@@ -9,8 +9,9 @@ import { ContentfulImageBlock } from '@/ui-components/contentful-image-block'
 dayjs.extend(advancedFormat)
 
 export const TrainingCard = ({ event, entry }) => {
+  console.log('event: ', event);
   const formattedDate = dayjs(event.eventDate).format('MMMM Do, YYYY')
-  const category = event.categoryEntry.fields.categoryTag
+  const category = event?.categoryEntry?.fields?.categoryTag
 
   return (
     <article className='auto-rows-auto rounded-xl lg:grid-cols-2 grid w-full h-auto grid-cols-1 overflow-hidden'>
@@ -26,11 +27,20 @@ export const TrainingCard = ({ event, entry }) => {
           <h3 className='HEADING head-3 text-primary-900 lg:order-first order-last'>
             {event.eventTitle}
           </h3>
-          <span className='DIVIDER lg:block hidden'>|</span>
-          <span className='CATEGORY meta-1'>{category}</span>
+          {category && (
+            <>
+              <span className='DIVIDER lg:block hidden'>|</span>
+              <span className='CATEGORY meta-1'>{category}</span>
+            </>
+          )}
         </div>
         <p className='PARAGRAPH'>{event.eventDescriptionTeaser}</p>
-        <Button text='Sign Up →' path={`${4}`} classes='med ' />
+        <Button
+          text='Sign Up →'
+          path={`/offerings/training/events/${event.pageSlug}`}
+          classes='sm'
+        />
+        {/* TODO: Include buttons for read more and sign up. */}
       </div>
       <div className='h-[25vh] order-first lg:order-last lg:h-auto relative'>
         <ContentfulImageBlock contentfulData={event.imageMain} />
