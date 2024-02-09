@@ -1,4 +1,4 @@
-export const CONTENTFUL_CONTENT_KEYS = {
+export const CONTENTFUL_CONTENT_ENTRY_KEYS = {
   HOME: '2peFXvBUiCt2gM8eCh4NoD',
   FOUNDER: '6YLVKd81WK2Z6eASH3POSc',
   ABOUT: '70mLmJNDh6kzGJ3PxN9KHd',
@@ -7,4 +7,11 @@ export const CONTENTFUL_CONTENT_KEYS = {
   TRAINING: '63s5rZ2VzX3bqrCNod54wn',
   CONSULTING: '1a0Yhcvi6tHsW5HPtyokSb',
   BLOG: '65QVnOu4ILMIb3WDUANNgp'
+}
+
+export const CONTENTFUL_CONTENT_TYPE_KEYS = {
+  BLOG_DIRECTORY: 'blogDirectoryPage',
+  BLOG_POST: 'blogPost',
+  TRAINING_CATEGORY: 'offeringsTrainingCategoryPage',
+  TRAINING_EVENT: 'offeringsTrainingEventPage',
 }
