@@ -17,18 +17,18 @@
   font-size: 152px;
 }
 .title {
-  @include headerText;
-  margin: 0 !important;
-  margin-bottom: var(--space-lg);
+  // @include headerText;
+  // margin: 0 !important;
+  // margin-bottom: var(--space-lg);
   &.left {
     text-align: left;
   }
-  @media (max-width: 1024px) {
-    font-size: 48px !important;
-  }
-  @media (max-width: 592px) {
-    font-size: 40px !important;
-  }
+  // @media (max-width: 1024px) {
+  //   font-size: 48px !important;
+  // }
+  // @media (max-width: 592px) {
+  //   font-size: 40px !important;
+  // }
 }
 
 .label {

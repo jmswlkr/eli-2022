@@ -306,6 +306,7 @@
   --nav-height: 9vh;
 
   // + tokens | layout
+  --reading-content-width: min(90ch, 100%);
   --content-width: 1200px;
   --content-width: 1400px; // TODO - Reevaluate layout with this width
   --column-width: calc(var(--content-width) / 3);

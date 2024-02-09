@@ -16,7 +16,8 @@ module.exports = {
         display: ['var(--font-title)'],
         subdisplay: ['var(--font-subtitle)'],
         body: ['var(--font-med)'],
-        thin: ['var(--font-reg)'],
+        light: ['var(--font-reg)'],
+        italic: ['var(--font-italic)'],
       },
       colors: {
         primary: {
