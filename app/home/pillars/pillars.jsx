@@ -1,13 +1,9 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 
-import { baseUrl } from '/utils/cloudinary'
-import { pillarData } from './pillar-data'
-
-import { fadeIn } from 'animation/fade'
-import { phases } from 'animation/transition'
+import { baseUrl } from '@/utils'
 
 import {
   pillars,
@@ -46,18 +42,18 @@ import {
   padded,
   cardHeading
 } from './pillars.module.scss'
-import { useScrollOnMount } from 'hooks/useScrollOnMount'
-import { useResize } from 'hooks/useResize'
+import { useScrollOnMount } from '@/hooks'
 
 import {
   FlowerIcon,
   StonesIcon,
   ThoughtIcon,
   YogaIcon
-} from 'ui-components/svg/pillar-icons'
-import { breakWords } from 'utils/text-helpers'
-import { useLayoutContext } from 'app/(context)/layout.context'
-import { ChevronIcon } from 'ui-components/svg/chevron'
+} from '@/ui-components'
+import { breakWords } from '@/utils'
+import { useLayoutContext } from '@/context'
+import { ChevronIcon } from '@/ui-components'
+import { HeaderParagraph } from '@/ui-components'
 
 export const Pillars = ({
   pillarsTitleSubtitle,
@@ -72,6 +68,7 @@ export const Pillars = ({
   pillarsCard4Text
 }) => {
   const [curPillar, setCurPillar] = useState(null)
+  console.log('pillarsMainText: ', pillarsMainText);
 
   useScrollOnMount()
 
@@ -80,28 +77,32 @@ export const Pillars = ({
       id: 'sensibilities-01',
       path: '/',
       title: breakWords(pillarsCard1Title),
-      text: <>{pillarsCard1Text}</>,
+      text: pillarsCard1Text,
+      // text: <>{pillarsCard1Text}</>,
       icon: <StonesIcon />
     },
     {
       id: 'presence-02',
       path: '/',
       title: breakWords(pillarsCard2Title),
-      text: <>{pillarsCard2Text}</>,
+      text: pillarsCard2Text,
+      // text: <>{pillarsCard2Text}</>,
       icon: <YogaIcon />
     },
     {
       id: 'discernment-03',
       path: '/',
       title: breakWords(pillarsCard3Title),
-      text: <>{pillarsCard3Text}</>,
+      text: pillarsCard3Text,
+      // text: <>{pillarsCard3Text}</>,
       icon: <ThoughtIcon />
     },
     {
       id: 'learning-04',
       path: '/',
       title: breakWords(pillarsCard4Title),
-      text: <>{pillarsCard4Text}</>,
+      text: pillarsCard4Text,
+      // text: <>{pillarsCard4Text}</>,
       icon: <FlowerIcon />
     }
   ]
@@ -113,12 +114,14 @@ export const Pillars = ({
           <h2 className={title}>{pillarsTitleSubtitle[0]}</h2>
           <p className={subtitle}>{pillarsTitleSubtitle[1]}</p>
           <p className={text}>
-            <span>{pillarsMainText}</span>
+            <HeaderParagraph mainContentParagraph={pillarsMainText}/>
+            {/* <span>{pillarsMainText}</span> */}
           </p>
         </div>
       </div>
       <div className={pillarCardsGrid}>
         {contentfulPillars.map((plr, idx) => {
+          console.log('plr: ', plr)
           return (
             <PillarCard
               key={plr.id}
@@ -153,12 +156,7 @@ function PillarCard({ idx, title, icon, handleHoverPillar, allPillars }) {
   // set modal open and inject content.
   const handleOpenAndPopulateModal = () => {
     setContentModalOpen(!contentModalOpen)
-    setModalContent(
-      <PillarsModal
-        allPillars={allPillars}
-        curIdx={idx}
-      />
-    )
+    setModalContent(<PillarsModal allPillars={allPillars} curIdx={idx} />)
   }
 
   return (
@@ -176,18 +174,19 @@ function PillarsModal({ allPillars, idx = 0 }) {
   const [curIdx, setCurIdx] = useState(idx)
 
   const { icon, title, text } = allPillars[curIdx]
+  console.log('text: ', text)
 
   const handleCyclePillars = (direction) => {
     if (direction === 'next') {
       if (curIdx < allPillars.length - 1) {
-        setCurIdx(prvIdx => prvIdx + 1)
+        setCurIdx((prvIdx) => prvIdx + 1)
       } else {
         setCurIdx(0)
       }
     }
     if (direction === 'prev') {
       if (curIdx > 0) {
-        setCurIdx(prvIdx => prvIdx - 1)
+        setCurIdx((prvIdx) => prvIdx - 1)
       } else {
         setCurIdx(allPillars.length - 1)
       }
@@ -200,7 +199,10 @@ function PillarsModal({ allPillars, idx = 0 }) {
         <div className={modalIcon}>{icon}</div>
         <h2 className={modalTitle}>{title}</h2>
         <div className={modalDivider}></div>
-        <p className={modalText}>{text}</p>
+        <div className={modalText}>
+          <HeaderParagraph mainContentParagraph={text} />
+        </div>
+        {/* <p className={modalText}>{text}</p> */}
       </div>
       <div className={modalNavigation}>
         <button
@@ -221,7 +223,11 @@ function PillarsModal({ allPillars, idx = 0 }) {
           const activeStyle = pillar.title === title ? active : ''
 
           return (
-            <li onClick={() => setCurIdx(idx)} className={`${modalNavItem} ${activeStyle}`} key={pillar.id}>
+            <li
+              onClick={() => setCurIdx(idx)}
+              className={`${modalNavItem} ${activeStyle}`}
+              key={pillar.id}
+            >
               {pillar.title}
             </li>
           )

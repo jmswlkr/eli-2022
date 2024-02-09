@@ -28,7 +28,7 @@
 
   &:nth-child(2),
   &:nth-child(3) {
-    font-family: var(--font-semibold);
+    font-family: var(--font-bold);
   }
 
   @media (max-width: 592px) {
@@ -48,7 +48,7 @@
   &.inline {
     display: inline;
     a {
-      font-family: var(--font-semibold);
+      font-family: var(--font-bold);
       color: var(--primary);
     }
   }

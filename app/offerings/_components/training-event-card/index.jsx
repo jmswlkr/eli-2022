@@ -3,8 +3,8 @@
 import * as dayjs from 'dayjs'
 import * as advancedFormat from 'dayjs/plugin/advancedFormat'
 
-import { Button } from '@/ui-components/general-btn/general-btn'
-import { ContentfulImageBlock } from '@/ui-components/contentful-image-block'
+import { Button } from '@/ui-components'
+import { ContentfulImageBlock } from '@/ui-components'
 
 dayjs.extend(advancedFormat)
 
@@ -43,7 +43,7 @@ export const TrainingCard = ({ event, entry }) => {
         {/* TODO: Include buttons for read more and sign up. */}
       </div>
       <div className='h-[25vh] order-first lg:order-last lg:h-auto relative'>
-        <ContentfulImageBlock contentfulData={event.imageMain} />
+        <ContentfulImageBlock contentfulImage={event.imageMain} />
       </div>
     </article>
   )

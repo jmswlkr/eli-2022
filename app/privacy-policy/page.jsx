@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ContentLayout } from 'ui-components/content-layout/content-layout'
+import { ContentLayout } from '@/ui-components'
 
 import { header, block, subheader, content } from './privacy-policy.module.scss'
 

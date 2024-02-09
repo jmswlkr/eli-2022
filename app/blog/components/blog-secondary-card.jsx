@@ -1,0 +1,37 @@
+'use client'
+
+import { getUsaDateFromISO } from '@/utils'
+
+import { Button } from '@/ui-components'
+import { ContentfulImageBlock } from '../../../ui-components/contentful-image-block'
+
+export const BlogSecondaryCard = ({ content, truncated = false }) => {
+  console.log('content: ', content)
+
+  const formattedDate = getUsaDateFromISO(content.sys.createdAt)
+
+  const {
+    fields: {
+      heroSection: { fields: card }
+    }
+  } = content
+
+  console.log('card: ', card)
+  return (
+    <div className='BLOG_CARD_CONTAINER gap-md flex-col-tl'>
+      <div className='IMAGE WRAP h-[30vh] w-full relative'>
+        <ContentfulImageBlock contentfulImage={card.mainImage} />
+      </div>
+      <div className='TEXT_WRAP gap-md flex-col-tl'>
+        <h2 className='HEADING head-4 lg:head-2 font-semibold'>{card.heading}</h2>
+        <p className='SUBHEADING lg:block hidden'>{card.subheading}</p>
+        <div className='META lg:flex gap-[.5ch] hidden'>
+          <span>{formattedDate}</span>
+          <span>•</span>
+          <span>4 minute read</span>
+        </div>
+        <Button text='Read More' path={`blog/`} classes='sm ' />
+      </div>
+    </div>
+  )
+}

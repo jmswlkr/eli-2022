@@ -1,11 +1,11 @@
 import { draftMode } from 'next/headers'
 
-import { useContentfulEntryByParams } from '@/utils/contentful/useContentfulEntryByParams'
+import { useContentfulEntryByParams } from '@/utils'
 
-import { HeroTertiary } from '@/ui-components/hero/tertiatry'
-import { CtaSection } from '@/ui-components/cta-section'
-import { ParagraphHeader } from '@/ui-components/headings/paragraph-header'
-import { HeaderParagraph } from '@/ui-components/header-paragraph/header-paragraph'
+import { HeroTertiary } from '@/ui-components'
+import { CtaSection } from '@/ui-components'
+import { ParagraphHeader } from '@/ui-components'
+import { HeaderParagraph } from '@/ui-components'
 
 import { EventBanner } from '../../../_components/event-banner'
 

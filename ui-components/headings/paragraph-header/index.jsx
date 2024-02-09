@@ -1,4 +1,4 @@
-import { twm } from '@/utils/tailwind/tw-merge'
+import { twm } from '@/utils'
 
 import { header } from './paragraph-header.module.scss'
 

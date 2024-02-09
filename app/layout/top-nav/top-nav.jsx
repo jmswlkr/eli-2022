@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 import { pageLinks } from '../navigation-data'
 
-import { Logo } from 'ui-components/logo/logo'
+import { Logo } from '@/ui-components'
 
 import {
   topNav,

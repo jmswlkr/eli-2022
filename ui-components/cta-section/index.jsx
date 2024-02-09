@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from 'ui-components/general-btn/general-btn'
+import { Button } from '@/ui-components'
 
 import {
   container,
@@ -44,7 +44,7 @@ export const CtaSection = ({
           <Button text={buttonText} path={buttonLink} classes='solid med' />
         </div>
         <div className={imageStyle}>
-          <ContentfulImageBlock contentfulData={image} />
+          <ContentfulImageBlock contentfulImage={image} />
         </div>
       </div>
     </section>

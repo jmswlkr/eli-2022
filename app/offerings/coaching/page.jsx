@@ -1,16 +1,15 @@
 import React from 'react'
 import { draftMode } from 'next/headers'
 
-import { useContentful } from 'utils/contentful/useContentful'
+import { useContentful } from '@/utils'
 import { PAGE_CONFIG } from './page-config'
 
-import { HeaderParagraph } from 'ui-components/header-paragraph/header-paragraph'
+import { HeaderParagraph } from '@/ui-components'
 import { CoachingBlock } from './coaching-block'
 
 import { container, welcome, intro, ethos } from './page.module.scss'
-import { PageHero } from 'ui-components/page-hero/page-hero'
-import { CtaSection } from 'ui-components/cta-section/cta-section'
-import { HeroSecondary } from '@/ui-components/hero/secondary'
+import { CtaSection } from '@/ui-components'
+import { HeroSecondary } from '@/ui-components'
 
 
 const LeadershipCoaching = async () => {
@@ -20,14 +19,6 @@ const LeadershipCoaching = async () => {
     ...PAGE_CONFIG,
     preview: isEnabled,
   })
-
-  const heroContent = {
-    heroHeaderLines: content.heroHeaderLines,
-    heroImage: content.heroImage,
-    heroButtonText: 'Get Started'
-  }
-
-  const { quoteText } = content;
 
   const introContent = [
     {

@@ -27,7 +27,7 @@ import {
   listNav,
   navItem
 } from './values.module.scss'
-import { ChevronIcon } from 'ui-components/svg/chevron'
+import { ChevronIcon } from '@/ui-components'
 import { useLayoutContext } from 'app/(context)/layout.context'
 
 export const Values = (content) => {

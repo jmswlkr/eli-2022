@@ -1,10 +1,10 @@
 import { draftMode } from 'next/headers'
 
-import { useContentful } from '@/utils/contentful/useContentful'
+import { useContentful } from '@/utils'
 
-import { ComingSoon } from '@/ui-components/coming-soon/coming-soon'
-import { CtaSection } from '@/ui-components/cta-section/cta-section'
-import { HeroSecondary } from '@/ui-components/hero/secondary'
+import { ComingSoon } from '@/ui-components'
+import { CtaSection } from '@/ui-components'
+import { HeroSecondary } from '@/ui-components'
 
 import { PAGE_CONFIG } from './page-config'
 

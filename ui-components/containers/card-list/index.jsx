@@ -1,6 +1,6 @@
 'use client'
 
-import { ParagraphHeader } from 'ui-components/headings/paragraph-header'
+import { ParagraphHeader } from '@/ui-components'
 
 export const CardList = ({ heading, list, CardComponent, content }) => {
   return (

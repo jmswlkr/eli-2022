@@ -1,6 +1,6 @@
 import { draftMode } from 'next/headers'
 
-import { useContentful } from 'utils/contentful/useContentful'
+import { useContentful } from '@/contentful'
 import { PAGE_CONFIG } from './page.config'
 
 import { Contact } from './home/contact/contact'

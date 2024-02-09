@@ -1,3 +1,5 @@
+'use client';
+
 import { useMutation } from 'react-query'
 
 export const useCreateClient = () => {

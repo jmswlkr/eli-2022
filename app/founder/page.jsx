@@ -2,14 +2,14 @@ import { draftMode } from 'next/headers'
 
 import { PAGE_CONFIG } from './page.config'
 
-import { ContentLayout } from 'ui-components/content-layout/content-layout'
-import { QuoteBlock } from 'ui-components/quote-block/quote-block'
+import { ContentLayout } from '@/ui-components'
+import { QuoteBlock } from '@/ui-components'
 import { Intro } from './intro/intro'
 import { BodyContent } from './body-content/body-content'
 import { Story } from './story/story'
-import { CtaSection } from 'ui-components/cta-section/cta-section'
-import { useContentful } from 'utils/contentful/useContentful'
-import { HeroSecondary } from '@/ui-components/hero/secondary'
+import { CtaSection } from '@/ui-components'
+import { useContentful } from '@/utils'
+import { HeroSecondary } from '@/ui-components'
 
 const Founder = async () => {
   const { isEnabled } = draftMode()

@@ -1,5 +1,5 @@
-import { ContentfulImageBlock } from '@/ui-components/contentful-image-block'
-import { Button } from '@/ui-components/general-btn/general-btn'
+import { ContentfulImageBlock } from '@/ui-components'
+import { Button } from '@/ui-components'
 
 export const HeroSecondary = ({
   titleSegments,
@@ -35,11 +35,11 @@ export const HeroSecondary = ({
             />
           </div>
           <div className='HERO_IMAGE_MOBILE full absolute-center lg:hidden relative z-0 block'>
-            <ContentfulImageBlock contentfulData={imageUrl} classes='absolute-img opacity-20' />
+            <ContentfulImageBlock contentfulImage={imageUrl} classes='absolute-img opacity-20' />
           </div>
         </div>
         <div className='HERO_IMAGE_DESK lg:block relative hidden'>
-          <ContentfulImageBlock contentfulData={imageUrl} />
+          <ContentfulImageBlock contentfulImage={imageUrl} />
         </div>
       </div>
     </section>

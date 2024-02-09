@@ -2,11 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/animation/*": ["animation/*"],
-      "@/context/*": ["app/(context)/*"],
+      "@/animation": ["animation/index.js"],
+      "@/context": ["app/(context)/index.js"],
       "@/hooks": ["hooks/index.js"],
-      "@/ui-components/*": ["ui-components/*"],
-      "@/utils/*": ["utils/*"]
+      "@/ui-components": ["ui-components/index.js"],
+      "@/utils": ["utils/index.js"],
+      "@/contentful": ["contentful/index.js"],
+      "@/server": ["server.config.js"]
     }
   }
 }

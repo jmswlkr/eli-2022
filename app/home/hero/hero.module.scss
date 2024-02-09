@@ -40,7 +40,7 @@
   video {
     position: absolute;
     top: 0;
-    left: -15%;
+    // left: -15%;
     height: 100%;
     width: 120%;
     object-fit: cover;
@@ -90,7 +90,7 @@
 
 .tagline {
   @include heroText;
-  font-family: var(--font-semibold);
+  font-family: var(--font-bold);
   width: 80%;
   font-size: 4rem;
   display: flex;

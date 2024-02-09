@@ -1,0 +1,53 @@
+import * as dayjs from 'dayjs'
+import * as advancedFormat from 'dayjs/plugin/advancedFormat'
+
+dayjs.extend(advancedFormat)
+
+// DATE HELPERS
+
+export const getUsaDateFromISO = (isoDate) => {
+  return dayjs(isoDate).format('MMMM Do, YYYY')
+}
+
+export const toEST = (date = Date.now()) => {
+  return date.toLocaleString('en-US', {
+    timeZone: 'America/New_York'
+  })
+}
+
+export const getDateWindow = (windowStart, windowSize = 31) => {
+  const windowEnd = new Date(windowStart)
+
+  windowEnd.setDate(windowStart.getDate() + windowSize)
+  return windowEnd.toISOString()
+}
+
+export const getYmd = (date) => {
+  return new Date(date).toISOString().slice(0, 10)
+}
+
+export function getYmdObject(dateStr) {
+  let date = new Date(dateStr)
+  let year = date.getFullYear()
+  let month = date.toLocaleDateString('en-us', { month: 'short' })
+  let day = date.getDate()
+  return { year, month, day }
+}
+
+export const getDateFromState = (aptDateVal) => {
+  const { y, m, d } = aptDateVal
+
+  const dateFromState = getYmd(
+    new Date(`${y}-${m}-${Number(d) + 1}`).toISOString()
+  )
+  // const dateFromState = getYmd(new Date(`${y}-${m}-19`).toISOString())
+  return dateFromState
+}
+
+export const timeAlreadyBooked = (bookings = [], hour) => {
+  const formattedHour = `${hour.toString().padStart(2, '0')}:00:00`
+  const foundMatchingTime = bookings.some((bkg) => {
+    return bkg?.time === formattedHour
+  })
+  return foundMatchingTime
+}

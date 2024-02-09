@@ -3,10 +3,10 @@
 import { useRef } from 'react'
 import { send } from '@emailjs/browser'
 
-import { useLayoutContext } from '@/context/layout.context'
+import { useLayoutContext } from '@/context'
 
-import { SectionHeader } from 'ui-components/headings/section-header'
-import { Button } from 'ui-components/general-btn/general-btn'
+import { SectionHeader } from '@/ui-components'
+import { Button } from '@/ui-components'
 
 import {
   contact,

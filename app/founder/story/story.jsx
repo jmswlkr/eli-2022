@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderParagraph } from 'ui-components/header-paragraph/header-paragraph'
+import { HeaderParagraph } from '@/ui-components'
 
 import {
   container,

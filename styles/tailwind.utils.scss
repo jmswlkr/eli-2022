@@ -98,6 +98,8 @@
 
 // COMPONENTS
 .hero-container-1 {
+  height: calc(100vh - var(--nav-height));
+  margin-top: var(--nav-height);
 }
 .hero-container-2 {
   height: 65vh;

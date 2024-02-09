@@ -1,11 +1,11 @@
 import { draftMode } from 'next/headers'
 
-import { useContentful } from 'utils/contentful/useContentful'
+import { useContentful } from '@/utils'
 import { PAGE_CONFIG } from './page-config'
 import { extractOfferingsContent } from './extract-offerings-content'
 
-import { HeaderParagraph } from '@/ui-components/header-paragraph/header-paragraph'
-import { HeroSecondary } from '@/ui-components/hero/secondary'
+import { HeaderParagraph } from '@/ui-components'
+import { HeroSecondary } from '@/ui-components'
 import { OfferingBlock } from './_components/offering-block'
 
 const Offerings = async () => {

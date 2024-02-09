@@ -1,15 +1,15 @@
 import { draftMode } from 'next/headers'
 
 import { PAGE_CONFIG } from './page.config'
-import { useContentful } from 'utils/contentful/useContentful'
+import { useContentful } from '@/utils'
 
 import { Hero } from './hero/hero'
-import { QuoteBlock } from 'ui-components/quote-block/quote-block'
+import { QuoteBlock } from '@/ui-components'
 import { Intro } from './intro/intro'
 import { MissionVision } from './mission-vision/mission-vision'
 import { Values } from './values/values'
-import { CtaSection } from 'ui-components/cta-section/cta-section'
-import { ContentLayout } from 'ui-components/content-layout/content-layout'
+import { CtaSection } from '@/ui-components'
+import { ContentLayout } from '@/ui-components'
 
 const About = async () => {
   const { isEnabled } = draftMode()

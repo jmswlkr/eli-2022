@@ -1,13 +1,13 @@
 import React from 'react'
 import { draftMode } from 'next/headers'
 
-import { useContentful } from 'utils/contentful/useContentful'
+import { useContentful } from '@/utils'
 import { PAGE_CONFIG } from './page-config'
 
-import { CtaSection } from 'ui-components/cta-section/cta-section'
-import { HeroSecondary } from '@/ui-components/hero/secondary'
-import { ParagraphHeader } from '@/ui-components/headings/paragraph-header'
-import { HeaderParagraphList } from '@/ui-components/header-paragraph/header-paragraph-list'
+import { CtaSection } from '@/ui-components'
+import { HeroSecondary } from '@/ui-components'
+import { ParagraphHeader } from '@/ui-components'
+import { HeaderParagraphList } from '@/ui-components'
 import { TrainingCard } from '../_components/training-event-card'
 import { TrainingCategoryCard } from '../_components/training-category-card'
 import { TestComponent } from '../_components/test'
@@ -40,10 +40,6 @@ const TrainingPage = async () => {
           })}
         </div>
       </section>
-      
-      {/* TEST */}
-      <TestComponent content={content}/>
-
       <CtaSection {...content.cta.fields} />
     </>
   )

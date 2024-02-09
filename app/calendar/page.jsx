@@ -4,7 +4,7 @@ import axios from 'axios'
 import { PopupModal, useCalendlyEventListener } from 'react-calendly'
 
 import { calendly_config } from './config'
-import { ContentLayout } from 'ui-components/content-layout/content-layout'
+import { ContentLayout } from '@/ui-components'
 import { useCalendlyModalDisplay } from './useCalendlyModalDisplay'
 
 import { layout, modal, backBtn } from './calendar.module.scss'

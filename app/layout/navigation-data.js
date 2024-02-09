@@ -1,12 +1,12 @@
 // * Small, convenient, reusable data stuctures. * //
 
-import { EmailIcon } from 'ui-components/svg/email-icon'
-import { PhoneIcon } from 'ui-components/svg/phone-icon'
+import { EmailIcon } from '@/ui-components'
+import { PhoneIcon } from '@/ui-components'
 import {
   Facebook,
   Instagram,
   LinkedIn,
-} from 'ui-components/svg/social-icons'
+} from '@/ui-components'
 
 export const pageLinks = [
   {

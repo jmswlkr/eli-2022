@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from 'ui-components/general-btn/general-btn'
+import { Button } from '@/ui-components'
 
 import {
   container,

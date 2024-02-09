@@ -42,7 +42,7 @@
   --font-thin: "Lato Thin", "Segoe UI Light";
   --font-reg: "Lato Light", "Segoe UI Light";
   --font-med: "Lato Med", "Segoe UI";
-  --font-semibold: "Lato Semibold", "Segoe UI";
+  --font-bold: "Lato Semibold", "Segoe UI";
 
   // italic
   --font-light-italic: "Lato Light Italic", "Segoe UI Light";
@@ -192,6 +192,7 @@
   // base palette
   --papaya: #e6aca5;
   --snapdragon: #f4f7f8;
+  --sky-blue: #91C4E9;
   --french-blue: #426e8d;
   --ocean-blue: #2b5879;
   --deep-blue: #173245;
@@ -238,11 +239,11 @@
   --primary-bg: var(--snapdragon);
   
   // + tokens | primary | tailwindcss
-  --reference-300: var(--vivid-blue);
+  --reference-300: var(--sky-blue);
   --reference-500: var(--french-blue);
   --reference-600: var(--ocean-blue);
   --reference-900: var(--deep-blue);
-  --color-primary-300: 13 133 227;
+  --color-primary-300: 145 196 233;
   --color-primary-500: 66 110 141;
   --color-primary-600: 43 88 121;
   --color-primary-900: 23 50 69;

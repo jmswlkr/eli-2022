@@ -78,7 +78,7 @@
   }
   span:nth-child(2),
   span:nth-child(3) {
-    font-family: var(--font-semibold);
+    font-family: var(--font-bold);
     font-size: var(--text-hero-sm);
     @media (max-width: 1024px) {
       font-size: var(--text-header-lg);

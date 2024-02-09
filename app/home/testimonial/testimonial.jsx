@@ -11,9 +11,9 @@ import { animationProps } from 'animation/animate'
 import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
 
-import { PlayButton } from 'ui-components/svg/play-button'
-import { QuoteMark } from 'ui-components/svg/quote-mark'
-import { SectionHeader } from 'ui-components/headings/section-header'
+import { PlayButton } from '@/ui-components'
+import { QuoteMark } from '@/ui-components'
+import { SectionHeader } from '@/ui-components'
 import { useAnimationControls } from './useAnimationControls'
 import { extractTestimonials } from './extract-testimonials'
 
@@ -46,13 +46,7 @@ import {
   fadeTransitionBlock,
   scrollTip,
 } from './testimonial.module.scss'
-import { CloseIcon } from 'ui-components/svg/close'
-
-// TODO
-// TODO
-// # Rebuild this section to allow zoom.
-// TODO
-// TODO
+import { CloseIcon } from '@/ui-components'
 
 
 export const Testimonial = (content) => {

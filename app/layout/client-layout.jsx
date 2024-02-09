@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { phases } from 'animation/transition'
 import { blurFadeIn } from 'animation/fade'
 import { useActionOnKey } from 'hooks/useActionOnKey'
-import { CloseIcon } from 'ui-components/svg/close'
+import { CloseIcon } from '@/ui-components'
 
 export const ClientLayout = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
