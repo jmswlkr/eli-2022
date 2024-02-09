@@ -9,7 +9,6 @@ import { ContentfulImageBlock } from '@/ui-components'
 dayjs.extend(advancedFormat)
 
 export const TrainingCard = ({ event, entry }) => {
-  console.log('event: ', event);
   const formattedDate = dayjs(event.eventDate).format('MMMM Do, YYYY')
   const category = event?.categoryEntry?.fields?.categoryTag
 

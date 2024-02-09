@@ -1,3 +1,5 @@
+/* eslint no-console: 0 */
+
 'use client';
 
 export const TestComponent = ({ content }) => {

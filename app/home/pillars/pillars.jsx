@@ -44,12 +44,7 @@ import {
 } from './pillars.module.scss'
 import { useScrollOnMount } from '@/hooks'
 
-import {
-  FlowerIcon,
-  StonesIcon,
-  ThoughtIcon,
-  YogaIcon
-} from '@/ui-components'
+import { FlowerIcon, StonesIcon, ThoughtIcon, YogaIcon } from '@/ui-components'
 import { breakWords } from '@/utils'
 import { useLayoutContext } from '@/context'
 import { ChevronIcon } from '@/ui-components'
@@ -68,7 +63,6 @@ export const Pillars = ({
   pillarsCard4Text
 }) => {
   const [curPillar, setCurPillar] = useState(null)
-  console.log('pillarsMainText: ', pillarsMainText);
 
   useScrollOnMount()
 
@@ -114,14 +108,12 @@ export const Pillars = ({
           <h2 className={title}>{pillarsTitleSubtitle[0]}</h2>
           <p className={subtitle}>{pillarsTitleSubtitle[1]}</p>
           <p className={text}>
-            <HeaderParagraph mainContentParagraph={pillarsMainText}/>
-            {/* <span>{pillarsMainText}</span> */}
+            <HeaderParagraph mainContentParagraph={pillarsMainText} />
           </p>
         </div>
       </div>
       <div className={pillarCardsGrid}>
         {contentfulPillars.map((plr, idx) => {
-          console.log('plr: ', plr)
           return (
             <PillarCard
               key={plr.id}
@@ -174,7 +166,6 @@ function PillarsModal({ allPillars, idx = 0 }) {
   const [curIdx, setCurIdx] = useState(idx)
 
   const { icon, title, text } = allPillars[curIdx]
-  console.log('text: ', text)
 
   const handleCyclePillars = (direction) => {
     if (direction === 'next') {

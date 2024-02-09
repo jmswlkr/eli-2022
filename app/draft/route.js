@@ -11,7 +11,6 @@ export async function GET(request) {
   const secret = searchParams.get('secret')
 
   const slug = searchParams.get('slug')
-  // console.log('slug: ', slug);
 
   // Check for valid secret and slug
   if (secret !== contentfulSecret || !slug) {
@@ -20,9 +19,8 @@ export async function GET(request) {
 
   // Check for data existing in contentful
   const content = await checkContentful({
-    key: slug.toUpperCase(),
+    key: slug.toUpperCase()
   })
-  // console.log('content: ', content);
 
   // error if no data returned
   if (!content) {
@@ -37,7 +35,7 @@ export async function GET(request) {
   return new Response(null, {
     status: 307,
     headers: {
-      Location: `/${isHomePage ? '' : slug}`,
-    },
+      Location: `/${isHomePage ? '' : slug}`
+    }
   })
 }

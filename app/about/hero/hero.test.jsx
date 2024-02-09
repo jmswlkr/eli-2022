@@ -9,7 +9,6 @@ describe('the hero component.', () => {
   //   render(<Hero />);
 
   //   const header = screen.getByRole('heading')
-  //   console.log('header children: ', [...header.children]);
     
   //   expect(header).toBeInTheDocument()
   // })

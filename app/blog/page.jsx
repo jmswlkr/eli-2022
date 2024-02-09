@@ -31,7 +31,6 @@ const BlogPage = async () => {
   const featuredBlogSelected = selectedContent.items[0].fields?.featuredBlog
 
   const featuredBlogDefault = defaultContent.items[0]
-  console.log('defaultContent: ', defaultContent);
 
   const secondaryPosts = defaultContent.items.slice(1)
 
@@ -45,9 +44,7 @@ const BlogPage = async () => {
         />
         <ul className='BLOG_GRID gap-xl lg:grid-cols-2 auto-rows-auto grid w-full grid-cols-1'>
           {secondaryPosts.map((blog) => {
-            return (
-              <BlogSecondaryCard key={blog.sys.id} content={blog} />
-            )
+            return <BlogSecondaryCard key={blog.sys.id} content={blog} />
           })}
         </ul>
       </section>
@@ -57,4 +54,3 @@ const BlogPage = async () => {
 }
 
 export default BlogPage
-  

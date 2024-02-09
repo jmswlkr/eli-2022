@@ -1,3 +1,5 @@
+/* eslint no-console: 0 */
+
 'use client'
 
 import { useRef } from 'react'

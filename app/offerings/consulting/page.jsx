@@ -15,7 +15,6 @@ const OrganizationalConsultingPage = async () => {
     ...PAGE_CONFIG,
     preview: isEnabled
   })
-  console.log('content from consulting page: ', content)
 
   return (
     <div>
