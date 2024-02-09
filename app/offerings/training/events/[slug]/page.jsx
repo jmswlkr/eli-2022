@@ -1,6 +1,6 @@
 import { draftMode } from 'next/headers'
 
-import { useContentfulEntryByParams } from '@/utils'
+import { useContentfulEntryByParams } from '@/contentful'
 
 import { HeroTertiary } from '@/ui-components'
 import { CtaSection } from '@/ui-components'

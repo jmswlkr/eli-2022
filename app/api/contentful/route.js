@@ -1,5 +1,5 @@
 import { createClient } from 'contentful'
-import { CONTENTFUL_CONTENT_KEYS } from 'utils/contentful/keys'
+import { CONTENTFUL_CONTENT_KEYS } from '@/contentful'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,

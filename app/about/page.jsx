@@ -1,7 +1,7 @@
 import { draftMode } from 'next/headers'
 
 import { PAGE_CONFIG } from './page.config'
-import { useContentful } from '@/utils'
+import { useContentful } from '@/contentful'
 
 import { Hero } from './hero/hero'
 import { QuoteBlock } from '@/ui-components'

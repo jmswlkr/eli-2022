@@ -1,6 +1,6 @@
 import { draftMode } from 'next/headers'
 
-import { useContentful } from '@/utils'
+import { useContentful } from '@/contentful'
 
 import { ComingSoon } from '@/ui-components'
 import { CtaSection } from '@/ui-components'
@@ -8,7 +8,7 @@ import { HeroSecondary } from '@/ui-components'
 
 import { PAGE_CONFIG } from './page-config'
 
-const OrganizationalConsulting = async () => {
+const OrganizationalConsultingPage = async () => {
   const { isEnabled } = draftMode()
 
   const { content } = await useContentful({
@@ -26,3 +26,5 @@ const OrganizationalConsulting = async () => {
     </div>
   )
 }
+
+export default OrganizationalConsultingPage

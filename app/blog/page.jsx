@@ -1,6 +1,6 @@
 import { draftMode } from 'next/headers'
 
-import { useContentfulEntryByParams } from '@/utils'
+import { useContentfulEntryByParams } from '@/contentful'
 
 import { ContentLayout } from '@/ui-components'
 import { HeroPrimary as BlogHero } from '@/ui-components'

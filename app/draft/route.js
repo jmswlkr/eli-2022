@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { draftMode } from 'next/headers'
-import { checkContentful } from '@/utils'
+import { checkContentful } from '@/contentful'
 
 const contentfulSecret = process.env.CONTENTFUL_PREVIEW_SECRET
 

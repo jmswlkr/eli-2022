@@ -8,7 +8,7 @@ import { Intro } from './intro/intro'
 import { BodyContent } from './body-content/body-content'
 import { Story } from './story/story'
 import { CtaSection } from '@/ui-components'
-import { useContentful } from '@/utils'
+import { useContentful } from '@/contentful'
 import { HeroSecondary } from '@/ui-components'
 
 const Founder = async () => {
