@@ -5,6 +5,7 @@ import { PAGE_CONFIG } from './page.config'
 
 import { Contact } from './home/contact/contact'
 import { Hero } from './home/hero/hero'
+import { FlyerSlider } from './home/flyer-slider'
 import { Intro } from './home/intro/intro'
 import { Pillars } from './home/pillars/pillars'
 import { Testimonial } from './home/testimonial/testimonial'
@@ -17,7 +18,7 @@ const Home = async () => {
     preview: isEnabled,
   })
 
-  const components = [Hero, Intro, Pillars, Testimonial, Contact]
+  const components = [Hero, FlyerSlider, Intro, Pillars, Testimonial, Contact]
 
   if (error) return <div>Error</div> // TODO: Build error page.
 

@@ -1,0 +1,76 @@
+'use client'
+
+import Slider from 'react-slick'
+import { useRouter } from 'next/navigation'
+
+import { twm } from '@/utils'
+import { Button, ContentfulImageBlock } from '@/ui-components'
+
+
+export const FlyerSlider = ({ slider: slides }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    arrows: false,
+    slidesToScroll: 1,
+    fade: true
+  }
+  return (
+    <section className='SLIDER_CONTAINER max-h-[55vh] w-full lg:w-[var(--content-width)] relative'>
+      <Slider {...settings}>
+        {slides.map((slide) => {
+          return <Slide key={slide.sys.meta} slide={slide.fields} />
+        })}
+      </Slider>
+    </section>
+  )
+}
+
+function Slide({ slide }) {
+  const router = useRouter()
+
+  const colorThemeMap = {
+    dark: {
+      title: 'text-primary-900',
+      button: 'dark',
+      shade: 'bg-primary-300/30'
+    },
+    light: {
+      title: 'text-primary-300',
+      button: 'light',
+      shade: 'bg-primary-900/50'
+    }
+  } 
+
+  const colorTheme = slide.isLightTheme
+    ? colorThemeMap.light
+    : colorThemeMap.dark
+
+  function handleNavigateToFlyerItem() {
+    router.push(slide.buttonLinkFlyer)
+  }
+
+  return (
+    <article className='SLIDE w-full mb-md h-[40vh] lg:h-[50vh] border relative isolate'>
+      <div className='TEXT_WRAP full p-md gap-md lg:justify-between lg:flex-row lg:items-end relative z-10 flex flex-col items-start justify-end'>
+        <div className='flex-col-tl gap-ms'>
+          <p className='meta-1 text-white'>{slide.flyerMetaText}</p>
+          <h2 className={twm('head-1 !font-body', colorTheme.title)}>
+            {slide.title}
+          </h2>
+        </div>
+        <Button
+          text={slide.buttonText}
+          classes={twm('sm solid', colorTheme.button)}
+          action={handleNavigateToFlyerItem}
+        />
+      </div>
+      <div className='BG_IMAGE_WRAP absolute-center isolate full z-0'>
+        <div className={twm('SHADE absolute-shade z-10', colorTheme.shade)} />
+        <ContentfulImageBlock contentfulImage={slide.image} classes='z-0' />
+      </div>
+    </article>
+  )
+}
