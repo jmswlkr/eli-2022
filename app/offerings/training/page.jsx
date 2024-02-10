@@ -10,7 +10,6 @@ import { ParagraphHeader } from '@/ui-components'
 import { HeaderParagraphList } from '@/ui-components'
 import { TrainingCard } from '../_components/training-event-card'
 import { TrainingCategoryCard } from '../_components/training-category-card'
-import { TestComponent } from '../_components/test'
 
 const TrainingPage = async () => {
   const { isEnabled } = draftMode()

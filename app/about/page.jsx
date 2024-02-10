@@ -3,8 +3,7 @@ import { draftMode } from 'next/headers'
 import { PAGE_CONFIG } from './page.config'
 import { useContentful } from '@/contentful'
 
-import { Hero } from './hero/hero'
-import { QuoteBlock } from '@/ui-components'
+import { HeroSecondary, QuoteBlock } from '@/ui-components'
 import { Intro } from './intro/intro'
 import { MissionVision } from './mission-vision/mission-vision'
 import { Values } from './values/values'
@@ -20,7 +19,6 @@ const About = async () => {
   })
 
   const components = [
-    Hero,
     QuoteBlock,
     Intro,
     MissionVision,
@@ -30,6 +28,7 @@ const About = async () => {
 
   return (
     <ContentLayout>
+      <HeroSecondary {...content.hero.fields}/>
       {content &&
         components.map((Component, idx) => {
           return <Component key={idx} {...content} />
