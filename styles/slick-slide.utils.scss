@@ -1,0 +1,18 @@
+// .slick-slide {
+//   width: 100%;
+// }
+
+.slick-dots {
+  text-align: left;
+
+  li {
+    button::before {
+      color: var(--primary-tr-1);
+    }
+  }
+  .slick-active {
+    button::before {
+      color: var(--primary-dark) !important;
+    }
+  }
+}

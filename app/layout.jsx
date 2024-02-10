@@ -10,6 +10,9 @@ import '../styles/variables.scss'
 import '../styles/react-calendar.scss'
 import '../styles/tailwind.typography.scss'
 import '../styles/tailwind.utils.scss'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import '../styles/slick-slide.utils.scss'
 
 const RootLayout = ({ children }) => {
   return (
