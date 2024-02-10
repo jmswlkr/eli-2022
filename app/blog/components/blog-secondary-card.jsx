@@ -29,7 +29,7 @@ export const BlogSecondaryCard = ({ content }) => {
           <span>•</span>
           <span>4 minute read</span>
         </div>
-        <Button text='Read More' path={`blog/`} classes='sm ' />
+        <Button text='Read More' path={`blog/${card.slug}`} classes='sm ' />
       </div>
     </div>
   )
