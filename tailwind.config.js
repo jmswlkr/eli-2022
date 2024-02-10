@@ -25,6 +25,9 @@ module.exports = {
           500: 'rgba(var(--color-primary-500) / <alpha-value>)',
           600: 'rgba(var(--color-primary-600) / <alpha-value>)',
           900: 'rgba(var(--color-primary-900) / <alpha-value>)'
+        },
+        accent: {
+          300: 'rgba(var(--color-accent-300) / <alpha-value>)',
         }
       },
       gap: {

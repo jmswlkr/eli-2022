@@ -190,6 +190,7 @@
   --white-fade-35: hsla(0, 0%, 100%, 0.15);
   
   // base palette
+  --papaya: rgb(230, 172, 165);
   --papaya: #e6aca5;
   --snapdragon: #f4f7f8;
   --sky-blue: #91C4E9;
@@ -238,7 +239,7 @@
   
   --primary-bg: var(--snapdragon);
   
-  // + tokens | primary | tailwindcss
+  // ---- tokens | primary | tailwindcss
   --reference-300: var(--sky-blue);
   --reference-500: var(--french-blue);
   --reference-600: var(--ocean-blue);
@@ -247,6 +248,10 @@
   --color-primary-500: 66 110 141;
   --color-primary-600: 43 88 121;
   --color-primary-900: 23 50 69;
+
+  // ---- tokens | accent | tailwindcss
+  --reference-300: var(--papaya);
+  --color-accent-300: 230 172 165;
 
   
   // + tokens | accent
