@@ -6,7 +6,7 @@ export const breakWords = (str) => {
   const [top, bot] = str.split(' ')
   return (
     <>
-      {top} <br /> {bot}
+      <span>{top}</span> <span>{bot}</span>
     </>
   )
 }
