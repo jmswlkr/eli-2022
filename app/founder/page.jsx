@@ -4,12 +4,12 @@ import { PAGE_CONFIG } from './page.config'
 
 import { ContentLayout } from '@/ui-components'
 import { QuoteBlock } from '@/ui-components'
-import { Intro } from './intro/intro'
-import { BodyContent } from './body-content/body-content'
-import { Story } from './story/story'
 import { CtaSection } from '@/ui-components'
 import { useContentful } from '@/contentful'
 import { HeroSecondary } from '@/ui-components'
+import { IntroSection } from './intro'
+import { StorySection } from './story'
+import { TrainingSection } from './training'
 
 const Founder = async () => {
   const { isEnabled } = draftMode()
@@ -21,19 +21,18 @@ const Founder = async () => {
 
   const components = [
     QuoteBlock,
-    Intro,
-    BodyContent,
-    Story,
+    IntroSection,
+    StorySection,
+    TrainingSection,
     CtaSection
   ]
 
   return (
     <ContentLayout>
       <HeroSecondary {...content.hero.fields} />
-      {content &&
-        components.map((Component, idx) => {
-          return <Component key={idx} {...content} />
-        })}
+      {components.map((Component, idx) => {
+        return <Component key={idx} {...content} />
+      })}
     </ContentLayout>
   )
 }

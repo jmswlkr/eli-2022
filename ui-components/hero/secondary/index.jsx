@@ -13,19 +13,19 @@ export const HeroSecondary = ({
     <section className='HERO_CONTAINER_2 hero-container-2 relative w-full'>
       <div className='CONTENT absolute-center lg:grid-cols-2 grid w-screen h-full'>
         <div className='TEXT_WRAP flex-center bg-primary-500/10 relative'>
-          <div className='TEXT_CONTENT flex-col-tl gap-ms z-20'>
+          <div className='TEXT_CONTENT max-w-5/6 flex-col-center lg:flex-col-tl gap-ms z-20'>
             {subtitle && subtitlePositionTop && (
               <p className='SUBTITLE head-3 italic text-primary-500 !font-thin'>
                 {subtitle}
               </p>
             )}
-            <h1 className='HEADING flex-col-tl head-1 text-primary-500'>
+            <h1 className='HEADING flex-col-center lg:flex-col-tl head-1 text-primary-500'>
               {titleSegments.map((segment) => {
                 return <span key={segment}>{segment}</span>
               })}
             </h1>
             {subtitle && !subtitlePositionTop && (
-              <p className='SUBTITLE head-3 italic text-primary-500 !font-thin'>
+              <p className='SUBTITLE max-w-4/5 text-center head-3 italic text-primary-500 !font-thin'>
                 {subtitle}
               </p>
             )}
