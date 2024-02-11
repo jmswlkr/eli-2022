@@ -1,10 +1,10 @@
+import { twm } from "@/utils"
 import { HeaderParagraph } from "@/ui-components"
 
-import { container } from './header-paragraph-list.module.scss'
 
-export const HeaderParagraphList = ({ paragraphs }) => {
+export const HeaderParagraphList = ({ paragraphs, classes }) => {
   return (
-    <section className={container}>{
+    <section className={twm('flex-col-tl gap-md', classes)}>{
       paragraphs.map((paragraph, idx) => {
         return (
           <HeaderParagraph

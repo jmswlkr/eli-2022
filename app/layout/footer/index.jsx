@@ -26,7 +26,6 @@ export const Footer = () => {
             {OFFERINGS.label}
           </span>
           {OFFERINGS.links.map((link) => {
-            console.log('link: ', link)
             return (
               <li key={link.text}>
                 <Link href={link.path}>{link.text}</Link>
