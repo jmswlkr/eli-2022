@@ -13,14 +13,20 @@ module.exports = {
         '2k': '2200px'
       },
       fontFamily: {
+        // TOKEN
         display: ['var(--font-title)'],
         subdisplay: ['var(--font-subtitle)'],
         body: ['var(--font-med)'],
+        
+        // EXPLICIT
+        bold: ['var(--font-med)'],
         light: ['var(--font-reg)'],
         italic: ['var(--font-italic)'],
       },
       colors: {
         primary: {
+          100: 'rgba(var(--color-primary-100) / <alpha-value>)',
+          150: 'rgba(var(--color-primary-100) / <alpha-value>)',
           300: 'rgba(var(--color-primary-300) / <alpha-value>)',
           500: 'rgba(var(--color-primary-500) / <alpha-value>)',
           600: 'rgba(var(--color-primary-600) / <alpha-value>)',
@@ -28,7 +34,8 @@ module.exports = {
         },
         accent: {
           300: 'rgba(var(--color-accent-300) / <alpha-value>)',
-        }
+        },
+        primary_text: 'var(--text-color)',
       },
       gap: {
         sm: '10px',
