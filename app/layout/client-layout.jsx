@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import { TopNav } from './top-nav/top-nav'
-import { Footer } from './footer/footer'
+// import { Footer } from './footer/footer'
 
 import { layout, content, modal, close } from './client-layout.module.scss'
 import { Menu } from './menu/menu'
@@ -14,6 +14,7 @@ import { phases } from 'animation/transition'
 import { blurFadeIn } from 'animation/fade'
 import { useActionOnKey } from 'hooks/useActionOnKey'
 import { CloseIcon } from '@/ui-components'
+import { Footer } from './footer'
 
 export const ClientLayout = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -37,6 +38,7 @@ export const ClientLayout = ({ children }) => {
         <span className='vp-marker vp-marker__hero' ref={heroRef} />
         {children}
       </main>
+      {/* <Footer /> */}
       <Footer />
     </div>
   )
