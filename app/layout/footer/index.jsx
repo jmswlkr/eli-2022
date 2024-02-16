@@ -8,7 +8,7 @@ import { CONNECT, CONTACT, OFFERINGS } from '../data'
 export const Footer = () => {
   return (
     <footer className='bg-primary-600 full p-lg flex-col-bl lg:!items-center gap-lg text-[24px] tracking-[2px] text-white pt-xxl'>
-      <div className='MAIN_LINKS_CONTAINER lg:w-[var(--reading-content-width)] flex-col-tl w-full md:mb-lg md:gap-[25vw] lg:gap-lg lg:!justify-between md:!flex-row gap-lg'>
+      <div className='MAIN_LINKS_CONTAINER w-4/5 sm:!gap-lg lg:w-[var(--reading-content-width)] flex-col-tl w-full md:mb-lg lg:gap-[25vw] lg:gap-lg lg:!justify-between lg:!flex-row gap-lg'>
         <ul className='CONNECT_LINKS flex-col-tl gap-ms'>
           <span className='md:block text-primary-150 meta-2 hidden'>
             {CONNECT.label}
@@ -33,7 +33,7 @@ export const Footer = () => {
             )
           })}
         </ul>
-        <ul className='CONTACT_LINKS_DESK lg:flex flex-col-bl gap-md hidden text-sm'>
+        <ul className='CONTACT_LINKS_DESK gap-md lg:flex flex-col items-start justify-end hidden text-sm'>
           <span className='meta-2 lg:block hidden'>{CONTACT.label}</span>
           <li>
             <a href={CONTACT.email.link}>{CONTACT.email.display}</a>
@@ -52,7 +52,7 @@ export const Footer = () => {
           </li>
         </ul>
       </div>
-      <ul className='CONTACT_LINKS lg:!hidden flex-col-bl gap-md text-sm'>
+      <ul className='CONTACT_LINKS_MOBILE lg:!hidden flex-col-bl gap-md text-sm'>
         <span className='meta-2 lg:block hidden'>{CONTACT.label}</span>
         <li>
           <a href={CONTACT.email.link}>{CONTACT.email.display}</a>

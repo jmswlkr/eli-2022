@@ -47,7 +47,7 @@ export const CONTACT = {
     link: 'tel://+15707094277'
   },
   email: {
-    display: 'info@embodiedlearninginstitute.org',
+    display: <>info@<wbr/>embodiedlearninginstitute.org</>,
     link: 'mailto:info@embodiedlearninginstitute.com'
   },
   socials: [
