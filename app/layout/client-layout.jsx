@@ -15,6 +15,7 @@ import { blurFadeIn } from 'animation/fade'
 import { useActionOnKey } from 'hooks/useActionOnKey'
 import { CloseIcon } from '@/ui-components'
 import { Footer } from './footer'
+import { SiteMenu } from './menu'
 
 export const ClientLayout = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -32,36 +33,32 @@ export const ClientLayout = ({ children }) => {
         modalOpen={modalOpen}
         showBG={!heroInView}
       />
-      <Menu modalOpen={modalOpen} closeModal={() => setModalOpen(false)} />
+      <SiteMenu modalOpen={modalOpen} closeModal={() => setModalOpen(false)} />
       <ModalContainer />
       <main className={content}>
         <span className='vp-marker vp-marker__hero' ref={heroRef} />
         {children}
       </main>
-      {/* <Footer /> */}
       <Footer />
     </div>
   )
 }
 
 function ModalContainer() {
-  const { setContentModalOpen, contentModalOpen, modalContent } = useLayoutContext()
+  const { setContentModalOpen, contentModalOpen, modalContent } =
+    useLayoutContext()
 
   useActionOnKey(() => setContentModalOpen(false))
 
   return (
     <AnimatePresence>
       {contentModalOpen && (
-        <motion.div
-          className={modal}
-          {...phases}
-          {...blurFadeIn}
-        >
+        <motion.div className={modal} {...phases} {...blurFadeIn}>
           <div onClick={() => setContentModalOpen(false)} className={close}>
             <CloseIcon />
           </div>
-         {modalContent}
-        </motion.div> 
+          {modalContent}
+        </motion.div>
       )}
     </AnimatePresence>
   )

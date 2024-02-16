@@ -16,7 +16,7 @@ export const CONNECT = {
       path: '/founder'
     },
     {
-      text: 'blog',
+      text: 'Blog',
       path: '/blog'
     }
   ]
@@ -34,7 +34,7 @@ export const OFFERINGS = {
       path: '/offerings/consulting'
     },
     {
-      text: 'training',
+      text: 'Training',
       path: '/offerings/training'
     }
   ]
@@ -47,7 +47,13 @@ export const CONTACT = {
     link: 'tel://+15707094277'
   },
   email: {
-    display: <>info@<wbr/>embodiedlearninginstitute.org</>,
+    display: (
+      <>
+        info@
+        <wbr />
+        embodiedlearninginstitute.org
+      </>
+    ),
     link: 'mailto:info@embodiedlearninginstitute.com'
   },
   socials: [
