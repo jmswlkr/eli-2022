@@ -17,25 +17,30 @@ module.exports = {
         display: ['var(--font-title)'],
         subdisplay: ['var(--font-subtitle)'],
         body: ['var(--font-med)'],
-        
+
         // EXPLICIT
         bold: ['var(--font-med)'],
         light: ['var(--font-reg)'],
-        italic: ['var(--font-italic)'],
+        italic: ['var(--font-italic)']
       },
       colors: {
         primary: {
           100: 'rgba(var(--color-primary-100) / <alpha-value>)',
-          150: 'rgba(var(--color-primary-100) / <alpha-value>)',
+          150: 'rgba(var(--color-primary-150) / <alpha-value>)',
           300: 'rgba(var(--color-primary-300) / <alpha-value>)',
           500: 'rgba(var(--color-primary-500) / <alpha-value>)',
           600: 'rgba(var(--color-primary-600) / <alpha-value>)',
           900: 'rgba(var(--color-primary-900) / <alpha-value>)'
         },
         accent: {
-          300: 'rgba(var(--color-accent-300) / <alpha-value>)',
+          300: 'rgba(var(--color-accent-300) / <alpha-value>)'
         },
+        neutral: {
+          200: 'rgba(var(--color-neutral-300) / <alpha-value)'
+        },
+
         primary_text: 'var(--text-color)',
+        meta_text: 'rgba(var(--color-neutral-300) / <alpha-value)'
       },
       gap: {
         sm: '10px',
