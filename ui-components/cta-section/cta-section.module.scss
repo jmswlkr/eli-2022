@@ -9,8 +9,7 @@
 
   // ↓ EXPERIMENTAL
   height: 65vh;
-  // margin: 5vh 0;
-  border-radius: var(--radius-md);
+  background-color: var(--cloud-blue);
   // ↑ EXPERIMENTAL
 }
 
@@ -22,7 +21,7 @@
   height: 100%;
   width: 100vw;
   padding: 5rem var(--content-margin);
-  background: var(--primary-tr-2);
+  // background: var(--primary-tr-2);
 
   display: grid;
   gap: 5%;

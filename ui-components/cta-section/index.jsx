@@ -36,15 +36,19 @@ export const CtaSection = ({
   image = DEFAULTS.image
 }) => {
   return (
-    <section className={container}>
-      <div className={content}>
-        <div className={words}>
-          <h3 className={header}>{title}</h3>
-          <p className={paragraph}>{blurb}</p>
-          <Button text={buttonText} path={buttonLink} classes='solid med' />
-        </div>
-        <div className={imageStyle}>
-          <ContentfulImageBlock contentfulImage={image} />
+    <section className='CTA_CONTAINER relative w-full h-[65vh]'>
+      <div className='FULLBLEED_WRAP bg-primary-100 absolute-center flex-center h-full !w-screen'>
+        <div className='CTA_CONTENT_GRID grid-rows-1 grid-cols-1 lg:grid-cols-2 lg:py-xl h-full w-full lg:w-[var(--reading-content-width)] grid'>
+          <div className='gap-md lg:items-start relative z-20 flex flex-col items-center justify-center'>
+            <h3 className='head-3 text-primary-300 lg:text-primary-500'>{title}</h3>
+            <p className=' !leading-[150%] text-white lg:text-primary_text lg:par-1 w-4/5 lg:text-left text-center'>{blurb}</p>
+            <Button text={buttonText} path={buttonLink} classes='solid med !bg-primary-300 lg:!bg-primary-500' />
+          </div>
+          <div className='SHADE bg-primary-300/30 absolute-shade z-10' />
+          <div className='SHADE bg-black/50 absolute-shade lg:hidden z-10' />
+          <div className='CTA_IMAGE absolute-center full lg:!h-4/5 overflow-hidden lg:rounded-lg lg:!relative z-0'>
+            <ContentfulImageBlock contentfulImage={image} />
+          </div>
         </div>
       </div>
     </section>
