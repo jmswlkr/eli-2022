@@ -27,11 +27,11 @@ export const HeaderParagraph = ({
   }
 
   return (
-    <div className={twm(container, classes.wrapper)}>
+    <div className={twm('HP_CONTAINER flex-col-tl gap-md', classes.wrapper)}>
       {mainContentHeading && (
-        <h4 className={twm(header, 'head-4', classes.header)}>{mainContentHeading}</h4>
+        <h4 className={twm('HP_HEADER font-body tracking-[1px] head-4 text-primary-500', classes.header)}>{mainContentHeading}</h4>
       )}
-      <p className={twm(contentStyle, 'par-1', classes.paragraph)}>
+      <p className={twm('HP_PARAGRAPH flex-col-tl [&_br]:inline-block', 'par-1', classes.paragraph)}>
         {documentToReactComponents(mainContentParagraph, formattingOptions)}
       </p>
     </div>
