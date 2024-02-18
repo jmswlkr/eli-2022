@@ -117,9 +117,9 @@ function TextTestimonial({ text, name }) {
           />,
           portal
         )}
-      <span className={quoteMark}>
+      {/* <span className={quoteMark}>
         <QuoteMark />
-      </span>
+      </span> */}
       <blockquote className={quote} onClick={handleModalOpen}>
         {text}
       </blockquote>
