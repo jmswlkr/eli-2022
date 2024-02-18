@@ -37,13 +37,13 @@ export const StorySection = ({ storyContent }) => {
 
 function StoryBlock({ block, colorTheme }) {
   return (
-    <div className={twm('STORY_BLOCK p-lg', colorTheme.bg)}>
+    <div className={twm('STORY_BLOCK p-md pt-lg lg:p-lg', colorTheme.bg)}>
       <HeaderParagraph
         mainContentHeading={block.heading}
         mainContentParagraph={block.paragraph}
         classes={{
           header: colorTheme.heading,
-          paragraph: colorTheme.paragraph
+          paragraph: `${colorTheme.paragraph} flex-col-tl gap-ms lg:gap-md`
         }}
       />
     </div>
