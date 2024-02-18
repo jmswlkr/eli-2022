@@ -57,7 +57,7 @@ export const ContactSection = () => {
               type='submit'
               className='general-btn px-md py-sm outline border-primary-500 text-primary-500'
             >
-              test button
+              Submit
             </button>
           </form>
         </div>
