@@ -9,11 +9,11 @@ export const TrainingCategoryCard = ({ category }) => {
       <span className='h-[75px] aspect-square relative'>
         <ContentfulImageBlock contentfulImage={category.icon} classes='!object-contain'/>
       </span>
-      <h3 className='HEADING head-3 text-primary-500'>
+      <h3 className='HEADING head-3 text-primary-500 text-center'>
         {category.categoryTitle}
       </h3>
       <p className='PARAGRAPH text-center'>{category.blurbDescription}</p>
-      <Button text={'View More →'} path={'/'} classes={'sm text-primary-500'} />
+      <Button text={'View More →'} path={'/'} classes={'sm text-primary-500 outline'} />
     </div>
   )
 }

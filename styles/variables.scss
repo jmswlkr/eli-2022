@@ -329,7 +329,7 @@
     (var(--content-width) / 4) - 48px
   );
   --content-margin: calc(
-    (100vw - var(--content-width)) / 2
+    (100vw - var(--reading-content-width)) / 2
   );
   --content-shift: var(--content-margin);
   --content-shift-neg: calc(-1 * var(--content-shift));

@@ -44,10 +44,9 @@ import {
   attr,
   attrInitial,
   fadeTransitionBlock,
-  scrollTip,
+  scrollTip
 } from './testimonial.module.scss'
 import { CloseIcon } from '@/ui-components'
-
 
 export const Testimonial = (content) => {
   const { sectionRef, controls } = useAnimationControls()
@@ -60,6 +59,7 @@ export const Testimonial = (content) => {
       <SectionHeader
         title={testimonialTitle}
         labelText={testimonialMarqueeText}
+        classes={{ title: 'head-3' }}
       />
       <div className={testimonialSliderBase}>
         <div className={testimonialSlider}>
@@ -73,7 +73,7 @@ export const Testimonial = (content) => {
                   {...animationProps({
                     controls,
                     dur: 2,
-                    del: (idx + 1) * 0.333,
+                    del: (idx + 1) * 0.333
                   })}
                 >
                   {isVideo ? (

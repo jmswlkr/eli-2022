@@ -48,7 +48,8 @@
 
 .content {
   height: auto;
-  width: var(--content-width);
+  // width: var(--content-width);
+  width: var(--reading-content-width);
   display: flex;
   gap: var(--intersection-margin);
   // padding-bottom: var(--intersection-margin);

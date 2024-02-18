@@ -14,7 +14,7 @@ export const TrainingCard = ({ event, entry }) => {
 
   return (
     <article className='auto-rows-auto rounded-xl lg:grid-cols-2 grid w-full h-auto grid-cols-1 overflow-hidden'>
-      <div className='TEXT_CONTENT full p-md lg:p-lg bg-primary-500/10 flex-col-tl gap-md'>
+      <div className='TEXT_CONTENT full p-md bg-primary-500/10 flex-col-tl gap-md'>
         <div className='LABEL meta-1 text-primary-500 flex-col-tl lg:flex-center lg:!flex-row gap-[1ch]'>
           <span>{formattedDate}</span>
           <span className='lg:block hidden'>•</span>
@@ -22,16 +22,15 @@ export const TrainingCard = ({ event, entry }) => {
             {event.eventLocationName}
           </span>
         </div>
-        <div className='HEADING_BLOCK flex-col-tl lg:flex-center lg:!flex-row lg:!items-end gap-[1ch]'>
-          <h3 className='HEADING head-3 text-primary-900 lg:order-first order-last'>
-            {event.eventTitle}
-          </h3>
+        <div className='HEADING_BLOCK flex-col-tl gap-[1ch]'>
           {category && (
             <>
-              <span className='DIVIDER lg:block hidden'>|</span>
               <span className='CATEGORY meta-1'>{category}</span>
             </>
           )}
+          <h3 className='HEADING head-3 text-primary-900'>
+            {event.eventTitle}
+          </h3>
         </div>
         <p className='PARAGRAPH'>{event.eventDescriptionTeaser}</p>
         <Button

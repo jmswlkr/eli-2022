@@ -15,6 +15,8 @@ const About = async () => {
 
   const { content } = await useContentful({
     ...PAGE_CONFIG,
+
+
     preview: isEnabled
   })
 
