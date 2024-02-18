@@ -12,7 +12,6 @@
   }
 }
 
-
 // TODO: Move this back to globals?
 // > LAYOUT < \\
 .vp-marker {
@@ -41,7 +40,6 @@
   }
 }
 
-
 // > CONTAINERS < \\
 .scroll-wrap {
   height: 100%;
@@ -66,13 +64,11 @@
   color: var(--primary-deep);
 }
 
-
 // > COMPONENTS < \\
 .general-btn {
   cursor: pointer;
-  padding: 0.8rem 1.75rem;
+  outline: none;
   border-radius: var(--radius-md);
-  border: 0.5px solid currentColor;
   display: inline;
   white-space: nowrap;
   letter-spacing: 2px;
@@ -84,6 +80,9 @@
     background-color: var(--primary);
     border-color: var(--primary);
     color: var(--white) !important;
+  }
+  &.outline {
+    border: 0.5px solid currentColor;
   }
   &.solid {
     background-color: var(--primary);
@@ -119,4 +118,3 @@
     background-color: var(--primary-tr-2);
   }
 }
-

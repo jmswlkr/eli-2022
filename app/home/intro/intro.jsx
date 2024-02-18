@@ -74,7 +74,8 @@ export const Intro = ({
                   <p>{c.text}</p>
                 </div>
                 <div className={cardBtn}>
-                  <Button text={c.btnText} path={c.path} />
+
+                  <Button text={c.btnText} path={c.path} classes='outline' />
                 </div>
               </div>
             </Link>

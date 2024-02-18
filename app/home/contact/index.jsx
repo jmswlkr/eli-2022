@@ -55,7 +55,7 @@ export const ContactSection = () => {
             />
             <button
               type='submit'
-              className='general-btn border-primary-500 text-primary-500'
+              className='general-btn px-md py-sm outline border-primary-500 text-primary-500'
             >
               test button
             </button>

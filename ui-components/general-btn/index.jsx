@@ -32,7 +32,7 @@ export function Button({
 
   return (
     <button
-      className={twm('general-btn', classes)}
+      className={twm('general-btn px-md py-sm', classes)}
       onClick={handleClick}
       type={type}
       disabled={disabled}
