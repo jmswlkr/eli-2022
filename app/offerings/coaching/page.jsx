@@ -2,6 +2,7 @@ import { draftMode } from 'next/headers'
 
 import { useContentful } from '@/contentful'
 import {
+  BorderBlock,
   CtaSection,
   HeaderParagraph,
   HeaderParagraphList,
@@ -42,20 +43,11 @@ const CoachingPage = async () => {
           <section className='COACHING_CARDS flex-col-tl gap-md mb-xxl'>
             {coaching.map((block) => {
               return (
-                <div
-                  className='CARD bg-primary-500/75 p-md rounded-lg'
+                <BorderBlock
                   key={block.heading}
-                >
-                  <HeaderParagraph
-                    mainContentHeading={block.heading}
-                    mainContentParagraph={block.paragraph}
-                    classes={{
-                      wrapper: '!gap-ms',
-                      header: '!text-primary-900',
-                      paragraph: 'text-white'
-                    }}
-                  />
-                </div>
+                  heading={block.heading}
+                  paragraph={block.paragraph}
+                />
               )
             })}
           </section>
