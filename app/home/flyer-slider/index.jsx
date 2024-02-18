@@ -6,8 +6,7 @@ import { useRouter } from 'next/navigation'
 import { twm } from '@/utils'
 import { Button, ContentfulImageBlock } from '@/ui-components'
 
-
-export const FlyerSlider = ({ slider: slides }) => {
+export const FlyerSlider = ({ showSlider, slider: slides }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -17,6 +16,9 @@ export const FlyerSlider = ({ slider: slides }) => {
     slidesToScroll: 1,
     fade: true
   }
+
+  if (!showSlider) return null
+
   return (
     <section className='SLIDER_CONTAINER max-h-[55vh] w-full lg:w-[var(--content-width)] relative'>
       <Slider {...settings}>
@@ -42,7 +44,7 @@ function Slide({ slide }) {
       button: 'light',
       shade: 'bg-primary-900/50'
     }
-  } 
+  }
 
   const colorTheme = slide.isLightTheme
     ? colorThemeMap.light

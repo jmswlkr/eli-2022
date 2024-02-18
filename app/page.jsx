@@ -3,8 +3,6 @@ import { draftMode } from 'next/headers'
 import { useContentful } from '@/contentful'
 import { PAGE_CONFIG } from './page.config'
 
-import { Contact } from './home/contact/contact'
-import { Hero } from './home/hero/hero'
 import { FlyerSlider } from './home/flyer-slider'
 import { Intro } from './home/intro/intro'
 import { PillarsSection } from './home/pillars'
@@ -21,13 +19,11 @@ const Home = async () => {
   })
 
   const components = [
-    // Hero,
     HeroSection,
     FlyerSlider,
     Intro,
     PillarsSection,
     Testimonial,
-    // Contact,
     ContactSection
   ]
 
