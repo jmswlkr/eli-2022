@@ -7,6 +7,7 @@ export * from './media'
 export * from './svg'
 
 // COMPONENTS
+export * from './border-block'
 export * from './coming-soon'
 export * from './cta-section'
 export * from './general-btn'

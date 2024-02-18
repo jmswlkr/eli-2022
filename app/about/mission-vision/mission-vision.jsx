@@ -6,25 +6,30 @@ import {
   container,
   statement,
   header,
-  content,
+  content
 } from './mission-vision.module.scss'
+import { BorderBlock } from '@/ui-components'
 
 export const MissionVision = ({
   missionTitle,
-  missionTextContent,
+  missionText,
   visionTitle,
-  visionTextContent,
+  visionText
 }) => {
   return (
-    <article className={container}>
-      <div className={statement}>
-        <h3 className={header}>{missionTitle}</h3>
-        <p className={content}>{missionTextContent}</p>
-      </div>
-      <div className={statement}>
-        <h3 className={header}>{visionTitle}</h3>
-        <p className={content}>{visionTextContent}</p>
-      </div>
+    <article className='CONTAINER auto-rows-auto gap-md grid w-full grid-cols-2'>
+      {[
+        { title: missionTitle, content: missionText },
+        { title: visionTitle, content: visionText }
+      ].map((statement, idx) => {
+        return (
+          <BorderBlock
+            key={idx}
+            heading={statement.title}
+            paragraph={statement.content}
+          />
+        )
+      })}
     </article>
   )
 }
