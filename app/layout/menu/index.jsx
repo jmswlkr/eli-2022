@@ -24,7 +24,7 @@ export const SiteMenu = ({ modalOpen, closeModal }) => {
           {...phases}
           className={twm(modal, 'flex-center pb-0')}
         >
-          <div className='MENU_INNER lg:px-md gap-lg md:gap-xl p-md w-[var(--reading-content-width)] flex flex-col justify-end lg:justify-center items-center h-full text-white'>
+          <div className='MENU_INNER  gap-lg md:gap-xl p-md md:p-lg lg:px-md w-[var(--reading-content-width)] flex flex-col justify-end lg:justify-center items-center h-full text-white'>
             <div className='MENU_MAIN gap-lg lg:gap-0 lg:flex-row flex flex-col items-start justify-between w-full'>
               <ul className='CONNECT_COLUMN flex-col-tl gap-md lg:gap-lg'>
                 <span className='LABEL meta-2 md:block md:meta-1 text-meta_text hidden'>
