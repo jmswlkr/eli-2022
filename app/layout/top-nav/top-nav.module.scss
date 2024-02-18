@@ -11,12 +11,16 @@
   top: 0;
   width: 100vw;
   height: var(--nav-height);
-  padding: 0 2rem;
+  // padding: 0 2rem;
+  padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary);
   transition: var(--transition-primary);
+  @media (max-width: 592px) {
+    padding: 0 25px;
+  }
   &::after {
     z-index: -1;
     position: absolute;

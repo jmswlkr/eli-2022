@@ -24,16 +24,16 @@ export const SiteMenu = ({ modalOpen, closeModal }) => {
           {...phases}
           className={twm(modal, 'flex-center pb-0')}
         >
-          <div className='MENU_INNER lg:px-md gap-xl p-lg w-[var(--reading-content-width)] flex flex-col justify-end lg:justify-center items-center h-full text-white'>
+          <div className='MENU_INNER lg:px-md gap-lg md:gap-xl p-md w-[var(--reading-content-width)] flex flex-col justify-end lg:justify-center items-center h-full text-white'>
             <div className='MENU_MAIN gap-lg lg:gap-0 lg:flex-row flex flex-col items-start justify-between w-full'>
-              <ul className='CONNECT_LINKS flex-col-tl gap-md lg:gap-lg'>
-                <span className='LABEL meta-1 text-meta_text'>
+              <ul className='CONNECT_COLUMN flex-col-tl gap-md lg:gap-lg'>
+                <span className='LABEL meta-2 md:block md:meta-1 text-meta_text hidden'>
                   {CONNECT.label}
                 </span>
                 {CONNECT.links.map((link) => {
                   return (
                     <li
-                      className='head-3 hover:text-primary-300'
+                      className='head-5 md:head-3 hover:text-primary-300'
                       key={link.text}
                     >
                       <Link href={link.path} onClick={closeModal}>
@@ -43,14 +43,14 @@ export const SiteMenu = ({ modalOpen, closeModal }) => {
                   )
                 })}
               </ul>
-              <ul className='OFFERINGS_LINKS flex-col-tl gap-md lg:gap-lg'>
-                <span className='LABEL meta-1 text-meta_text'>
+              <ul className='OFFERINGS_COLUMN flex-col-tl gap-md lg:gap-lg'>
+                <span className='LABEL meta-2 md:block md:meta-1 text-meta_text hidden'>
                   {OFFERINGS.label}
                 </span>
                 {OFFERINGS.links.map((link) => {
                   return (
                     <li
-                      className='head-3 lg:head-2 hover:text-primary-300'
+                      className='head-5 md:head-3 lg:head-2 hover:text-primary-300'
                       key={link.text}
                     >
                       <Link href={link.path} onClick={closeModal}>
@@ -61,9 +61,9 @@ export const SiteMenu = ({ modalOpen, closeModal }) => {
                 })}
               </ul>
             </div>
-            <div className='CONTACT par-1 gap-md lg:flex-row lg:items-end flex flex-col items-start justify-between w-full'>
-              <div className='INFO flex-col-bl gap-md'>
-                <span className='LABEL meta-1 text-meta_text'>
+            <div className='MENU_CONTACT par-1 gap-md lg:flex-row lg:items-end flex flex-col items-start justify-between w-full'>
+              <div className='INFO_COLUMN flex-col-bl gap-md'>
+                <span className='LABEL md:block meta-1 text-meta_text hidden'>
                   {CONTACT.label}
                 </span>
                 <a
@@ -81,7 +81,7 @@ export const SiteMenu = ({ modalOpen, closeModal }) => {
                   {CONTACT.phone.display}
                 </a>
               </div>
-              <div className='SOCIAL gap-md flex items-end'>
+              <div className='SOCIAL_COLUMN gap-md flex items-end'>
                 {CONTACT.socials.map((social) => {
                   return (
                     <Link

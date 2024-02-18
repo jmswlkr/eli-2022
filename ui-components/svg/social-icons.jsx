@@ -3,9 +3,9 @@ import React from 'react'
 export const Facebook = () => {
   return (
     <svg
-      className='FACEBOOK'
-      width='37'
-      height='36'
+      className='FACEBOOK aspect-square h-[25px] md:h-[35px]'
+      // width='37'
+      // height='36'
       viewBox='0 0 37 36'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -17,9 +17,9 @@ export const Facebook = () => {
 export const Instagram = () => {
   return (
     <svg
-      className='INSTA'
-      width='36'
-      height='36'
+      className='INSTA aspect-square h-[25px] md:h-[35px]'
+      // width='25'
+      // height='25'
       viewBox='0 0 36 36'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -31,9 +31,9 @@ export const Instagram = () => {
 export const LinkedIn = () => {
   return (
     <svg
-      className='LINKEDIN'
-      width='36'
-      height='36'
+      className='LINKEDIN aspect-square h-[25px] md:h-[35px]'
+      // width='36'
+      // height='36'
       viewBox='0 0 36 36'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -45,10 +45,10 @@ export const LinkedIn = () => {
 export const Pinterest = () => {
   return (
     <svg
-      className='PINTEREST'
+      className='PINTEREST aspect-square h-[25px] md:h-[35px]'
       fill='none'
-      width='38'
-      height='38'
+      // width='38'
+      // height='38'
       viewBox='0 0 38 38'
       xmlns='http://www.w3.org/2000/svg'
     >
