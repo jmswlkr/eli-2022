@@ -29,7 +29,7 @@ export const ContactSection = () => {
 
   return (
     <section className='CONTACT_SECTION flex-center isolate relative w-full'>
-      <div className='CONTENT py-lg lg:grid-cols-2 gap-xxl z-10 grid w-full'>
+      <div className='CONTENT pb-xxl py-lg lg:grid-cols-2 gap-xxl z-10 grid w-full'>
         <div className='FORM_WRAPPER flex-col-tl full'>
           <SectionHeader title='Get in Touch' />
           <form
