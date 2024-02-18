@@ -1,6 +1,7 @@
 import React from 'react'
 import { QuoteMark } from '../svg/quote-mark'
 
+import { twm } from '@/utils'
 import {
   container,
   quoteMark,
@@ -16,7 +17,7 @@ export const QuoteBlock = ({ quote, author, source }) => {
       <span className={quoteMark}>
         <QuoteMark />
       </span>
-      <p className={text}>{quote}</p>
+      <p className={twm(text, 'quote-1')}>{quote}</p>
       {author && source && (
         <div className={attr}>
           <span className={authorStyle}> — &nbsp; {author}</span>

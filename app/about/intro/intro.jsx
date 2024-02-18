@@ -8,32 +8,41 @@ import {
   textWrap,
   intro as introStyle,
   paragraph,
-  inline,
+  inline
 } from './intro.module.scss'
+import { HeaderParagraph } from '@/ui-components'
 
 export const Intro = ({
+  mainContent,
   mainContentParagraph1,
   mainContentParagraph2,
   mainContentParagraph3,
-  mainContentParagraph4,
+  mainContentParagraph4
 }) => {
+  const intro = [
+    mainContentParagraph1,
+    mainContentParagraph2,
+    mainContentParagraph3,
+    mainContentParagraph4
+  ]
+  console.log('mainContent: ', mainContent)
 
   return (
-    <section className={container}>
-      <div className={textWrap}>
-        <p className={introStyle}>
-          <MD>{mainContentParagraph1}</MD>
-        </p>
-        <p className={paragraph}>
-          <MD>{mainContentParagraph2}</MD>
-        </p>
-        <p className={paragraph}>
-          <MD>{mainContentParagraph3}</MD>
-        </p>
-        <p className={`${paragraph} ${inline}`}>
-          <MD>{mainContentParagraph4}</MD>
-        </p>
+    <div className='READABLE_WRAP flex-col-center'>
+      <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xxl'>
+        <div className='MAIN_CONTENT flex-col-tl gap-lg'>
+          {mainContent.map((block) => {
+            return (
+              <HeaderParagraph
+                key={block.sys.id}
+                mainContentHeading={block.fields?.heading}
+                mainContentParagraph={block.fields.paragraph}
+                classes={{ wrapper: '!gap-ms', content: '!gap-ms' }}
+              />
+            )
+          })}
+        </div>
       </div>
-    </section>
+    </div>
   )
 }

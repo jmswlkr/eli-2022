@@ -1,19 +1,14 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { extractValuesCardsFromContentful } from './extract-values'
 
 import {
   container,
-  intro,
-  header,
-  content as contentStyle,
-  grid,
   card,
   cardTitle,
   cardText,
-  flipped,
   shade,
   modalContainer,
   modalContent,
@@ -23,15 +18,13 @@ import {
   text,
   arrowNav,
   prev,
-  next,
-  listNav,
-  navItem
+  next
 } from './values.module.scss'
-import { ChevronIcon } from '@/ui-components'
+import { ChevronIcon, HeaderParagraph } from '@/ui-components'
 import { useLayoutContext } from 'app/(context)/layout.context'
 
 export const Values = (content) => {
-  const { valuesTitle, valuesTextContent } = content
+  const { valuesHeadingBlock } = content
 
   const values = extractValuesCardsFromContentful(content)
 
@@ -45,11 +38,15 @@ export const Values = (content) => {
 
   return (
     <section className={container}>
-      <div className={intro}>
-        <h2 className={header}>{valuesTitle}</h2>
-        <p className={contentStyle}>{valuesTextContent}</p>
-      </div>
-      <ul className={grid}>
+      <HeaderParagraph
+        mainContentHeading={valuesHeadingBlock.fields.heading}
+        mainContentParagraph={valuesHeadingBlock.fields.paragraph}
+      />
+      <ul
+        className={
+          'VALUES_GRID grid lg:grid-cols-2 auto-rows-[250px] w-full gap-md'
+        }
+      >
         {values.map((value, idx) => {
           return (
             <ValueCard
@@ -79,7 +76,7 @@ function ValueCard({ value, allValues, idx }) {
 
   return (
     <li className={`${card}`} onClick={handleOpenAndPopulateModal}>
-      <span className={cardTitle}>{front}</span>
+      <span className='!head-4 uppercase'>{front}</span>
       <div className={`${cardText}`}>
         <p>{back}</p>
       </div>
@@ -111,12 +108,6 @@ function ValuesModal({ allValues, idx }) {
     }
   }
 
-  /*
-    TODO
-    # Ensure that this set up opens the modal slot.
-    # Continue with building the values modal as designed in Figma.
-  */
- 
   return (
     <div className={modalContainer}>
       <div className={modalContent}>
@@ -135,39 +126,6 @@ function ValuesModal({ allValues, idx }) {
           <ChevronIcon />
         </button>
       </div>
-      <ul className={listNav}>
-        {allValues.map((value, idx) => {
-          const activeStyle = value.front === title ? active : ''
-
-          return (
-            <li
-              onClick={() => setCurIdx(idx)}
-              className={`${navItem} ${activeStyle}`}
-              key={value.front}
-            >
-              {value.front}
-            </li>
-          )
-        })}
-      </ul>
     </div>
   )
 }
-
-/*
-
-<li
-  key={front}
-  className={`${card}`}
-  // onClick={() => handleFlipped(idx)}
-  // className={`${card} ${isFlipped ? flipped : ''}`}
->
-  <span className={cardTitle}>{front}</span>
-  <div className={`${cardText}`}>
-    <p>{back}</p>
-  </div>
-  <div className={shade} style={{ background: color }} />
-  <img src={image.url} alt={image.alt} />
-</li>
-
-*/

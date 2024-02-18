@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  margin: var(--intracontent-margin-lg) 0;
+  // margin: var(--intracontent-margin-lg) 0;
   font-family: var(--font-italic);
   color: var(--primary-deep);
   display: flex;
@@ -19,11 +19,11 @@
   left: -5%;
 }
 .text {
-  font-size: var(--text-prose-em);
-  @media (max-width: 1024px) {
-    line-height: 175%;
-    font-size: var(--text-ml);
-  }
+  // font-size: var(--text-prose-em);
+  // @media (max-width: 1024px) {
+  //   line-height: 175%;
+  //   font-size: var(--text-ml);
+  // }
 }
 .attr {
   margin-top: 1rem;

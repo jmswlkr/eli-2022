@@ -15,24 +15,22 @@ const About = async () => {
 
   const { content } = await useContentful({
     ...PAGE_CONFIG,
-    preview: isEnabled,
+    preview: isEnabled
   })
 
-  const components = [
-    QuoteBlock,
-    Intro,
-    MissionVision,
-    Values,
-    CtaSection,
-  ]
+  const components = [QuoteBlock, Intro, MissionVision, Values, CtaSection]
 
   return (
     <ContentLayout>
-      <HeroSecondary {...content.hero.fields}/>
-      {content &&
-        components.map((Component, idx) => {
-          return <Component key={idx} {...content} />
-        })}
+      <HeroSecondary {...content.hero.fields} />
+      <div className='READABLE_WRAP flex-col-center'>
+        <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xxl'>
+          {content &&
+            components.map((Component, idx) => {
+              return <Component key={idx} {...content} />
+            })}
+        </div>
+      </div>
     </ContentLayout>
   )
 }

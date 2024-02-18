@@ -91,9 +91,9 @@
     z-index: 3;
     width: 85%;
     text-align: center;
-    text-transform: uppercase;
-    font-family: var(--font-bold);
-    font-size: var(--text-prose);
+    // text-transform: uppercase;
+    // font-family: var(--font-bold);
+    // font-size: var(--text-prose);
     color: var(--white);
   }
   .shade {
@@ -159,6 +159,9 @@
     justify-content: center;
     gap: 50px;
     padding-bottom: 10vh;
+    @media (max-width: 1024px) {
+      gap: 25px;
+    }
   }
   .thumbnail {
     position: relative;
@@ -167,8 +170,9 @@
     overflow: hidden;
     border: 1px solid var(--accent);
     border-radius: var(--radius-rounded);
-
-    img {
+    @media (max-width: 1024px) {
+      height: 100px;
+      width: 100px;
     }
   }
   .title {
