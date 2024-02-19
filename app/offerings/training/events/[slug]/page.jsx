@@ -2,12 +2,18 @@ import { draftMode } from 'next/headers'
 
 import { useContentfulEntryByParams } from '@/contentful'
 
-import { HeroTertiary } from '@/ui-components'
+import {
+  BorderBlock,
+  EmphasisBlock,
+  HeroTertiary,
+  QuoteBlock,
+  TestComponent
+} from '@/ui-components'
 import { CtaSection } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
 import { HeaderParagraph } from '@/ui-components'
 
-import { EventBanner } from '../../../_components/event-banner'
+import { TrainingEventHero } from '../../../_components/event-hero'
 
 const TrainingEventPage = async ({ params }) => {
   const { isEnabled } = draftMode()
@@ -25,8 +31,9 @@ const TrainingEventPage = async ({ params }) => {
 
   return (
     <>
-      <HeroTertiary type={'event'} {...content.hero.fields} />
-      <EventBanner bannerText={content.eventDescriptionTeaser} />
+      <TrainingEventHero {...content.hero.fields} />
+      <TestComponent content={content} />
+      <EmphasisBlock text={content.eventDescriptionTeaser} />
       <section className='DESCRIPTION flex-col-tl gap-lg'>
         {content?.eventDescriptionParagraphs?.map((paragraph) => {
           return (

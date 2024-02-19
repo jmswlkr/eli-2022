@@ -36,7 +36,7 @@ export const TrainingCard = ({ event, entry }) => {
         <Button
           text='Sign Up →'
           path={`/offerings/training/events/${event.pageSlug}`}
-          classes='sm'
+          classes='sm outline text-primary-500'
         />
         {/* TODO: Include buttons for read more and sign up. */}
       </div>
