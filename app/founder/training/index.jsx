@@ -22,7 +22,7 @@ export const TrainingSection = ({ training: blocks }) => {
     <setction className='TRAINING_SECTION flex-col-tl gap-md w-full'>
       <SectionHeader title='My Training' />
       {Object.entries(years)
-        .toSorted((a, b) => b[0] - a[0]) // sort by year
+        .sort((a, b) => b[0] - a[0]) // sort by year
         .map((year) => {
           return <YearBlock key={year[0]} year={year[0]} blocks={year[1]} />
         })}

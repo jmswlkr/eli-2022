@@ -6,7 +6,6 @@ import { baseUrl } from '@/utils'
 export const ContactSection = () => {
   async function handleSubmitInquiry(formData) {
     'use server'
-    console.log('formData: ', formData)
 
     send(
       `${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`,

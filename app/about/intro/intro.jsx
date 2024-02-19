@@ -25,7 +25,6 @@ export const Intro = ({
     mainContentParagraph3,
     mainContentParagraph4
   ]
-  console.log('mainContent: ', mainContent)
 
   return (
     <div className='READABLE_WRAP flex-col-center'>
