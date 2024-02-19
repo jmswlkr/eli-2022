@@ -22,7 +22,7 @@ export const HeroTertiary = ({
   return (
     <div className='HERO_CONTAINER_3 hero-container-3 grid grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-[.55fr_.45fr] pt-lg gap-md w-full'>
       <div className={'relative full'}>
-        {/* <ContentfulImageBlock contentfulImage={heroImage} /> */}
+        <ContentfulImageBlock contentfulImage={heroImage} />
       </div>
       <div className='TEXT_WRAP full gap-md flex flex-col items-start justify-end'>
         <h1 className='TEXT_1 head-1 !font-body !text-[72px]'>

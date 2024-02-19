@@ -1,3 +1,5 @@
+/* eslint no-console: 0 */
+
 import { send } from '@emailjs/browser'
 
 import { SectionHeader } from 'ui-components/headings'

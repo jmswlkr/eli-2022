@@ -19,7 +19,8 @@ module.exports = {
         body: ['var(--font-med)'],
 
         // EXPLICIT
-        bold: ['var(--font-med)'],
+        bold: ['var(--font-bold)'],
+        semibold: ['var(--font-med)'],
         light: ['var(--font-reg)'],
         italic: ['var(--font-italic)']
       },

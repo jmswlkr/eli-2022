@@ -59,7 +59,7 @@ export const Testimonial = (content) => {
       <SectionHeader
         title={testimonialTitle}
         labelText={testimonialMarqueeText}
-        classes={{ title: 'head-3' }}
+        classes={{ title: 'head-2' }}
       />
       <div className={testimonialSliderBase}>
         <div className={testimonialSlider}>

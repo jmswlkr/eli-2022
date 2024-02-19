@@ -11,7 +11,7 @@ import {
 export const SectionHeader = ({
   title = 'Section Title',
   alignLeft = false,
-  classes = { container: '', title: 'head-4' }
+  classes = { container: '', title: 'head-2' }
 }) => {
   return (
     <div className={twm(container, classes.container)}>

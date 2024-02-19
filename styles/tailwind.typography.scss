@@ -14,7 +14,6 @@
     letter-spacing: var(--tracking-lg);
   }
 }
-
 .display-2 {
   font-size: 136px;
   font-family: var(--font-display);
@@ -25,6 +24,16 @@
   }
   @media (max-width: 592px) {
     font-size: 46px;
+    letter-spacing: var(--tracking-lg);
+  }
+}
+.display-3 {
+  font-size: 64px;
+  @media (max-width: 1024px) {
+    font-size: 56px;
+  }
+  @media (max-width: 592px) {
+    font-size: 40px;
     letter-spacing: var(--tracking-lg);
   }
 }
