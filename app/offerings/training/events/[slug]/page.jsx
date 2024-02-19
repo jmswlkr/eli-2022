@@ -32,7 +32,6 @@ const TrainingEventPage = async ({ params }) => {
   return (
     <>
       <TrainingEventHero {...content.hero.fields} />
-      <TestComponent content={content} />
       <EmphasisBlock text={content.eventDescriptionTeaser} />
       <section className='DESCRIPTION flex-col-tl gap-lg'>
         {content?.eventDescriptionParagraphs?.map((paragraph) => {
