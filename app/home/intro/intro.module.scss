@@ -147,9 +147,12 @@
 
 .imgWrap {
   position: relative;
-  height: 250px;
+  aspect-ratio: 4 / 3;
   width: 100%;
   background-color: slategray;
   border-radius: 5px;
   overflow: hidden;
+  img {
+    object-position: 50% 25% !important;
+  }
 }
