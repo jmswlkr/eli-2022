@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       screens: {
         xs: '475px',
+        lg: '1025px',
         xxxl: '1700px', // navbar collapses on this breakpoint
         '2k': '2200px'
       },

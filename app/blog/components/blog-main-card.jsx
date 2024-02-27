@@ -15,15 +15,15 @@ export const BlogMainCard = ({ content, withButton = true }) => {
   if (!content) return null
 
   return (
-    <div className='BLOG_FEATURE_CONTAINER gap-md lg:gap-lg grid w-full grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-[.6fr_.4fr]'>
-      <div className='IMAGE WRAP relative min-h-[30vh] lg:min-h-[60vh]'>
+    <div className='BLOG_FEATURE_CONTAINER  gap-md md:gap-lg grid w-full grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-[.6fr_.4fr]'>
+      <div className='IMAGE WRAP relative lg:min-h-[60vh]'>
         {hero?.mainImage && (
           <ContentfulImageBlock contentfulImage={hero?.mainImage} />
         )}
       </div>
       <div className='TEXT_WRAP gap-md flex flex-col items-start justify-end'>
-        <h2 className='TITLE head-3 lg:head-2'>{hero?.heading}</h2>
-        <p className='SUBTITLE head-4 !font-light'>{hero?.subheading}</p>
+        <h2 className='TITLE head-2'>{hero?.heading}</h2>
+        <p className='SUBTITLE head-4 !font-body !leading-[125%]'>{hero?.subheading}</p>
         <div className='flex-tl items-center gap-[1ch]'>
           <span>{formattedDate}</span>
           {/* <span>•</span>
