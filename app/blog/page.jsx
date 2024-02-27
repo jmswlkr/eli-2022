@@ -15,14 +15,17 @@ const BlogPage = async () => {
     preview: isEnabled,
     params: {
       content_type: 'blogDirectoryPage',
-      include: 10
+      include: 10,
+      limit: 1
     }
   })
 
   const { entry: defaultContent } = await useContentfulEntryByParams({
     preview: isEnabled,
     params: {
-      content_type: 'blogPost'
+      content_type: 'blogPost',
+      include: 10,
+      limit: 4
     }
   })
 

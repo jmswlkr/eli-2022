@@ -1,2 +1,2 @@
-export * from './paragraph-header'
-export * from './section-header'
+export * from './paragraph-header';
+export * from './section-header';

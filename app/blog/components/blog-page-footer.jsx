@@ -1,12 +1,10 @@
-
 import { draftMode } from 'next/headers'
 
 import { twm } from '@/utils'
 import { useContentfulEntryByParams } from '@/contentful'
-import {SectionHeader } from '@/ui-components'
 
 import { BlogSecondaryCard } from './blog-secondary-card'
-
+import { SectionHeader } from '@/ui-components'
 
 export const BlogPageFooter = async ({ currentEntry }) => {
   const { isEnabled } = draftMode()
@@ -21,9 +19,14 @@ export const BlogPageFooter = async ({ currentEntry }) => {
     }
   })
 
+  if (entries.total < 1) return null
+
   return (
     <div className='BLOG_FOOTER gap-md flex-col'>
-      <SectionHeader title='Recent Articles' classes={{ title: twm('head-3') }} />
+      <SectionHeader
+        title='Recent Articles'
+        classes={{ title: twm('head-3') }}
+      />
       <div className='BLOG_PAGE_FOOTER gap-lg pb-xxl lg:grid-cols-2 lg:grid-rows-1 grid grid-cols-1 grid-rows-2'>
         {entries.items.map((item) => {
           return <BlogSecondaryCard key={item.sys.id} content={item} />

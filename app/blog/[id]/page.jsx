@@ -2,10 +2,10 @@ import { draftMode } from 'next/headers'
 
 import { useContentfulEntryByParams } from '@/contentful'
 
-import { ContentLayout } from '@/ui-components'
 import { BlogMainCard as BlogHero } from '../components/blog-main-card'
 import { BlogContent } from '../components/blog-content'
 import { BlogPageFooter } from '../components/blog-page-footer'
+import { ContentLayout } from '@/ui-components'
 
 
 const BlogSinglePage = async ({ params }) => {
