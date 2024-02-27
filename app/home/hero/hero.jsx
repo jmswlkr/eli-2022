@@ -50,7 +50,7 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
             {...phases}
             transition={smooth(3, 0)}
           />
-          <video
+          {/* <motion.video
             key='img1'
             className={bg}
             src={`https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4`}
@@ -59,28 +59,35 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
             muted
             {...fadeSlideUpShort}
             {...phases}
-            transition={smooth(3, 1)}
-          />
+            transition={smooth(1, 1)}
+          /> */}
         </AnimatePresence>
       </div>
-      <motion.div
-        className={heroTextContent}
-      >
-        <div className={tagline}>
-          <h2 className={slogan}>
-            <span>{heroHeaderLines[0]}</span>
-            <span className={small}>{heroHeaderLines[1]}</span>
-            <em>{heroHeaderLines[2]}</em>
-          </h2>
-          <div className={btn}>
-            <a href={'/#intro'}>
-              <button className='general-btn solid light'>
-                {heroButtonText}
-              </button>
-            </a>
-          </div>
-        </div>
-      </motion.div>
+      <AnimatePresence>
+        {fontsLoaded && (
+          <motion.div
+            transition={smooth(3, 1)}
+            {...phases}
+            {...fadeIn}
+            className={heroTextContent}
+          >
+            <div className={tagline}>
+              <h2 className={slogan}>
+                <span>{heroHeaderLines[0]}</span>
+                <span className={small}>{heroHeaderLines[1]}</span>
+                <em>{heroHeaderLines[2]}</em>
+              </h2>
+              <div className={btn}>
+                <a href={'/#intro'}>
+                  <button className='general-btn solid light'>
+                    {heroButtonText}
+                  </button>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

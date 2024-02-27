@@ -32,7 +32,7 @@ export function Button({
 
   return (
     <button
-      className={twm('general-btn px-md py-sm', classes)}
+      className={twm('general-btn px-md py-sm outline-none', classes)}
       onClick={handleClick}
       type={type}
       disabled={disabled}

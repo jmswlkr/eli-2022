@@ -15,7 +15,7 @@ export const scrollPhases = {
 
 
 // Animation Transition Objects
-export const smooth = (duration = 2.5, delay = 0) => {
+export const smooth = (duration = 1, delay = 0) => {
   return {
     delay,
     duration,
