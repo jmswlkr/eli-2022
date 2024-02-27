@@ -25,7 +25,8 @@ const BlogPage = async () => {
     params: {
       content_type: 'blogPost',
       include: 10,
-      limit: 4
+      limit: 4,
+      order: '-sys.createdAt'
     }
   })
 
@@ -34,7 +35,9 @@ const BlogPage = async () => {
   const featuredBlogSelected = selectedContent.items[0].fields?.featuredBlog
 
   const featuredBlogDefault = defaultContent.items[0]
+  
 
+  
   const secondaryPosts = defaultContent.items.slice(1)
 
   return (

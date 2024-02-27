@@ -11,16 +11,14 @@ const Error = ({ error, reset }) => {
   }, [error, reset])
 
   return (
-    <section className='CONTAINER flex-col-center p-xxl w-ful'>
+    <section className='CONTAINER mt-[var(--nav-height)] flex-col-center p-xxl w-full min-h-[50vh]'>
       <div className='HEADER text-primary-500 head-2 flex-col-center'>
-        <h2>Error!</h2>
+        <h2>We can't find this page.</h2>
         <div className='RELOAD_BTN'>
-          <Button text='subscribe for updates' action={reset} />
+          <Button text='Reload' action={reset} />
         </div>
       </div>
-      <p className='MESSAGE flex-col-center text-center [&>*]:text-center'>
-        <span>We encountered an error looking for this page.</span>
-        <span>•</span>
+      <p className='MESSAGE par-1 w-2/3 flex-col-center text-center [&>*]:text-center'>
         <span>
           Please reload your browser or click the above button to go back to the
           previous page.
