@@ -67,7 +67,7 @@
 // > COMPONENTS < \\
 .general-btn {
   cursor: pointer;
-  outline: none;
+  outline: none !important;
   border-radius: var(--radius-md);
   display: inline;
   white-space: nowrap;
@@ -82,7 +82,7 @@
     color: var(--white) !important;
   }
   &.outline {
-    border: 0.5px solid currentColor;
+    border: 0.5px solid currentColor !important;
   }
   &.solid {
     background-color: var(--primary);
