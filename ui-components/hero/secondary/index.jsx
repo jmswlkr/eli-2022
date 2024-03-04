@@ -11,8 +11,8 @@ export const HeroSecondary = ({
 }) => {
   return (
     <section className='HERO_CONTAINER_2 hero-container-2 relative w-full'>
-      <div className='CONTENT absolute-center lg:grid-cols-2 grid w-screen h-full'>
-        <div className='TEXT_WRAP flex-center bg-primary-500/10 relative'>
+      <div className='CONTENT absolute-center lg:grid-cols-2 lg:grid-rows-1 grid w-screen h-full grid-cols-1 grid-rows-2'>
+        <div className='TEXT_WRAP p-xl lg:p-0 flex-center bg-primary-500/10 relative'>
           <div className='TEXT_CONTENT max-w-5/6 flex-col-center lg:flex-col-tl gap-ms z-20'>
             {subtitle && subtitlePositionTop && (
               <p className='SUBTITLE head-3 italic text-primary-500 !font-thin'>
@@ -44,14 +44,14 @@ export const HeroSecondary = ({
               alt='circle decoration'
             />
           </div>
-          <div className='HERO_IMAGE_MOBILE full absolute-center lg:hidden relative z-0 block'>
+          {/* <div className='HERO_IMAGE_MOBILE full absolute-center lg:hidden relative z-0 block'>
             <ContentfulImageBlock
               contentfulImage={imageUrl}
               classes='absolute-img opacity-20'
             />
-          </div>
+          </div> */}
         </div>
-        <div className='HERO_IMAGE_DESK lg:block relative hidden'>
+        <div className='HERO_IMAGE relative block'>
           <ContentfulImageBlock contentfulImage={imageUrl} />
         </div>
       </div>

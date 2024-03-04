@@ -3,7 +3,6 @@ import { BLOCKS } from '@contentful/rich-text-types'
 
 import { twm } from '@/utils'
 
-
 export const HeaderParagraph = ({
   mainContentHeading,
   mainContentParagraph,
@@ -13,7 +12,6 @@ export const HeaderParagraph = ({
     paragraph: ''
   }
 }) => {
-  console.log("🚀 ~ mainContentParagraph:", mainContentParagraph)
   const formattingOptions = {
     renderNode: {
       [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
