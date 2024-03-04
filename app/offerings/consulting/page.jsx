@@ -36,7 +36,7 @@ const OrganizationalConsultingPage = async () => {
           <div className="LIST_CONTENT flex-col-tl gap-md">
             {content.listContent.map((block) => {
               return (
-                <div key={block.sys.id}className='LIST_ITEM border-l-2 border-primary-500 rounded-r-lg flex-col-tl gap-ms bg-primary-100 p-md'>
+                <div key={block.sys.id}className='LIST_ITEM border-primary-500 flex-col-tl gap-ms bg-primary-100 p-md border-l-2 rounded-r-lg'>
                   <HeaderParagraph
                     mainContentHeading={block.fields.heading}
                     mainContentParagraph={block.fields.paragraph}
@@ -48,7 +48,7 @@ const OrganizationalConsultingPage = async () => {
           </div>
         </div>
       </div>
-      <CtaSection {...content.cta}/>
+      <CtaSection {...content.cta.fields}/>
     </>
   )
 }

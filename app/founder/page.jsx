@@ -19,13 +19,7 @@ const Founder = async () => {
     preview: isEnabled
   })
 
-  const components = [
-    QuoteBlock,
-    IntroSection,
-    StorySection,
-    TrainingSection,
-    CtaSection
-  ]
+  const components = [QuoteBlock, IntroSection, StorySection, TrainingSection]
 
   return (
     <ContentLayout>
@@ -33,6 +27,7 @@ const Founder = async () => {
       {components.map((Component, idx) => {
         return <Component key={idx} {...content} />
       })}
+      <CtaSection {...content.cta.fields} />
     </ContentLayout>
   )
 }

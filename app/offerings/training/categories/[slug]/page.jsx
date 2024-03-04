@@ -60,7 +60,7 @@ const TrainingCategoryPage = async ({ params }) => {
           })}
         </div>
       </section>
-      <CtaSection {...content.ctaCard.fields}/>
+      <CtaSection {...content.cta.fields}/>
     </>
   )
 }

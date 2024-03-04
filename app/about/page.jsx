@@ -16,11 +16,10 @@ const About = async () => {
   const { content } = await useContentful({
     ...PAGE_CONFIG,
 
-
     preview: isEnabled
   })
 
-  const components = [QuoteBlock, Intro, MissionVision, Values, CtaSection]
+  const components = [QuoteBlock, Intro, MissionVision, Values]
 
   return (
     <ContentLayout>
@@ -33,6 +32,7 @@ const About = async () => {
             })}
         </div>
       </div>
+      <CtaSection {...content.cta.fields} />
     </ContentLayout>
   )
 }

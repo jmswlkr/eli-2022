@@ -52,7 +52,7 @@ const CoachingPage = async () => {
             })}
           </section>
         </div>
-        <CtaSection />
+        <CtaSection {...content.cta.fields} />
       </div>
     </>
   )
