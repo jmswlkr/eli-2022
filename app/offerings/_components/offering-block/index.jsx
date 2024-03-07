@@ -7,12 +7,12 @@ import {
   blurb,
   text as textStyle,
   header,
-  content,
   btn,
   details,
   list,
   imgWrap
 } from './offering-block.module.scss'
+import { twm } from 'utils/tailwind'
 
 export const OfferingBlock = ({
   id,
@@ -28,7 +28,7 @@ export const OfferingBlock = ({
       <div className={blurb}>
         <div className={textStyle}>
           <h3 className={header}>{title}</h3>
-          <p className={content}>{text}</p>
+          <p className='par-1'>{text}</p>
         </div>
         <Button
           text='Learn More'
@@ -37,10 +37,10 @@ export const OfferingBlock = ({
         />
       </div>
       <div className={details}>
-        <h3 className={header}>{list_header}</h3>
+        <h3 className={twm(header, 'head-4')}>{list_header}</h3>
         <ul className={list}>
           {details_list.map((detail, idx) => {
-            return <li key={idx}>{detail}</li>
+            return <li key={idx} className='par-1'>{detail}</li>
           })}
         </ul>
         <div className={imgWrap}>

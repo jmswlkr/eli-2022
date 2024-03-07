@@ -1,5 +1,6 @@
 import { ContentfulImageBlock } from '@/ui-components'
 import { Button } from '@/ui-components'
+import { twm } from 'utils/tailwind'
 
 export const HeroSecondary = ({
   titleSegments,
@@ -7,8 +8,10 @@ export const HeroSecondary = ({
   subtitlePositionTop,
   imageUrl,
   buttonText = null,
-  buttonPath = null
+  buttonPath = null,
+  ...content
 }) => {
+  console.log('🚀 ~ content:', content)
   return (
     <section className='HERO_CONTAINER_2 hero-container-2 relative w-full'>
       <div className='CONTENT absolute-center lg:grid-cols-2 lg:grid-rows-1 grid w-screen h-full grid-cols-1 grid-rows-2'>
@@ -51,8 +54,30 @@ export const HeroSecondary = ({
             />
           </div> */}
         </div>
-        <div className='HERO_IMAGE relative block'>
-          <ContentfulImageBlock contentfulImage={imageUrl} />
+        <div
+          className={twm(
+            'HERO_IMAGE bg-primary-600 relative block flex-center',
+            content.usePaddedImage && 'py-lg px-[10vw]'
+          )}
+        >
+          <div
+            className={twm(
+              'PADDING_WRAP full relative overflow-hidden',
+              content.usePaddedImage && ''
+            )}
+          >
+            <div
+              className={twm(
+                'OUTER_FRAME full relative flex-center',
+                content.usePaddedImage &&
+                  'p-lg border border-primary-300/50'
+              )}
+            >
+              <div className='INNER_FRAME full flex-center relative'>
+                <ContentfulImageBlock contentfulImage={imageUrl} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

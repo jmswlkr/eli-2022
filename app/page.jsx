@@ -9,6 +9,7 @@ import { PillarsSection } from './home/pillars'
 import { Testimonial } from './home/testimonial/testimonial'
 import { HeroSection } from './home/hero'
 import { ContactSection } from './home/contact'
+import { TestComponent } from '@/ui-components'
 
 const Home = async () => {
   const { isEnabled } = draftMode()

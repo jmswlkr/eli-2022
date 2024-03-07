@@ -27,33 +27,33 @@ const CoachingPage = async () => {
     <>
       <HeroSecondary {...content.hero.fields} />
       <div className='READABLE_WRAP flex-col-center'>
-        <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-lg'>
+        <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xl'>
           <section className='INTRO flex-col-tl gap-lg'>
-            {intro.map((block) => {
+            {content.mainContent.map((block) => {
               return (
                 <HeaderParagraph
-                  key={block.heading}
-                  mainContentHeading={block.heading}
-                  mainContentParagraph={block.paragraph}
+                  key={block.sys.id}
+                  mainContentHeading={block.fields.heading}
+                  mainContentParagraph={block.fields.paragraph}
                   classes={{ wrapper: '!gap-ms', content: '!gap-ms' }}
                 />
               )
             })}
           </section>
-          <section className='COACHING_CARDS flex-col-tl gap-md mb-xxl'>
-            {coaching.map((block) => {
+          <section className='COACHING_CARDS flex-col-tl gap-md'>
+            {content.keyContent.map((block) => {
               return (
                 <BorderBlock
-                  key={block.heading}
-                  heading={block.heading}
-                  paragraph={block.paragraph}
+                  key={block.sys.id}
+                  heading={block.fields.heading}
+                  paragraph={block.fields.paragraph}
                 />
               )
             })}
           </section>
         </div>
-        <CtaSection {...content.cta.fields} />
       </div>
+      <CtaSection {...content.cta.fields} />
     </>
   )
 }

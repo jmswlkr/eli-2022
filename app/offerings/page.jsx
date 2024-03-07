@@ -4,7 +4,7 @@ import { useContentful } from '@/contentful'
 import { PAGE_CONFIG } from './page-config'
 import { extractOfferingsContent } from './extract-offerings-content'
 
-import { HeaderParagraph } from '@/ui-components'
+import { CtaSection, HeaderParagraph } from '@/ui-components'
 import { HeroSecondary } from '@/ui-components'
 import { OfferingBlock } from './_components/offering-block'
 
@@ -34,6 +34,7 @@ const Offerings = async () => {
       {offeringsBlocks.map((block, idx) => {
         return <OfferingBlock key={idx} {...block} />
       })}
+      <CtaSection {...content.cta.fields} />
     </>
   )
 }
