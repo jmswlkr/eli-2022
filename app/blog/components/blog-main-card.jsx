@@ -2,7 +2,7 @@
 
 import { getUsaDateFromISO } from '@/utils'
 
-import { Button } from '@/ui-components'
+import { LinkButton } from '@/ui-components'
 import { ContentfulImageBlock } from '@/ui-components'
 
 // TODO: Calculate TTR
@@ -30,7 +30,7 @@ export const BlogMainCard = ({ content, withButton = true }) => {
           <span>{content?.timeToRead || '3'} minute read</span> */}
         </div>
         {withButton && (
-          <Button
+          <LinkButton
             text='Read More'
             path={`blog/${content?.fields?.slug}`}
             classes='sm solid'

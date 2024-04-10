@@ -1,15 +1,7 @@
 import React from 'react'
 
-import { Button } from '@/ui-components'
+import { LinkButton } from '@/ui-components'
 
-import {
-  container,
-  content,
-  words,
-  header,
-  paragraph,
-  image as imageStyle
-} from './cta-section.module.scss'
 import { ContentfulImageBlock } from '../contentful-image-block'
 
 const DEFAULTS = {
@@ -41,8 +33,8 @@ export const CtaSection = ({
         <div className='CTA_CONTENT_GRID grid-rows-1 grid-cols-1 lg:grid-cols-2 lg:py-xl h-full w-full lg:w-[var(--reading-content-width)] grid'>
           <div className='gap-md lg:items-start relative z-20 flex flex-col items-center justify-center'>
             <h3 className='head-3 text-primary-300 lg:text-primary-500'>{title}</h3>
-            <p className=' !leading-[150%] text-white lg:text-primary_text lg:par-1 w-4/5 lg:text-left text-center'>{blurb}</p>
-            <Button text={buttonText} path={buttonLink} classes='solid med !bg-primary-300 lg:!bg-primary-500' />
+            <p className=' !leading-[150%] text-white lg:text-primary_text lg:par-1 w-4/5 md:w-2/3 lg:w-4/5 lg:text-left text-center'>{blurb}</p>
+            <LinkButton text={buttonText} path={buttonLink} classes='solid med !bg-primary-300 lg:!bg-primary-500' />
           </div>
           <div className='SHADE bg-primary-300/30 absolute-shade z-10' />
           <div className='SHADE bg-black/50 absolute-shade lg:hidden z-10' />

@@ -3,7 +3,7 @@
 import dayjs from 'dayjs'
 import * as advancedFormat from 'dayjs/plugin/advancedFormat'
 
-import { Button } from '@/ui-components'
+import { Button, LinkButton } from '@/ui-components'
 import { ContentfulImageBlock } from '../../contentful-image-block'
 
 dayjs.extend(advancedFormat)
@@ -39,7 +39,7 @@ export const HeroTertiary = ({
           <p className='TEXT_3 par-1 !text-[24px]'>{heroTertiaryText}</p>
         )}
         {heroButtonText && (
-          <Button text={heroButtonText} path='#' classes='solid sm dark' />
+          <LinkButton text={heroButtonText} path='#' classes='solid sm dark' />
         )}
       </div>
     </div>

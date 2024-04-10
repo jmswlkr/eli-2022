@@ -6,7 +6,7 @@ import {
   connectLinks,
   contactInfo,
   pageLinks,
-  socialIcons,
+  socialIcons
 } from '../navigation-data'
 
 import {
@@ -41,25 +41,21 @@ export const Footer = () => {
           {connectLinks.map((lnk) => {
             return (
               <li key={lnk.content}>
-                <Link legacyBehavior href={lnk.path}>
-                  <a>{lnk.content}</a>
-                </Link>
+                <Link href={lnk.path}>{lnk.content}</Link>
               </li>
             )
           })}
         </ul>
-        <ul className={`${linkList} ${pageLinksStyle}`}>
+        <div className={`${linkList} ${pageLinksStyle}`}>
           <label>Site</label>
           {pageLinks.map((lnk) => {
             return (
-              <li key={lnk.content}>
-                <Link legacyBehavior href={lnk.path}>
-                  <a>{lnk.menu_content}</a>
-                </Link>
-              </li>
+              <span key={lnk.content}>
+                <Link href={lnk.path}>{lnk.menu_content}</Link>
+              </span>
             )
           })}
-        </ul>
+        </div>
         <span className={mobileDivider} />
         <ul className={`${linkList} ${contactLinks}`}>
           {contactInfo.map((inf) => {
@@ -68,7 +64,9 @@ export const Footer = () => {
                 <label>{inf.label}</label>
                 <a href={inf.link} target='_blank' rel='noreferrer'>
                   <span className={desk}>{inf.content}</span>
-                  <span className={mobile}>{inf.icon} {inf.label} us</span>
+                  <span className={mobile}>
+                    {inf.icon} {inf.label} us
+                  </span>
                 </a>
               </li>
             )
@@ -79,13 +77,17 @@ export const Footer = () => {
         <ul className={social}>
           {socialIcons.map((icn) => {
             return (
-              <a key={icn.id} href={icn.link} target='_blank' rel='noreferrer'>
-                {icn.icon}
-              </a>
+              <li key={icn.id}>
+                <a href={icn.link} target='_blank' rel='noreferrer'>
+                  {icn.icon}
+                </a>
+              </li>
             )
           })}
         </ul>
-        <span className={copyright}>© {currentYear} Embodied Learning Institute </span>
+        <span className={copyright}>
+          © {currentYear} Embodied Learning Institute{' '}
+        </span>
       </div>
       <div className={btt}>
         <button className={bttBtn} onClick={scrollTop}>

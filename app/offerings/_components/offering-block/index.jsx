@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from '@/ui-components'
+import { LinkButton } from '@/ui-components'
 
 import {
   container,
@@ -30,7 +30,7 @@ export const OfferingBlock = ({
           <h3 className={header}>{title}</h3>
           <p className='par-1'>{text}</p>
         </div>
-        <Button
+        <LinkButton
           text='Learn More'
           classes={`solid med ${btn}`}
           path={path}

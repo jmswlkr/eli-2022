@@ -50,17 +50,6 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
             {...phases}
             transition={smooth(3, 0)}
           />
-          {/* <motion.video
-            key='img1'
-            className={bg}
-            src={`https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4`}
-            autoPlay
-            loop
-            muted
-            {...fadeSlideUpShort}
-            {...phases}
-            transition={smooth(1, 1)}
-          /> */}
         </AnimatePresence>
       </div>
       <AnimatePresence>
@@ -78,10 +67,8 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
                 <em>{heroHeaderLines[2]}</em>
               </h2>
               <div className={btn}>
-                <a href={'/#intro'}>
-                  <button className='general-btn solid light'>
-                    {heroButtonText}
-                  </button>
+                <a general-btn solid light href={'/#intro'}>
+                  {heroButtonText}
                 </a>
               </div>
             </div>

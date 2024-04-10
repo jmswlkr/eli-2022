@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { Button, ContentfulImageBlock, HeaderParagraph, TestComponent } from '@/ui-components'
+import {
+  Button,
+  ContentfulImageBlock,
+  HeaderParagraph,
+  LinkButton,
+  TestComponent
+} from '@/ui-components'
 import { SectionHeader } from '@/ui-components'
 
 import { cards } from './intro-data'
@@ -10,7 +16,7 @@ import {
   imgWrap,
   card as cardStyle,
   cardMain,
-  cardBtn,
+  cardBtn
 } from './intro.module.scss'
 
 export const Intro = ({
@@ -26,14 +32,13 @@ export const Intro = ({
   introCard4Text,
   ...content
 }) => {
-  
   return (
     <section className={intro}>
       <span className='scroll-pad' id='intro' />
       <SectionHeader title={introTitle} labelText={introMarqueeText} />
       <div className={cardContainer}>
-        {content.introContent.map(card => {
-          return <IntroCard key={card.sys.id} card={card.fields}/>
+        {content.introContent.map((card) => {
+          return <IntroCard key={card.sys.id} card={card.fields} />
         })}
       </div>
     </section>
@@ -52,7 +57,13 @@ function IntroCard({ card }) {
           <HeaderParagraph mainContentParagraph={card.paragraph} />
         </div>
         <div className={cardBtn}>
-          <Button text={card.buttonText} path={card.buttonLink} classes='outline' />
+          {card.buttonText && card.buttonLink && (
+            <LinkButton
+              text={card.buttonText}
+              path={card.buttonLink}
+              classes='outline'
+            />
+          )}
         </div>
       </div>
     </Link>

@@ -1,31 +1,6 @@
-'use client'
-
-import React from 'react'
-import MD from 'react-markdown'
-
-import {
-  container,
-  textWrap,
-  intro as introStyle,
-  paragraph,
-  inline
-} from './intro.module.scss'
 import { HeaderParagraph } from '@/ui-components'
 
-export const Intro = ({
-  mainContent,
-  mainContentParagraph1,
-  mainContentParagraph2,
-  mainContentParagraph3,
-  mainContentParagraph4
-}) => {
-  const intro = [
-    mainContentParagraph1,
-    mainContentParagraph2,
-    mainContentParagraph3,
-    mainContentParagraph4
-  ]
-
+export const Intro = ({ mainContent }) => {
   return (
     <div className='READABLE_WRAP flex-col-center'>
       <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xxl'>

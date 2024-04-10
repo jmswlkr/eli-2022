@@ -7,8 +7,7 @@ import { send } from '@emailjs/browser'
 
 import { useLayoutContext } from '@/context'
 
-import { SectionHeader } from '@/ui-components'
-import { Button } from '@/ui-components'
+import { ActionButton, LinkButton, SectionHeader } from '@/ui-components'
 
 import {
   contact,
@@ -102,7 +101,7 @@ export const Contact = ({ ctaHeader, ctaBlurb, ctaButtonText }) => {
           />
         </form>
         <span className={submitBtn}>
-          <Button text='Submit' action={handleSubmitInquiry} />
+          <ActionButton text='Submit' action={handleSubmitInquiry} />
         </span>
       </div>
       <div className={appointment}>
@@ -116,7 +115,7 @@ export const Contact = ({ ctaHeader, ctaBlurb, ctaButtonText }) => {
           <h4 className={heading}>{ctaHeader}</h4>
           <div className={text}>{ctaBlurb}</div>
           <div className={btn}>
-            <Button text={ctaButtonText} link='/calendar' />
+            <LinkButton text={ctaButtonText} link='/calendar' />
           </div>
         </div>
       </div>

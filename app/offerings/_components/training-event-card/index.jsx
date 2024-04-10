@@ -3,7 +3,7 @@
 import * as dayjs from 'dayjs'
 import * as advancedFormat from 'dayjs/plugin/advancedFormat'
 
-import { Button } from '@/ui-components'
+import { LinkButton } from '@/ui-components'
 import { ContentfulImageBlock } from '@/ui-components'
 
 dayjs.extend(advancedFormat)
@@ -33,7 +33,7 @@ export const TrainingCard = ({ event, entry }) => {
           </h3>
         </div>
         <p className='PARAGRAPH'>{event.eventDescriptionTeaser}</p>
-        <Button
+        <LinkButton
           text='Sign Up →'
           path={`/offerings/training/events/${event.pageSlug}`}
           classes='sm outline text-primary-500'

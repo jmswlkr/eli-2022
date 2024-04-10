@@ -1,6 +1,6 @@
 'use client'; 
 
-import { Button } from '@/ui-components'
+import { ActionButton } from '@/ui-components'
 import { useEffect } from 'react'
 
 const Error = ({ error, reset }) => {
@@ -15,7 +15,7 @@ const Error = ({ error, reset }) => {
       <div className='HEADER text-primary-500 head-2 flex-col-center'>
         <h2>We can't find this page.</h2>
         <div className='RELOAD_BTN'>
-          <Button text='Reload' action={reset} />
+          <ActionButton text='Reload' action={reset} />
         </div>
       </div>
       <p className='MESSAGE par-1 w-2/3 flex-col-center text-center [&>*]:text-center'>

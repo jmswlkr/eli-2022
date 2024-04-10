@@ -3,7 +3,7 @@
 import React, { useRef, useState } from 'react'
 
 import { useCreateClient } from '@/hooks'
-import { Button } from '../general-btn'
+import { ActionButton } from '../buttons/action-button'
 
 import {
   container,
@@ -35,7 +35,7 @@ export const ComingSoon = () => {
       <div className={headerCta}>
         <h2>Coming Soon!</h2>
         <div className={ctaBtn}>
-          <Button text='subscribe for updates' action={handleModalOpen} />
+          <ActionButton text='subscribe for updates' action={handleModalOpen} />
         </div>
       </div>
       <p className={message}>
@@ -99,7 +99,7 @@ function NewsletterModal({ closeModal }) {
                 name='email_address'
                 ref={emailRef}
               />
-              <Button
+              <ActionButton
                 classes='solid dark'
                 text={isLoading ? 'Working...' : 'Subscribe'}
                 // type='submit'
@@ -110,10 +110,10 @@ function NewsletterModal({ closeModal }) {
           )}
           {isError && <p className={errorMessage}>{error.message}</p>}
           {isSuccess && (
-            <p className={successMessage}>
+            <div className={successMessage}>
               <span>Successfully subscribed!</span>
               <button className='general-btn'>Close this dialog</button>
-            </p>
+            </div>
           )}
         </form>
       </article>

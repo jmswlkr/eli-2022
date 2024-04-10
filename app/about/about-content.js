@@ -31,7 +31,7 @@ export const INTRO_CONTENT = {
       <>
         These learned inclinations hinder our ability to thrive. At ELI, we
         teach clients to hone themselves through the practices outlined in our{' '}
-        <Link legacyBehavior href='/#pillars'>
+        <Link href='/#pillars'>
           four pillars
         </Link>
         , undoing these unhealthy tendencies that are at the root of so much

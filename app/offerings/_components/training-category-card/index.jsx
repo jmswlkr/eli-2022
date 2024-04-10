@@ -1,7 +1,6 @@
 'use client'
 
-import { ContentfulImageBlock } from '@/ui-components'
-import { Button } from '@/ui-components'
+import { ContentfulImageBlock, LinkButton } from '@/ui-components'
 
 export const TrainingCategoryCard = ({ category }) => {
   return (
@@ -13,7 +12,7 @@ export const TrainingCategoryCard = ({ category }) => {
         {category.categoryTitle}
       </h3>
       <p className='PARAGRAPH text-center'>{category.blurbDescription}</p>
-      <Button text={'View More →'} path={'/'} classes={'sm text-primary-500 outline'} />
+      <LinkButton text={'View More →'} path={'/'} classes={'sm text-primary-500 outline'} />
     </div>
   )
 }

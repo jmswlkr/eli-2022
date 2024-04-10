@@ -41,7 +41,7 @@ export const HeaderParagraph = ({
           {mainContentHeading}
         </h4>
       )}
-      <p
+      <div
         className={twm(
           'HP_PARAGRAPH flex-col-tl gap-ms [&_br]:inline-block',
           'par-1',
@@ -49,7 +49,7 @@ export const HeaderParagraph = ({
         )}
       >
         {documentToReactComponents(mainContentParagraph, formattingOptions)}
-      </p>
+      </div>
     </div>
   )
 }

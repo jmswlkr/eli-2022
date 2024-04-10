@@ -10,9 +10,9 @@ export const Footer = () => {
     <footer className='bg-primary-600 full p-lg flex-col-bl lg:!items-center gap-lg text-[24px] tracking-[2px] text-white pt-xxl'>
       <div className='MAIN_LINKS_CONTAINER w-4/5 sm:!gap-lg lg:w-[var(--reading-content-width)] flex-col-tl w-full md:mb-lg lg:gap-[25vw] lg:gap-lg lg:!justify-between lg:!flex-row gap-lg'>
         <ul className='CONNECT_LINKS flex-col-tl gap-ms'>
-          <span className='md:block text-primary-150 meta-2 hidden'>
+          <li className='md:block text-primary-150 meta-2 hidden'>
             {CONNECT.label}
-          </span>
+          </li>
           {CONNECT.links.map((link) => {
             return (
               <li key={link.text}>
@@ -22,9 +22,9 @@ export const Footer = () => {
           })}
         </ul>
         <ul className='OFFERINGS_LINKS flex-col-tl gap-ms'>
-          <span className='md:block text-primary-150 meta-2 hidden'>
+          <li className='md:block text-primary-150 meta-2 hidden'>
             {OFFERINGS.label}
-          </span>
+          </li>
           {OFFERINGS.links.map((link) => {
             return (
               <li key={link.text}>
@@ -34,7 +34,7 @@ export const Footer = () => {
           })}
         </ul>
         <ul className='CONTACT_LINKS_DESK gap-md lg:flex flex-col items-start justify-end hidden text-sm'>
-          <span className='meta-2 lg:block hidden'>{CONTACT.label}</span>
+          <li className='meta-2 lg:block hidden'>{CONTACT.label}</li>
           <li>
             <a href={CONTACT.email.link}>{CONTACT.email.display}</a>
           </li>
@@ -53,7 +53,7 @@ export const Footer = () => {
         </ul>
       </div>
       <ul className='CONTACT_LINKS_MOBILE lg:!hidden flex-col-bl gap-md text-sm'>
-        <span className='meta-2 lg:block hidden'>{CONTACT.label}</span>
+        <li className='meta-2 lg:block hidden'>{CONTACT.label}</li>
         <li>
           <a href={CONTACT.email.link}>{CONTACT.email.display}</a>
         </li>

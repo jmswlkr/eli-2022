@@ -23,7 +23,7 @@ import {
   mobile,
   menuFooter,
   social,
-  copyright,
+  copyright
 } from './menu-modal.module.scss'
 
 export const MenuModal = ({ modalOpen, closeModal }) => {
@@ -53,14 +53,11 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
                 return (
                   <li key={idx}>
                     <label>{inf.label}</label>
-                    <Link legacyBehavior href={inf.link}>
-                      <a>
-                        {/* {inf.content} */}
-                        <span className={desk}>{inf.content}</span>
-                        <span className={mobile}>
-                          {inf.icon} {inf.label} us
-                        </span>
-                      </a>
+                    <Link href={inf.link}>
+                      <span className={desk}>{inf.content}</span>
+                      <span className={mobile}>
+                        {inf.icon} {inf.label} us
+                      </span>
                     </Link>
                   </li>
                 )

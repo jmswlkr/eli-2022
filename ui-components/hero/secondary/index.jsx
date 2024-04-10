@@ -1,5 +1,4 @@
-import { ContentfulImageBlock } from '@/ui-components'
-import { Button } from '@/ui-components'
+import { ContentfulImageBlock, LinkButton } from '@/ui-components'
 import { twm } from 'utils/tailwind'
 
 export const HeroSecondary = ({
@@ -11,7 +10,6 @@ export const HeroSecondary = ({
   buttonPath = null,
   ...content
 }) => {
-  console.log('🚀 ~ content:', content)
   return (
     <section className='HERO_CONTAINER_2 hero-container-2 relative w-full'>
       <div className='CONTENT absolute-center lg:grid-cols-2 lg:grid-rows-1 grid w-screen h-full grid-cols-1 grid-rows-2'>
@@ -33,7 +31,7 @@ export const HeroSecondary = ({
               </p>
             )}
             {buttonText && (
-              <Button
+              <LinkButton
                 text={buttonText}
                 path={buttonPath}
                 classes='sm solid mt-8'
@@ -47,17 +45,11 @@ export const HeroSecondary = ({
               alt='circle decoration'
             />
           </div>
-          {/* <div className='HERO_IMAGE_MOBILE full absolute-center lg:hidden relative z-0 block'>
-            <ContentfulImageBlock
-              contentfulImage={imageUrl}
-              classes='absolute-img opacity-20'
-            />
-          </div> */}
         </div>
         <div
           className={twm(
             'HERO_IMAGE bg-primary-600 relative block flex-center',
-            content.usePaddedImage && 'py-lg px-[10vw]'
+            content.usePaddedImage && 'lg:py-lg md:px-[10vw]'
           )}
         >
           <div
@@ -70,7 +62,7 @@ export const HeroSecondary = ({
               className={twm(
                 'OUTER_FRAME full relative flex-center',
                 content.usePaddedImage &&
-                  'p-lg border border-primary-300/50'
+                  'md:px-lg lg:p-lg lg:border lg:border-primary-300/50'
               )}
             >
               <div className='INNER_FRAME full flex-center relative'>

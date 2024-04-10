@@ -113,7 +113,7 @@ export const Menu = ({ modalOpen, closeModal }) => {
           <div className={flexWrap}>
             <footer className={footer}>
               <ul className={icons}>
-                {socialIcons.map((icn, idx) => {
+                {socialIcons.map((icn) => {
                   return (
                     <li key={icn.id}>
                       <a href={icn.link} target='_blank' rel='noreferrer'>

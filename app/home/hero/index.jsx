@@ -2,13 +2,13 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { Button } from '@/ui-components'
+import { LinkButton } from '@/ui-components'
 import { phases, smooth } from '@/animation'
 import { fadeIn } from '@/animation'
 import { useFontsLoaded } from '@/hooks'
 
 
-export const HeroSection = (props) => {
+export const HeroSection = () => {
   return (
     <section className='HERO_SECTION isolate hero-container-1 relative w-full'>
       <HeroText />
@@ -33,7 +33,7 @@ function HeroText() {
         </span>
         <span className='text-primary-300'>Embodied Learning</span>
       </h1>
-      <Button
+      <LinkButton
         text='Get Started'
         path='/#intro'
         classes='solid sm lg:med !bg-primary-300 !border-none'

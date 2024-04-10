@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 import { useRouter } from 'next/navigation'
 
 import { twm } from '@/utils'
-import { Button, ContentfulImageBlock } from '@/ui-components'
+import { ActionButton, ContentfulImageBlock } from '@/ui-components'
 
 export const FlyerSlider = ({ showSlider, slider: slides }) => {
   const settings = {
@@ -63,7 +63,7 @@ function Slide({ slide }) {
             {slide.title}
           </h2>
         </div>
-        <Button
+        <ActionButton
           text={slide.buttonText}
           classes={twm('sm solid', colorTheme.button)}
           action={handleNavigateToFlyerItem}

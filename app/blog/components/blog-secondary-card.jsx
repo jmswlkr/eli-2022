@@ -2,7 +2,7 @@
 
 import { getUsaDateFromISO } from '@/utils'
 
-import { Button } from '@/ui-components'
+import { LinkButton } from '@/ui-components'
 import { ContentfulImageBlock } from '../../../ui-components/contentful-image-block'
 
 export const BlogSecondaryCard = ({ content }) => {
@@ -15,7 +15,7 @@ export const BlogSecondaryCard = ({ content }) => {
   } = content
 
   return (
-    <div className='BLOG_CARD_CONTAINER gap-md flex-col-tl'>
+    <li className='BLOG_CARD_CONTAINER gap-md flex-col-tl'>
       <div className='IMAGE WRAP h-[30vh] w-full relative'>
         <ContentfulImageBlock contentfulImage={card.mainImage} />
       </div>
@@ -29,12 +29,12 @@ export const BlogSecondaryCard = ({ content }) => {
           <span>•</span>
           <span>4 minute read</span>
         </div>
-        <Button
+        <LinkButton
           text='Read More'
           path={`blog/${content.fields.slug}`}
           classes='sm outline'
         />
       </div>
-    </div>
+    </li>
   )
 }
