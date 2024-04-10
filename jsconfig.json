@@ -8,7 +8,8 @@
       "@/ui-components": ["ui-components/index.js"],
       "@/utils": ["utils/index.js"],
       "@/contentful": ["contentful/index.js"],
-      "@/server": ["server.config.js"]
+      "@/server": ["server.config.js"],
+      "@/styles": ["styles/*"],
     }
   }
 }
