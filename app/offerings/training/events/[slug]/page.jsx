@@ -22,7 +22,7 @@ const TrainingEventPage = async ({ params }) => {
     preview: isEnabled,
     params: {
       content_type: 'offeringsTrainingEventPage',
-      include: 1,
+      include: 10,
       'fields.pageSlug[match]': params.slug
     }
   })

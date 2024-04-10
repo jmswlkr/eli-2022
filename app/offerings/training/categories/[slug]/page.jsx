@@ -17,13 +17,12 @@ const TrainingCategoryPage = async ({ params }) => {
     preview: isEnabled,
     params: {
       content_type: 'offeringsTrainingCategoryPage',
-      include: 1,
+      include: 10,
       'fields.slug[match]': params.slug
     }
   })
 
   const content = entry?.items[0].fields
-
   return (
     <>
       <HeroSecondary {...content?.hero?.fields} />

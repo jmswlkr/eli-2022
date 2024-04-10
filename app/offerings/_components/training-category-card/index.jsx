@@ -12,7 +12,7 @@ export const TrainingCategoryCard = ({ category }) => {
         {category.categoryTitle}
       </h3>
       <p className='PARAGRAPH text-center'>{category.blurbDescription}</p>
-      <LinkButton text={'View More →'} path={'/'} classes={'sm text-primary-500 outline'} />
+      <LinkButton text={'View More →'} path={`/offerings/training/categories/${category.slug}`} classes={'sm text-primary-500 outline'} />
     </div>
   )
 }
