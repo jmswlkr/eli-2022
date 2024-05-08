@@ -9,15 +9,25 @@ export function PillarCard({ title, icon, idx, allPillars }) {
     useLayoutContext()
 
   // set modal open and inject content.
-  const handleOpenAndPopulateModal = () => {
-    setContentModalOpen(!contentModalOpen)
-    setModalContent(<PillarsModal allPillars={allPillars} curIdx={idx} />)
+  const handleOpenAndPopulateModal = (curIdx) => {
+    if (curIdx !== undefined || curIdx === 0) {
+      setModalContent(
+        <PillarsModal
+          currPillar={allPillars[curIdx]}
+          allPillars={allPillars}
+          idx={curIdx}
+        />
+      )
+    }
+    if (curIdx || curIdx === 0) {
+      setContentModalOpen(!contentModalOpen)
+    }
   }
 
   return (
     <div
-      onClick={handleOpenAndPopulateModal}
-      className='PILLAR_CARD cursor-pointer rounded-lg border-[.5px] border-[var(--color-tex-med)] hover:border-accent-300 lg:border-0 py-md lg:p-0 flex-col-center group gap-[35px] transition text-[var(--text-color-med)] hover:text-white'
+      onClick={() => handleOpenAndPopulateModal(idx)}
+      className='PILLAR_CARD cursor-pointer rounded-lg border-[.5px] border-[var(--color-tex-med)] hover:border-accent-300 lg:border-0 py-md lg:p-0 flex-col-center-top group gap-[35px] transition text-[var(--text-color-med)] hover:text-white'
     >
       <h4 className='P_TITLE head-3 lg:!head-5 text-center flex-col-center gap-sm !font-body tracking-[2px]'>
         {title}

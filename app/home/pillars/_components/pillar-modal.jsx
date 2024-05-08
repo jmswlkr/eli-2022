@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 import { HeaderParagraph, ChevronIcon } from '@/ui-components'
 import { blurFadeIn, phases } from '@/animation'
 
-export function PillarsModal({ allPillars, idx = 0 }) {
+export function PillarsModal({ allPillars, idx }) {
   const [curIdx, setCurIdx] = useState(idx)
 
   const { icon, title, text } = allPillars[curIdx]
@@ -28,6 +28,11 @@ export function PillarsModal({ allPillars, idx = 0 }) {
     }
   }
 
+  useEffect(() => {
+    setCurIdx(idx)
+  }, [idx])
+  
+
   return (
     <motion.div
       {...phases}
@@ -36,7 +41,9 @@ export function PillarsModal({ allPillars, idx = 0 }) {
     >
       <div className='MODAL_CONTENT flex-col-center gap-lg'>
         <div className='ICON text-accent-300'>{icon}</div>
-        <h2 className='TITLE head-2 max-w-4/5 flex-col-center gap-md lg:!flex-row text-white'>{title}</h2>
+        <h2 className='TITLE head-2 max-w-4/5 flex-col-center gap-md lg:!flex-row text-white'>
+          {title}
+        </h2>
         <div className='DIVIDER bg-accent-300 w-8 h-1' />
         <div className='TEXT w-2/3 lg:w-[var(--reading-content-width)] text-center text-white'>
           <HeaderParagraph mainContentParagraph={text} />
