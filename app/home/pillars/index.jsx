@@ -7,10 +7,9 @@ import { HeaderParagraph } from '@/ui-components'
 import { PillarCard } from './_components/pillar-card'
 import { PillarsBG } from './_components/pillar-bg'
 
-
 export const PillarsSection = (props) => {
-  const { title, subtitle, paragraph, pillars } =
-    getPillarsDataFromContentfulProps(props)
+  const { title, subtitle, paragraph, pillarCards } =
+  getPillarsDataFromContentfulProps(props)
 
   return (
     <section className='PILLARS_SECTION flex-center relative w-full h-auto border border-red-300'>
@@ -23,8 +22,15 @@ export const PillarsSection = (props) => {
           </div>
         </div>
         <div className='PILLARS_LIST gap-lg lg:gap-0 lg:grid-cols-4 md:grid-cols-2 grid w-full h-auto grid-cols-1'>
-          {pillars.map((pillar, idx) => {
-            return <PillarCard key={pillar.id} idx={idx} allPillars={pillars} {...pillar} />
+          {pillarCards.map((pillar, idx) => {
+            return (
+              <PillarCard
+                key={pillar.id}
+                idx={idx}
+                allPillars={pillarCards}
+                {...pillar}
+              />
+            )
           })}
         </div>
       </div>
