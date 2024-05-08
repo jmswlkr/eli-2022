@@ -12,7 +12,7 @@ export const PillarsSection = (props) => {
   getPillarsDataFromContentfulProps(props)
 
   return (
-    <section className='PILLARS_SECTION flex-center relative w-full h-auto border border-red-300'>
+    <section className='PILLARS_SECTION flex-center relative w-full h-auto border border-red-300' id='pillars-section'>
       <div className='PILLARS_CONTENT w-[var(--content-width)] py-xxl flex-col-center gap-xl relative z-50 h-auto text-white'>
         <div className='PILLARS_TEXT_BLOCK flex-col-center gap-lg relative z-50'>
           <h2 className='head-2'>{title}</h2>

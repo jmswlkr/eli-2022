@@ -1,7 +1,8 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 
 import { twm } from '@/utils'
+import Link from 'next/link'
 
 export const HeaderParagraph = ({
   mainContentHeading,
@@ -15,7 +16,14 @@ export const HeaderParagraph = ({
   const formattingOptions = {
     renderNode: {
       [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
-      [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>
+      [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+      [INLINES.HYPERLINK]: (node, children) => {
+        return (
+          <Link href={'/#pillars-section'} className='text-primary-500 font-bold cursor-pointer'>
+            {children}
+          </Link>
+        )
+      }
     },
     renderText: (text) => {
       return text.split('\n').reduce((children, textSegment, index) => {
