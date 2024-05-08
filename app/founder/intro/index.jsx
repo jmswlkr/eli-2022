@@ -1,4 +1,4 @@
-import { HeaderParagraph } from '@/ui-components'
+import { HeaderParagraph, TestComponent } from '@/ui-components'
 
 export const IntroSection = ({ introContent: { fields: intro } }) => {
   return (

@@ -22,7 +22,6 @@ export function getPillarsDataFromContentfulProps(props) {
     title: props.pillarsTitleSubtitle[0],
     subtitle: props.pillarsTitleSubtitle[1],
     paragraph: props.pillarsMainText,
-    pillars: contentfulPillars,
     pillarCards: pillarCardEntries
   }
 }
