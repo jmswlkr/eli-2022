@@ -5,8 +5,8 @@ export const StonesIcon = () => {
     <svg
       className='fill-current'
       width='119'
-      height='109'
-      viewBox='0 0 119 109'
+      height='119'
+      viewBox='0 0 119 119'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -19,9 +19,9 @@ export const YogaIcon = () => {
   return (
     <svg
       className='fill-current'
-      width='112'
+      width='119'
       height='119'
-      viewBox='0 0 112 119'
+      viewBox='0 0 119 119'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -49,9 +49,9 @@ export const ThoughtIcon = ({ color = 'var(--grey-30)' }) => {
   return (
     <svg
       className='fill-current'
-      width='113'
+      width='119'
       height='119'
-      viewBox='0 0 113 119'
+      viewBox='0 0 119 119'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
