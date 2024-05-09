@@ -10,17 +10,15 @@ export const Providers = ({ children }) => {
       defaultOptions: {
         queries: {
           staleTime: 20 * 1000,
-          refetchOnWindowFocus: false,
-        },
-      },
+          refetchOnWindowFocus: false
+        }
+      }
     })
   )
 
   return (
     <QueryClientProvider client={queryClient.current}>
-      <LayoutProvider>
-        {children}
-      </LayoutProvider>
+      <LayoutProvider>{children}</LayoutProvider>
     </QueryClientProvider>
   )
 }

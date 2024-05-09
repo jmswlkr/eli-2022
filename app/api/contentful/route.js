@@ -16,9 +16,6 @@ export default async function handler(req, res) {
 
     const entry = await client.getEntry(entry_id)
     const data = entry.fields
-    // if (defaultImage) {
-    //   data['defaultImage'] = defaultImage
-    // }
 
     res.json({ content: data, error: null })
   } catch (error) {

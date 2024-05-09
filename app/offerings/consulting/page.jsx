@@ -2,7 +2,7 @@ import { draftMode } from 'next/headers'
 
 import { useContentful } from '@/contentful'
 
-import { ComingSoon, HeaderParagraph, TestComponent } from '@/ui-components'
+import { HeaderParagraph } from '@/ui-components'
 import { CtaSection } from '@/ui-components'
 import { HeroSecondary } from '@/ui-components'
 
