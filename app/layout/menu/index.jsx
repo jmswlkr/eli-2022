@@ -10,7 +10,6 @@ import { slideInTop } from 'animation/slide'
 
 import { modal } from './menu.module.scss'
 import { twm } from 'utils/tailwind'
-// import { CONNECT, CONTACT, OFFERINGS } from '../data'
 
 export const SiteMenu = ({ modalOpen, closeModal, navData }) => {
 
