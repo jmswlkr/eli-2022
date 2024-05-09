@@ -44,7 +44,7 @@ export const TopNav = ({ modalOpen, setModalOpen, showBG = false }) => {
                     key={link.content}
                     text={link.content}
                     path={link.path}
-                    classes='outline link-1 sm text-primary-150 hover:!border-transparent hover:!text-primary-600 hover:!bg-white'
+                    classes='xl:block hidden outline link-1 sm text-primary-150 hover:!border-transparent hover:!text-primary-600 hover:!bg-white'
                   />
                 )
               }
@@ -55,7 +55,7 @@ export const TopNav = ({ modalOpen, setModalOpen, showBG = false }) => {
                   {...fadeIn}
                   key={link.path}
                   // className={navItem}
-                  className='link-1 hover:text-primary-300 text-white'
+                  className='link-1 hover:text-primary-300 lg:block hidden text-white'
                 >
                   <Link href={link.path} scroll={false}>
                     {link.content}
