@@ -5,15 +5,17 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { useActionOnKey } from 'hooks/useActionOnKey'
 
-import { blurFadeIn } from 'animation/fade'
 import { phases } from 'animation/transition'
 import { slideInTop } from 'animation/slide'
 
 import { modal } from './menu.module.scss'
 import { twm } from 'utils/tailwind'
-import { CONNECT, CONTACT, OFFERINGS } from '../data'
+// import { CONNECT, CONTACT, OFFERINGS } from '../data'
 
-export const SiteMenu = ({ modalOpen, closeModal }) => {
+export const SiteMenu = ({ modalOpen, closeModal, navData }) => {
+
+  const { CONNECT, CONTACT, OFFERINGS } = navData;
+
   useActionOnKey(closeModal, 'Escape')
 
   return (

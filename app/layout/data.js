@@ -4,20 +4,29 @@ export const CONNECT = {
   label: 'Connect',
   links: [
     {
+      id: 'calendar',
       text: 'Calendar',
       path: '/calendar'
     },
     {
+      id: 'about',
       text: 'About',
       path: '/about'
     },
     {
+      id: 'founder',
       text: 'Founder',
       path: '/founder'
     },
     {
+      id: 'blog',
       text: 'Blog',
       path: '/blog'
+    },
+    {
+      id: 'book',
+      text: 'Book',
+      path: '/book'
     }
   ]
 }
@@ -77,4 +86,10 @@ export const CONTACT = {
       icon: <LinkedIn />
     }
   ]
+}
+
+export const NAVIGATION_DATA = {
+  CONNECT,
+  OFFERINGS,
+  CONTACT
 }

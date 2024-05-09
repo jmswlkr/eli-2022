@@ -3,9 +3,11 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
 
-import { CONNECT, CONTACT, OFFERINGS } from '../data'
+// import { CONNECT, CONTACT, OFFERINGS } from '../data'
 
-export const Footer = () => {
+export const Footer = ({ navData }) => {
+  const { CONNECT, CONTACT, OFFERINGS } = navData;
+    
   return (
     <footer className='bg-primary-600 full p-lg flex-col-bl lg:!items-center gap-lg text-[24px] tracking-[2px] text-white pt-xxl'>
       <div className='MAIN_LINKS_CONTAINER w-4/5 sm:!gap-lg lg:w-[var(--reading-content-width)] flex-col-tl w-full md:mb-lg lg:gap-[25vw] lg:gap-lg lg:!justify-between lg:!flex-row gap-lg'>

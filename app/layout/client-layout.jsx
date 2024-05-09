@@ -18,14 +18,11 @@ import { SiteMenu } from './menu'
 
 import { layout, content, modal, close } from './client-layout.module.scss'
 
-
-export const ClientLayout = ({ children }) => {
+export const ClientLayout = ({ navData, children }) => {
   const [modalOpen, setModalOpen] = useState(false)
   const { ref: heroRef, inView: heroInView } = useInView({
     initialInView: true
   })
-
-  const { contentModalOpen, modalContent } = useLayoutContext()
 
   return (
     <div className={layout}>
@@ -35,13 +32,17 @@ export const ClientLayout = ({ children }) => {
         modalOpen={modalOpen}
         showBG={!heroInView}
       />
-      <SiteMenu modalOpen={modalOpen} closeModal={() => setModalOpen(false)} />
+      <SiteMenu
+        navData={navData}
+        modalOpen={modalOpen}
+        closeModal={() => setModalOpen(false)}
+      />
       <ModalContainer />
       <main className={content}>
         <span className='vp-marker vp-marker__hero' ref={heroRef} />
         {children}
       </main>
-      <Footer />
+      <Footer navData={navData} />
     </div>
   )
 }

@@ -1,132 +1,100 @@
-import React from 'react'
+'use client'
+
+import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { useActionOnKey } from 'hooks/useActionOnKey'
 
-import {
-  pageLinks,
-  contactInfo,
-  connectLinks,
-  socialIcons,
-} from '../navigation-data'
-
-import { blurFadeIn } from 'animation/fade'
 import { phases } from 'animation/transition'
 import { slideInTop } from 'animation/slide'
 
-import {
-  modal,
-  menu,
-  cell,
-  flexWrap,
-  footer,
-  icons,
-  copyright,
-  about,
-  offerings,
-  contact,
-  icon,
-} from './menu.module.scss'
-import Link from 'next/link'
+import { modal } from './menu.module.scss'
+import { twm } from 'utils/tailwind'
+import { CONNECT, CONTACT, OFFERINGS } from '../data'
 
-export const Menu = ({ modalOpen, closeModal }) => {
-
-  useActionOnKey(closeModal, 'Escape') // close modal with esc key
+export const SiteMenu = ({ modalOpen, closeModal, managedData }) => {
+  console.log("🚀 ~ SiteMenu ~ managedData:", managedData)
+  useActionOnKey(closeModal, 'Escape')
 
   return (
-    <AnimatePresence mode='wait'>
+    <AnimatePresence>
       {modalOpen && (
-        <motion.menu className={modal} {...slideInTop} {...phases}>
-          <section className={flexWrap}>
-            <motion.div className={menu} {...blurFadeIn} {...phases}>
-              <motion.ul className={`${cell} ${about}`}>
-                <label>About</label>
-                <li className='mobile-only'>
-                  <Link
-                    onClick={closeModal}
-                    onTouchStart={closeModal}
-                    href='/offerings'
-                  >
-                    Offerings
-                  </Link>
+        <motion.menu
+          {...slideInTop}
+          {...phases}
+          className={twm(modal, 'flex-center pb-0')}
+        >
+          <div className='MENU_INNER  gap-lg md:gap-xl p-md md:p-lg lg:px-md w-[var(--reading-content-width)] flex flex-col justify-end lg:justify-center items-center h-full text-white'>
+            <div className='MENU_MAIN gap-lg lg:gap-0 lg:flex-row flex flex-col items-start justify-between w-full'>
+              <ul className='CONNECT_COLUMN flex-col-tl gap-md lg:gap-lg'>
+                <li className='LABEL meta-2 md:block md:meta-1 text-meta_text hidden'>
+                  {CONNECT.label}
                 </li>
-                {connectLinks.map((cl) => {
+                {CONNECT.links.map((link) => {
                   return (
-                    <li key={cl.path}>
-                      <Link
-                        onClick={closeModal}
-                        href={cl.path}
-                      >
-                        {cl.content}
+                    <li
+                      className='head-5 md:head-3 hover:text-primary-300'
+                      key={link.text}
+                    >
+                      <Link href={link.path} onClick={closeModal}>
+                        {link.text}
                       </Link>
-                    </li>
-                  )
-                })}
-              </motion.ul>
-              <motion.ul className={`${cell} ${offerings}`}>
-                <label>Offerings</label>
-                {pageLinks.map((ofr) => {
-                  return (
-                    <li key={ofr.content}>
-                      <Link
-                        onClick={closeModal}
-                        href={ofr.path}
-                      >
-                        {ofr.menu_content}
-                      </Link>
-                    </li>
-                  )
-                })}
-              </motion.ul>
-              <motion.ul className={`${cell} ${contact}`}>
-                {contactInfo.map((cn) => {
-                  return (
-                    <li key={cn.id}>
-                      {/* DESKTOP LAYOUT */}
-                      <label className='desk-only'>{cn.id}</label>
-                      <Link
-                        onClick={closeModal}
-                        onTouchStart={closeModal}
-                        className='desk-only'
-                        href={cn.link}
-                      >
-                        {cn.content}
-                      </Link>
-                      {/* MOBILE LAYOUT */}
-                      <Link
-                        onClick={closeModal}
-                        onTouchStart={closeModal}
-                        className='mobile-only'
-                        href={cn.link}
-                      >
-                        <div className={flexWrap}>
-                          <span className={icon}>{cn.icon}</span>
-                          <span>{cn.mobile_content}</span>
-                        </div>
-                      </Link>
-                    </li>
-                  )
-                })}
-              </motion.ul>
-            </motion.div>
-          </section>
-          <div className={flexWrap}>
-            <footer className={footer}>
-              <ul className={icons}>
-                {socialIcons.map((icn) => {
-                  return (
-                    <li key={icn.id}>
-                      <a href={icn.link} target='_blank' rel='noreferrer'>
-                        {icn.icon}
-                      </a>
                     </li>
                   )
                 })}
               </ul>
-              <small className={copyright}>
-                © 2022 Embodied Learning Institute
-              </small>
-            </footer>
+              <ul className='OFFERINGS_COLUMN flex-col-tl gap-md lg:gap-lg'>
+                <li className='LABEL meta-2 md:block md:meta-1 text-meta_text hidden'>
+                  {OFFERINGS.label}
+                </li>
+                {OFFERINGS.links.map((link) => {
+                  return (
+                    <li
+                      className='head-5 md:head-3 lg:head-2 hover:text-primary-300'
+                      key={link.text}
+                    >
+                      <Link href={link.path} onClick={closeModal}>
+                        {link.text}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+            <div className='MENU_CONTACT par-1 gap-md lg:flex-row lg:items-end flex flex-col items-start justify-between w-full'>
+              <div className='INFO_COLUMN flex-col-bl gap-md'>
+                <span className='LABEL md:block meta-1 text-meta_text hidden'>
+                  {CONTACT.label}
+                </span>
+                <a
+                  onClick={closeModal}
+                  href={CONTACT.email.link}
+                  className='EMAIL hover:text-primary-300'
+                >
+                  {CONTACT.email.display}
+                </a>
+                <a
+                  onClick={closeModal}
+                  href={CONTACT.phone.link}
+                  className='PHONE hover:text-primary-300'
+                >
+                  {CONTACT.phone.display}
+                </a>
+              </div>
+              <div className='SOCIAL_COLUMN gap-md flex items-end'>
+                {CONTACT.socials.map((social) => {
+                  return (
+                    <Link
+                      className='fill-white hover:fill-primary-300'
+                      key={social.id}
+                      href={social.link}
+                    >
+                      {social.icon}
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </motion.menu>
       )}
