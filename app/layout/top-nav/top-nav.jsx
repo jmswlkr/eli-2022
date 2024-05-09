@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 import { pageLinks } from '../navigation-data'
 
-import { Logo } from '@/ui-components'
+import { LinkButton, Logo } from '@/ui-components'
 
 import {
   topNav,
@@ -14,18 +14,13 @@ import {
   navItem,
   logo,
   menuBtn,
-  closeBtn,
+  closeBtn
 } from './top-nav.module.scss'
 import { AnimatePresence } from 'framer-motion'
 import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
 
-export const TopNav = ({
-  modalOpen,
-  setModalOpen,
-  showBG = false,
-}) => {
-
+export const TopNav = ({ modalOpen, setModalOpen, showBG = false }) => {
   const closeModal = () => {
     setModalOpen(false)
   }
@@ -38,19 +33,32 @@ export const TopNav = ({
       <Link className={logo} href='/' onClick={closeModal}>
         <Logo showFullText={true} color={'var(--white)'} />
       </Link>
-      <ul className={navActions}>
+      {/* <ul className={navActions}> */}
+      <ul className='gap-md flex items-center justify-end'>
         <AnimatePresence mode='sync'>
           {!modalOpen &&
-            pageLinks.slice(0, 3).map((pl) => {
+            pageLinks.map((link) => {
+              if (link.content === 'Schedule') {
+                return (
+                  <LinkButton
+                    key={link.content}
+                    text={link.content}
+                    path={link.path}
+                    classes='outline link-1 sm text-primary-150 hover:!border-transparent hover:!text-primary-600 hover:!bg-white'
+                  />
+                )
+              }
+
               return (
                 <motion.li
                   {...phases}
                   {...fadeIn}
-                  key={pl.path}
-                  className={navItem}
+                  key={link.path}
+                  // className={navItem}
+                  className='link-1 hover:text-primary-300 text-white'
                 >
-                  <Link href={pl.path} scroll={false}>
-                    {pl.content}
+                  <Link href={link.path} scroll={false}>
+                    {link.content}
                   </Link>
                 </motion.li>
               )
@@ -59,7 +67,7 @@ export const TopNav = ({
         <li>
           <button
             onClick={toggleModal}
-            className={`
+            className={`ml-md
           ${menuBtn} 
           ${modalOpen ? closeBtn : ''}
         `}

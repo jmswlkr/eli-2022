@@ -34,7 +34,7 @@ export const CtaSection = ({
           <div className='gap-md lg:items-start relative z-20 flex flex-col items-center justify-center'>
             <h3 className='head-3 text-primary-300 lg:text-primary-500'>{title}</h3>
             <p className=' !leading-[150%] text-white lg:text-primary_text lg:par-1 w-4/5 md:w-2/3 lg:w-4/5 lg:text-left text-center'>{blurb}</p>
-            <LinkButton text={buttonText} path={buttonLink} classes='solid med !bg-primary-300 lg:!bg-primary-500' />
+            <LinkButton text={buttonText} path={buttonLink} classes='solid med hover:!bg-primary-900 !bg-primary-300 lg:!bg-primary-500' />
           </div>
           <div className='SHADE bg-primary-300/30 absolute-shade z-10' />
           <div className='SHADE bg-black/50 absolute-shade lg:hidden z-10' />
