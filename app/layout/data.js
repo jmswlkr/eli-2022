@@ -26,6 +26,10 @@ export const OFFERINGS = {
   label: 'Offerings',
   links: [
     {
+      text: 'All Offerings',
+      path: '/offerings'
+    },
+    {
       text: 'Coaching',
       path: '/offerings/coaching'
     },

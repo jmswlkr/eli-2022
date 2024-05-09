@@ -18,7 +18,7 @@ export const pageLinks = [
         <br />
         Consulting
       </>
-    ),
+    )
   },
   {
     path: '/offerings/training',
@@ -30,7 +30,7 @@ export const pageLinks = [
         <br />
         Training
       </>
-    ),
+    )
   },
   {
     path: '/offerings/coaching',
@@ -41,8 +41,19 @@ export const pageLinks = [
         <br />
         Coaching
       </>
-    ),
+    )
   },
+  {
+    path: '/calendar',
+    content: 'Schedule',
+    menu_content: (
+      <>
+        Customized
+        <br />
+        Consulting
+      </>
+    )
+  }
 ]
 
 export const connectLinks = [
