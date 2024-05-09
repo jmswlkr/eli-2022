@@ -5,13 +5,10 @@ import {
   BorderBlock,
   CtaSection,
   HeaderParagraph,
-  HeaderParagraphList,
   HeroSecondary,
-  TestComponent
 } from '@/ui-components'
 
 import { PAGE_CONFIG } from './page-config'
-import { parseContentfulData } from './parse-contentful-data'
 
 const CoachingPage = async () => {
   const { isEnabled } = draftMode()
@@ -20,8 +17,6 @@ const CoachingPage = async () => {
     ...PAGE_CONFIG,
     preview: isEnabled
   })
-
-  const { intro, coaching } = parseContentfulData(content)
 
   return (
     <>
@@ -41,7 +36,7 @@ const CoachingPage = async () => {
             })}
           </section>
           <section className='COACHING_CARDS flex-col-tl gap-md'>
-            {content.keyContent.map((block) => {
+            {content.listContent.map((block) => {
               return (
                 <BorderBlock
                   key={block.sys.id}
