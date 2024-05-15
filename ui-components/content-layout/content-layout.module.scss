@@ -5,7 +5,8 @@
   gap: 5rem;
 
   @media (max-width: 1248px) {
-    padding: 0 5%;
+    // padding: 0 5%;
+    padding: 0;
   }
   @media (max-width: 592px) {
     gap: 4rem;
