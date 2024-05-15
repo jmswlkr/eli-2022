@@ -12,6 +12,9 @@
   @media (max-width: 1024px) {
     padding-top: 25vh;
   }
+  @media (max-width: 592px) {
+    height: 120vh;
+  }
 }
 
 .modal {
