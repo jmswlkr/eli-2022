@@ -120,6 +120,9 @@
     text-align: left;
     }
   }
+  @media (max-width: 1024px) {
+    border: none !important;
+  }
   @media (max-width: 592px) {
     justify-content: center;
   }
