@@ -17,7 +17,7 @@ export const MissionVision = ({
   visionText
 }) => {
   return (
-    <article className='CONTAINER auto-rows-auto gap-md grid w-full grid-cols-2'>
+    <article className='CONTAINER auto-rows-auto gap-md lg:grid-cols-2 grid w-full grid-cols-1'>
       {[
         { title: missionTitle, content: missionText },
         { title: visionTitle, content: visionText }
