@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { twm } from 'utils/tailwind'
+
 import { LinkButton } from '@/ui-components'
 
 import {
@@ -12,10 +14,9 @@ import {
   list,
   imgWrap
 } from './offering-block.module.scss'
-import { twm } from 'utils/tailwind'
+
 
 export const OfferingBlock = ({
-  id,
   title,
   text,
   path,
