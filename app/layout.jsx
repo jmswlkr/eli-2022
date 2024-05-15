@@ -25,7 +25,7 @@ const RootLayout = async ({ children }) => {
   return (
     <html lang='en'>
       <body>
-        <NextTopLoader />
+        <NextTopLoader showSpinner={false} color='var(--deep-blue)' />
         <Providers>
           <ClientLayout navData={managedNavData}>{children}</ClientLayout>
         </Providers>
