@@ -32,11 +32,11 @@ export const TrainingSection = ({ training: blocks }) => {
 
 function YearBlock({ year, blocks }) {
   return (
-    <div className='YEAR_BLOCK bg-primary-100 flex-col-tl p-md w-full rounded-lg'>
-      <span className='head-3 mb-ml font-display text-primary-500/30'>
+    <div className='YEAR_BLOCK bg-primary-100 flex-col-tl p-ms lg:p-md w-full rounded-lg'>
+      <span className='meta-1 lg:head-3 mb-ms lg:mb-ml font-display text-primary-500/50'>
         {year}
       </span>
-      <span className='auto-rows-auto gap-md lg:grid-cols-2 grid w-full grid-cols-1'>
+      <span className='auto-rows-auto gap-sm md:gap-md lg:grid-cols-2 grid w-full grid-cols-1'>
         {blocks.map((block) => {
           return <TrainingBlock key={block.sys.id} block={block.fields} />
         })}
