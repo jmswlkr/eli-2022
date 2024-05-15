@@ -13,8 +13,8 @@ export const TrainingCard = ({ event, entry }) => {
   const category = event?.categoryEntry?.fields?.categoryTag
 
   return (
-    <article className='auto-rows-auto rounded-xl lg:grid-cols-2 grid w-full h-auto grid-cols-1 overflow-hidden'>
-      <div className='TEXT_CONTENT full p-md bg-primary-500/10 flex-col-tl gap-md'>
+    <article className='TRAINING_CARD auto-rows-auto rounded-xl lg:grid-cols-2 grid w-full h-auto grid-cols-1 overflow-hidden'>
+      <div className='TEXT_CONTENT full p-ms md:p-md bg-primary-500/10 flex-col-tl gap-sm md:gap-ms lg:gap-md'>
         <div className='LABEL meta-1 text-primary-500 flex-col-tl lg:flex-center lg:!flex-row gap-[1ch]'>
           <span>{formattedDate}</span>
           <span className='lg:block hidden'>•</span>
@@ -40,7 +40,7 @@ export const TrainingCard = ({ event, entry }) => {
         />
         {/* TODO: Include buttons for read more and sign up. */}
       </div>
-      <div className='h-[25vh] order-first lg:order-last lg:h-auto relative'>
+      <div className='IMAGE_WRAP h-[25vh] order-first lg:order-last lg:h-auto relative'>
         <ContentfulImageBlock contentfulImage={event.imageMain} />
       </div>
     </article>
