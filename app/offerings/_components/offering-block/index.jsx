@@ -27,12 +27,12 @@ export const OfferingBlock = ({
     <article className={container}>
       <div className={blurb}>
         <div className={textStyle}>
-          <h3 className='head-4'>{title}</h3>
+          <h3 className='head-4 text-primary-500'>{title}</h3>
           <p className='par-1'>{text}</p>
         </div>
         <LinkButton
           text='Learn More'
-          classes={`solid med ${btn}`}
+          classes={`solid sm lg:med ${btn}`}
           path={path}
         />
       </div>

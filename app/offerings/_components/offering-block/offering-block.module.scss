@@ -39,9 +39,6 @@
   .header {
     // font-size: 48px;
     color: var(--primary);
-    @media (max-width: 592px) {
-      font-size: 28px;
-    }
   }
 }
 
@@ -62,9 +59,6 @@
   .header {
     // font-size: 40px;
     color: var(--primary-lighter);
-    @media (max-width: 592px) {
-      font-size: 28px;
-    }
   }
 }
 
