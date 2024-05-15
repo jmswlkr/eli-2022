@@ -3,8 +3,8 @@ import { HeaderParagraph } from '@/ui-components'
 export const Intro = ({ mainContent }) => {
   return (
     <div className='READABLE_WRAP flex-col-center'>
-      <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xxl'>
-        <div className='MAIN_CONTENT flex-col-tl gap-lg'>
+      <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xl'>
+        <div className='MAIN_CONTENT flex-col-tl gap-md lg:gap-lg'>
           {mainContent.map((block) => {
             return (
               <HeaderParagraph
