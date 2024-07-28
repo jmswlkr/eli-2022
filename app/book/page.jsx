@@ -1,9 +1,30 @@
-import { ComingSoon } from '../../ui-components/coming-soon'
+import { draftMode } from 'next/headers'
 
-const BookPage = () => {
+import { PAGE_CONFIG } from './page.config'
+
+import { ContentLayout, CtaSection, HeroSecondary, QuoteBlock } from '@/ui-components'
+import { useContentful } from 'contentful/hooks'
+import { StorySection } from 'app/founder/story'
+
+const BookPage = async () => {
+  const { isEnabled } = draftMode()
+
+  const { content } = await useContentful({
+    ...PAGE_CONFIG,
+    preview: isEnabled
+  })
+
+  // console.log('🚀 ~ BookPage ~ content:', content)
+  // const components = [QuoteBlock, IntroSection, StorySection, TrainingSection]
+
   return (
-    <ComingSoon />
+    <ContentLayout>
+      <HeroSecondary {...content.hero.fields} />
+      <QuoteBlock {...content}/>
+      <StorySection {...content}/>
+      <CtaSection {...content.cta.fields}/>
+    </ContentLayout>
   )
 }
 
-export default BookPage;
+export default BookPage
