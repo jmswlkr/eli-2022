@@ -14,9 +14,6 @@ const BookPage = async () => {
     preview: isEnabled
   })
 
-  // console.log('🚀 ~ BookPage ~ content:', content)
-  // const components = [QuoteBlock, IntroSection, StorySection, TrainingSection]
-
   return (
     <ContentLayout>
       <HeroSecondary {...content.hero.fields} />
