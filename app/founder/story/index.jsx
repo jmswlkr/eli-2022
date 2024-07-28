@@ -56,7 +56,6 @@ export const StorySection = ({ storyContent }) => {
 }
 
 function StoryBlock({ block, colorTheme }) {
-  console.log("🚀 ~ StoryBlock ~ block:", block)
   return (
     <div
       className={twm(
