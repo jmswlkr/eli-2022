@@ -1,5 +1,9 @@
 import { twm } from '@/utils'
-import { HeaderParagraph } from '@/ui-components'
+import {
+  ContentfulImageBlock,
+  HeaderParagraph,
+  LinkButton
+} from '@/ui-components'
 
 export const StorySection = ({ storyContent }) => {
   return (
@@ -23,6 +27,22 @@ export const StorySection = ({ storyContent }) => {
           }
         ]
 
+        if (
+          block.sys.contentType.sys.id ===
+          'componentInterstitialImage'
+        ) {
+          return (
+            <div
+              className='image-wrap h-[500px] w-full relative'
+              key={block.sys.id}
+            >
+              <ContentfulImageBlock
+                contentfulImage={block.fields.image}
+              />
+            </div>
+          )
+        }
+
         return (
           <StoryBlock
             key={block.sys.id}
@@ -36,8 +56,14 @@ export const StorySection = ({ storyContent }) => {
 }
 
 function StoryBlock({ block, colorTheme }) {
+  console.log("🚀 ~ StoryBlock ~ block:", block)
   return (
-    <div className={twm('STORY_BLOCK p-md pt-lg lg:p-lg', colorTheme.bg)}>
+    <div
+      className={twm(
+        'STORY_BLOCK flex-col-tl gap-md p-md pt-lg lg:p-lg',
+        colorTheme.bg
+      )}
+    >
       <HeaderParagraph
         mainContentHeading={block.heading}
         mainContentParagraph={block.paragraph}
@@ -46,6 +72,9 @@ function StoryBlock({ block, colorTheme }) {
           paragraph: `${colorTheme.paragraph} flex-col-tl gap-ms lg:gap-md`
         }}
       />
+      {block.buttonText && block.buttonLink && (
+        <LinkButton text={block.buttonText} path={block.buttonLink} classes='solid med !mt-md'/>
+      )}
     </div>
   )
 }
