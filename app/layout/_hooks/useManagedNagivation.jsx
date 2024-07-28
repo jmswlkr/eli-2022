@@ -15,10 +15,10 @@ export const useManagedNavigation = async ({ draftEnabled }) => {
   const visiblePages = contentVisibility.entry.items[0].fields
 
   const filteredConnectLinks = CONNECT.links.filter((link) => {
-    const isHidden = visiblePages[link.id] // will return boolean toggle state 
+    const show = visiblePages[link.id] // will return boolean toggle state 
     const isNotManaged = visiblePages[link.id] === undefined
   
-    const shouldShow = !isHidden && isNotManaged
+    const shouldShow = show || isNotManaged
 
     return shouldShow;
   })
