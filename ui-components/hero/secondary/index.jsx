@@ -30,7 +30,7 @@ export const HeroSecondary = ({
                 {subtitle}
               </p>
             )}
-            {buttonText && (
+            {buttonText && buttonPath && (
               <LinkButton
                 text={buttonText}
                 path={buttonPath}
