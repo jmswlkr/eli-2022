@@ -5,7 +5,6 @@ import { twm } from '@/utils'
 
 import { TEXT_STYLE_MAP } from './style-map'
 
-
 export const HeroPrimary = ({
   textLines,
   media,
@@ -37,7 +36,6 @@ export const HeroPrimary = ({
                 TEXT_STYLE_MAP.weight[fields.weight],
                 TEXT_STYLE_MAP.color[fields.color]
               ]
-
               return (
                 <span key={sys.id} className={twm(...styles)}>
                   {fields.text}
@@ -52,7 +50,12 @@ export const HeroPrimary = ({
             classes.imageContainer
           )}
         >
-          <div className={twm('SHADE full absolute-center z-20', classes.shade)} />
+          <div
+            className={twm(
+              'SHADE full absolute-center z-20',
+              classes.shade
+            )}
+          />
           <ContentfulImageBlock contentfulImage={media} />
         </div>
       </div>

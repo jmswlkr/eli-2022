@@ -55,10 +55,10 @@ export const Hero = ({ heroHeaderLines, heroButtonText }) => {
       <AnimatePresence>
         {fontsLoaded && (
           <motion.div
-            transition={smooth(3, 1)}
-            {...phases}
-            {...fadeIn}
-            className={heroTextContent}
+          transition={smooth(3, 1)}
+          {...phases}
+          {...fadeIn}
+          className={heroTextContent}
           >
             <div className={tagline}>
               <h2 className={slogan}>
