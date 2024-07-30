@@ -108,3 +108,19 @@ export const fadeIn = {
   variants: fi,
 }
 
+export const fadeInStagger = {
+  variants: {
+    visible: {
+      ...fi.visible,
+      transition: {
+        duration: 2,
+        delay: .5,
+        staggerChildren: .25
+      }
+    },
+    hidden: {
+      ...fi.hidden
+    }
+  }
+}
+
