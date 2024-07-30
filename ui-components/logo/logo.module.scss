@@ -8,6 +8,8 @@
     width: 58px;
     flex-shrink: 0;
     margin-right: 0.5rem;
+    scale: 0.85;
+    transform-origin: right;
     path {
       transition: var(--transition-primary);
     }
@@ -49,7 +51,7 @@
   font-family: var(--font-bold);
   text-transform: uppercase;
   color: currentColor;
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   margin-right: 0.25rem;
   &.initials {
     color: var(--primary);
