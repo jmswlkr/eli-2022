@@ -21,24 +21,43 @@ const TrainingPage = async () => {
 
   return (
     <>
-      <HeroSecondary {...content.hero.fields}/>
-      <HeaderParagraphList paragraphs={content.mainContentParagraphs} />
-      <section className='flex-col-tl gap-lg'>
-        <ParagraphHeader headingText={content.eventsHeading} />
-        <div className='flex-col-tl gap-lg'>
-          {content.eventsMostRecent.map((event, idx) => {
-            return <TrainingCard key={idx} event={event.fields} entry={event} />
-          })}
-        </div>
-      </section>
-      <section className='flex-col-tl gap-lg'>
-        <ParagraphHeader headingText={content.categoriesHeading} />
-        <div className='gap-md lg:grid-cols-2 auto-rows-auto lg:grid-rows-2 grid w-full grid-cols-1'>
-          {content.categoryList.map((category, idx) => {
-            return <TrainingCategoryCard key={idx} category={category.fields} />
-          })}
-        </div>
-      </section>
+      <HeroSecondary {...content.hero.fields} />
+      <HeaderParagraphList
+        paragraphs={content.mainContentParagraphs}
+      />
+      {content?.eventsMostRecent && (
+        <section className='flex-col-tl gap-lg'>
+          <ParagraphHeader headingText={content.eventsHeading} />
+          <div className='flex-col-tl gap-lg'>
+            {content.eventsMostRecent.map((event, idx) => {
+              return (
+                <TrainingCard
+                  key={idx}
+                  event={event.fields}
+                  entry={event}
+                />
+              )
+            })}
+          </div>
+        </section>
+      )}
+      {content?.categoryList && (
+        <section className='flex-col-tl gap-lg'>
+          <ParagraphHeader
+            headingText={content.categoriesHeading}
+          />
+          <div className='gap-md lg:grid-cols-2 auto-rows-auto lg:grid-rows-2 grid w-full grid-cols-1'>
+            {content.categoryList.map((category, idx) => {
+              return (
+                <TrainingCategoryCard
+                  key={idx}
+                  category={category.fields}
+                />
+              )
+            })}
+          </div>
+        </section>
+      )}
       <CtaSection {...content.cta.fields} />
     </>
   )
