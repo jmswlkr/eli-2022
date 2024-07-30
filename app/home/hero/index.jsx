@@ -4,9 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { LinkButton } from '@/ui-components'
 import { phases, smooth } from '@/animation'
-import { fadeIn } from '@/animation'
+import { fadeIn, fadeInStagger } from '@/animation'
 import { useFontsLoaded } from '@/hooks'
-
 
 export const HeroSection = () => {
   return (
@@ -26,18 +25,31 @@ function HeroText() {
       {...fadeIn}
       className='HERO_TEXT max-w-4/5 full flex-col-center gap-lg relative z-10'
     >
-      <h1 className='head-1 flex-col-center gap-sm text-center'>
-        <span className='text-white'>Transformational Change</span>
-        <span className='text-[20px] lg:text-[24px] uppercase tracking-[3px] text-white'>
+      <motion.h1
+        {...phases}
+        {...fadeInStagger}
+        className='head-1 flex-col-center gap-sm text-center'
+      >
+        <motion.span {...fadeIn} className='text-white'>
+          Transformational Change
+        </motion.span>
+        <motion.span
+          {...fadeIn}
+          className='text-[20px] lg:text-[24px] uppercase tracking-[3px] text-white'
+        >
           Through
-        </span>
-        <span className='text-primary-300'>Embodied Learning</span>
-      </h1>
-      <LinkButton
-        text='Get Started'
-        path='/#intro'
-        classes='solid sm lg:med !bg-primary-300 !border-none'
-      />
+        </motion.span>
+        <motion.span {...fadeIn} className='text-primary-300'>
+          Embodied Learning
+        </motion.span>
+        <motion.span {...fadeIn} className='span'>
+          <LinkButton
+            text='Get Started'
+            path='/#intro'
+            classes='solid sm lg:med !bg-primary-300 !border-none'
+          />
+        </motion.span>
+      </motion.h1>
     </motion.div>
   )
 }
