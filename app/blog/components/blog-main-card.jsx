@@ -16,7 +16,7 @@ export const BlogMainCard = ({ content, withButton = true }) => {
 
   return (
     <div className='BLOG_FEATURE_CONTAINER  gap-md md:gap-lg grid w-full grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-[.6fr_.4fr]'>
-      <div className='IMAGE WRAP relative lg:min-h-[60vh]'>
+      <div className='IMAGE WRAP relative lg:min-h-[60vh] rounded-md overflow-clip'>
         {hero?.mainImage && (
           <ContentfulImageBlock contentfulImage={hero?.mainImage} />
         )}
