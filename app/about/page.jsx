@@ -8,7 +8,7 @@ import { Intro } from './intro/intro'
 import { MissionVision } from './mission-vision/mission-vision'
 import { Values } from './values/values'
 import { CtaSection } from '@/ui-components'
-import { ContentLayout } from '@/ui-components'
+import { ContentLayout, ReadbleContent } from '@/ui-components'
 
 const About = async () => {
   const { isEnabled } = draftMode()
@@ -25,12 +25,12 @@ const About = async () => {
     <ContentLayout>
       <HeroSecondary {...content.hero.fields} />
       <div className='READABLE_WRAP flex-col-center'>
-        <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xxl'>
+        <ReadbleContent>
           {content &&
             components.map((Component, idx) => {
               return <Component key={idx} {...content} />
             })}
-        </div>
+        </ReadbleContent>
       </div>
       <CtaSection {...content.cta.fields} />
     </ContentLayout>

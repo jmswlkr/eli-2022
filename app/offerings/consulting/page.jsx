@@ -4,7 +4,7 @@ import { useContentful } from '@/contentful'
 
 import { HeaderParagraph } from '@/ui-components'
 import { CtaSection } from '@/ui-components'
-import { HeroSecondary } from '@/ui-components'
+import { HeroSecondary, ReadbleContent } from '@/ui-components'
 
 import { PAGE_CONFIG } from './page-config'
 
@@ -20,35 +20,44 @@ const OrganizationalConsultingPage = async () => {
     <>
       <HeroSecondary {...content.hero.fields} />
       <div className='READABLE_WRAP flex-col-center'>
-        <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xxl'>
-          <div className='MAIN_CONTENT flex-col-tl gap-lg'>
+        <ReadbleContent>
+          <div className='MAIN_CONTENT flex-col-tl gap-md'>
             {content.mainContent.map((block) => {
               return (
                 <HeaderParagraph
                   key={block.sys.id}
                   mainContentHeading={block.fields.heading}
                   mainContentParagraph={block.fields.paragraph}
-                  classes={{ wrapper: '!gap-ms', content: '!gap-ms' }}
+                  classes={{
+                    wrapper: '!gap-ms',
+                    content: '!gap-ms'
+                  }}
                 />
               )
             })}
           </div>
-          <div className="LIST_CONTENT flex-col-tl gap-md">
+          <div className='LIST_CONTENT flex-col-tl gap-md'>
             {content.listContent.map((block) => {
               return (
-                <div key={block.sys.id}className='LIST_ITEM border-primary-500 flex-col-tl gap-ms bg-primary-100 p-md border-l-2 rounded-r-lg'>
+                <div
+                  key={block.sys.id}
+                  className='LIST_ITEM border-primary-500 flex-col-tl gap-ms bg-primary-100 p-md border-l-2 rounded-r-lg'
+                >
                   <HeaderParagraph
                     mainContentHeading={block.fields.heading}
                     mainContentParagraph={block.fields.paragraph}
-                    classes={{ wrapper: '!gap-ms', content: '!gap-ms' }}
+                    classes={{
+                      wrapper: '!gap-ms',
+                      content: '!gap-ms'
+                    }}
                   />
                 </div>
               )
             })}
           </div>
-        </div>
+        </ReadbleContent>
       </div>
-      <CtaSection {...content.cta.fields}/>
+      <CtaSection {...content.cta.fields} />
     </>
   )
 }

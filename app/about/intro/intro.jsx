@@ -1,22 +1,25 @@
-import { HeaderParagraph } from '@/ui-components'
+import { HeaderParagraph, ReadbleContent } from '@/ui-components'
 
 export const Intro = ({ mainContent }) => {
   return (
     <div className='READABLE_WRAP flex-col-center'>
-      <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xl'>
-        <div className='MAIN_CONTENT flex-col-tl gap-md lg:gap-lg'>
+      <ReadbleContent>
+        <div className='MAIN_CONTENT flex-col-tl gap-md lg:gap-md'>
           {mainContent.map((block) => {
             return (
               <HeaderParagraph
                 key={block.sys.id}
                 mainContentHeading={block.fields?.heading}
                 mainContentParagraph={block.fields.paragraph}
-                classes={{ wrapper: '!gap-ms', content: '!gap-ms' }}
+                classes={{
+                  wrapper: '!gap-ms',
+                  content: '!gap-ms'
+                }}
               />
             )
           })}
         </div>
-      </div>
+      </ReadbleContent>
     </div>
   )
 }

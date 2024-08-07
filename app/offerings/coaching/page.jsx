@@ -6,6 +6,7 @@ import {
   CtaSection,
   HeaderParagraph,
   HeroSecondary,
+  ReadbleContent
 } from '@/ui-components'
 
 import { PAGE_CONFIG } from './page-config'
@@ -22,7 +23,7 @@ const CoachingPage = async () => {
     <>
       <HeroSecondary {...content.hero.fields} />
       <div className='READABLE_WRAP flex-col-center'>
-        <div className='READABLE_CONTENT w-[var(--reading-content-width)] flex-col-tl gap-xl'>
+        <ReadbleContent>
           <section className='INTRO flex-col-tl gap-lg'>
             {content.mainContent.map((block) => {
               return (
@@ -30,7 +31,10 @@ const CoachingPage = async () => {
                   key={block.sys.id}
                   mainContentHeading={block.fields.heading}
                   mainContentParagraph={block.fields.paragraph}
-                  classes={{ wrapper: '!gap-ms', content: '!gap-ms' }}
+                  classes={{
+                    wrapper: '!gap-ms',
+                    content: '!gap-ms'
+                  }}
                 />
               )
             })}
@@ -46,7 +50,7 @@ const CoachingPage = async () => {
               )
             })}
           </section>
-        </div>
+        </ReadbleContent>
       </div>
       <CtaSection {...content.cta.fields} />
     </>
