@@ -38,7 +38,8 @@ const BlogPage = async () => {
   
 
   
-  const secondaryPosts = defaultContent.items.slice(1)
+  // const secondaryPosts = defaultContent.items.slice(1)
+  const secondaryPosts = defaultContent.items
 
   return (
     <ContentLayout>
