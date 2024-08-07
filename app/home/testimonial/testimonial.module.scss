@@ -197,14 +197,18 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+    transition: all .4s;
   }
   @media (max-width: 1024px) {
     // height: 30vh;
     width: 100%;
     height: auto;
     video {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 16 / 9;
     }
+  }
+  .videoPlaying {
+    aspect-ratio: 1 / 1 !important;
   }
 }
 .videoShade {

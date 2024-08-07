@@ -1,7 +1,11 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion, useAnimation } from 'framer-motion'
+import {
+  AnimatePresence,
+  motion,
+  useAnimation
+} from 'framer-motion'
 import { createPortal } from 'react-dom'
 import { useInView } from 'react-intersection-observer'
 
@@ -34,6 +38,7 @@ import {
   videoWrap,
   expandVideoBtn,
   videoShade,
+  videoPlaying,
   hideShade,
   modalShade,
   closeModalBtn,
@@ -190,6 +195,10 @@ function VideoTestimonial({ videoUrl, name, text, videoThumb }) {
     setIsPlayingInModal(false)
   }
 
+  useEffect(() => {
+    console.log('isPlaying changed: ', isPlaying)
+  }, [isPlaying])
+
   return (
     <>
       {isPlayingInModal &&
@@ -207,11 +216,18 @@ function VideoTestimonial({ videoUrl, name, text, videoThumb }) {
       <div className={videoContainer}>
         {text}
         <div className={videoWrap} onClick={handleStartPlaying}>
-          <div className={`${videoShade} ${isPlaying ? hideShade : ''}`}>
+          <div
+            className={`${videoShade} ${
+              isPlaying ? hideShade : ''
+            }`}
+          >
             <PlayButton />
           </div>
           {isPlaying && (
-            <button className={expandVideoBtn} onClick={handleExpandToModal}>
+            <button
+              className={expandVideoBtn}
+              onClick={handleExpandToModal}
+            >
               ◰
             </button>
           )}
@@ -223,7 +239,9 @@ function VideoTestimonial({ videoUrl, name, text, videoThumb }) {
             controls={isPlaying}
             controlsList={'nofullscreen'}
             onEnded={() => setIsPlaying(false)}
+            onPause={() => setIsPlaying(false)}
             onClick={handleVideoClick}
+            className={isPlaying ? videoPlaying : ''}
           />
         </div>
       </div>
@@ -262,7 +280,11 @@ function VideoModal({ videoUrl, timeToStart, closeModal }) {
         &times;
       </button>
       <div className={modal} onClick={handleStartPlaying}>
-        <div className={`${videoShade} ${isPlaying ? hideShade : ''}`}>
+        <div
+          className={`${videoShade} ${
+            isPlaying ? hideShade : ''
+          }`}
+        >
           <PlayButton />
         </div>
         <video
