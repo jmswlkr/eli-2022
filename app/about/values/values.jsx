@@ -40,11 +40,13 @@ export const Values = (content) => {
     <section className={container}>
       <HeaderParagraph
         mainContentHeading={valuesHeadingBlock.fields.heading}
-        mainContentParagraph={valuesHeadingBlock.fields.paragraph}
+        mainContentParagraph={
+          valuesHeadingBlock.fields.paragraph
+        }
       />
       <ul
         className={
-          'VALUES_GRID grid lg:grid-cols-2 auto-rows-[250px] w-full gap-md'
+          'VALUES_GRID grid lg:grid-cols-2 auto-rows-[150px] lg:auto-rows-[250px] w-full gap-md'
         }
       >
         {values.map((value, idx) => {
