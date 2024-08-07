@@ -27,7 +27,7 @@ export function PillarCard({ title, icon, idx, allPillars }) {
   return (
     <div
       onClick={() => handleOpenAndPopulateModal(idx)}
-      className='PILLAR_CARD cursor-pointer rounded-lg border-[.5px] border-[var(--color-tex-med)] hover:border-accent-300 lg:border-0 py-md lg:p-0 flex-col-center-top group gap-[35px] transition text-[var(--text-color-med)] hover:text-white'
+      className='PILLAR_CARD cursor-pointer border-b-[.5px] border-[var(--color-tex-med)] hover:border-accent-300 lg:border-0 py-md lg:p-0 flex-col-center-top group gap-[35px] transition text-[var(--text-color-med)] hover:text-white'
     >
       <h4 className='P_TITLE head-3 lg:!head-5 text-center flex-col-center gap-sm !font-body tracking-[2px]'>
         {title}
