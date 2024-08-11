@@ -4,6 +4,7 @@ import { ContentfulImageBlock, HeaderParagraph } from '@/ui-components'
 import { Fragment } from 'react'
 import { BlogFooter } from './blog-content-footer'
 import { useParams } from 'next/navigation'
+import { twm } from 'utils/tailwind'
 
 export const BlogContent = ({ content }) => {
   const params = useParams()
@@ -61,8 +62,17 @@ function BlogImageTextBlock({ content }) {
 }
 
 function BlogImageBlock({ content }) {
+  
+  const imageHeightMap = {
+    'Short': 'h-[25vh]',
+    'Medium': 'h-[40vh]',
+    'Tall': 'h-[60vh]',
+  }
+
+  const height = imageHeightMap[content.fields.imageHeight] || 'h-[25vh]'
+  
   return (
-    <div className='IMAGE_BLOCK h-[25vh] relative w-full'>
+    <div className={twm('IMAGE_BLOCK relative w-full', height)}>
       <ContentfulImageBlock contentfulImage={content.fields?.image} />
     </div>
   )
