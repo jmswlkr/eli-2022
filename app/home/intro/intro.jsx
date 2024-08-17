@@ -31,7 +31,10 @@ export const Intro = ({
   return (
     <section className={intro}>
       <span className='scroll-pad' id='intro' />
-      <SectionHeader title={introTitle} labelText={introMarqueeText} />
+      <span className='h-[.5px] bg-primary-500 w-full mb-ml' />
+      <p className='text-primary-500  uppercase tracking-[4px] mb-md'>Welcome to ELI</p> 
+      <SectionHeader title={introTitle} classes={ { title: 'head-2 !items-center font-bold' } } />
+      <span className='h-[.5px] bg-primary-500 w-full mt-ms' />
       <div className={cardContainer}>
         {content.introContent.map((card) => {
           return <IntroCard key={card.sys.id} card={card.fields} />
