@@ -25,7 +25,7 @@ export const PillarsSection = (props) => {
           {pillarCards.map((pillar, idx) => {
             return (
               <PillarCard
-                key={pillar.id}
+                key={pillar.cardRefId}
                 idx={idx}
                 allPillars={pillarCards}
                 {...pillar}
