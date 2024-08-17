@@ -26,7 +26,7 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0,
   replaysSessionSampleRate: 0.1,
 
-  // tracesSampleRate: 1.0,
+  tracesSampleRate: 1.0,
   // tracePropagationTargets: [
   //   'localhost',
   //   /^https:\/\/embodiedlearninginstitute\.com\/api/
