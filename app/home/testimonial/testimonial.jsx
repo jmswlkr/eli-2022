@@ -7,14 +7,12 @@ import {
   useAnimation
 } from 'framer-motion'
 import { createPortal } from 'react-dom'
-import { useInView } from 'react-intersection-observer'
-
-import { testimonialData } from './testimonial-data'
 
 import { animationProps } from 'animation/animate'
 import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
 
+import { CloseIcon } from '@/ui-components'
 import { PlayButton } from '@/ui-components'
 import { QuoteMark } from '@/ui-components'
 import { SectionHeader } from '@/ui-components'
@@ -23,11 +21,6 @@ import { extractTestimonials } from './extract-testimonials'
 
 import {
   testimonial,
-  sectionAccent,
-  label,
-  header,
-  title,
-  text,
   testimonialSliderBase,
   testimonialSlider,
   testimonialList,
@@ -47,11 +40,8 @@ import {
   modalText,
   modalAttr,
   attr,
-  attrInitial,
-  fadeTransitionBlock,
   scrollTip
 } from './testimonial.module.scss'
-import { CloseIcon } from '@/ui-components'
 
 export const Testimonial = (content) => {
   const { sectionRef, controls } = useAnimationControls()
@@ -122,9 +112,6 @@ function TextTestimonial({ text, name }) {
           />,
           portal
         )}
-      {/* <span className={quoteMark}>
-        <QuoteMark />
-      </span> */}
       <blockquote className={quote} onClick={handleModalOpen}>
         {text}
       </blockquote>

@@ -13,7 +13,6 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
 export const FlyerSlider = ({ showSlider, slider: slides }) => {
   const settings = {
-    // dots: true,
     dots: slides.length > 1,
     infinite: true,
     speed: 500,
