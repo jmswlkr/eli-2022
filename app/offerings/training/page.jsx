@@ -18,12 +18,11 @@ const TrainingPage = async () => {
     ...PAGE_CONFIG,
     preview: isEnabled
   })
-
+  
   return (
     <>
       <HeroSecondary {...content.hero.fields} />
-      <TestComponent content={content} />
-      {/* <HeaderParagraphList
+      <HeaderParagraphList
         paragraphs={content.mainContentParagraphs}
       />
       <TestComponent content={content}/>
@@ -60,7 +59,7 @@ const TrainingPage = async () => {
           </div>
         </section>
       )}
-      <CtaSection {...content.cta.fields} /> */}
+      <CtaSection {...content.cta.fields} />
     </>
   )
 }

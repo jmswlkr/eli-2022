@@ -54,7 +54,7 @@ const TrainingCategoryPage = async ({ params }) => {
       <section className='flex-col-tl gap-lg'>
         <ParagraphHeader headingText={content.categoryEventsHeader} />
         <div className='flex-col-tl gap-lg'>
-          {content.categoryEventsEventList.map((event, idx) => {
+          {content?.categoryEventsEventList.map((event, idx) => {
             return <TrainingCard key={idx} event={event.fields} entry={event} />
           })}
         </div>
