@@ -56,8 +56,8 @@ function HeroText() {
 
 function HeroBG() {
   return (
-    <div className='HERO_BG isolate absolute-center z-0 w-screen h-full'>
-      <AnimatePresence>
+    <AnimatePresence>
+      <div className='HERO_BG isolate absolute-center z-0 w-screen h-full'>
         <motion.div className='SHADE bg-gradient-to-r from-primary-500/70 to-accent-300/50 absolute-shade full z-10' />
         <motion.div className='SHADE_DARK bg-black/40 absolute-shade full z-10' />
         <motion.video
@@ -70,7 +70,7 @@ function HeroBG() {
           src='https://res.cloudinary.com/jameswalker-work/video/upload/f_auto,q_auto:good/v1674832419/ELI/ocean_qxigpo.mp4'
           className='VIDEO absolute-img full z-0'
         />
-      </AnimatePresence>
-    </div>
+      </div>
+    </AnimatePresence>
   )
 }
