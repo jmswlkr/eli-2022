@@ -4,7 +4,7 @@ import { draftMode } from 'next/headers'
 import { useContentful } from '@/contentful'
 import { PAGE_CONFIG } from './page-config'
 
-import { CtaSection, TestComponent } from '@/ui-components'
+import { CtaSection } from '@/ui-components'
 import { HeroSecondary } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
 import { HeaderParagraphList } from '@/ui-components'
@@ -25,7 +25,6 @@ const TrainingPage = async () => {
       <HeaderParagraphList
         paragraphs={content.mainContentParagraphs}
       />
-      <TestComponent content={content}/>
       {content?.eventsMostRecent && (
         <section className='flex-col-tl gap-lg'>
           <ParagraphHeader headingText={content.eventsHeading} />
