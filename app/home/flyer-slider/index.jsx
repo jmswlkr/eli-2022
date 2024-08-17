@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 
 import { twm } from '@/utils'
 import {
-  ActionButton,
   ContentfulImageBlock,
   LinkButton
 } from '@/ui-components'
@@ -31,7 +30,7 @@ export const FlyerSlider = ({ showSlider, slider: slides }) => {
       <Slider {...settings}>
         {slides.map((slide) => {
           return (
-            <Slide key={slide.sys.meta} slide={slide.fields} />
+            <Slide key={slide.sys.id} slide={slide.fields} />
           )
         })}
       </Slider>
