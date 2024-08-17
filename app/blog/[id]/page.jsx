@@ -25,7 +25,7 @@ const BlogSinglePage = async ({ params }) => {
   return (
     <ContentLayout>
       <div className='NAV_SPACER h-[var(--nav-height)]' />
-      <BlogHero content={content} />
+      <BlogHero content={content} withButton={false} />
       <BlogContent content={content} />
       <div className='FOOTER_SPACER' />
       <BlogPageFooter currentEntry={content}/>
