@@ -1,14 +1,10 @@
 import Link from 'next/link'
+
 import {
-  Button,
   ContentfulImageBlock,
   HeaderParagraph,
-  LinkButton,
-  TestComponent
+  SectionHeader
 } from '@/ui-components'
-import { SectionHeader } from '@/ui-components'
-
-import { cards } from './intro-data'
 
 import {
   intro,
@@ -58,11 +54,7 @@ function IntroCard({ card }) {
         </div>
         <div className={cardBtn}>
           {card.buttonText && card.buttonLink && (
-            <LinkButton
-              text={card.buttonText}
-              path={card.buttonLink}
-              classes='outline'
-            />
+            <button className='general-btn solid sm'>{card.buttonText}</button>
           )}
         </div>
       </div>
