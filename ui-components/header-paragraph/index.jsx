@@ -1,8 +1,8 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
+import Link from 'next/link'
 
 import { twm } from '@/utils'
-import Link from 'next/link'
 
 export const HeaderParagraph = ({
   mainContentHeading,
@@ -19,7 +19,7 @@ export const HeaderParagraph = ({
       [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
       [INLINES.HYPERLINK]: (node, children) => {
         return (
-          <Link href={'/#pillars-section'} className='text-primary-500 font-bold cursor-pointer'>
+          <Link href={node.data.uri} className='text-primary-500 font-bold cursor-pointer'>
             {children}
           </Link>
         )
