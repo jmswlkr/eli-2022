@@ -30,7 +30,7 @@ const TrainingCategoryPage = async ({ params }) => {
 
   return (
     <>
-      <HeroSecondary {...content?.hero?.fields} />
+      <HeroSecondary {...content?.hero?.fields} subtitle={'Events'} subtitlePositionTop />  
       {hasDescription && <section className='DESCRIPTION flex-col-tl gap-lg'>
         {content?.descriptionParagraphs?.map((paragraph) => {
           return (
