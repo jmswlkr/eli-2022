@@ -31,7 +31,7 @@ export const BlogSecondaryCard = ({ content }) => {
         </div>
         <LinkButton
           text='Read More'
-          path={`blog/${content.fields.slug}`}
+          path={`/blog/${content.fields.slug}`}
           classes='sm outline'
         />
       </div>
