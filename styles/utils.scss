@@ -100,9 +100,13 @@
       background-color: var(--primary);
     }
   }
+  &.force {
+    &.xs {
+    padding: 0.1rem .5rem !important;
+  }
+  }
   &.sm {
     font-size: var(--text-md);
-    padding: 0.4rem 1.25rem;
     padding: 0.25rem 1rem;
   }
   &.med {
