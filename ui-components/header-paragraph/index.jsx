@@ -16,19 +16,35 @@ export const HeaderParagraph = ({
   const formattingOptions = {
     renderNode: {
       [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
-      [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+      [BLOCKS.LIST_ITEM]: (node, children) => (
+        <li>{children}</li>
+      ),
+      [BLOCKS.QUOTE]: (node, children) => (
+        <p className='QUOTE_BLOCK border-primary-500 p-md my-md text-primary-500 italic border-l'>
+          {children} 
+        </p>
+      ),
       [INLINES.HYPERLINK]: (node, children) => {
         return (
-          <Link href={node.data.uri} className='text-primary-500 font-bold cursor-pointer'>
+          <Link
+            href={node.data.uri}
+            className='text-primary-500 font-bold cursor-pointer'
+          >
             {children}
           </Link>
         )
       }
     },
     renderText: (text) => {
-      return text.split('\n').reduce((children, textSegment, index) => {
-        return [...children, index > 0 && <br key={index} />, textSegment]
-      }, [])
+      return text
+        .split('\n')
+        .reduce((children, textSegment, index) => {
+          return [
+            ...children,
+            index > 0 && <br key={index} />,
+            textSegment
+          ]
+        }, [])
     }
   }
 
