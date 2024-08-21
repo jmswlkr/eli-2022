@@ -41,30 +41,32 @@ export const OfferingsPreviewCard = async ({ entryId }) => {
           path={blurb.buttonLink}
         />
       </div>
-      <div className='LIST_SECTION flex-col-tl gap-md overflow-clip relative'>
-        <h3 className={twm('head-4 text-primary-100 z-20')}>
-          Opportunities for Growth
-        </h3>
-        {list.length > 0 && <ul className='flex-col-tl gap-ms pb-sm lg:gap-md z-20'>
-          {list.map((detail, idx) => {
-            return (
-              <li
-                key={idx}
-                className='par-1 pl-ms lg:pl-md text-white border-l-[.5px] border-white'
-              >
-                {detail}
-              </li>
-            )
-          })}
-        </ul>}
-        <div className='BG_IMAGE_WRAP full isolate absolute inset-0'>
-          <div className='SHADE bg-primary-500/80 saturate-[70%] absolute inset-0 z-10' />
-          <ContentfulImageBlock
-            contentfulImage={image}
-            classes='z-0 saturate-0 opacity-20'
-          />
+      {list.length > 0 && (
+        <div className='LIST_SECTION flex-col-tl gap-md overflow-clip relative'>
+          <h3 className={twm('head-4 text-primary-100 z-20')}>
+            Opportunities for Growth
+          </h3>
+          <ul className='flex-col-tl gap-ms pb-sm lg:gap-md z-20'>
+            {list.map((detail, idx) => {
+              return (
+                <li
+                  key={idx}
+                  className='par-1 pl-ms lg:pl-md text-white border-l-[.5px] border-white'
+                >
+                  {detail}
+                </li>
+              )
+            })}
+          </ul>
+          <div className='BG_IMAGE_WRAP full isolate absolute inset-0'>
+            <div className='SHADE bg-primary-500/80 saturate-[70%] absolute inset-0 z-10' />
+            <ContentfulImageBlock
+              contentfulImage={image}
+              classes='z-0 saturate-0 opacity-20'
+            />
+          </div>
         </div>
-      </div>
+      )}
     </article>
   )
 }
