@@ -33,7 +33,7 @@ export const OfferingsPreviewCard = async ({ entryId }) => {
         <HeaderParagraph
           classes={{ heading: '!head-4' }}
           mainContentHeading={blurb.heading}
-          mainContentParagraph={blurb.paragraph}
+          mainContentParagraph={blurb?.paragraph}
         />
         <LinkButton
           text={blurb.buttonText}

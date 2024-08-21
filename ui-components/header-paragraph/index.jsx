@@ -21,7 +21,7 @@ export const HeaderParagraph = ({
       ),
       [BLOCKS.QUOTE]: (node, children) => (
         <p className='QUOTE_BLOCK border-primary-500 p-md my-md text-primary-500 italic border-l'>
-          {children} 
+          {children}
         </p>
       ),
       [INLINES.HYPERLINK]: (node, children) => {
@@ -65,15 +65,20 @@ export const HeaderParagraph = ({
           {mainContentHeading}
         </h4>
       )}
-      <div
-        className={twm(
-          'HP_PARAGRAPH flex-col-tl gap-ms [&_br]:inline-block',
-          'par-1',
-          classes.paragraph
-        )}
-      >
-        {documentToReactComponents(mainContentParagraph, formattingOptions)}
-      </div>
+      {mainContentParagraph && (
+        <div
+          className={twm(
+            'HP_PARAGRAPH flex-col-tl gap-ms [&_br]:inline-block',
+            'par-1',
+            classes.paragraph
+          )}
+        >
+          {documentToReactComponents(
+            mainContentParagraph,
+            formattingOptions
+          )}
+        </div>
+      )}
     </div>
   )
 }
