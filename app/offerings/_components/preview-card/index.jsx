@@ -45,7 +45,7 @@ export const OfferingsPreviewCard = async ({ entryId }) => {
         <h3 className={twm('head-4 text-primary-100 z-20')}>
           Opportunities for Growth
         </h3>
-        <ul className='flex-col-tl gap-ms pb-sm lg:gap-md z-20'>
+        {list.length > 0 && <ul className='flex-col-tl gap-ms pb-sm lg:gap-md z-20'>
           {list.map((detail, idx) => {
             return (
               <li
@@ -56,7 +56,7 @@ export const OfferingsPreviewCard = async ({ entryId }) => {
               </li>
             )
           })}
-        </ul>
+        </ul>}
         <div className='BG_IMAGE_WRAP full isolate absolute inset-0'>
           <div className='SHADE bg-primary-500/80 saturate-[70%] absolute inset-0 z-10' />
           <ContentfulImageBlock

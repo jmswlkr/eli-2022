@@ -23,7 +23,7 @@ const Offerings = async () => {
         mainContentHeading={content.mainContentHeading}
         mainContentParagraph={content.mainContentParagraph}
       />
-      {content.offeringPagesPreviewCards.map((card, idx) => {
+      {content?.offeringPagesPreviewCards?.map((card, idx) => {
         return <OfferingsPreviewCard key={idx} entryId={card.sys.id} />
       })}
       <CtaSection {...content.cta.fields} />
