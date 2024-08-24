@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-import { ContentfulImageBlock, LinkButton } from '@/ui-components'
+import { ContentfulImageBlock } from '@/ui-components'
 
 export const TrainingCategoryCard = ({ category }) => {
   return (
@@ -17,9 +17,9 @@ export const TrainingCategoryCard = ({ category }) => {
         <h4 className='HEADING head-4 text-primary-500 text-center'>
           {category.categoryTitle}
         </h4>
-        <p className='PARAGRAPH p-ms text-center'>
+        {category.blurbDescription && <p className='PARAGRAPH p-ms text-center'>
           {category.blurbDescription}
-        </p>
+        </p>}
         <button className='general-btn sm text-primary-500 outline'>View More →</button>
       </div>
     </Link>
