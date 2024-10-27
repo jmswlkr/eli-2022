@@ -8,7 +8,7 @@ import { ContentfulImageBlock } from '@/ui-components'
 
 dayjs.extend(advancedFormat)
 
-export const TrainingCard = ({ event, entry }) => {
+export const TrainingCard = ({ event }) => {
   const formattedDate = dayjs(event.eventDate).format('MMMM Do, YYYY')
   const category = event?.categoryEntry?.fields?.categoryTag
 
@@ -41,7 +41,7 @@ export const TrainingCard = ({ event, entry }) => {
         {/* TODO: Include buttons for read more and sign up. */}
       </div>
       <div className='IMAGE_WRAP h-[25vh] order-first lg:order-last lg:h-auto relative'>
-        <ContentfulImageBlock contentfulImage={event.imageMain} />
+        <ContentfulImageBlock contentfulImage={event.hero.fields.heroImage} />
       </div>
     </article>
   )

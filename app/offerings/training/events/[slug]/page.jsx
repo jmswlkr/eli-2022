@@ -3,11 +3,7 @@ import { draftMode } from 'next/headers'
 import { useContentfulEntryByParams } from '@/contentful'
 
 import {
-  BorderBlock,
   EmphasisBlock,
-  HeroTertiary,
-  QuoteBlock,
-  TestComponent
 } from '@/ui-components'
 import { CtaSection } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
@@ -31,33 +27,57 @@ const TrainingEventPage = async ({ params }) => {
 
   return (
     <>
-      <TrainingEventHero {...content.hero.fields} />
-      <EmphasisBlock text={content.eventDescriptionTeaser} />
-      <section className='DESCRIPTION flex-col-tl gap-lg'>
-        {content?.eventDescriptionParagraphs?.map((paragraph) => {
-          return (
-            <HeaderParagraph
-              key={paragraph.sys.id}
-              mainContentHeading={paragraph.fields.heading}
-              mainContentParagraph={paragraph.fields.paragraph}
-            />
-          )
-        })}
-      </section>
-      <section className='TOPICS flex-col-tl gap-md'>
-        <ParagraphHeader headingText={content.eventTopicsHeading} />
-        {content?.eventTopicsParagraphs?.map((paragraph, idx) => {
-          return (
-            <div key={idx} className='LIST_WRAPPER bordered-list-wrapper'>
-              <HeaderParagraph
-                mainContentHeading={paragraph.fields.heading}
-                mainContentParagraph={paragraph.fields.paragraph}
-                classes={{ header: '!text-primary-900 font-semibold head-5' }}
-              />
-            </div>
-          )
-        })}
-      </section>
+      {content?.hero?.fields && (
+        <TrainingEventHero {...content.hero.fields} />
+      )}
+      {content?.eventDescriptionTeaser && (
+        <EmphasisBlock text={content.eventDescriptionTeaser} />
+      )}
+      {content?.eventDescriptionParagraphs && (
+        <section className='DESCRIPTION flex-col-tl gap-lg'>
+          {content?.eventDescriptionParagraphs?.map(
+            (paragraph) => {
+              return (
+                <HeaderParagraph
+                  key={paragraph.sys.id}
+                  mainContentHeading={paragraph.fields.heading}
+                  mainContentParagraph={
+                    paragraph.fields.paragraph
+                  }
+                />
+              )
+            }
+          )}
+        </section>
+      )}
+      {content?.eventTopicsParagraphs && (
+        <section className='TOPICS flex-col-tl gap-md'>
+          <ParagraphHeader
+            headingText={content.eventTopicsHeading}
+          />
+          {content?.eventTopicsParagraphs?.map(
+            (paragraph, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className='LIST_WRAPPER bordered-list-wrapper'
+                >
+                  <HeaderParagraph
+                    mainContentHeading={paragraph.fields.heading}
+                    mainContentParagraph={
+                      paragraph.fields.paragraph
+                    }
+                    classes={{
+                      header:
+                        '!text-primary-900 font-semibold head-5'
+                    }}
+                  />
+                </div>
+              )
+            }
+          )}
+        </section>
+      )}
       <CtaSection {...content?.eventCta?.fields} />
     </>
   )

@@ -4,7 +4,7 @@ import { draftMode } from 'next/headers'
 import { useContentful } from '@/contentful'
 import { PAGE_CONFIG } from './page-config'
 
-import { CtaSection } from '@/ui-components'
+import { CtaSection, TestComponent } from '@/ui-components'
 import { HeroSecondary } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
 import { HeaderParagraphList } from '@/ui-components'
@@ -22,6 +22,7 @@ const TrainingPage = async () => {
   return (
     <>
       <HeroSecondary {...content.hero.fields} />
+      {/* <TestComponent content={content} /> */}
       <HeaderParagraphList
         paragraphs={content.mainContentParagraphs}
       />
