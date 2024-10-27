@@ -68,13 +68,13 @@ const TrainingCategoryPage = async ({ params }) => {
           }
         )}
       </section>}
-      <section className='flex-col-tl gap-lg'>
+      <section className='CATEGORY_EVENTS flex-col-tl gap-lg w-full'>
         {hasEvents ? (
           <>
             <ParagraphHeader
               headingText={content.categoryEventsHeader}
             />
-            <div className='flex-col-tl gap-lg'>
+            <div className='EVENT_LIST flex-col-tl gap-lg w-full'>
               {content?.categoryEventsEventList?.map(
                 (event, idx) => {
                   return (
