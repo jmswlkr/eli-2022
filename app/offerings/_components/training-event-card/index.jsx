@@ -29,10 +29,12 @@ export const TrainingCard = ({ event }) => {
             </>
           )}
           <h3 className='HEADING head-3 text-primary-900'>
-            {event.eventTitle}
+            {event.hero.fields.heroPrimaryText}
           </h3>
         </div>
-        <p className='PARAGRAPH'>{event.eventDescriptionTeaser}</p>
+        <p className='PARAGRAPH'>
+          {event.eventDescriptionTeaser}
+        </p>
         <LinkButton
           text='Sign Up →'
           path={`/offerings/training/events/${event.pageSlug}`}
@@ -41,7 +43,9 @@ export const TrainingCard = ({ event }) => {
         {/* TODO: Include buttons for read more and sign up. */}
       </div>
       <div className='IMAGE_WRAP h-[25vh] order-first lg:order-last lg:h-auto relative'>
-        <ContentfulImageBlock contentfulImage={event.hero.fields.heroImage} />
+        <ContentfulImageBlock
+          contentfulImage={event.hero.fields.heroImage}
+        />
       </div>
     </article>
   )

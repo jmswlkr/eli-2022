@@ -22,7 +22,6 @@ const TrainingPage = async () => {
   return (
     <>
       <HeroSecondary {...content.hero.fields} />
-      {/* <TestComponent content={content} /> */}
       <HeaderParagraphList
         paragraphs={content.mainContentParagraphs}
       />
