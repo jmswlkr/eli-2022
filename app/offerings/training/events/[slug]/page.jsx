@@ -82,10 +82,10 @@ const TrainingEventPage = async ({ params }) => {
           )}
         </section>
       )}
-      <div className='bg-primary-100 flex rounded-md'>
+      {/* <div className='bg-primary-100 flex rounded-md'>
         <input placeholder='Email...' type="text" className="border-primary p-md bg-transparent" />
         <p className="italic">Enter your email above </p>
-      </div>
+      </div> */}
       <CtaSection {...content?.eventCta?.fields} />
     </>
   )
