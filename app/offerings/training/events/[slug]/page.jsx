@@ -4,6 +4,7 @@ import { useContentfulEntryByParams } from '@/contentful'
 
 import {
   EmphasisBlock,
+  TestComponent,
 } from '@/ui-components'
 import { CtaSection } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
@@ -27,11 +28,14 @@ const TrainingEventPage = async ({ params }) => {
 
   return (
     <>
-      {content?.hero?.fields && (
-        <TrainingEventHero {...content.hero.fields} />
-      )}
-      {content?.eventDescriptionTeaser && (
-        <EmphasisBlock text={content.eventDescriptionTeaser} />
+      {content?.hero?. fields && (
+        <TrainingEventHero 
+          date={{
+            start: content.eventDateStart,
+            end: content.eventDateEnd
+          }} 
+          {...content.hero.fields} 
+        />
       )}
       {content?.eventDescriptionParagraphs && (
         <section className='DESCRIPTION flex-col-tl gap-lg'>
@@ -78,6 +82,10 @@ const TrainingEventPage = async ({ params }) => {
           )}
         </section>
       )}
+      <div className='bg-primary-100 flex rounded-md'>
+        <input placeholder='Email...' type="text" className="border-primary p-md bg-transparent" />
+        <p className="italic">Enter your email above </p>
+      </div>
       <CtaSection {...content?.eventCta?.fields} />
     </>
   )

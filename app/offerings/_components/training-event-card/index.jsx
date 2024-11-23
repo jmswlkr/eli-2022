@@ -3,20 +3,32 @@
 import * as dayjs from 'dayjs'
 import * as advancedFormat from 'dayjs/plugin/advancedFormat'
 
-import { LinkButton } from '@/ui-components'
+import { HeaderParagraph, LinkButton } from '@/ui-components'
 import { ContentfulImageBlock } from '@/ui-components'
 
 dayjs.extend(advancedFormat)
 
 export const TrainingCard = ({ event }) => {
-  const formattedDate = dayjs(event.eventDate).format('MMMM Do, YYYY')
+  // const formattedDate = dayjs(event.eventDate).format('MMMM Do, YYYY')
+  const formattedDate = {
+    start: dayjs(event.eventDateStart).format('MMM Do'),
+    end: dayjs(event.eventDateEnd).format('MMM Do'),
+    year: dayjs(event.eventDateStart).format('YYYY')
+  }
+  console.log({ formattedDate })
   const category = event?.categoryEntry?.fields?.categoryTag
 
   return (
     <article className='TRAINING_CARD auto-rows-auto rounded-xl lg:grid-cols-2 grid w-full h-auto grid-cols-1 overflow-hidden'>
       <div className='TEXT_CONTENT full p-ms md:p-md bg-primary-500/10 flex-col-tl gap-sm md:gap-ms lg:gap-md'>
         <div className='LABEL meta-1 text-primary-500 flex-col-tl lg:flex-center lg:!flex-row gap-[1ch]'>
-          <span>{formattedDate}</span>
+          <div className="gap-xs lg:flex-row lg:gap-sm flex items-center justify-start">
+            <span>{formattedDate.start}</span>
+            <span>-</span>
+            <span>{formattedDate.end}</span>
+            <span>-</span>
+            <span>{formattedDate.year}</span>
+          </div>
           <span className='lg:block hidden'>•</span>
           <span className='lg:font-normal font-semibold'>
             {event.eventLocationName}
@@ -32,9 +44,10 @@ export const TrainingCard = ({ event }) => {
             {event.hero.fields.heroPrimaryText}
           </h3>
         </div>
-        <p className='PARAGRAPH'>
+        <HeaderParagraph mainContentParagraph={event.teaserDescription} />
+        {/* <p className='PARAGRAPH'>
           {event.eventDescriptionTeaser}
-        </p>
+        </p> */}
         <LinkButton
           text='Sign Up →'
           path={`/offerings/training/events/${event.pageSlug}`}
