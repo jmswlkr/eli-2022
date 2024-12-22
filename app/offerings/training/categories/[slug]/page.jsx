@@ -11,6 +11,7 @@ import { HeaderParagraph } from '@/ui-components'
 import { TrainingCard } from '../../../_components/training-event-card'
 
 const TrainingCategoryPage = async ({ params }) => {
+  console.log("🚀 ~ TrainingCategoryPage ~ params:", params)
   const { isEnabled } = draftMode()
 
   const { entry } = await useContentfulEntryByParams({
@@ -21,53 +22,75 @@ const TrainingCategoryPage = async ({ params }) => {
       'fields.slug[match]': params.slug
     }
   })
+      console.log("🚀 ~ TrainingCategoryPage ~ params:", params)
+    console.log("🚀 ~ TrainingCategoryPage ~ params:", params)
 
   const content = entry?.items[0].fields
 
-  const hasDescription = content?.descriptionParagraphs?.length > 0
+  const hasDescription =
+    content?.descriptionParagraphs?.length > 0
   const hasTopics = content?.eventTopicsParagraphs?.length > 0
-  const hasEvents = content?.categoryEventsEventList?.length > 0
+
+  // Filter out unpublished events
+  const publishedEvents =
+    content?.categoryEventsEventList?.filter((event) => {
+      // Check if the event exists and has fields (is published)
+      return (
+        event &&
+        event.fields &&
+        Object.keys(event.fields).length > 0
+      )
+    }) || []
+
+  const hasEvents = publishedEvents.length > 0
 
   return (
     <>
-      <HeroSecondary {...content?.hero?.fields} subtitlePositionTop />  
-      {hasDescription && <section className='DESCRIPTION flex-col-tl gap-lg'>
-        {content?.descriptionParagraphs?.map((paragraph) => {
-          return (
-            <HeaderParagraph
-              key={paragraph.sys.id}
-              mainContentHeading={paragraph.fields.heading}
-              mainContentParagraph={paragraph.fields.paragraph}
-            />
-          )
-        })}
-      </section>}
-      {hasTopics && <section className='TOPICS flex-col-tl gap-md'>
-        <ParagraphHeader
-          headingText={content.eventFocusHeader}
-        />
-        {content?.eventTopicsParagraphs?.map(
-          (paragraph, idx) => {
+      <HeroSecondary
+        {...content?.hero?.fields}
+        subtitlePositionTop
+      />
+      {hasDescription && (
+        <section className='DESCRIPTION flex-col-tl gap-lg'>
+          {content?.descriptionParagraphs?.map((paragraph) => {
             return (
-              <div
-                key={idx}
-                className='LIST_WRAPPER bordered-list-wrapper'
-              >
-                <HeaderParagraph
-                  mainContentHeading={paragraph.fields.heading}
-                  mainContentParagraph={
-                    paragraph.fields.paragraph
-                  }
-                  classes={{
-                    header:
-                      '!text-primary-900 font-semibold head-5'
-                  }}
-                />
-              </div>
+              <HeaderParagraph
+                key={paragraph.sys.id}
+                mainContentHeading={paragraph.fields.heading}
+                mainContentParagraph={paragraph.fields.paragraph}
+              />
             )
-          }
-        )}
-      </section>}
+          })}
+        </section>
+      )}
+      {hasTopics && (
+        <section className='TOPICS flex-col-tl gap-md'>
+          <ParagraphHeader
+            headingText={content.eventFocusHeader}
+          />
+          {content?.eventTopicsParagraphs?.map(
+            (paragraph, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className='LIST_WRAPPER bordered-list-wrapper'
+                >
+                  <HeaderParagraph
+                    mainContentHeading={paragraph.fields.heading}
+                    mainContentParagraph={
+                      paragraph.fields.paragraph
+                    }
+                    classes={{
+                      header:
+                        '!text-primary-900 font-semibold head-5'
+                    }}
+                  />
+                </div>
+              )
+            }
+          )}
+        </section>
+      )}
       <section className='CATEGORY_EVENTS flex-col-tl gap-lg w-full'>
         {hasEvents ? (
           <>
@@ -75,7 +98,7 @@ const TrainingCategoryPage = async ({ params }) => {
               headingText={content.categoryEventsHeader}
             />
             <div className='EVENT_LIST flex-col-tl gap-lg w-full'>
-              {content?.categoryEventsEventList?.map(
+              {hasEvents && content?.categoryEventsEventList?.map(
                 (event, idx) => {
                   return (
                     <TrainingCard
@@ -89,7 +112,9 @@ const TrainingCategoryPage = async ({ params }) => {
             </div>
           </>
         ) : (
-          <NoEventsMessage categoryTitle={content.categoryTitle} />
+          <NoEventsMessage
+            categoryTitle={content.categoryTitle}
+          />
         )}
       </section>
       <CtaSection {...content.cta.fields} />

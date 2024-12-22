@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+
 import { LayoutProvider } from './layout.context'
 
 export const Providers = ({ children }) => {
@@ -18,7 +19,9 @@ export const Providers = ({ children }) => {
 
   return (
     <QueryClientProvider client={queryClient.current}>
-      <LayoutProvider>{children}</LayoutProvider>
+      <LayoutProvider>
+          {children}
+      </LayoutProvider>
     </QueryClientProvider>
   )
 }

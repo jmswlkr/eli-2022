@@ -1,11 +1,9 @@
 import { draftMode } from 'next/headers'
+import Link from 'next/link'
 
 import { useContentfulEntryByParams } from '@/contentful'
 
-import {
-  EmphasisBlock,
-  TestComponent,
-} from '@/ui-components'
+import { EmphasisBlock, TestComponent } from '@/ui-components'
 import { CtaSection } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
 import { HeaderParagraph } from '@/ui-components'
@@ -13,6 +11,7 @@ import { HeaderParagraph } from '@/ui-components'
 import { TrainingEventHero } from '../../../_components/event-hero'
 
 const TrainingEventPage = async ({ params }) => {
+  console.log("🚀 ~ TrainingEventPage ~ params:", params)
   const { isEnabled } = draftMode()
 
   const { entry } = await useContentfulEntryByParams({
@@ -25,16 +24,17 @@ const TrainingEventPage = async ({ params }) => {
   })
 
   const content = entry?.items[0].fields
+  const currentPath = `/offerings/training/events/${params.slug}`
 
   return (
     <>
-      {content?.hero?. fields && (
-        <TrainingEventHero 
+      {content?.hero?.fields && (
+        <TrainingEventHero
           date={{
             start: content.eventDateStart,
             end: content.eventDateEnd
-          }} 
-          {...content.hero.fields} 
+          }}
+          {...content.hero.fields}
         />
       )}
       {content?.eventDescriptionParagraphs && (
@@ -55,17 +55,14 @@ const TrainingEventPage = async ({ params }) => {
         </section>
       )}
       {content?.eventTopicsParagraphs && (
-        <section className='TOPICS flex-col-tl gap-md'>
+        <section className='TOPICS flex-col-tl gap-md bg-primary-100 p-md rounded-md'>
           <ParagraphHeader
             headingText={content.eventTopicsHeading}
           />
           {content?.eventTopicsParagraphs?.map(
             (paragraph, idx) => {
               return (
-                <div
-                  key={idx}
-                  className='LIST_WRAPPER bordered-list-wrapper'
-                >
+                <div key={idx} className='LIST_WRAPPER '>
                   <HeaderParagraph
                     mainContentHeading={paragraph.fields.heading}
                     mainContentParagraph={
@@ -82,6 +79,17 @@ const TrainingEventPage = async ({ params }) => {
           )}
         </section>
       )}
+      <div className='ENROLL_SECTION group hover:bg-primary-600 bg-primary-500 rounded-xl py-lg flex-col-center gap-md transition-all'>
+        <p className='quote-1 text-white'>
+          Step into your enoughness—register today!
+        </p>
+        <Link
+          href={`${currentPath}/enroll`}
+          className='general-btn p-sm outline md text-primary-100 border-primary-100'
+        >
+          ENROLL →
+        </Link>
+      </div>
       {/* <div className='bg-primary-100 flex rounded-md'>
         <input placeholder='Email...' type="text" className="border-primary p-md bg-transparent" />
         <p className="italic">Enter your email above </p>
