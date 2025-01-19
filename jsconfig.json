@@ -10,6 +10,7 @@
       "@/contentful": ["contentful/index.js"],
       "@/server": ["server.config.js"],
       "@/styles": ["styles/*"],
+      "@/emails": ["eli-email/emails/*"]
     }
   }
 }

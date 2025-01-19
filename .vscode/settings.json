@@ -2,5 +2,21 @@
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#4d81f157",
     "editor.snippetTabstopHighlightBackground": "#3a518357"
-  }
+  },
+  "conventionalCommits.scopes": [
+    "home",
+    "offerings-home",
+    "layout",
+    "offerings-coaching",
+    "book",
+    "theme",
+    "about",
+    "calendar",
+    "founder",
+    "ui-components",
+    "offerings-training",
+    "chores",
+    "blog",
+    "project"
+  ]
 }

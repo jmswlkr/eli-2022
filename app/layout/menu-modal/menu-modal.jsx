@@ -5,7 +5,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import { pageLinks, contactInfo, socialIcons } from '../navigation-data'
+import {
+  pageLinks,
+  contactInfo,
+  socialIcons
+} from '../navigation-data'
 import { useActionOnKey } from 'hooks/useActionOnKey'
 
 import { phases, smooth } from 'animation/transition'
@@ -41,7 +45,11 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
   return (
     <AnimatePresence mode='wait'>
       {modalOpen && (
-        <motion.menu className={modal} {...phases} {...slideInTop}>
+        <motion.menu
+          className={modal}
+          {...phases}
+          {...slideInTop}
+        >
           <div className={menuOptions}>
             <motion.ul
               className={`${contactOptions} ${menuList}`}
@@ -77,7 +85,7 @@ export const MenuModal = ({ modalOpen, closeModal }) => {
                       onClick={() => handleLinkClick(lnk.path)}
                       onTouch={() => handleLinkClick(lnk.path)}
                     >
-                      {lnk.content}
+                      {lnk.content} test
                     </a>
                   </li>
                 )

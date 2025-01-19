@@ -7,6 +7,7 @@ import { Providers } from './(context)/providers'
 import { useManagedNavigation } from './layout/_hooks/useManagedNagivation'
 
 import '../styles/_mixins.scss'
+import '../styles/components.scss'
 import '../styles/global.scss'
 import '../styles/utils.scss'
 import '../styles/variables.scss'

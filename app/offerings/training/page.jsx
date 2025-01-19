@@ -23,7 +23,9 @@ const TrainingPage = async () => {
     preview: isEnabled
   })
 
-  const { entry: { items: allEvents} } = await useContentfulEntryByParams({
+  const {
+    entry: { items: allEvents }
+  } = await useContentfulEntryByParams({
     preview: isEnabled,
     params: {
       content_type: 'offeringsTrainingEventPage',
@@ -34,7 +36,7 @@ const TrainingPage = async () => {
   const upcomingEvents = allEvents?.filter((event) => {
     const eventDate = new Date(event.fields.eventDateStart)
     const currentDate = new Date()
-    return eventDate >= currentDate;
+    return eventDate >= currentDate
   })
 
   const hasUpcomingEvents = upcomingEvents?.length > 0
@@ -61,7 +63,8 @@ const TrainingPage = async () => {
           </div>
         </section>
       )}
-      <section className='CATEGORY_EVENTS flex-col-tl gap-lg w-full'>
+      <section className='CATEGORY_EVENTS flex-col-tl gap-lg relative w-full'>
+        <span className='scroll-pad' id='events' />
         {hasUpcomingEvents ? (
           <>
             <ParagraphHeader
@@ -69,17 +72,15 @@ const TrainingPage = async () => {
             />
             <div className='EVENT_LIST flex-col-tl gap-lg w-full'>
               {hasUpcomingEvents &&
-                upcomingEvents?.map(
-                  (event, idx) => {
-                    return (
-                      <TrainingCard
-                        key={idx}
-                        event={event.fields}
-                        entry={event}
-                      />
-                    )
-                  }
-                )}
+                upcomingEvents?.map((event, idx) => {
+                  return (
+                    <TrainingCard
+                      key={idx}
+                      event={event.fields}
+                      entry={event}
+                    />
+                  )
+                })}
             </div>
           </>
         ) : (

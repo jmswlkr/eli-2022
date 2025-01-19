@@ -13,6 +13,7 @@ export const TrainingEventHero = ({
   date,
   locationName,
   heroPrimaryText,
+  currentPath,
   descriptionHero: heroDescriptionText
 }) => {
 
@@ -28,8 +29,10 @@ export const TrainingEventHero = ({
         <ContentfulImageBlock contentfulImage={heroImage} />
       </div>
       <div className='TEXT_WRAP full gap-md flex flex-col items-start justify-end'>
-        <p className="meta-1 text-primary-600">Training Event</p>
-        <h1 className='TEXT_1_TITLE head-2 text-primary-600 !font-weight-300'>{heroPrimaryText}</h1>
+        <p className='meta-1 text-primary-600'>Training Event</p>
+        <h1 className='TEXT_1_TITLE head-2 text-primary-600 !font-weight-300'>
+          {heroPrimaryText}
+        </h1>
         <h2 className='TEXT_2_DATE flex-col-tl gap-[1ch] link-1 !font-body'>
           <div className='gap-xs lg:flex-row lg:gap-sm flex items-center justify-start'>
             <span>{formattedDate.start}</span>
@@ -39,7 +42,11 @@ export const TrainingEventHero = ({
             <span>{formattedDate.year}</span>
           </div>
           <span>{locationName}</span>
-          <LinkButton text={'Enroll →'} path={'/'} classes={'md !tracking-[3px] solid light'}/>
+          <LinkButton
+            text={'Enroll →'}
+            path={`${currentPath}/enroll`}
+            classes={'md !tracking-[3px] solid light'}
+          />
         </h2>
         {heroDescriptionText && (
           <p className='TEXT_3 par-1 !text-[24px]'>

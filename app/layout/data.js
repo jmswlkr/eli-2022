@@ -49,6 +49,10 @@ export const OFFERINGS = {
     {
       text: 'Training',
       path: '/offerings/training'
+    },
+    {
+      text: 'Events',
+      path: '/offerings/training#events'
     }
   ]
 }

@@ -1,9 +1,11 @@
 import { draftMode } from 'next/headers'
 
 import { useContentfulEntryByParams } from '@/contentful'
-import { TestComponent } from '@/ui-components'
 import { EventDetails } from './details'
 import { EnrollmentForm } from './form'
+import { Payment } from './payment'
+import { CtaSection, TestComponent } from '@/ui-components'
+import { EnrollProvider } from './enroll.context'
 
 const EnrollPage = async ({ params }) => {
   const { isEnabled } = draftMode()
@@ -20,32 +22,25 @@ const EnrollPage = async ({ params }) => {
   const content = entry?.items[0].fields
 
   return (
-    <div className='ENROLL_PAGE full mt-[20vh] flex-col-tl gap-lg min-h-screen'>
-      {/* <TestComponent content={content}/> */}
+    <div className='ENROLL_PAGE mt-[20vh] lg:w-full flex-col-tl gap-lg min-h-screen'>
       <section className='flex-col-tl text-primary-600 gap-md'>
         <p className='HEADER meta-1'>Event Enrollment</p>
         <h1 className='HEADER head-3'>
           {content?.hero?.fields?.heroPrimaryText}
         </h1>
       </section>
-      {/*
-        
-          - Event details:
-            - Date
-            - Price
-            - Location/Online
-          - Signup form:
-            - First and last name
-            - Address
-            - Phone number
-            - Email
-          TODO: Redirect to Calendly for scheduling?
-          - Payment Capture:
-            - PayPal
-
-        */}
-      <EventDetails event={content} />
-      <EnrollmentForm />
+      {/* <TestComponent content={content} /> */}
+      <EnrollProvider>
+        <EventDetails event={content} />
+        {/* <EnrollmentForm /> */}
+        <Payment
+          amount={content.eventCourseTuition}
+          eventId={content.pageSlug}
+          confirmationSlug={`/offerings/training/events/${params.slug}/enroll/confirmation`}
+          content={content}
+        />
+      </EnrollProvider>
+      <CtaSection />
     </div>
   )
 }

@@ -28,7 +28,7 @@ export const CtaSection = ({
   image = DEFAULTS.image
 }) => {
   return (
-    <section className='CTA_CONTAINER relative w-full h-[65vh]'>
+    <section className='CTA_CONTAINER relative lg:w-full h-[65vh]'>
       <div className='FULLBLEED_WRAP bg-primary-100 absolute-center flex-center h-full !w-screen'>
         <div className='CTA_CONTENT_GRID grid-rows-1 grid-cols-1 lg:grid-cols-2 lg:py-xl h-full w-full lg:w-[var(--reading-content-width)] grid'>
           <div className='gap-md lg:items-start relative z-20 flex flex-col items-center justify-center'>

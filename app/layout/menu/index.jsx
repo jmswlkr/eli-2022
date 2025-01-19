@@ -12,8 +12,7 @@ import { modal } from './menu.module.scss'
 import { twm } from 'utils/tailwind'
 
 export const SiteMenu = ({ modalOpen, closeModal, navData }) => {
-
-  const { CONNECT, CONTACT, OFFERINGS } = navData;
+  const { CONNECT, CONTACT, OFFERINGS } = navData
 
   useActionOnKey(closeModal, 'Escape')
 
@@ -34,10 +33,15 @@ export const SiteMenu = ({ modalOpen, closeModal, navData }) => {
                 {CONNECT.links.map((link) => {
                   return (
                     <li
-                      className='head-5 md:head-3 hover:text-primary-300'
+                      className={twm(
+                        'head-5 md:head-3 hover:text-primary-300'
+                      )}
                       key={link.text}
                     >
-                      <Link href={link.path} onClick={closeModal}>
+                      <Link
+                        href={link.path}
+                        onClick={closeModal}
+                      >
                         {link.text}
                       </Link>
                     </li>
@@ -49,12 +53,22 @@ export const SiteMenu = ({ modalOpen, closeModal, navData }) => {
                   {OFFERINGS.label}
                 </li>
                 {OFFERINGS.links.map((link) => {
+                  const isVivid =
+                    link.text === 'Events'
+                      ? 'text-[var(--lotus-blossom)]'
+                      : ''
                   return (
                     <li
-                      className='head-5 md:head-3 lg:head-2 hover:text-primary-300'
+                      className={twm(
+                        'head-5 md:head-3 lg:head-2 hover:text-primary-300',
+                        isVivid
+                      )}
                       key={link.text}
                     >
-                      <Link href={link.path} onClick={closeModal}>
+                      <Link
+                        href={link.path}
+                        onClick={closeModal}
+                      >
                         {link.text}
                       </Link>
                     </li>

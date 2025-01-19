@@ -10,8 +10,37 @@ import { HeaderParagraph } from '@/ui-components'
 
 import { TrainingEventHero } from '../../../_components/event-hero'
 
+
+const enroll_content = {
+  zoomInfo: {
+    link: '[ZOOM LINK]',
+    meetingId: '[Meeting ID]',
+    passcode: '[Passcode]'
+  },
+  intro: {
+    heading: 'Welcome!',
+    paragraph: `We're thrilled that you've registered for our 12-Week Somatic Training Course. Your commitment to deepening your body awareness and personal growth means a lot to us, and we're excited to guide you through this transformative journey.`
+  },
+  overview: {
+    heading: 'Course Overview',
+    paragraph: `Your course will meet weekly on [Day of Week] from [Start Time] to [End Time], beginning [Start Date] and concluding [End Date]. All sessions will be conducted via Zoom.`,
+    recommendations: [
+      'Join each session 5 minutes early to ensure a smooth start',
+      'Test your audio and video capabilities before the first session'
+    ],
+    preparationChecklist: [
+      'A quiet, private space where you can move freely',
+      'Comfortable clothing that allows for easy movement',
+      'A yoga mat or soft surface',
+      'Water bottle',
+      {
+        optional: ['Journal for taking notes']
+      }
+    ]
+  }
+}
+
 const TrainingEventPage = async ({ params }) => {
-  console.log("🚀 ~ TrainingEventPage ~ params:", params)
   const { isEnabled } = draftMode()
 
   const { entry } = await useContentfulEntryByParams({
@@ -34,6 +63,7 @@ const TrainingEventPage = async ({ params }) => {
             start: content.eventDateStart,
             end: content.eventDateEnd
           }}
+          currentPath={currentPath}
           {...content.hero.fields}
         />
       )}
@@ -90,10 +120,6 @@ const TrainingEventPage = async ({ params }) => {
           ENROLL →
         </Link>
       </div>
-      {/* <div className='bg-primary-100 flex rounded-md'>
-        <input placeholder='Email...' type="text" className="border-primary p-md bg-transparent" />
-        <p className="italic">Enter your email above </p>
-      </div> */}
       <CtaSection {...content?.eventCta?.fields} />
     </>
   )

@@ -31,9 +31,10 @@ export const SiteMenu = ({ modalOpen, closeModal, managedData }) => {
                   {CONNECT.label}
                 </li>
                 {CONNECT.links.map((link) => {
+                  const isVivid = link.text === 'Events' ? 'text-[var(--vivid-blue)]' : ''
                   return (
                     <li
-                      className='head-5 md:head-3 hover:text-primary-300'
+                      className={twm('head-5 md:head-3 hover:text-primary-300', isVivid)}
                       key={link.text}
                     >
                       <Link href={link.path} onClick={closeModal}>

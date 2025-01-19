@@ -19,6 +19,7 @@ import {
 import { AnimatePresence } from 'framer-motion'
 import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
+import { twm } from 'utils/tailwind'
 
 export const TopNav = ({ modalOpen, setModalOpen, showBG = false }) => {
   const closeModal = () => {
@@ -49,13 +50,18 @@ export const TopNav = ({ modalOpen, setModalOpen, showBG = false }) => {
                 )
               }
 
+              const isVivid =
+                link.content === 'Events'
+                  ? '!text-[var(--lotus-blossom)]'
+                  : ''
+
               return (
                 <motion.li
                   {...phases}
                   {...fadeIn}
                   key={link.path}
                   // className={navItem}
-                  className='link-2 hover:text-primary-300 lg:block hidden text-white'
+                  className={twm('link-2 hover:text-primary-300 lg:block hidden text-white', isVivid)}
                 >
                   <Link href={link.path} scroll={false}>
                     {link.content}
