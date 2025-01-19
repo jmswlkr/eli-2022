@@ -4,7 +4,6 @@ export async function POST(request) {
   try {
     const body = await request.json()
     const { paymentDetails, eventId } = body
-    console.log("🚀 ~ POST ~ paymentDetails:", paymentDetails)
 
     // 1. Verify payment with PayPal
     const verified = await verifyPayPalPayment(paymentDetails.id)
@@ -54,9 +53,6 @@ async function verifyPayPalPayment(orderId) {
 
 // Helper function to get PayPal access token
 async function getPayPalAccessToken() {
-  console.log('getting access token...');
-  
-
   const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
   const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
   
@@ -72,7 +68,5 @@ async function getPayPalAccessToken() {
   });
 
   const data = await response.json();
-  console.log("🚀 ~ getPayPalAccessToken ~ data:", data)
-  console.log("🚀 ~ getPayPalAccessToken ~ data.access_token:", data.access_token)
   return data.access_token;
 }

@@ -13,7 +13,6 @@ import { twm } from 'utils/tailwind'
 import { CONNECT, CONTACT, OFFERINGS } from '../data'
 
 export const SiteMenu = ({ modalOpen, closeModal, managedData }) => {
-  console.log("🚀 ~ SiteMenu ~ managedData:", managedData)
   useActionOnKey(closeModal, 'Escape')
 
   return (

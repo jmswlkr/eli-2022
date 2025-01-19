@@ -11,7 +11,6 @@ import { HeaderParagraph } from '@/ui-components'
 import { TrainingCard } from '../../../_components/training-event-card'
 
 const TrainingCategoryPage = async ({ params }) => {
-  console.log("🚀 ~ TrainingCategoryPage ~ params:", params)
   const { isEnabled } = draftMode()
 
   const { entry } = await useContentfulEntryByParams({
@@ -22,8 +21,6 @@ const TrainingCategoryPage = async ({ params }) => {
       'fields.slug[match]': params.slug
     }
   })
-      console.log("🚀 ~ TrainingCategoryPage ~ params:", params)
-    console.log("🚀 ~ TrainingCategoryPage ~ params:", params)
 
   const content = entry?.items[0].fields
 

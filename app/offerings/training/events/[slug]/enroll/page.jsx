@@ -2,9 +2,8 @@ import { draftMode } from 'next/headers'
 
 import { useContentfulEntryByParams } from '@/contentful'
 import { EventDetails } from './details'
-import { EnrollmentForm } from './form'
 import { Payment } from './payment'
-import { CtaSection, TestComponent } from '@/ui-components'
+import { CtaSection } from '@/ui-components'
 import { EnrollProvider } from './enroll.context'
 
 const EnrollPage = async ({ params }) => {
@@ -29,10 +28,8 @@ const EnrollPage = async ({ params }) => {
           {content?.hero?.fields?.heroPrimaryText}
         </h1>
       </section>
-      {/* <TestComponent content={content} /> */}
       <EnrollProvider>
         <EventDetails event={content} />
-        {/* <EnrollmentForm /> */}
         <Payment
           amount={content.eventCourseTuition}
           eventId={content.pageSlug}

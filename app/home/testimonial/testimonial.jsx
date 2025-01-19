@@ -182,10 +182,6 @@ function VideoTestimonial({ videoUrl, name, text, videoThumb }) {
     setIsPlayingInModal(false)
   }
 
-  useEffect(() => {
-    console.log('isPlaying changed: ', isPlaying)
-  }, [isPlaying])
-
   return (
     <>
       {isPlayingInModal &&

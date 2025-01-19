@@ -9,16 +9,10 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(req) {
   try {
     const body = await req.json()
-    console.log('🚀 ~ POST ~ body:', body)
     const { to, emailContent } = body
 
-    const { subject, intro, main, zoom } = emailContent
+    const { subject } = emailContent
 
-    // return NextResponse.json({
-    //   success: true,
-    //   message: 'TEST: Sent email successfully!',
-    //   emailContent
-    // })
     const resendRes = await resend.emails.send({
       from: 'eli.info@embodiedlearninginstitute.com',
       to: [to],
@@ -26,8 +20,6 @@ export async function POST(req) {
       react: EliEventConfirmationEmail({ ...emailContent })
     })
 
-    console.log('🚀 ~ POST ~ resendRes:', resendRes)
-    
     return NextResponse.json({
       success: true,
       message: resendRes.data,

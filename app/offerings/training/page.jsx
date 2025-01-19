@@ -7,12 +7,11 @@ import {
 } from '@/contentful'
 import { PAGE_CONFIG } from './page-config'
 
-import { CtaSection, TestComponent } from '@/ui-components'
+import { CtaSection } from '@/ui-components'
 import { HeroSecondary } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
 import { HeaderParagraphList } from '@/ui-components'
 import { TrainingCard } from '../_components/training-event-card'
-import { TrainingCategoryCard } from '../_components/training-category-card'
 import Link from 'next/link'
 
 const TrainingPage = async () => {

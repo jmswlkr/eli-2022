@@ -3,7 +3,7 @@ import { draftMode } from 'next/headers'
 import { useContentful } from '@/contentful'
 import { PAGE_CONFIG } from './page-config'
 
-import { CtaSection, HeaderParagraph, TestComponent } from '@/ui-components'
+import { CtaSection, HeaderParagraph } from '@/ui-components'
 import { HeroSecondary } from '@/ui-components'
 import { OfferingsPreviewCard } from './_components/preview-card'
 

@@ -59,7 +59,6 @@ export const Contact = ({ ctaHeader, ctaBlurb, ctaButtonText }) => {
       `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`
     )
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text)
         setModalContent(<ContactModalContent type={modal_types.SUCCESS} />)
         setContentModalOpen(true)
       })
