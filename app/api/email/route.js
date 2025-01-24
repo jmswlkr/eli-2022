@@ -1,7 +1,7 @@
 import { Resend } from 'resend'
 
 // import EliSingleTopicEmail from '@/emails/eli-single.jsx'
-import EliEventConfirmationEmail from '../../../email-templates/eli-event-confirm.jsx'
+import EliEventConfirmationEmail from '../../../emails/eli-event-confirm.jsx'
 import { NextResponse } from 'next/server'
 
 const resend = new Resend(process.env.RESEND_API_KEY)

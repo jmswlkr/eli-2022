@@ -223,17 +223,24 @@ const ContentSectionZoom = ({ content }) => {
         </span>
       </Text>
       <Text className='PAR mb-sm text-primary-800 w-full m-0'>
+        Meeting Link:{' '}
+        <span className='text-primary-500 mb-4 ml-1 font-bold'>
+          {content.id_link_pwd[1]}
+        </span>
+      </Text>
+      <Text className='PAR mb-sm text-primary-800 w-full m-0'>
         Meeting Password:{' '}
         <span className='text-primary-500 mb-4 ml-1 font-bold'>
           {content.id_link_pwd[2]}
         </span>
       </Text>
+      {/* <Text className='PAR mb-sm text-primary-800 w-full m-0 opacity-0 pointer-events-none'>space</Text>
       <Link
         className={TWButtonStyles}
         href={content.id_link_pwd[1]}
       >
         Join Zoom Meeting
-      </Link>
+      </Link> */}
     </Section>
   )
 }
@@ -279,7 +286,7 @@ const FooterSection = () => {
 }
 
 const TWButtonStyles =
-  'TW_BUTTON w-full !mt-2 cursor-pointer box-border px-[8px] py-[3px] bg-transparent border border-solid rounded-md text-[14px] tracking-[1px] uppercase border-primary-500 text-primary-500'
+  'TW_BUTTON w-full !mt-2 cursor-pointer px-[8px] py-[3px] bg-[#2b5879] text-[#ffffff] rounded-md text-[14px] tracking-[1px] uppercase border-primary-500'
 
 const heroSection = {
   backgroundImage: `url('https://res.cloudinary.com/jameswalker-work/image/upload/v1712604373/ELI/email/ocean-gradient_j4hu2k.png')`,
