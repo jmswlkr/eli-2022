@@ -3,10 +3,15 @@
 import { useEffect, useMemo } from 'react'
 import * as dayjs from 'dayjs'
 import * as advancedFormat from 'dayjs/plugin/advancedFormat'
+import * as timezone from 'dayjs/plugin/timezone'
+import * as utc from 'dayjs/plugin/utc'
+
 
 import { useEnrollContext } from './enroll.context'
 
 dayjs.extend(advancedFormat)
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
 export const EventDetails = ({ event }) => {
   const { eventMeta, setEventMeta } = useEnrollContext()
@@ -15,7 +20,15 @@ export const EventDetails = ({ event }) => {
     () => ({
       start: dayjs(event.eventDateStart).format('MMM Do'),
       end: dayjs(event.eventDateEnd).format('MMM Do'),
-      year: dayjs(event.eventDateStart).format('YYYY')
+      year: dayjs(event.eventDateStart).format('YYYY'),
+      timeStart: dayjs
+        .utc(event.eventDateStart)
+        .tz('America/New_York')
+        .format('h:mm A'),
+      timeEnd: dayjs
+        .utc(event.eventDateEnd)
+        .tz('America/New_York')
+        .format('h:mm A')
     }),
     [event.eventDateStart, event.eventDateEnd]
   )
@@ -52,6 +65,15 @@ export const EventDetails = ({ event }) => {
           <span>{formattedDate.end}</span>
           <span>-</span>
           <span>{formattedDate.year}</span>
+        </li>
+        <li className='gap-xs lg:flex-row lg:gap-sm meta-1 flex items-center justify-start'>
+          <p className='meta-1 text-primary-500 uppercase'>
+            Time
+          </p>
+          <span>{formattedDate.timeStart}</span>
+          <span>-</span>
+          <span>{formattedDate.timeEnd}</span>
+          <span>({event.eventDay})</span>
         </li>
         <li className='flex-center gap-sm meta-1'>
           <p className='meta-1 text-primary-500 uppercase'>

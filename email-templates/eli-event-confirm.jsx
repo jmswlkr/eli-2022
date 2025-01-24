@@ -17,8 +17,8 @@ import {
   Tailwind,
   Text
 } from '@react-email/components'
+import ReactMarkdown from 'react-markdown'
 
-import { twm } from './static/tailwind/tw-merge'
 import { theme } from './static/tailwind/theme'
 
 const defaultValues = {
@@ -27,8 +27,6 @@ const defaultValues = {
     body: `Welcome! We're thrilled that you've registered for our 12-Week Somatic Training Course. Your commitment to deepening your body awareness and personal growth means a lot to us, and we're excited to guide you through this transformative journey.`
   },
   main: {
-    // image:
-    //   'https://res.cloudinary.com/jameswalker-work/image/upload/v1712604374/ELI/email/training-1_pye9ya.png',
     heading: `Course Details`,
     body: `Your course will meet weekly on Mondays from 10:00AM to 12:00PM, beginning February 1st and concluding March 13th. All sessions will be conducted via Zoom.`,
     listItems: [
@@ -41,7 +39,11 @@ const defaultValues = {
   zoom: {
     heading: 'Zoom Instructions',
     body: `To join the session, simply click the Zoom link below at your scheduled course time. You'll be prompted to enter the password provided. If you experience any technical difficulties, please email us for assistance.`,
-    link_pwd: [`https://zoom.com`, `password1234`]
+    id_link_pwd: [
+      `829 3365 7381`,
+      `https://zoom.com`,
+      `password1234`
+    ]
   }
 }
 
@@ -141,11 +143,11 @@ const HeroSection = ({ content }) => {
         </tr>
         <tr className='align-bottom'>
           <td className='align-bottom'>
-            <Text className='text-3xl m-0 mb-4 font-bold italic text-[#CDDCE7]'>
+            <Text className='text-3xl m-0 mt-8 mb-4 font-bold italic text-[#CDDCE7]'>
               {content.heading}
             </Text>
             <Text className='PAR w-full lg:w-2/3 mb-4 text-[#CDDCE7] m-0'>
-              {content.body}
+              <ReactMarkdown>{content.body}</ReactMarkdown>
             </Text>
           </td>
         </tr>
@@ -188,9 +190,9 @@ const ContentSection = ({ content }) => {
         </Heading>
       )}
       <Text className='PAR text-primary-800 mb-sm w-full m-0'>
-        {content.body}
+        <ReactMarkdown>{content.body}</ReactMarkdown>
       </Text>
-      {content.listItems.map((item, index) => (
+      {content?.listItems?.length > 0 && content.listItems.map((item, index) => (
         <Text
           key={index}
           className='PAR text-primary-800 mb-sm w-full m-0'
@@ -211,21 +213,27 @@ const ContentSectionZoom = ({ content }) => {
         </Heading>
       )}
       <Text className='PAR text-primary-800 mb-sm w-full m-0'>
-        {content.body}
+        <ReactMarkdown>{content.body}</ReactMarkdown>
       </Text>
       <Hr className='mb-sm' />
       <Text className='PAR mb-sm text-primary-800 w-full m-0'>
-        Your Password:{' '}
+        Meeting ID:{' '}
         <span className='text-primary-500 ml-1 font-bold'>
-          {content.link_pwd[1]}
+          {content.id_link_pwd[0]}
         </span>
       </Text>
-      <Button
-        className={twm(TWButtonStyles)}
-        href={content.link_pwd[0]}
+      <Text className='PAR mb-sm text-primary-800 w-full m-0'>
+        Meeting Password:{' '}
+        <span className='text-primary-500 mb-4 ml-1 font-bold'>
+          {content.id_link_pwd[2]}
+        </span>
+      </Text>
+      <Link
+        className={TWButtonStyles}
+        href={content.id_link_pwd[1]}
       >
         Join Zoom Meeting
-      </Button>
+      </Link>
     </Section>
   )
 }
@@ -271,7 +279,7 @@ const FooterSection = () => {
 }
 
 const TWButtonStyles =
-  'TW_BUTTON box-border px-[8px] py-[3px] bg-transparent border border-solid rounded-md text-[14px] tracking-[1px] uppercase border-primary-500 text-primary-500'
+  'TW_BUTTON w-full !mt-2 cursor-pointer box-border px-[8px] py-[3px] bg-transparent border border-solid rounded-md text-[14px] tracking-[1px] uppercase border-primary-500 text-primary-500'
 
 const heroSection = {
   backgroundImage: `url('https://res.cloudinary.com/jameswalker-work/image/upload/v1712604373/ELI/email/ocean-gradient_j4hu2k.png')`,
@@ -305,7 +313,7 @@ const imageStyle = {
 
 const headingCellStyle = {
   backgroundColor: '#CDDCE7',
-  marginBottom: '16px',
+  marginBottom: '16px'
 }
 
 const headingStyle = {
@@ -322,7 +330,7 @@ const mobileHeadingCellStyle = {
 }
 
 const mobileHeadingStyle = {
-  ...headingStyle,
+  ...headingStyle
 }
 
 const mobileImageStyle = {

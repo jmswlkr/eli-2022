@@ -47,7 +47,7 @@ export const Payment = ({
   const emailContent = {
     subject: content.confirmationEmailSubjectLine,
     intro: {
-      heading: `${content.confirmationEmailIntroHeading} ${enrollData.fullName}!`,
+      heading: `${content.confirmationEmailIntroHeading} ${content.confirmationEmailShouldGreetByName ? `, ${enrollData.fullName}!` : ''}`,
       body: content.confirmationEmailIntroParagraph
     },
     main: {
@@ -58,7 +58,8 @@ export const Payment = ({
     zoom: {
       heading: content.confirmationEmailZoomSectionHeading,
       body: content.confirmationEmailZoomSectionInstructions,
-      link_pwd: content.confirmationEmailZoomSectionLinkpassword
+      id_link_pwd:
+        content.confirmationEmailZoomSectionLinkpassword
     }
   }
 
@@ -115,7 +116,8 @@ export const Payment = ({
         })
 
         // 2. Send confirmation email
-        const emailResponse = await handleSendConfirmationEmail(enrollmentData)
+        const emailResponse =
+          await handleSendConfirmationEmail(enrollmentData)
 
         // 3. Redirect to success page
         const redirectURL = `${confirmationSlug}?id=${details.id}`
@@ -251,6 +253,12 @@ export const Payment = ({
           <div className='flex-col-tl gap-ms w-full h-full'>
             <h4 className='head-5'>Your Total:</h4>
             <p className='text-primary-100 head-4'>${amount}</p>
+            <button
+              onClick={handleSendConfirmationEmail}
+              className='general-btn outline p-md'
+            >
+              Test Email
+            </button>
           </div>
           <div className='flex-center isolate relative w-full'>
             {reqsNotFilled.length > 0 && (
