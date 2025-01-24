@@ -253,12 +253,12 @@ export const Payment = ({
           <div className='flex-col-tl gap-ms w-full h-full'>
             <h4 className='head-5'>Your Total:</h4>
             <p className='text-primary-100 head-4'>${amount}</p>
-            <button
+            {/* <button
               onClick={handleSendConfirmationEmail}
               className='general-btn outline p-md'
             >
               Test Email
-            </button>
+            </button> */}
           </div>
           <div className='flex-center isolate relative w-full'>
             {reqsNotFilled.length > 0 && (
