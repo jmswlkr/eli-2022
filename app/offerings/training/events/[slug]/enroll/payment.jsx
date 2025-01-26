@@ -8,6 +8,12 @@ import { twm } from 'utils/tailwind'
 
 const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID
 
+const PROCESS_STATES = {
+  IDLE: 'IDLE',
+  PROCESSING: 'PROCESSING',
+  SUCCESS: 'SUCCESS'
+}
+
 export const Payment = ({
   amount,
   confirmationSlug,
@@ -33,7 +39,9 @@ export const Payment = ({
 
   // Create a local state mirror of the enrollment data
   const [localEnrollData, setLocalEnrollData] = useState(null)
-
+  const [processingState, setProcessingState] = useState(
+    PROCESS_STATES.IDLE
+  )
   // Update local state whenever enrollment data changes
   useEffect(() => {
     if (enrollData.email && enrollData.fullName) {
@@ -103,7 +111,7 @@ export const Payment = ({
     emailDetails = null
   ) => {
     try {
-      console.log("🚀 ~ emailDetails:", emailDetails)
+      console.log('🚀 ~ emailDetails:', emailDetails)
       // Get current form values which represent the latest user input
       const registrationData = {
         email: emailRef.current.value,
@@ -187,6 +195,7 @@ export const Payment = ({
   const payPalSuccessHandler = useCallback(
     async (details) => {
       try {
+        setProcessingState(PROCESS_STATES.PROCESSING)
         // Use the local state which should persist through PayPal modal
         const enrollmentData = localEnrollData
 
@@ -202,6 +211,8 @@ export const Payment = ({
             ...enrollmentData
           })
         })
+        setProcessingState(PROCESS_STATES.SUCCESS)
+
         // 2. Send confirmation email
         const emailResponse =
           await handleSendConfirmationEmail(enrollmentData)
@@ -211,6 +222,7 @@ export const Payment = ({
             details,
             emailResponse
           )
+        setProcessingState(PROCESS_STATES.IDLE)
         // 4. Redirect to success page
         const redirectURL = `${confirmationSlug}?id=${details.id}`
         window.location.href = redirectURL
@@ -345,12 +357,16 @@ export const Payment = ({
           <div className='flex-col-tl gap-ms w-full h-full'>
             <h4 className='head-5'>Your Total:</h4>
             <p className='text-primary-100 head-4'>${amount}</p>
-            <button
-              onClick={() => handleAddRegistrationToContentful()}
-              className='general-btn outline p-md'
-            >
-              Test Email
-            </button>
+            {processingState === PROCESS_STATES.PROCESSING && (
+              <p className='text-meta-1 text-primary-100 mt-auto italic'>
+                Payment confirmed! Registering...
+              </p>
+            )}
+            {processingState === PROCESS_STATES.SUCCESS && (
+              <p className='text-meta-1 text-primary-100 mt-auto italic'>
+                Registered! Redirecting...
+              </p>
+            )}
           </div>
           <div className='flex-center isolate relative w-full'>
             {reqsNotFilled.length > 0 && (
