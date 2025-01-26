@@ -35,6 +35,7 @@ const EnrollPage = async ({ params }) => {
           eventId={content.pageSlug}
           confirmationSlug={`/offerings/training/events/${params.slug}/enroll/confirmation`}
           content={content}
+          eventEntryId={entry?.items[0].sys.id}
         />
       </EnrollProvider>
       <CtaSection />

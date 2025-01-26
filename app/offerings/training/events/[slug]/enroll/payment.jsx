@@ -12,7 +12,8 @@ export const Payment = ({
   amount,
   confirmationSlug,
   eventId,
-  content
+  content,
+  eventEntryId
 }) => {
   const enrollData = useEnrollContext()
   const {
@@ -22,6 +23,7 @@ export const Payment = ({
     phone,
     reqsNotFilled,
     submitAttempted,
+    setSubmitAttempted,
     setEmail,
     setFullName,
     setAddress,
@@ -96,6 +98,92 @@ export const Payment = ({
     [emailContent]
   )
 
+  const handleAddRegistrationToContentful = async (
+    paymentDetails = null,
+    emailDetails = null
+  ) => {
+    try {
+      console.log("🚀 ~ emailDetails:", emailDetails)
+      // Get current form values which represent the latest user input
+      const registrationData = {
+        email: emailRef.current.value,
+        fullName: nameRef.current.value,
+        address: addressRef.current.value || '',
+        phone: phoneRef.current.value || ''
+      }
+
+      // Construct the base request body with registration details
+      const requestBody = {
+        eventId: eventEntryId,
+        fields: {
+          // Core registration information about the participant
+          registrationDetails: {
+            fullName: registrationData.fullName,
+            email: registrationData.email,
+            phone: registrationData.phone,
+            address: registrationData.address
+          },
+          // Initialize the communication tracking fields
+          communication: {
+            confirmationEmailSent:
+              emailDetails?.success || false,
+            confirmationEmailDate:
+              paymentDetails?.create_time || null,
+            confirmationEmailId:
+              emailDetails?.message?.id || null,
+            reminderEmailsSent: []
+          }
+        }
+      }
+
+      // If payment details are provided (from PayPal), add the payment information
+      if (paymentDetails) {
+        requestBody.fields.payment = {
+          id: paymentDetails.id,
+          status: paymentDetails.status,
+          amount: paymentDetails.purchase_units[0].amount.value,
+          currency:
+            paymentDetails.purchase_units[0].amount
+              .currency_code,
+          provider: 'paypal'
+        }
+      }
+
+      // Send the registration data to our API endpoint
+      const response = await fetch(
+        '/api/contentful/event/registration',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(requestBody)
+        }
+      )
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(
+          errorData.message || 'Failed to process registration'
+        )
+      }
+
+      const responseData = await response.json()
+
+      // Return successful registration data including the registration ID
+      return {
+        success: true,
+        registrationId: responseData.registrationId,
+        status: responseData.status
+      }
+    } catch (error) {
+      console.error('Registration process failed:', error)
+      throw new Error(
+        'Failed to complete registration. Please try again.'
+      )
+    }
+  }
+
   const payPalSuccessHandler = useCallback(
     async (details) => {
       try {
@@ -114,12 +202,16 @@ export const Payment = ({
             ...enrollmentData
           })
         })
-
         // 2. Send confirmation email
         const emailResponse =
           await handleSendConfirmationEmail(enrollmentData)
-
-        // 3. Redirect to success page
+        // 3. Add registration to Contentful
+        const contentfulRegistrationResponse =
+          await handleAddRegistrationToContentful(
+            details,
+            emailResponse
+          )
+        // 4. Redirect to success page
         const redirectURL = `${confirmationSlug}?id=${details.id}`
         window.location.href = redirectURL
       } catch (error) {
@@ -253,12 +345,12 @@ export const Payment = ({
           <div className='flex-col-tl gap-ms w-full h-full'>
             <h4 className='head-5'>Your Total:</h4>
             <p className='text-primary-100 head-4'>${amount}</p>
-            {/* <button
-              onClick={handleSendConfirmationEmail}
+            <button
+              onClick={() => handleAddRegistrationToContentful()}
               className='general-btn outline p-md'
             >
               Test Email
-            </button> */}
+            </button>
           </div>
           <div className='flex-center isolate relative w-full'>
             {reqsNotFilled.length > 0 && (
