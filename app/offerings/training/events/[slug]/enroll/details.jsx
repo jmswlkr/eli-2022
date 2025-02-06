@@ -83,7 +83,7 @@ export const EventDetails = ({ event }) => {
         </li>
         <li className='flex-center gap-sm meta-1'>
           <p className='meta-1 text-primary-500 uppercase'>
-            Tution
+            Tuition
           </p>
           ${event.eventCourseTuition}
         </li>
