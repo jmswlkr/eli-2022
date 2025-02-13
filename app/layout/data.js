@@ -68,7 +68,7 @@ export const CONTACT = {
       <>
         info@
         <wbr />
-        embodiedlearninginstitute.org
+        embodiedlearninginstitute.com
       </>
     ),
     link: 'mailto:info@embodiedlearninginstitute.com'
