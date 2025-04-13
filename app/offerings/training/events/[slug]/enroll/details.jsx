@@ -26,8 +26,9 @@ export const EventDetails = ({ event }) => {
         .tz('America/New_York')
         .format('h:mm A'),
       timeEnd: dayjs
-        .utc(event.eventDateEnd)
+        .utc(event.eventDateStart)
         .tz('America/New_York')
+        .add(event?.eventDuration ?? 60, 'minute')
         .format('h:mm A')
     }),
     [event.eventDateStart, event.eventDateEnd]

@@ -24,9 +24,9 @@ export const CONNECT = {
       path: '/blog'
     },
     {
-      id: 'book',
-      text: 'Book',
-      path: '/book'
+      id: 'podcast',
+      text: 'Podcast',
+      path: '/podcast'
     }
   ]
 }

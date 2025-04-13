@@ -10,15 +10,12 @@ import {
 
 export const pageLinks = [
   {
-    /*
-    {
-      text: 'Events',
-      path: '/offerings/training#events'
-    }
-    
-    */
     path: '/offerings/training#events',
     content: 'Events',
+  },
+  {
+    path: '/podcast',
+    content: 'Podcast',
   },
   {
     path: '/offerings/consulting',
