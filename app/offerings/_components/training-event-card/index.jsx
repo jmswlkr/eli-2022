@@ -15,7 +15,6 @@ export const TrainingCard = ({ event }) => {
     end: dayjs(event.eventDateEnd).format('MMM Do'),
     year: dayjs(event.eventDateStart).format('YYYY')
   }
-  const category = event?.categoryEntry?.fields?.categoryTag
 
   return (
     <Link
@@ -40,36 +39,27 @@ export const TrainingCard = ({ event }) => {
             </span>
           </div>
           <div className='HEADING_BLOCK flex-col-tl gap-[1ch]'>
-            {category && (
-              <>
-                <span className='CATEGORY meta-1'>
-                  {category}
-                </span>
-              </>
-            )}
             <h3 className='HEADING head-3 text-primary-900'>
-              {event.hero.fields.heroPrimaryText}
+              {event?.hero?.fields?.heroPrimaryText
+                ? event?.hero?.fields?.heroPrimaryText
+                : event?.eventTitle}
             </h3>
           </div>
-          <HeaderParagraph
-            mainContentParagraph={event.teaserDescription}
-          />
-          {/* <p className='PARAGRAPH'>
-          {event.eventDescriptionTeaser}
-        </p> */}
+          {event?.teaserDescription && (
+            <HeaderParagraph
+              mainContentParagraph={event?.teaserDescription}
+            />
+          )}
           <button className='general-btn sm outline text-primary-500 group-hover:bg-primary-600 group-hover:text-white'>
             Sign up →
           </button>
-          {/* <LinkButton
-          text='Sign Up →'
-          path={`/offerings/training/events/${event.pageSlug}`}
-          classes='sm outline text-primary-500'
-        /> */}
         </div>
         <div className='IMAGE_WRAP h-[25vh] order-first lg:order-last lg:h-auto relative'>
-          <ContentfulImageBlock
-            contentfulImage={event.hero.fields.heroImage}
-          />
+          {event.imageMain && (
+            <ContentfulImageBlock
+              contentfulImage={event.imageMain}
+            />
+          )}
         </div>
       </article>
     </Link>

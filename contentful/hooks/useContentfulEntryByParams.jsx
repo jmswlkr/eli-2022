@@ -1,6 +1,9 @@
 import { client, previewClient } from '../config'
 
-export const useContentfulEntryByParams = async ({ preview, params }) => {
+export const useContentfulEntryByParams = async ({
+  preview,
+  params
+}) => {
   try {
     const data = preview
       ? await previewClient.getEntries(params)

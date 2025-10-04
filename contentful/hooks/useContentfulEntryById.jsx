@@ -2,12 +2,12 @@ import { client, previewClient } from '../config'
 
 export const useContentfulEntryById = async ({
   preview = false,
-  entryId,
-  params
+  entryId
 }) => {
   try {
     const entry = preview
-      ? await previewClient.getEntry(
+      // ? await previewClient.getEntry(
+      ? await client.getEntry(
           entryId
         )
       : await client.getEntry(entryId)

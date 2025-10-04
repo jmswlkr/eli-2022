@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { useContentfulEntryByParams } from '@/contentful'
 
-import { CtaSection } from '@/ui-components'
+import { CtaSection, TestComponent } from '@/ui-components'
 import { ParagraphHeader } from '@/ui-components'
 import { HeaderParagraph } from '@/ui-components'
 
