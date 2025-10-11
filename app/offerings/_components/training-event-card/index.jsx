@@ -6,6 +6,7 @@ import * as advancedFormat from 'dayjs/plugin/advancedFormat'
 
 import { HeaderParagraph, LinkButton } from '@/ui-components'
 import { ContentfulImageBlock } from '@/ui-components'
+import { twm } from 'utils/tailwind'
 
 dayjs.extend(advancedFormat)
 
@@ -23,7 +24,14 @@ export const TrainingCard = ({ event }) => {
         event?.pageSlug ?? '#'
       }`}
     >
-      <article className='TRAINING_CARD auto-rows-auto rounded-xl lg:grid-cols-2 grid w-full h-auto grid-cols-1 overflow-hidden'>
+      <article
+        className={twm(
+          'TRAINING_CARD auto-rows-auto rounded-xl grid w-full h-auto overflow-hidden',
+          event.hero?.fields?.heroImage
+            ? 'lg:grid-cols-2 grid-cols-1'
+            : 'grid-cols-1'
+        )}
+      >
         <div className='TEXT_CONTENT full p-ms md:p-md bg-primary-100 flex-col-tl gap-sm md:gap-ms lg:gap-md'>
           <div className='LABEL meta-1 text-primary-500 flex-col-tl lg:flex-center lg:!flex-row gap-[1ch]'>
             <div className='gap-xs lg:flex-row lg:gap-sm flex items-center justify-start'>
@@ -54,13 +62,13 @@ export const TrainingCard = ({ event }) => {
             Sign up →
           </button>
         </div>
-        <div className='IMAGE_WRAP h-[25vh] order-first lg:order-last lg:h-auto relative'>
-          {event.imageMain && (
+        {event?.hero?.fields?.heroImage && (
+          <div className='IMAGE_WRAP h-[25vh] order-first lg:order-last lg:h-auto relative'>
             <ContentfulImageBlock
-              contentfulImage={event.imageMain}
+              contentfulImage={event.hero.fields.heroImage}
             />
-          )}
-        </div>
+          </div>
+        )}
       </article>
     </Link>
   )
