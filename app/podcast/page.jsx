@@ -16,10 +16,10 @@ const PodcastPage = async () => {
 
   return (
     <ContentLayout>
-      <HeroSecondary {...content.hero.fields} />
+      <HeroSecondary {...content?.hero?.fields} />
       <QuoteBlock {...content}/>
       <StorySection {...content}/>
-      <CtaSection {...content.cta.fields}/>
+      <CtaSection {...content?.cta?.fields}/>
     </ContentLayout>
   )
 }
