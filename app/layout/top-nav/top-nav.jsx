@@ -4,7 +4,6 @@ import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
-import { pageLinks } from '../navigation-data'
 
 import { LinkButton, Logo } from '@/ui-components'
 
@@ -21,13 +20,14 @@ import { phases } from 'animation/transition'
 import { fadeIn } from 'animation/fade'
 import { twm } from 'utils/tailwind'
 
-export const TopNav = ({ modalOpen, setModalOpen, showBG = false }) => {
+export const TopNav = ({ modalOpen, setModalOpen, navData: { pageLinks }, showBG = false }) => {
   const closeModal = () => {
     setModalOpen(false)
   }
   const toggleModal = () => {
     setModalOpen(!modalOpen)
   }
+
 
   return (
     <nav className={topNav}>

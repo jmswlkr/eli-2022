@@ -33,6 +33,9 @@ const TrainingEventPage = async ({ params }) => {
             start: content.eventDateStart,
             end: content.eventDateEnd
           }}
+          eventFrequency={content?.eventFrequency ?? 'ONCE'}
+          eventDay={content?.eventDay ?? 'Mondays'}
+          eventStartTime={content?.eventStartTime ?? null}
           currentPath={currentPath}
           {...content.hero.fields}
         />
@@ -81,7 +84,7 @@ const TrainingEventPage = async ({ params }) => {
       )}
       <div className='ENROLL_SECTION group hover:bg-primary-600 bg-primary-500 rounded-xl py-lg flex-col-center gap-md transition-all'>
         <p className='quote-1 text-white'>
-          Step into your embodied enoughness — register today!
+          {content?.enrollText ?? 'Step into your embodied enoughness — enroll today!'}
         </p>
         <Link
           href={`${currentPath}/enroll`}

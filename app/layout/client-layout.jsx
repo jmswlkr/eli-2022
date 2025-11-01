@@ -28,6 +28,7 @@ export const ClientLayout = ({ navData, children }) => {
     <div className={layout}>
       <article id='portal' />
       <TopNav
+        navData={navData}
         setModalOpen={setModalOpen}
         modalOpen={modalOpen}
         showBG={!heroInView}

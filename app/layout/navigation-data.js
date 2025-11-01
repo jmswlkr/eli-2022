@@ -2,104 +2,79 @@
 
 import { EmailIcon } from '@/ui-components'
 import { PhoneIcon } from '@/ui-components'
-import {
-  Facebook,
-  Instagram,
-  LinkedIn,
-} from '@/ui-components'
+import { Facebook, Instagram, LinkedIn } from '@/ui-components'
 
 export const pageLinks = [
   {
     path: '/offerings/training#events',
-    content: 'Events',
+    content: 'Events'
+  },
+  {
+    path: '/blog',
+    content: 'Blog'
   },
   {
     path: '/podcast',
-    content: 'Podcast',
+    content: 'Podcast'
+  },
+  {
+    path: '/book',
+    content: 'Book'
   },
   {
     path: '/offerings/consulting',
-    content: 'Consulting',
-    menu_content: (
-      <>
-        Customized
-        <br />
-        Consulting
-      </>
-    )
+    content: 'Consulting'
   },
   {
     path: '/offerings/training',
     content: 'Training',
-    menu_content: 'Transformational Training',
-    menu_content: (
-      <>
-        Transformational
-        <br />
-        Training
-      </>
-    )
+    menu_content: 'Transformational Training'
   },
   {
     path: '/offerings/coaching',
-    content: 'Coaching',
-    menu_content: (
-      <>
-        Embodied
-        <br />
-        Coaching
-      </>
-    )
+    content: 'Coaching'
   },
   {
     path: '/calendar',
-    content: 'Schedule',
-    menu_content: (
-      <>
-        Customized
-        <br />
-        Consulting
-      </>
-    )
+    content: 'Schedule'
   }
 ]
 
 export const connectLinks = [
   {
     path: '/about',
-    content: 'About ELI',
+    content: 'About ELI'
   },
   {
     path: '/founder',
-    content: 'About the Founder',
+    content: 'About the Founder'
   },
   {
     path: '/calendar',
-    content: 'Calendar',
+    content: 'Calendar'
   },
   {
     path: '/blog',
-    content: 'Blog',
+    content: 'Blog'
   }
-  
 ]
 
 export const socialIcons = [
   {
     id: 'IG',
     link: `https://wwww.Instagram.com/`,
-    icon: <Instagram />,
+    icon: <Instagram />
   },
   {
     id: 'FB',
     link: `https://wwww.facebook.com/`,
-    icon: <Facebook />,
+    icon: <Facebook />
   },
   {
     id: 'LI',
     link: `https://wwww.linkedin.com/`,
-    icon: <LinkedIn />,
-  },
+    icon: <LinkedIn />
+  }
 ]
 
 export const contactInfo = [
