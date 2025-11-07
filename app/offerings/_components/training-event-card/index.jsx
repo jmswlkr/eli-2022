@@ -4,17 +4,63 @@ import Link from 'next/link'
 import * as dayjs from 'dayjs'
 import * as advancedFormat from 'dayjs/plugin/advancedFormat'
 
-import { HeaderParagraph, LinkButton } from '@/ui-components'
+import {
+  HeaderParagraph,
+  LinkButton,
+  TestComponent
+} from '@/ui-components'
 import { ContentfulImageBlock } from '@/ui-components'
 import { twm } from 'utils/tailwind'
 
 dayjs.extend(advancedFormat)
 
 export const TrainingCard = ({ event }) => {
+
   const formattedDate = {
     start: dayjs(event.eventDateStart).format('MMM Do'),
     end: dayjs(event.eventDateEnd).format('MMM Do'),
     year: dayjs(event.eventDateStart).format('YYYY')
+  }
+
+  const dateDisplayType = {
+    ONCE: 'DATES',
+    REPEAT_WEEKLY: 'WEEKLY',
+  }[event?.eventFrequency ?? 'ONCE']
+
+  function EventDateDisplay({ displayType }) {
+    const formattedDoW = event?.eventDay.endsWith('s')
+      ? event?.eventDay
+      : `${event?.eventDay}s`
+    const isStartTimeValid =
+      typeof event?.eventStartTime === 'string' &&
+      dayjs(
+        event?.eventStartTime,
+        ['HH:mm', 'HH:mm:ss'],
+        true
+      ).isValid()
+    const startTime = isStartTimeValid
+      ? formatTimeTo12Hour(event?.eventStartTime)
+      : null
+
+    if (displayType === 'DATES')
+      return (
+        <div className='gap-xs lg:flex-row lg:gap-sm flex items-center justify-start'>
+          <span>{formattedDate.start}</span>
+          <span>-</span>
+          <span>{formattedDate.end}</span>
+          <span>-</span>
+          <span>{formattedDate.year}</span>
+        </div>
+      )
+    if (displayType === 'WEEKLY')
+      return (
+        <div className='gap-xs lg:flex-row lg:gap-sm flex items-center justify-start'>
+          <span>
+            {formattedDoW} {startTime ? `- ${startTime}` : ''}
+          </span>
+        </div>
+      )
+    // return null;
   }
 
   return (
@@ -24,6 +70,7 @@ export const TrainingCard = ({ event }) => {
         event?.pageSlug ?? '#'
       }`}
     >
+      <TestComponent content={event} />
       <article
         className={twm(
           'TRAINING_CARD auto-rows-auto rounded-xl grid w-full h-auto overflow-hidden',
@@ -34,13 +81,14 @@ export const TrainingCard = ({ event }) => {
       >
         <div className='TEXT_CONTENT full p-ms md:p-md bg-primary-100 flex-col-tl gap-sm md:gap-ms lg:gap-md'>
           <div className='LABEL meta-1 text-primary-500 flex-col-tl lg:flex-center lg:!flex-row gap-[1ch]'>
-            <div className='gap-xs lg:flex-row lg:gap-sm flex items-center justify-start'>
+            <EventDateDisplay displayType={dateDisplayType} />
+            {/* <div className='gap-xs lg:flex-row lg:gap-sm flex items-center justify-start'>
               <span>{formattedDate.start}</span>
               <span>-</span>
               <span>{formattedDate.end}</span>
               <span>-</span>
               <span>{formattedDate.year}</span>
-            </div>
+            </div> */}
             <span className='lg:block hidden'>•</span>
             <span className='lg:font-normal font-semibold'>
               {event.eventLocationName}

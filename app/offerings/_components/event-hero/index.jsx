@@ -49,17 +49,6 @@ export const TrainingEventHero = ({
   }['WEEKLY']
   // }[rest.eventFrequency ?? 'ONCE']
 
-  const testContent = {
-    heroImage,
-    date,
-    locationName,
-    heroPrimaryText,
-    currentPath,
-    heroDescriptionText,
-    formattedDate,
-    rest
-  }
-
   function EventDateDisplay({ displayType }) {
     const formattedDoW = eventDay.endsWith('s') ? eventDay : `${eventDay}s`;
     // const startTime = eventStartTime ? formatTimeTo12Hour(eventStartTime) : null;
