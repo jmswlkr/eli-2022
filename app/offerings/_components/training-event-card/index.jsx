@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import * as dayjs from 'dayjs'
 import * as advancedFormat from 'dayjs/plugin/advancedFormat'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 
 import {
   HeaderParagraph,
@@ -13,6 +14,16 @@ import { ContentfulImageBlock } from '@/ui-components'
 import { twm } from 'utils/tailwind'
 
 dayjs.extend(advancedFormat)
+dayjs.extend(customParseFormat)
+
+function formatTimeTo12Hour(time24) {
+  // Automatically handle both HH:mm and HH:mm:ss
+  const format =
+    time24.split(':').length === 3 ? 'HH:mm:ss' : 'HH:mm'
+  const time = dayjs(time24, format)
+
+  return time.format('h:mm A')
+}
 
 export const TrainingCard = ({ event }) => {
 
