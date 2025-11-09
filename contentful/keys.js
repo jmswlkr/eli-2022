@@ -15,6 +15,5 @@ export const CONTENTFUL_CONTENT_ENTRY_KEYS = {
 export const CONTENTFUL_CONTENT_TYPE_KEYS = {
   BLOG_DIRECTORY: 'blogDirectoryPage',
   BLOG_POST: 'blogPost',
-  TRAINING_CATEGORY: 'offeringsTrainingCategoryPage',
   TRAINING_EVENT: 'offeringsTrainingEventPage',
 }

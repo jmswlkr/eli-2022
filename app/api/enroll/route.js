@@ -3,10 +3,17 @@ import { NextResponse } from 'next/server'
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { paymentDetails, eventId } = body
+    const { id, paymentDetails } = body
+
+    const isFreeEvent = id === 'FREE_REGISTRATION'
+
+    if (isFreeEvent) {
+      // If free registration, skip payment verification
+      return NextResponse.json({ success: true });
+    }
 
     // 1. Verify payment with PayPal
-    const verified = await verifyPayPalPayment(paymentDetails.id)
+    const verified = isFreeEvent ? true : await verifyPayPalPayment(paymentDetails.id)
     if (!verified) {
       return NextResponse.json(
         { error: 'Payment verification failed' },

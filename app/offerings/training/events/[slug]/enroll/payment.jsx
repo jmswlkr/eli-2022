@@ -136,7 +136,7 @@ export const Payment = ({
             confirmationEmailSent:
               emailDetails?.success || false,
             confirmationEmailDate:
-              paymentDetails?.create_time || null,
+              paymentDetails !== null ? paymentDetails?.create_time || new Date().toISOString() : new Date().toISOString(),
             confirmationEmailId:
               emailDetails?.message?.id || null,
             reminderEmailsSent: []
@@ -145,15 +145,15 @@ export const Payment = ({
       }
 
       // If payment details are provided (from PayPal), add the payment information
-      if (paymentDetails) {
+      if (paymentDetails !== null) {
         requestBody.fields.payment = {
-          id: paymentDetails.id,
-          status: paymentDetails.status,
-          amount: paymentDetails.purchase_units[0].amount.value,
+          id: paymentDetails?.id ?? 'non-paypal-payment',
+          status: paymentDetails?.status ?? 'COMPLETED_NON_PAYPAL',
+          amount: paymentDetails?.purchase_units?.[0]?.amount?.value ?? '0.00',
           currency:
-            paymentDetails.purchase_units[0].amount
-              .currency_code,
-          provider: 'paypal'
+            paymentDetails?.purchase_units?.[0]?.amount
+              ?.currency_code ?? 'USD',
+          provider: paymentDetails ? 'paypal' : 'other',
         }
       }
 
@@ -194,6 +194,42 @@ export const Payment = ({
 
   const payPalSuccessHandler = useCallback(
     async (details) => {
+      if (details.id === 'FREE_REGISTRATION') {
+        try {
+          setProcessingState(PROCESS_STATES.PROCESSING)
+          // Use the local state which should persist through PayPal modal
+          const enrollmentData = localEnrollData
+
+          const enrollResponse = await fetch('/api/enroll', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              id: details.id,
+              paymentDetails: {},
+              eventId,
+              ...enrollmentData
+            })
+          })
+          setProcessingState(PROCESS_STATES.SUCCESS)
+          // 2. Send confirmation email
+          const emailResponse =
+            await handleSendConfirmationEmail(enrollmentData)
+          // 3. Add registration to Contentful
+          const contentfulRegistrationResponse =
+            await handleAddRegistrationToContentful(
+              null, // details
+              emailResponse
+            )
+          setProcessingState(PROCESS_STATES.IDLE)
+          // 4. Redirect to success page
+          const redirectURL = `${confirmationSlug}?id=${details.id}`
+          window.location.href = redirectURL
+        } catch (error) {
+          console.error('Free enrollment process failed:', error)
+        }
+      }
       try {
         setProcessingState(PROCESS_STATES.PROCESSING)
         // Use the local state which should persist through PayPal modal
@@ -375,10 +411,23 @@ export const Payment = ({
                 className='absolute-center full z-50 bg-transparent cursor-pointer'
               />
             )}
-            <PayPalButton
-              amount={amount}
-              onSuccess={payPalSuccessHandler}
-            />
+            {Number(amount) > 0 ? (
+              <PayPalButton
+                amount={amount}
+                onSuccess={payPalSuccessHandler}
+              />
+            ) : (
+              <button
+                onClick={() =>
+                  payPalSuccessHandler({
+                    id: 'FREE_REGISTRATION'
+                  })
+                }
+                className='general-btn solid light w-full py-2'
+              >
+                Complete Registration
+              </button>
+            )}
           </div>
         </div>
       </div>
